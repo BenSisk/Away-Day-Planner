@@ -46,19 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activityPrices.cs" />
     <Compile Include="awayDayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="awayDayForm.Designer.cs">
       <DependentUpon>awayDayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="awayDayModel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="awayDayPresenter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="enumActivities.cs" />
+    <Compile Include="awayDayModel.cs" />
+    <Compile Include="awayDayPresenter.cs" />
     <Compile Include="IFace_awayDayModel.cs" />
     <Compile Include="IFace_awayDayPresenter.cs" />
     <Compile Include="IFace_awayDayForm.cs" />

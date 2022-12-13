@@ -12,5 +12,7 @@ namespace awayDayPlanner
         Boolean getActivity1 { get; }
         Boolean getActivity2 { get; }
         Boolean getActivity3 { get; }
+        void setEstimatedCost(string total);
+        void message(string message);
     }
 }

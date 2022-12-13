@@ -9,7 +9,7 @@ namespace awayDayPlanner
     public interface IFace_awayDayModel
     {
         void register(IFace_awayDayPresenter presenter);
-
-        void estimateCost(List<Activity> activities);
+        void estimateCost(List<string> activities);
+        int submit(List<string> activities);
     }
 }

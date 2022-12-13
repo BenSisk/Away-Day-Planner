@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner
 {
-    public partial class awayDayPresenter : Form, IFace_awayDayPresenter
+    public partial class awayDayPresenter : IFace_awayDayPresenter
     {
         private IFace_awayDayModel model;
         private IFace_awayDayForm view;
@@ -19,25 +19,58 @@ namespace awayDayPlanner
             this.model = model;
             view.register(this);
             model.register(this);
+            this.initialiseForm();
+        }
+
+        private void initialiseForm()
+        {
+            this.setEstimatedCost(0);
+        }
+
+        public void estimateCost()
+        {
+            model.estimateCost(this.getActivityList());
+        }
+
+        private void setEstimatedCost(string total)
+        {
+            view.setEstimatedCost(total);
+        }
+
+        public void setEstimatedCost(double total)
+        {
+            this.setEstimatedCost(String.Format("{0:0.00}", Math.Round(total, 2)));
         }
 
         public void submit()
         {
-            List<Activity> activities = new List<Activity>();
+            if (model.submit(this.getActivityList()) == 0)
+            {
+                view.message("Application Submitted Successfully");
+            }
+            else
+            {
+                view.message("Something went wrong.");
+            }
+        }
+
+
+        private List<string> getActivityList()
+        {
+            List<string> activities = new List<string>();
             if (view.getActivity1)
             {
-                activities.Add(Activity.activity1);
+                activities.Add("activity1");
             }
             if (view.getActivity2)
             {
-                activities.Add(Activity.activity2);
+                activities.Add("activity2");
             }
             if (view.getActivity3)
             {
-                activities.Add(Activity.activity3);
+                activities.Add("activity3");
             }
-
-            model.estimateCost(activities);
+            return activities;
         }
     }
 }

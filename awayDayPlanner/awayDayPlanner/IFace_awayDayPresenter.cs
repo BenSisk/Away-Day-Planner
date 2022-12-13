@@ -8,6 +8,8 @@ namespace awayDayPlanner
 {
     public interface IFace_awayDayPresenter
     {
+        void estimateCost();
+        void setEstimatedCost(double total);
         void submit();
     }
 }
