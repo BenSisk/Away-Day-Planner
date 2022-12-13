@@ -9,3 +9,14 @@ C:\Users\Ben\source\repos\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner
 C:\Users\Ben\source\repos\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.csproj.CoreCompileInputs.cache
 C:\Users\Ben\source\repos\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.exe
 C:\Users\Ben\source\repos\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.pdb
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\awayDayPlanner.exe.config
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\awayDayPlanner.exe
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\awayDayPlanner.pdb
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.csproj.AssemblyReference.cache
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.awayDayForm.resources
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Properties.Resources.resources
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.csproj.GenerateResource.cache
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.csproj.CoreCompileInputs.cache
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.exe
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.pdb

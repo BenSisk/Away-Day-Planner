@@ -9,7 +9,5 @@ namespace awayDayPlanner
     public interface IFace_awayDayPresenter
     {
         void submit();
-        void register(IFace_awayDayForm view);
-        void register(IFace_awayDayModel model);
     }
 }

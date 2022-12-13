@@ -24,12 +24,13 @@ namespace awayDayPlanner
         public void estimateCost(List<Activity> activities)
         {
             //stuff
+            MessageBox.Show(activities.Count.ToString());
             generateEstimatedCostPDF(new Dictionary<Activity, float>());
         }
 
         private void generateEstimatedCostPDF(Dictionary<Activity, float> activities)
         {
-            //other stuff
+            //MessageBox.Show("GONK!");
         }
     }
 }
