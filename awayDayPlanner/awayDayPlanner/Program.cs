@@ -25,8 +25,8 @@ namespace awayDayPlanner
             //Application.Run(awayDayForm);
 
             // Test code
-            LoginForm loginForm = new LoginForm();
-            Application.Run(loginForm);
+            //LoginForm loginForm = new LoginForm();
+            Application.Run(FormProvider.LoginForm);
         }
     }
 }

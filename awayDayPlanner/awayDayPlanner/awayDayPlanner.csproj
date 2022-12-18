@@ -66,17 +66,18 @@
     <Compile Include="awayDayModel.cs" />
     <Compile Include="awayDayPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
+    <Compile Include="GUI\FormProvider.cs" />
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Register.cs">
+    <Compile Include="GUI\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="GUI\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IFace_awayDayModel.cs" />
     <Compile Include="IFace_awayDayPresenter.cs" />
@@ -102,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212181011048_AddUserClass.resx">
       <DependentUpon>202212181011048_AddUserClass.cs</DependentUpon>

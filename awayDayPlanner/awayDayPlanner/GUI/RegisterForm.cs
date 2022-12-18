@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI
 {
-    public partial class Register : Form
+    public partial class RegisterForm : Form
     {
-        public Register()
+        public RegisterForm()
         {
             InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            FormProvider.RegisterForm.Close();
+            FormProvider.LoginForm.Show();
         }
     }
 }
