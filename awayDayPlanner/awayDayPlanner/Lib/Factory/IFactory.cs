@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    internal interface IIFactory
+    internal interface IFactory
     {
-        void getInstance();
         void getCredentials();
         void verifyCredentials();
         void createUser();
