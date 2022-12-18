@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Lib.Users
 {
-    internal class User : IUser
+    public class User : IUser
     {
         public int id { get; set; }
         public string firstname { get; set; }

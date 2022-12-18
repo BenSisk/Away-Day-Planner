@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace awayDayPlanner
         [STAThread]
         static void Main()
         {
+            var db = new ADPContext();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new awayDayPresenter());
