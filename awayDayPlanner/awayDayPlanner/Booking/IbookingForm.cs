@@ -10,9 +10,13 @@ namespace awayDayPlanner.Booking
     public interface IbookingForm
     {
         void register(IbookingPresenter presenter);
+        
         void message(string message);
+
         DialogResult displayFormAsDialog(Form form);
-        void addItemToDGV(Activity activity, string customName, string notes);
-        DataGridViewRowCollection getItinerary();
+
+        void addItemToDGV(string name, string notes);
+
+        void deleteRow(DataGridViewRow row);
     }
 }

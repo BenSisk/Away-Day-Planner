@@ -64,17 +64,9 @@ namespace awayDayPlanner.Booking
             presenter.addActivity();
         }
 
-        public void addItemToDGV(Activity activity, string customName, string notes)
+        public void addItemToDGV(string name, string notes)
         {
-            if (activity == Activity.Custom)
-            {
-                this.dgvActivities.Rows.Add(customName, notes);
-            }
-            else
-            {
-                this.dgvActivities.Rows.Add(activity, notes);
-            }
-            
+            this.dgvActivities.Rows.Add(name, notes);
         }
 
         public DialogResult displayFormAsDialog(Form form)
@@ -82,29 +74,17 @@ namespace awayDayPlanner.Booking
             return form.ShowDialog(this);
         }
 
-        private void dgv_activities_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            e.Cancel = confirmDelete();
-        }
-
         private void btnRemoveActivity_Click(object sender, EventArgs e)
         {
-            if (!confirmDelete())
+            if (MessageBox.Show("Do you want really to delete the selected row", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                foreach (DataGridViewRow row in dgvActivities.SelectedRows)
-                {
-                    this.dgvActivities.Rows.Remove(row);
-                }
+                presenter.deleteRows(dgvActivities.SelectedRows);
             }
         }
 
-        private Boolean confirmDelete()
+        public void deleteRow(DataGridViewRow row)
         {
-            return MessageBox.Show("Do you want really to delete the selected row", "Confirm Deletion", MessageBoxButtons.OKCancel) != DialogResult.OK;
-        }
-        public DataGridViewRowCollection getItinerary()
-        {
-            return this.dgvActivities.Rows;
+            dgvActivities.Rows.Remove(row);
         }
     }
 }

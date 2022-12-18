@@ -49,6 +49,7 @@
             // dgvActivities
             // 
             this.dgvActivities.AllowUserToAddRows = false;
+            this.dgvActivities.AllowUserToDeleteRows = false;
             this.dgvActivities.AllowUserToResizeColumns = false;
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActivities.Location = new System.Drawing.Point(12, 38);
@@ -56,7 +57,6 @@
             this.dgvActivities.ReadOnly = true;
             this.dgvActivities.Size = new System.Drawing.Size(689, 419);
             this.dgvActivities.TabIndex = 4;
-            this.dgvActivities.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgv_activities_UserDeletingRow);
             // 
             // btnAddItem
             // 

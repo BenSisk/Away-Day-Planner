@@ -24,6 +24,7 @@ namespace awayDayPlanner.Booking
             txtCustomActivity.Enabled = false;
             txtCustomActivity.TabStop = false;
             txtCustomActivity.Text = "";
+            txtNotes.Text = "";
             cmbxActivity.SelectedIndex = 0;
         }
 
