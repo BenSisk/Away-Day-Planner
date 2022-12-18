@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
@@ -11,6 +13,13 @@ namespace awayDayPlanner.Lib.Factory
     {
         private static Login instance = null;
         private static readonly object padlock = new object();
+
+        [Key]
+        private int loginID;
+        private String username = null;
+        private String password = null;
+
+        public virtual ICollection<User> User { get; set; }
 
         Login()
         {

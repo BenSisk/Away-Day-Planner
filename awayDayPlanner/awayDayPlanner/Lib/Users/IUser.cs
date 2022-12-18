@@ -8,7 +8,7 @@ namespace awayDayPlanner.Lib.Users
 {
     internal interface IUser
     {
-        int id
+        int userID
         {
             get; set;
         }

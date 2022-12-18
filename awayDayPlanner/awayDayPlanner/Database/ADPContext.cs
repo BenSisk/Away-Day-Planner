@@ -11,7 +11,7 @@ using System.Configuration;
 
 namespace awayDayPlanner.Database
 {
-    public class ADPContext
+    public class ADPContext : DbContext
     {
         public DbSet<User> User { get; set; }
     }

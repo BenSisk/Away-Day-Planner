@@ -86,6 +86,7 @@
     <Compile Include="Lib\Factory\Register.cs" />
     <Compile Include="Lib\Users\IUser.cs" />
     <Compile Include="Lib\Users\User.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="awayDayForm.resx">

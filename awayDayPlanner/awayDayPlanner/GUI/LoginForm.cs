@@ -26,5 +26,10 @@ namespace awayDayPlanner.GUI
         {
             this.Close();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
