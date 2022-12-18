@@ -8,11 +8,13 @@ using awayDayPlanner.Lib.Users;
 
 using System.Data.Entity;
 using System.Configuration;
+using awayDayPlanner.Lib.Factory;
 
 namespace awayDayPlanner.Database
 {
     public class ADPContext : DbContext
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Login> Login { get; set; }
     }
 }

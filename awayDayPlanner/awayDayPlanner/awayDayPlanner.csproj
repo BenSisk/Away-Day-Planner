@@ -86,6 +86,14 @@
     <Compile Include="Lib\Factory\Register.cs" />
     <Compile Include="Lib\Users\IUser.cs" />
     <Compile Include="Lib\Users\User.cs" />
+    <Compile Include="Migrations\202212181011048_AddUserClass.cs" />
+    <Compile Include="Migrations\202212181011048_AddUserClass.designer.cs">
+      <DependentUpon>202212181011048_AddUserClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212181114012_ADPDatabase.cs" />
+    <Compile Include="Migrations\202212181114012_ADPDatabase.designer.cs">
+      <DependentUpon>202212181114012_ADPDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +102,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212181011048_AddUserClass.resx">
+      <DependentUpon>202212181011048_AddUserClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212181114012_ADPDatabase.resx">
+      <DependentUpon>202212181114012_ADPDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

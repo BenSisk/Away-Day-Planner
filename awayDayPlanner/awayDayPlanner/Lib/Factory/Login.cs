@@ -9,15 +9,15 @@ using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    internal class Login : IFactory
+    public class Login : IFactory
     {
+        [Key]
+        public int loginID { get; set; }
+        public String username { get; set; }
+        public String password { get; set; }
+
         private static Login instance = null;
         private static readonly object padlock = new object();
-
-        [Key]
-        private int loginID;
-        private String username = null;
-        private String password = null;
 
         public virtual ICollection<User> User { get; set; }
 
