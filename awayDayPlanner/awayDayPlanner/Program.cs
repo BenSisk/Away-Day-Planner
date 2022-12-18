@@ -1,4 +1,5 @@
 ﻿using awayDayPlanner.Database;
+using awayDayPlanner.GUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,11 @@ namespace awayDayPlanner
             awayDayForm awayDayForm = new awayDayForm();
             awayDayModel awayDayModel = new awayDayModel();
             awayDayPresenter presenter = new awayDayPresenter(awayDayForm, awayDayModel);
-            Application.Run(awayDayForm);
+            //Application.Run(awayDayForm);
+
+            // Test code
+            LoginForm loginForm = new LoginForm();
+            Application.Run(loginForm);
         }
     }
 }
