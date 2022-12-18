@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace awayDayPlanner
+namespace awayDayPlanner.Booking
 {
     public interface IFace_awayDayPresenter
     {

@@ -1,5 +1,6 @@
 ﻿using awayDayPlanner.Database;
 using awayDayPlanner.GUI;
+using awayDayPlanner.Booking;
 using System;
 using System.Windows.Forms;
 
@@ -22,11 +23,11 @@ namespace awayDayPlanner
             awayDayForm awayDayForm = new awayDayForm();
             awayDayModel awayDayModel = new awayDayModel();
             awayDayPresenter presenter = new awayDayPresenter(awayDayForm, awayDayModel);
-            //Application.Run(awayDayForm);
+            Application.Run(awayDayForm);
 
             // Test code
             //LoginForm loginForm = new LoginForm();
-            Application.Run(FormProvider.LoginForm);
+            //Application.Run(FormProvider.LoginForm);
         }
     }
 }

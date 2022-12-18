@@ -56,15 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="activityPrices.cs" />
-    <Compile Include="awayDayForm.cs">
+    <Compile Include="Booking\activityPrices.cs" />
+    <Compile Include="Booking\awayDayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="awayDayForm.Designer.cs">
+    <Compile Include="Booking\awayDayForm.Designer.cs">
       <DependentUpon>awayDayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="awayDayModel.cs" />
-    <Compile Include="awayDayPresenter.cs" />
+    <Compile Include="Booking\awayDayModel.cs" />
+    <Compile Include="Booking\awayDayPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
     <Compile Include="GUI\FormProvider.cs" />
     <Compile Include="GUI\LoginForm.cs">
@@ -79,9 +79,9 @@
     <Compile Include="GUI\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IFace_awayDayModel.cs" />
-    <Compile Include="IFace_awayDayPresenter.cs" />
-    <Compile Include="IFace_awayDayForm.cs" />
+    <Compile Include="Booking\IFace_awayDayModel.cs" />
+    <Compile Include="Booking\IFace_awayDayPresenter.cs" />
+    <Compile Include="Booking\IFace_awayDayForm.cs" />
     <Compile Include="Lib\Factory\Login.cs" />
     <Compile Include="Lib\Factory\IFactory.cs" />
     <Compile Include="Lib\Factory\Register.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="awayDayForm.resx">
+    <EmbeddedResource Include="Booking\awayDayForm.resx">
       <DependentUpon>awayDayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
@@ -143,6 +143,7 @@
   <ItemGroup>
     <None Include="Resources\login.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

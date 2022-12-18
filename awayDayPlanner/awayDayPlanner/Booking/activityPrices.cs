@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace awayDayPlanner
+namespace awayDayPlanner.Booking
 {
     public class activityPrices
     {

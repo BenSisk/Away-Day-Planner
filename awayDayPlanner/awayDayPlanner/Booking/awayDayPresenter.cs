@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace awayDayPlanner
+namespace awayDayPlanner.Booking
 {
     public partial class awayDayPresenter : IFace_awayDayPresenter
     {
