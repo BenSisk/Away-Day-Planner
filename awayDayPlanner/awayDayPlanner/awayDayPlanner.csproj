@@ -60,6 +60,7 @@
     <Compile Include="IFace_awayDayForm.cs" />
     <Compile Include="Lib\Factory\Login.cs" />
     <Compile Include="Lib\Factory\IFactory.cs" />
+    <Compile Include="Lib\Factory\Register.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="awayDayForm.resx">
