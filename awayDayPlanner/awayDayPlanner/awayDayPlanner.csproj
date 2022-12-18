@@ -61,6 +61,8 @@
     <Compile Include="Lib\Factory\Login.cs" />
     <Compile Include="Lib\Factory\IFactory.cs" />
     <Compile Include="Lib\Factory\Register.cs" />
+    <Compile Include="Lib\Users\IUser.cs" />
+    <Compile Include="Lib\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="awayDayForm.resx">
@@ -88,8 +90,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Lib\Users\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
