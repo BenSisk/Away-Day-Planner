@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Booking
 {
-    public interface IFace_awayDayModel
+    public interface IbookingModel
     {
-        void register(IFace_awayDayPresenter presenter);
-        void estimateCost(List<string> activities);
+        void register(IbookingPresenter presenter);
         int submit(List<string> activities);
     }
 }

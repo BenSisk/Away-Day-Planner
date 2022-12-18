@@ -20,14 +20,13 @@ namespace awayDayPlanner
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new awayDayPresenter());
 
-            awayDayForm awayDayForm = new awayDayForm();
-            awayDayModel awayDayModel = new awayDayModel();
-            awayDayPresenter presenter = new awayDayPresenter(awayDayForm, awayDayModel);
+            var awayDayForm = FormProvider.bookingForm;
+            var presenter = FormProvider.bookingPresenter;
             Application.Run(awayDayForm);
 
             // Test code
-            //LoginForm loginForm = new LoginForm();
-            //Application.Run(FormProvider.LoginForm);
+            // LoginForm loginForm = new LoginForm();
+            // Application.Run(FormProvider.LoginForm);
         }
     }
 }

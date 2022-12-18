@@ -7,20 +7,20 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.Booking
 {
-    public partial class awayDayModel : IFace_awayDayModel
+    public partial class bookingModel : IbookingModel
     {
-        private IFace_awayDayPresenter presenter;
+        private IbookingPresenter presenter;
         private activityPrices prices;
 
 
 
-        public awayDayModel()
+        public bookingModel()
         {
 
         }
 
 
-        public void register(IFace_awayDayPresenter presenter)
+        public void register(IbookingPresenter presenter)
         {
             this.presenter = presenter;
 
@@ -71,15 +71,6 @@ namespace awayDayPlanner.Booking
 
             return total;
         }
-
-
-        public void estimateCost(List<string> activities)
-        {
-            Dictionary<string, double> activityCosts = costPerActivity(activities);
-            double total = subtotal(activityCosts.Values.ToList());
-            presenter.setEstimatedCost(total);
-        }
-
 
         public int submit(List<string> activities)
         {

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Booking
 {
-    public interface IFace_awayDayPresenter
+    public enum Activity
     {
-        void estimateCost();
-        void setEstimatedCost(double total);
-        void submit();
+        Activity1,
+        Activity2,
+        Activity3,
+        Custom
     }
 }

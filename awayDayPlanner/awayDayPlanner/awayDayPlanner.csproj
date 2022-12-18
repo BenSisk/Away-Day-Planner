@@ -56,15 +56,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Booking\Activities.cs" />
     <Compile Include="Booking\activityPrices.cs" />
-    <Compile Include="Booking\awayDayForm.cs">
+    <Compile Include="Booking\addNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Booking\awayDayForm.Designer.cs">
-      <DependentUpon>awayDayForm.cs</DependentUpon>
+    <Compile Include="Booking\addNewItem.Designer.cs">
+      <DependentUpon>addNewItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\awayDayModel.cs" />
-    <Compile Include="Booking\awayDayPresenter.cs" />
+    <Compile Include="Booking\bookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\bookingForm.Designer.cs">
+      <DependentUpon>bookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\bookingModel.cs" />
+    <Compile Include="Booking\bookingPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
     <Compile Include="GUI\FormProvider.cs" />
     <Compile Include="GUI\LoginForm.cs">
@@ -79,9 +86,9 @@
     <Compile Include="GUI\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Booking\IFace_awayDayModel.cs" />
-    <Compile Include="Booking\IFace_awayDayPresenter.cs" />
-    <Compile Include="Booking\IFace_awayDayForm.cs" />
+    <Compile Include="Booking\IbookingModel.cs" />
+    <Compile Include="Booking\IbookingPresenter.cs" />
+    <Compile Include="Booking\IbookingForm.cs" />
     <Compile Include="Lib\Factory\Login.cs" />
     <Compile Include="Lib\Factory\IFactory.cs" />
     <Compile Include="Lib\Factory\Register.cs" />
@@ -98,8 +105,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Booking\awayDayForm.resx">
-      <DependentUpon>awayDayForm.cs</DependentUpon>
+    <EmbeddedResource Include="Booking\addNewItem.resx">
+      <DependentUpon>addNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\bookingForm.resx">
+      <DependentUpon>bookingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
