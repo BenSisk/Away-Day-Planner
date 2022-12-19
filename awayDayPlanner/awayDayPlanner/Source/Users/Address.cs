@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace awayDayPlanner.Source.Users
         [Required] public String Firstline { get; set; } = string.Empty;
         [Required] public String SecondLine { get; set; } = string.Empty;
         [Required] public String PostCode { get; set; } = string.Empty;
+
+        public int UserID { get; set; }
     }
 }

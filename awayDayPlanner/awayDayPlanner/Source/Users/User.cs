@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace awayDayPlanner.Lib.Users
 {
@@ -15,7 +16,8 @@ namespace awayDayPlanner.Lib.Users
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string email { get; set; }
-        public DateTime dob { get; set; }
+        public string dob { get; set; }
+        public string phone { get; set;  }
 
         public virtual Address Address { get; set; } = new Address();
 

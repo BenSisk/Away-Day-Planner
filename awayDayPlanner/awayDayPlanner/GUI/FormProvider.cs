@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,6 +55,7 @@ namespace awayDayPlanner.GUI
                 return _registerForm;
             }
         }
+
         private static RegisterForm _registerForm;
         private static LoginForm _loginForm;
         private static ControlPanelForm _controlPanel;

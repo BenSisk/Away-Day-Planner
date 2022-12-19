@@ -1,4 +1,6 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,15 +10,28 @@ namespace awayDayPlanner.GUI.Model
 {
     public class RegisterModel : IRegisterModel
     {
-        public void Submit()
+        public void Submit(User user, Address address)
         {
-            throw new NotImplementedException();
+            Database.Database.Data.User.Add(user);
+            Database.Database.Data.Address.Add(address);
+            Database.Database.Data.SaveChanges();
+
+            var query = from b in Database.Database.Data.User
+                        orderby b.firstname
+                        select b;
+
+            Console.WriteLine("All users in the database:");
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.firstname);
+            }
         }
 
         public void Close()
         {
             FormProvider.LoginForm.Show();
-            FormProvider.RegisterForm.Close();
+            FormProvider.RegisterForm.Hide();
+            FormProvider.RegisterForm.Reset();
         }
 
     }

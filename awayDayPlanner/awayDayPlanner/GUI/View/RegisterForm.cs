@@ -17,19 +17,42 @@ namespace awayDayPlanner.GUI
         {
             InitializeComponent();
         }
+
+        public void Reset()
+        {
+            this.Controls.Clear();
+            InitializeComponent();
+        }
+
         public RegisterPresenter Presenter
         {
             private get; set;
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            Presenter.Submit();
-        }
+        public string firstname => this.txtFirstname.Text;
+
+        public string surname => this.txtLastname.Text;
+
+        public string email => this.txtEmail.Text;
+
+        public string dob => this.dtpDOB.Text;
+
+        public string phone => this.txtPhone.Text;
+
+        public string firstline => this.txtFirstline.Text;
+
+        public string secondline => this.txtSecondline.Text;
+
+        public string postcode => this.txtPostcode.Text;
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Presenter.Close();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Presenter.Submit();
         }
     }
 }
