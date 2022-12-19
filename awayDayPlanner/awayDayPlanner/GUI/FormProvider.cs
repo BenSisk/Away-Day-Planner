@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.GUI
 {
+
+    // Singleton classes for managing forms without creating and destroying contexts
     public class FormProvider
     {
         public static LoginForm LoginForm
@@ -18,6 +20,19 @@ namespace awayDayPlanner.GUI
                 }
 
                 return _loginForm;
+            }
+        }
+
+        public static ControlPanelForm ControlPanelForm
+        {
+            get
+            {
+                if (_controlPanel == null)
+                {
+                    _controlPanel = new ControlPanelForm();
+                }
+
+                return _controlPanel;
             }
         }
 
@@ -35,5 +50,6 @@ namespace awayDayPlanner.GUI
         }
         private static RegisterForm _registerForm;
         private static LoginForm _loginForm;
+        private static ControlPanelForm _controlPanel;
     }
 }

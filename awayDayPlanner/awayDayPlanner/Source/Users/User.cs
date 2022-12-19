@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.Source.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace awayDayPlanner.Lib.Users
         public string email { get; set; }
         public DateTime dob { get; set; }
 
+        public virtual Address Address { get; set; } = new Address();
 
         public void verifyDetails()
         {

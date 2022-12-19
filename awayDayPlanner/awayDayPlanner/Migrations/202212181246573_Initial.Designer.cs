@@ -7,13 +7,13 @@ namespace awayDayPlanner.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ADPDatabase : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ADPDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202212181114012_ADPDatabase"; }
+            get { return "202212181246573_Initial"; }
         }
         
         string IMigrationMetadata.Source

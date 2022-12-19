@@ -66,6 +66,12 @@
     <Compile Include="awayDayModel.cs" />
     <Compile Include="awayDayPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
+    <Compile Include="GUI\ControlPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ControlPanelForm.Designer.cs">
+      <DependentUpon>ControlPanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormProvider.cs" />
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -82,20 +88,17 @@
     <Compile Include="IFace_awayDayModel.cs" />
     <Compile Include="IFace_awayDayPresenter.cs" />
     <Compile Include="IFace_awayDayForm.cs" />
-    <Compile Include="Lib\Factory\Login.cs" />
-    <Compile Include="Lib\Factory\IFactory.cs" />
-    <Compile Include="Lib\Factory\Register.cs" />
-    <Compile Include="Lib\Users\IUser.cs" />
-    <Compile Include="Lib\Users\User.cs" />
-    <Compile Include="Migrations\202212181011048_AddUserClass.cs" />
-    <Compile Include="Migrations\202212181011048_AddUserClass.designer.cs">
-      <DependentUpon>202212181011048_AddUserClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202212181114012_ADPDatabase.cs" />
-    <Compile Include="Migrations\202212181114012_ADPDatabase.designer.cs">
-      <DependentUpon>202212181114012_ADPDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202212181246573_Initial.cs" />
+    <Compile Include="Migrations\202212181246573_Initial.designer.cs">
+      <DependentUpon>202212181246573_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Source\Factory\Login.cs" />
+    <Compile Include="Source\Factory\IFactory.cs" />
+    <Compile Include="Source\Factory\Register.cs" />
+    <Compile Include="Source\Users\Address.cs" />
+    <Compile Include="Source\Users\IUser.cs" />
+    <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="awayDayForm.resx">
@@ -107,11 +110,8 @@
     <EmbeddedResource Include="GUI\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212181011048_AddUserClass.resx">
-      <DependentUpon>202212181011048_AddUserClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212181114012_ADPDatabase.resx">
-      <DependentUpon>202212181114012_ADPDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212181246573_Initial.resx">
+      <DependentUpon>202212181246573_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

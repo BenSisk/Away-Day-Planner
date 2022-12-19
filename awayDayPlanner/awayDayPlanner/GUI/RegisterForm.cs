@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,12 @@ namespace awayDayPlanner.GUI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            FormProvider.RegisterForm.Close();
+            FormProvider.RegisterForm.Hide();
             FormProvider.LoginForm.Show();
+        }
+
+        private void Details_Enter(object sender, PaintEventArgs e)
+        {
         }
     }
 }

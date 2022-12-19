@@ -37,6 +37,5 @@ C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.exe
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.pdb
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.LoginForm.resources
-C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUserClass.resources
-C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.ADPDatabase.resources
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.RegisterForm.resources
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.Initial.resources

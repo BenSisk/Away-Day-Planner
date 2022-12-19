@@ -34,8 +34,9 @@ namespace awayDayPlanner.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
+            
+            FormProvider.RegisterForm.Show();
+            FormProvider.LoginForm.Hide();
         }
     }
 }
