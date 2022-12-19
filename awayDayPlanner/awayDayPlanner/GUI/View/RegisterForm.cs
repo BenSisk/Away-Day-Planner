@@ -29,21 +29,21 @@ namespace awayDayPlanner.GUI
             private get; set;
         }
 
-        public string firstname => this.txtFirstname.Text;
+        public string firstname => this.txtFirstname.Text.ToString();
 
-        public string surname => this.txtLastname.Text;
+        public string surname => this.txtLastname.Text.ToString();
 
-        public string email => this.txtEmail.Text;
+        public string email => this.txtEmail.Text.ToString();
 
-        public string dob => this.dtpDOB.Text;
+        public string dob => this.dtpDOB.Text.ToString();
 
-        public string phone => this.txtPhone.Text;
+        public string phone => this.txtPhone.Text.ToString();
 
-        public string firstline => this.txtFirstline.Text;
+        public string FirstLine => this.txtFirstline.Text.ToString();
 
-        public string secondline => this.txtSecondline.Text;
+        public string SecondLine => this.txtSecondline.Text.ToString();
 
-        public string postcode => this.txtPostcode.Text;
+        public string PostCode => this.txtPostcode.Text.ToString();
 
         private void btnClose_Click(object sender, EventArgs e)
         {

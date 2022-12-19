@@ -12,7 +12,9 @@ namespace awayDayPlanner.GUI.Model
     {
         public void Submit(User user, Address address)
         {
+            Console.WriteLine(address.FirstLine);
             Database.Database.Data.User.Add(user);
+            Database.Database.Data.SaveChanges();
             Database.Database.Data.Address.Add(address);
             Database.Database.Data.SaveChanges();
 

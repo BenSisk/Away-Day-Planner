@@ -35,9 +35,9 @@ namespace awayDayPlanner.GUI
 
             Address address = new Address
             {
-                Firstline = _view.firstline,
-                SecondLine = _view.secondline,
-                PostCode = _view.postcode
+                FirstLine = _view.FirstLine,
+                SecondLine = _view.SecondLine,
+                PostCode = _view.PostCode
             };
 
             _model.Submit(user, address);

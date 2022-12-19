@@ -11,10 +11,8 @@ namespace awayDayPlanner.Source.Users
     public class Address
     {
         [Key] public int AddressID { get; set; }
-        [Required] public String Firstline { get; set; } = string.Empty;
-        [Required] public String SecondLine { get; set; } = string.Empty;
-        [Required] public String PostCode { get; set; } = string.Empty;
-
-        public int UserID { get; set; }
+        public string FirstLine { get; set; }
+        public string SecondLine { get; set; }
+        public string PostCode { get; set; }
     }
 }

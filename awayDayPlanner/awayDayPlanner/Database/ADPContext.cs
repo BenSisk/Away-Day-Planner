@@ -1,24 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using awayDayPlanner.Lib.Users;
+﻿using awayDayPlanner.Lib.Users;
 
 using System.Data.Entity;
-using System.Configuration;
 using awayDayPlanner.Lib.Factory;
-using awayDayPlanner.GUI;
 using awayDayPlanner.Source.Users;
 
 namespace awayDayPlanner.Database
 {
     public class ADPContext : DbContext
     {
-        public ADPContext() : base()
-        {
-
+        public ADPContext()
+            : base("name=conString")
+            { 
         }
         public DbSet<User> User { get; set; }
         public DbSet<Login> Login { get; set; }
