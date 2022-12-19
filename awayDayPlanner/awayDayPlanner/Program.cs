@@ -20,6 +20,13 @@ namespace awayDayPlanner
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new awayDayPresenter());
 
+            //this will actually happen in the database thing I think, where it populates AcitivityEnum
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity1, new ActivityNormal());
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity2, new ActivityNormal());
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity3, new ActivityNormal());
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
+
+
             Application.Run(FormProvider.bookingForm);
 
             // Test code

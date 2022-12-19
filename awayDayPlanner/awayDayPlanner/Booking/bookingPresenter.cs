@@ -13,8 +13,7 @@ namespace awayDayPlanner.Booking
     {
         private IbookingModel model;
         private IbookingForm view;
-        private List<IActivity> activities;
-        private ActivityFactory activityFactory;
+        private List<IActivity> activities = new List<IActivity>();
 
         public bookingPresenter()
         {
@@ -23,13 +22,6 @@ namespace awayDayPlanner.Booking
             view.register(this);
             model.register(this);
             this.initialiseForm();
-
-
-            activityFactory = ActivityFactory.ActivityFactorySingleton;
-            activityFactory.RegisterActivity(ActivityEnum.Activity1, new ActivityNormal());
-            activityFactory.RegisterActivity(ActivityEnum.Activity2, new ActivityNormal());
-            activityFactory.RegisterActivity(ActivityEnum.Activity3, new ActivityNormal());
-            activityFactory.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
         }
 
         private void initialiseForm()
@@ -66,7 +58,7 @@ namespace awayDayPlanner.Booking
                 string custom = itemForm.getCustomRequest().ToString();
                 string notes = itemForm.getNotes().ToString();
 
-                IActivity activityInstance = activityFactory.getActivityInstance(activity);
+                IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.getActivityInstance(activity);
                 activityInstance.Type = activity;
                 activityInstance.Name = custom;
                 activityInstance.Notes = notes;
