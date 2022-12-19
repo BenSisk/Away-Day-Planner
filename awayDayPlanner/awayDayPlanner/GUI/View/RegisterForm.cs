@@ -26,5 +26,10 @@ namespace awayDayPlanner.GUI
         {
             Presenter.Submit();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Presenter.Close();
+        }
     }
 }

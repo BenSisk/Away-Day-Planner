@@ -9,6 +9,7 @@ using awayDayPlanner.Lib.Users;
 using System.Data.Entity;
 using System.Configuration;
 using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.GUI;
 
 namespace awayDayPlanner.Database
 {

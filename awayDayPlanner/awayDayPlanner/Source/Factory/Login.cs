@@ -76,5 +76,8 @@ namespace awayDayPlanner.Lib.Factory
         {
             throw new NotImplementedException();
         }
+
+        public void Submit()
+        { throw new NotImplementedException(); }
     }
 }

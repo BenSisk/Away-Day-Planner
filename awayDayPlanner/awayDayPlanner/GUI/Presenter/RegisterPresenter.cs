@@ -23,5 +23,10 @@ namespace awayDayPlanner.GUI
         {
             _model.Submit();
         }
+
+        public void Close()
+        {
+            _model.Close();
+        }
     }
 }

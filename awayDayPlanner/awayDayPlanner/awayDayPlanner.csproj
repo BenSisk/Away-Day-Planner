@@ -66,6 +66,7 @@
     <Compile Include="awayDayModel.cs" />
     <Compile Include="awayDayPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
+    <Compile Include="Database\Database.cs" />
     <Compile Include="GUI\Model\ILoginModel.cs" />
     <Compile Include="GUI\Model\IRegisterModel.cs" />
     <Compile Include="GUI\Model\LoginModel.cs" />

@@ -32,7 +32,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -56,22 +60,19 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel10.SuspendLayout();
             this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,10 +82,9 @@
             this.Details.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel11.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel10.SuspendLayout();
-            this.flowLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,13 +104,14 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.Coral;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnClose.Location = new System.Drawing.Point(748, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 40);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label2
             // 
@@ -136,6 +137,19 @@
             this.panel2.Size = new System.Drawing.Size(800, 388);
             this.panel2.TabIndex = 1;
             // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(532, 322);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(148, 35);
+            this.btnRegister.TabIndex = 12;
+            this.btnRegister.Text = "Submit";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
@@ -152,6 +166,34 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Login Details";
+            // 
+            // flowLayoutPanel10
+            // 
+            this.flowLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
+            this.flowLayoutPanel10.Controls.Add(this.label11);
+            this.flowLayoutPanel10.Controls.Add(this.textBox9);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(6, 104);
+            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(308, 33);
+            this.flowLayoutPanel10.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 6);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 21);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Confirm:    ";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(100, 3);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(205, 27);
+            this.textBox9.TabIndex = 3;
+            this.textBox9.UseSystemPasswordChar = true;
             // 
             // flowLayoutPanel7
             // 
@@ -380,6 +422,34 @@
             this.textBox2.Size = new System.Drawing.Size(196, 27);
             this.textBox2.TabIndex = 3;
             // 
+            // flowLayoutPanel11
+            // 
+            this.flowLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
+            this.flowLayoutPanel11.Controls.Add(this.label12);
+            this.flowLayoutPanel11.Controls.Add(this.textBox10);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(6, 187);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(308, 33);
+            this.flowLayoutPanel11.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 21);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Phone:        ";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox10.Location = new System.Drawing.Point(104, 3);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(198, 27);
+            this.textBox10.TabIndex = 3;
+            // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
@@ -435,75 +505,6 @@
             this.textBox3.Size = new System.Drawing.Size(194, 27);
             this.textBox3.TabIndex = 3;
             // 
-            // flowLayoutPanel10
-            // 
-            this.flowLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel10.Controls.Add(this.label11);
-            this.flowLayoutPanel10.Controls.Add(this.textBox9);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(6, 104);
-            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(308, 33);
-            this.flowLayoutPanel10.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 6);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 21);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Confirm:    ";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(100, 3);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(205, 27);
-            this.textBox9.TabIndex = 3;
-            this.textBox9.UseSystemPasswordChar = true;
-            // 
-            // flowLayoutPanel11
-            // 
-            this.flowLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel11.Controls.Add(this.label12);
-            this.flowLayoutPanel11.Controls.Add(this.textBox10);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(6, 187);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(308, 33);
-            this.flowLayoutPanel11.TabIndex = 6;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 21);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Phone:        ";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox10.Location = new System.Drawing.Point(104, 3);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(198, 27);
-            this.textBox10.TabIndex = 3;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(532, 322);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(148, 35);
-            this.btnRegister.TabIndex = 12;
-            this.btnRegister.Text = "Submit";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,6 +522,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.flowLayoutPanel10.ResumeLayout(false);
+            this.flowLayoutPanel10.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel9.ResumeLayout(false);
@@ -537,14 +540,12 @@
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel11.ResumeLayout(false);
+            this.flowLayoutPanel11.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel10.ResumeLayout(false);
-            this.flowLayoutPanel10.PerformLayout();
-            this.flowLayoutPanel11.ResumeLayout(false);
-            this.flowLayoutPanel11.PerformLayout();
             this.ResumeLayout(false);
 
         }

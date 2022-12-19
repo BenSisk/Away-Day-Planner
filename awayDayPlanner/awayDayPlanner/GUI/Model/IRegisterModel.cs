@@ -9,5 +9,7 @@ namespace awayDayPlanner.GUI.Model
     public interface IRegisterModel
     {
         void Submit();
+
+        void Close();
     }
 }

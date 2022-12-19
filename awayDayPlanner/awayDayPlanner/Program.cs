@@ -2,6 +2,7 @@
 using awayDayPlanner.GUI;
 using System;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace awayDayPlanner
 {
@@ -13,8 +14,6 @@ namespace awayDayPlanner
         [STAThread]
         static void Main()
         {
-            var db = new ADPContext();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new awayDayPresenter());

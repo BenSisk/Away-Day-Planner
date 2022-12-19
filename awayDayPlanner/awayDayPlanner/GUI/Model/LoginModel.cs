@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace awayDayPlanner.GUI.Model
 {
@@ -37,6 +34,19 @@ namespace awayDayPlanner.GUI.Model
         public void Close()
         {
             FormProvider.LoginForm.Close();
+        }
+
+        public void Submit()
+        {
+            var query = from b in Database.Database.Data.User
+                        orderby b.firstname
+                        select b;
+
+            Console.WriteLine("All users in the database:");
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.firstname);
+            }
         }
 
         public void verifyCredentials()

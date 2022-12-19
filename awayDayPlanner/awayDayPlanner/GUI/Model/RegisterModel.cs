@@ -12,5 +12,12 @@ namespace awayDayPlanner.GUI.Model
         {
             throw new NotImplementedException();
         }
+
+        public void Close()
+        {
+            FormProvider.LoginForm.Show();
+            FormProvider.RegisterForm.Close();
+        }
+
     }
 }
