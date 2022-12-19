@@ -34,6 +34,11 @@ namespace awayDayPlanner.GUI.Model
             FormProvider.LoginForm.Hide();
         }
 
+        public void Close()
+        {
+            FormProvider.LoginForm.Close();
+        }
+
         public void verifyCredentials()
         {
             throw new NotImplementedException();

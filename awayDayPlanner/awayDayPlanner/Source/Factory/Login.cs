@@ -71,5 +71,10 @@ namespace awayDayPlanner.Lib.Factory
         {
             throw new NotImplementedException();
         }
+
+        public void Close()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

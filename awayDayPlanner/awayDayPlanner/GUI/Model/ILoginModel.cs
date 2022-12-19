@@ -17,5 +17,7 @@ namespace awayDayPlanner.GUI.Model
         void deshashPassword();
 
         void Register();
+
+        void Close();
     }
 }
