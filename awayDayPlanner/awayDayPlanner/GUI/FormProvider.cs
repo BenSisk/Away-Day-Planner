@@ -46,6 +46,7 @@ namespace awayDayPlanner.GUI
                 if (_bookingForm == null)
                 {
                     _bookingForm = new bookingForm();
+                    _bookingPresenter = FormProvider.bookingPresenter;
                 }
 
                 return _bookingForm;

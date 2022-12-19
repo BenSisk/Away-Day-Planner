@@ -31,7 +31,7 @@ namespace awayDayPlanner.Booking
 
         private void populateComboBox()
         {
-            foreach (var item in Enum.GetValues(typeof(Activity)))
+            foreach (var item in Enum.GetValues(typeof(ActivityEnum)))
             {
                 cmbxActivity.Items.Add(item);
             }
@@ -43,20 +43,25 @@ namespace awayDayPlanner.Booking
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            if (cmbxActivity.SelectedItem.Equals(Activity.Custom) && txtCustomActivity.Text.Length == 0)
+            if (cmbxActivity.SelectedItem.Equals(ActivityEnum.Custom))
             {
-                MessageBox.Show("You must enter a name for the custom activity", "Error");
-                txtCustomActivity.Focus();
+                if (txtCustomActivity.Text.Length == 0)
+                {
+                    MessageBox.Show("You must enter a name for the custom activity", "Error");
+                    txtCustomActivity.Focus();
+                    return;
+                }
             }
             else
             {
-                this.DialogResult = DialogResult.OK;
+                txtCustomActivity.Text = cmbxActivity.SelectedItem.ToString();
             }
+            this.DialogResult = DialogResult.OK;
         }
 
-        public Activity getActivityType()
+        public ActivityEnum getActivityType()
         {
-            return (Activity) cmbxActivity.SelectedItem;
+            return (ActivityEnum) cmbxActivity.SelectedItem;
         }
 
         public string getCustomRequest()
@@ -71,7 +76,7 @@ namespace awayDayPlanner.Booking
 
         private void cmbxActivity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((Activity) cmbxActivity.SelectedItem == Activity.Custom)
+            if ((ActivityEnum) cmbxActivity.SelectedItem == ActivityEnum.Custom)
             {
                 txtCustomActivity.Enabled = true;
                 txtCustomActivity.TabStop = true;

@@ -13,6 +13,8 @@ namespace awayDayPlanner.Booking
     {
         private IbookingModel model;
         private IbookingForm view;
+        private List<IActivity> activities;
+        private ActivityFactory activityFactory;
 
         public bookingPresenter()
         {
@@ -21,6 +23,13 @@ namespace awayDayPlanner.Booking
             view.register(this);
             model.register(this);
             this.initialiseForm();
+
+
+            activityFactory = ActivityFactory.ActivityFactorySingleton;
+            activityFactory.RegisterActivity(ActivityEnum.Activity1, new ActivityNormal());
+            activityFactory.RegisterActivity(ActivityEnum.Activity2, new ActivityNormal());
+            activityFactory.RegisterActivity(ActivityEnum.Activity3, new ActivityNormal());
+            activityFactory.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
         }
 
         private void initialiseForm()
@@ -53,20 +62,17 @@ namespace awayDayPlanner.Booking
             if(view.displayFormAsDialog(itemForm) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
-                Activity activity = itemForm.getActivityType();
+                var activity = itemForm.getActivityType();
                 string custom = itemForm.getCustomRequest().ToString();
                 string notes = itemForm.getNotes().ToString();
 
-                string name;
-                if (activity == Activity.Custom)
-                {
-                    name = custom;
-                }
-                else
-                {
-                    name = activity.ToString();
-                }
-                view.addItemToDGV(name, notes);
+                IActivity activityInstance = activityFactory.getActivityInstance(activity);
+                activityInstance.Type = activity;
+                activityInstance.Name = custom;
+                activityInstance.Notes = notes;
+
+                this.activities.Add(activityInstance);
+                view.addItemToDGV(activityInstance.Name, activityInstance.Notes);
             }
         }
 
@@ -74,8 +80,7 @@ namespace awayDayPlanner.Booking
         {
             foreach (DataGridViewRow row in rows)
             {
-                //view.message(row.Index.ToString());
-                //delete corresponding object
+                this.activities.RemoveAt(row.Index);
                 view.deleteRow(row);
             }
         }

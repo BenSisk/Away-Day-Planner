@@ -20,9 +20,7 @@ namespace awayDayPlanner
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new awayDayPresenter());
 
-            var awayDayForm = FormProvider.bookingForm;
-            var presenter = FormProvider.bookingPresenter;
-            Application.Run(awayDayForm);
+            Application.Run(FormProvider.bookingForm);
 
             // Test code
             // LoginForm loginForm = new LoginForm();
