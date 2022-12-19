@@ -10,33 +10,26 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : Form, ILoginView
     {
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        public string userName
         {
-
+            get { return this.txtUsername.Text; }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        public string password
         {
-            this.Close();
+            get { return this.txtPassword.Text; }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            FormProvider.RegisterForm.Show();
-            FormProvider.LoginForm.Hide();
+        public LoginPresenter Presenter
+        { 
+            private get; set; 
         }
     }
 }

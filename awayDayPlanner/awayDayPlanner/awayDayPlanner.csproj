@@ -66,6 +66,7 @@
     <Compile Include="awayDayModel.cs" />
     <Compile Include="awayDayPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
+    <Compile Include="GUI\Presenter\LoginPresenter.cs" />
     <Compile Include="GUI\View\ControlPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +120,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -146,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\Model\" />
-    <Folder Include="GUI\Presenter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

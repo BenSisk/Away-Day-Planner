@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI
 {
@@ -17,6 +18,7 @@ namespace awayDayPlanner.GUI
                 if (_loginForm == null)
                 {
                     _loginForm = new LoginForm();
+                    _loginForm.Presenter = new LoginPresenter(_loginForm);
                 }
 
                 return _loginForm;

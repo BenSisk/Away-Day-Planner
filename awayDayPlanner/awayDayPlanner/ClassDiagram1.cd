@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="awayDayPlanner.GUI.FormProvider">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAEAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>GUI\FormProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="awayDayPlanner.Lib.Users.User">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAhAAAAgDAAIAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Users\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="awayDayPlanner.Lib.Factory.Register">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAQBAAAAAAAAABAAAQAAAABQAAAAAA=</HashCode>
+      <FileName>Source\Factory\Register.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="awayDayPlanner.Lib.Factory.Login">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAAEAAgAQAAAAAAEAAABAAAQAAAABQgAAAAA=</HashCode>
+      <FileName>Source\Factory\Login.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="awayDayPlanner.Lib.Users.IUser">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAhAAAAgDAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source\Users\IUser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="awayDayPlanner.Lib.Factory.IFactory">
+    <Position X="12.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABQAAAAAA=</HashCode>
+      <FileName>Source\Factory\IFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace awayDayPlanner.GUI.View
+namespace awayDayPlanner.GUI
 {
     public interface ILoginView
     {
-        string userName { get; set; }
-        string password { get; set; }
+        string userName { get;}
+        string password { get;}
+
+        LoginPresenter Presenter { set; }
     }
 }
