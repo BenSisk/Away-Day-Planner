@@ -26,14 +26,16 @@ namespace awayDayPlanner.Booking
         {
             this.Controls.Add(dgvActivities);
 
-            dgvActivities.ColumnCount = 2;
+            dgvActivities.ColumnCount = 3;
             dgvActivities.RowHeadersVisible = false;
 
             dgvActivities.Columns[0].Width = 200;
             dgvActivities.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvActivities.Columns[2].Width = 100;
 
             dgvActivities.Columns[0].Name = "Activity";
             dgvActivities.Columns[1].Name = "Notes";
+            dgvActivities.Columns[2].Name = "Estimated Cost";
 
             dgvActivities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
@@ -64,9 +66,9 @@ namespace awayDayPlanner.Booking
             presenter.addActivity();
         }
 
-        public void addItemToDGV(string name, string notes)
+        public void addItemToDGV(string name, string notes, double price)
         {
-            this.dgvActivities.Rows.Add(name, notes);
+            this.dgvActivities.Rows.Add(name, notes, price);
         }
 
         public DialogResult displayFormAsDialog(Form form)

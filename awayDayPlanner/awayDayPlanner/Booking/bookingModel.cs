@@ -19,19 +19,10 @@ namespace awayDayPlanner.Booking
 
         }
 
-
         public void register(IbookingPresenter presenter)
         {
             this.presenter = presenter;
-
-            // not how prices will eventually be set, placeholder for testing
-            this.prices = new activityPrices();
-            prices.setPrice("activity1", 4.02);
-            prices.setPrice("activity2", 27.54);
-            /*prices.setPrice("activity3", 2.08);
-            prices.setPrice("activity3", 57.98);*/
         }
-
 
         public Dictionary<string, double> costPerActivity(List<string> activities)
         {
@@ -54,12 +45,10 @@ namespace awayDayPlanner.Booking
             return activityEstimatedCosts;
         }
 
-
-        private void generateEstimatedCostPDF(Dictionary<string, double> activities, double total)
+        private void generatePDF()
         {
             //make itemised PDF
         }
-
 
         private double subtotal(List<double> costs)
         {
@@ -72,19 +61,9 @@ namespace awayDayPlanner.Booking
             return total;
         }
 
-        public int submit(List<string> activities)
+        public int submit(List<IActivity> activities)
         {
-            Dictionary<string, double> activityCosts = costPerActivity(activities);
-            if (activityCosts.Count == 0)
-            {
-                return -1;
-            }
-            else
-            {
-                double total = subtotal(activityCosts.Values.ToList());
-                generateEstimatedCostPDF(activityCosts, total);
-                return 0;
-            }
+            return 0;
         }
     }
 }

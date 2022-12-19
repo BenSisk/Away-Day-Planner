@@ -31,7 +31,7 @@ namespace awayDayPlanner.Booking
 
         public void submit()
         {
-            if (model.submit(this.getActivityList()) == 0)
+            if (model.submit(this.activities) == 0)
             {
                 view.message("Application Submitted Successfully");
             }
@@ -39,13 +39,6 @@ namespace awayDayPlanner.Booking
             {
                 view.message("Something went wrong.");
             }
-        }
-
-
-        private List<string> getActivityList()
-        {
-            List<string> activities = new List<string>();
-            return activities;
         }
 
         public void addActivity()
@@ -64,7 +57,7 @@ namespace awayDayPlanner.Booking
                 activityInstance.Notes = notes;
 
                 this.activities.Add(activityInstance);
-                view.addItemToDGV(activityInstance.Name, activityInstance.Notes);
+                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.EstimatedCost);
             }
         }
 

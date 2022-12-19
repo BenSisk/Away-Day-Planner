@@ -35,7 +35,7 @@ namespace awayDayPlanner.Booking
         }
         #endregion
 
-        public void RegisterActivity (ActivityEnum activityType, IActivity activity)
+        public void RegisterActivity (Enum activityType, IActivity activity)
         {
             if (!ActivityMapping.ContainsKey(activityType))
             {
@@ -43,7 +43,7 @@ namespace awayDayPlanner.Booking
             }
         }
 
-        public IActivity getActivityInstance(ActivityEnum activityType)
+        public IActivity getActivityInstance(Enum activityType)
         {
             IActivity activity = null;
             if (ActivityMapping.ContainsKey(activityType))
@@ -58,9 +58,10 @@ namespace awayDayPlanner.Booking
 
     public abstract class Activity : IActivity
     {
-        public ActivityEnum Type { get; set; }
+        public Enum Type { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
+        public double EstimatedCost { get; set; }
         public abstract void RegisterActivity();
         public abstract IActivity CreateActivity();
     }
@@ -80,6 +81,11 @@ namespace awayDayPlanner.Booking
 
     public class ActivityCustom : Activity
     {
+        public ActivityCustom()
+        {
+            this.EstimatedCost = 0;
+        }
+
         override public void RegisterActivity()
         {
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(this.Type, new ActivityCustom());
@@ -93,9 +99,10 @@ namespace awayDayPlanner.Booking
 
     public interface IActivity
     {
-        ActivityEnum Type { get; set; }
+        Enum Type { get; set; }
         string Name { get; set; }
         string Notes { get; set; }
+        double EstimatedCost { get; set; }
         void RegisterActivity();
         IActivity CreateActivity();
     }

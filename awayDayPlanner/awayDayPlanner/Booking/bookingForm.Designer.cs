@@ -57,13 +57,14 @@
             this.dgvActivities.ReadOnly = true;
             this.dgvActivities.Size = new System.Drawing.Size(689, 419);
             this.dgvActivities.TabIndex = 4;
+            this.dgvActivities.TabStop = false;
             // 
             // btnAddItem
             // 
             this.btnAddItem.Location = new System.Drawing.Point(707, 38);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(216, 79);
-            this.btnAddItem.TabIndex = 5;
+            this.btnAddItem.TabIndex = 1;
             this.btnAddItem.Text = "Add New Activity";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
@@ -73,7 +74,7 @@
             this.btnRemoveActivity.Location = new System.Drawing.Point(707, 123);
             this.btnRemoveActivity.Name = "btnRemoveActivity";
             this.btnRemoveActivity.Size = new System.Drawing.Size(216, 79);
-            this.btnRemoveActivity.TabIndex = 6;
+            this.btnRemoveActivity.TabIndex = 2;
             this.btnRemoveActivity.Text = "Remove Selected Activity";
             this.btnRemoveActivity.UseVisualStyleBackColor = true;
             this.btnRemoveActivity.Click += new System.EventHandler(this.btnRemoveActivity_Click);
@@ -83,7 +84,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // bookingForm
             // 
@@ -95,6 +96,8 @@
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.dgvActivities);
             this.Controls.Add(this.btnSubmit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "bookingForm";
             this.Text = "awayDay_Form";
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();

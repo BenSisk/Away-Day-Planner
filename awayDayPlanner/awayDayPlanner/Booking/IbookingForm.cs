@@ -15,7 +15,7 @@ namespace awayDayPlanner.Booking
 
         DialogResult displayFormAsDialog(Form form);
 
-        void addItemToDGV(string name, string notes);
+        void addItemToDGV(string name, string notes, double price);
 
         void deleteRow(DataGridViewRow row);
     }

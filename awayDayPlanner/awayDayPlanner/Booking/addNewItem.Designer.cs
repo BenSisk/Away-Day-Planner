@@ -39,6 +39,8 @@
             // 
             // cmbxActivity
             // 
+            this.cmbxActivity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbxActivity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbxActivity.FormattingEnabled = true;
             this.cmbxActivity.Location = new System.Drawing.Point(12, 35);
             this.cmbxActivity.Name = "cmbxActivity";
@@ -51,7 +53,7 @@
             this.btnAddItem.Location = new System.Drawing.Point(12, 213);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(364, 67);
-            this.btnAddItem.TabIndex = 2;
+            this.btnAddItem.TabIndex = 3;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
@@ -62,7 +64,7 @@
             this.txtCustomActivity.Location = new System.Drawing.Point(139, 36);
             this.txtCustomActivity.Name = "txtCustomActivity";
             this.txtCustomActivity.Size = new System.Drawing.Size(237, 20);
-            this.txtCustomActivity.TabIndex = 3;
+            this.txtCustomActivity.TabIndex = 1;
             this.txtCustomActivity.TabStop = false;
             // 
             // txtNotes
@@ -70,7 +72,7 @@
             this.txtNotes.Location = new System.Drawing.Point(12, 124);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(364, 83);
-            this.txtNotes.TabIndex = 4;
+            this.txtNotes.TabIndex = 2;
             this.txtNotes.Text = "";
             // 
             // lblNotes
