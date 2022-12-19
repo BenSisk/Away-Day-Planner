@@ -1,3 +1,5 @@
 awayDayPlanner/.vs/*
 *.vsidx
 *.cache
+*.mdf
+*.ldf
