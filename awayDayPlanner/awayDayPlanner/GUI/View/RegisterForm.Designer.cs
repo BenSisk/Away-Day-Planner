@@ -111,7 +111,6 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label2
             // 

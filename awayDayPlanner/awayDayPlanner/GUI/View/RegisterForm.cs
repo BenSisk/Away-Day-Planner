@@ -11,21 +11,20 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : Form, IRegisterView
     {
         public RegisterForm()
         {
             InitializeComponent();
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        public RegisterPresenter Presenter
         {
-            FormProvider.RegisterForm.Hide();
-            FormProvider.LoginForm.Show();
+            private get; set;
         }
 
-        private void Details_Enter(object sender, PaintEventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
+            Presenter.Submit();
         }
     }
 }

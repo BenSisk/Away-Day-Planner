@@ -17,8 +17,10 @@ namespace awayDayPlanner.GUI
             {
                 if (_loginForm == null)
                 {
+                    var model = new Model.LoginModel();
+
                     _loginForm = new LoginForm();
-                    _loginForm.Presenter = new LoginPresenter(_loginForm);
+                    _loginForm.Presenter = new LoginPresenter(_loginForm, model);
                 }
 
                 return _loginForm;
@@ -44,7 +46,9 @@ namespace awayDayPlanner.GUI
             {
                 if (_registerForm == null)
                 {
+                    var model = new Model.RegisterModel();
                     _registerForm = new RegisterForm();
+                    _registerForm.Presenter = new RegisterPresenter(_registerForm, model);
                 }
 
                 return _registerForm;

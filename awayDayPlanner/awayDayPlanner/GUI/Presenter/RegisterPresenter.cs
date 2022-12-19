@@ -5,25 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//using awayDayPlanner.GUI.Model;
-
 namespace awayDayPlanner.GUI
 {
-    public class LoginPresenter
+    public class RegisterPresenter
     {
-        private readonly ILoginView _view;
-        private readonly ILoginModel _model;
+        private readonly IRegisterView _view;
+        private readonly IRegisterModel _model;
 
-        public LoginPresenter(ILoginView view, ILoginModel model)
+        public RegisterPresenter(IRegisterView view, IRegisterModel model)
         {
             _view = view;
             view.Presenter = this;
             _model = model;
         }
 
-        public void Register()
+        public void Submit()
         {
-            _model.Register();
+            _model.Submit();
         }
     }
 }

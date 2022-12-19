@@ -31,5 +31,10 @@ namespace awayDayPlanner.GUI
         { 
             private get; set; 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Presenter.Register();
+        }
     }
 }

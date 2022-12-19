@@ -4,12 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using awayDayPlanner.GUI.Model;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    public class Login : IFactory
+    public class Login : IFactory, ILoginModel
     {
         [Key]
         public int loginID { get; set; }
@@ -57,9 +58,18 @@ namespace awayDayPlanner.Lib.Factory
         }
 
         private void deshashPassword()
-
         {
 
+        }
+
+        void ILoginModel.deshashPassword()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Register()
+        {
+            throw new NotImplementedException();
         }
     }
 }
