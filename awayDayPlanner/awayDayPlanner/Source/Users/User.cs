@@ -13,13 +13,19 @@ namespace awayDayPlanner.Lib.Users
     {
         [Key]
         public int userID { get; set; }
+        [Required]
         public string firstname { get; set; }
+        [Required]
         public string lastname { get; set; }
+        [Required]
         public string email { get; set; }
+        [Required]
         public string dob { get; set; }
-        public string phone { get; set;  }
+        [Required]
+        public string phone { get; set; }
 
-        public virtual Address Address { get; set; } = new Address();
+        [Required]
+        public virtual Address Address { get; set; }
 
         public void verifyDetails()
         {

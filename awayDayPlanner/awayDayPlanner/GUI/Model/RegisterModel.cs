@@ -13,9 +13,9 @@ namespace awayDayPlanner.GUI.Model
         public void Submit(User user, Address address)
         {
             Console.WriteLine(address.FirstLine);
-            Database.Database.Data.User.Add(user);
-            Database.Database.Data.SaveChanges();
             Database.Database.Data.Address.Add(address);
+            user.Address = address;
+            Database.Database.Data.User.Add(user);
             Database.Database.Data.SaveChanges();
 
             var query = from b in Database.Database.Data.User
