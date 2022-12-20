@@ -8,6 +8,7 @@ using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.newItem;
+using awayDayPlanner.GUI;
 
 namespace awayDayPlanner.GUI
 {
@@ -20,10 +21,26 @@ namespace awayDayPlanner.GUI
             {
                 if (_loginForm == null)
                 {
+                    var model = new Model.LoginModel();
+
                     _loginForm = new LoginForm();
+                    _loginForm.Presenter = new LoginPresenter(_loginForm, model);
                 }
 
                 return _loginForm;
+            }
+        }
+
+        public static ControlPanelForm ControlPanelForm
+        {
+            get
+            {
+                if (_controlPanel == null)
+                {
+                    _controlPanel = new ControlPanelForm();
+                }
+
+                return _controlPanel;
             }
         }
 
@@ -33,7 +50,9 @@ namespace awayDayPlanner.GUI
             {
                 if (_registerForm == null)
                 {
+                    var model = new Model.RegisterModel();
                     _registerForm = new RegisterForm();
+                    _registerForm.Presenter = new RegisterPresenter(_registerForm, model);
                 }
 
                 return _registerForm;
@@ -102,5 +121,6 @@ namespace awayDayPlanner.GUI
         private static bookingForm _bookingForm;
         private static bookingPresenter _bookingPresenter;
         private static bookingModel _bookingModel;
+        private static ControlPanelForm _controlPanel;
     }
 }

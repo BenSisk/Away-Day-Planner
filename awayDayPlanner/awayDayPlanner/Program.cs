@@ -26,8 +26,8 @@ namespace awayDayPlanner
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
 
 
-            // Application.Run(FormProvider.LoginForm);
-            Application.Run(FormProvider.bookingForm);
+            Application.Run(FormProvider.LoginForm);
+            // Application.Run(FormProvider.bookingForm);
         }
     }
 }
