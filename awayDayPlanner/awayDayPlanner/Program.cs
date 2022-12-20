@@ -3,6 +3,7 @@ using awayDayPlanner.GUI;
 using System;
 using System.Windows.Forms;
 using System.Data.Entity;
+using awayDayPlanner.Booking;
 
 namespace awayDayPlanner
 {
@@ -16,17 +17,17 @@ namespace awayDayPlanner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new awayDayPresenter());
 
-            awayDayForm awayDayForm = new awayDayForm();
-            awayDayModel awayDayModel = new awayDayModel();
-            awayDayPresenter presenter = new awayDayPresenter(awayDayForm, awayDayModel);
-            //Application.Run(awayDayForm);
 
-            // Test code
-            //LoginForm loginForm = new LoginForm();
+            // this will probably be moved to wherever it reads the activity list from later
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity1, new ActivityNormal());
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity2, new ActivityNormal());
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity3, new ActivityNormal());
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
 
-            Application.Run(FormProvider.LoginForm);
+
+            // Application.Run(FormProvider.LoginForm);
+            Application.Run(FormProvider.bookingForm);
         }
     }
 }

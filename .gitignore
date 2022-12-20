@@ -3,3 +3,6 @@ awayDayPlanner/.vs/*
 *.cache
 *.mdf
 *.ldf
+*.mdf
+awayDayPlanner/awayDayPlanner/bin/Debug/Database/Database.mdf
+*.ldf
