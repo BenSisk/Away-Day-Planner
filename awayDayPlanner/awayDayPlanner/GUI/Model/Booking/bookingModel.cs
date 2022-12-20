@@ -43,13 +43,27 @@ namespace awayDayPlanner.GUI.Model.Booking
             {
                 total += activityEstimatedCost;
             }
-
             return total;
         }
 
         public int submit(List<IActivity> activities)
         {
-            return 0;
+            if (activities.Count > 0)
+            {
+                AwayDay awayday = new AwayDay();
+                foreach (IActivity activity in activities)
+                {
+                    Database.Database.Data.Activity.Add(activity.getObject());
+                    awayday.AwayDayActivities.Add(activity.getObject());
+                }
+                Database.Database.Data.AwayDay.Add(awayday);
+                Database.Database.Data.SaveChanges();
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
         }
     }
 }

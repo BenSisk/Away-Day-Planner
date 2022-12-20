@@ -83,7 +83,6 @@
     <Compile Include="GUI\View\Booking\bookingForm.Designer.cs">
       <DependentUpon>bookingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Activities\Activities.cs" />
     <Compile Include="GUI\Model\Booking\bookingModel.cs" />
     <Compile Include="GUI\Presenter\Booking\bookingPresenter.cs" />
     <Compile Include="GUI\View\Booking\IbookingForm.cs" />
@@ -119,6 +118,11 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Source\Activities\Activity.cs" />
+    <Compile Include="Source\Activities\ActivityEnum.cs" />
+    <Compile Include="Source\Activities\ActivityFactory.cs" />
+    <Compile Include="Source\Activities\AwayDay.cs" />
+    <Compile Include="Source\Activities\IActivity.cs" />
     <Compile Include="Source\Factory\Login.cs" />
     <Compile Include="Source\Factory\IFactory.cs" />
     <Compile Include="Source\Factory\Register.cs" />
@@ -186,7 +190,6 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
