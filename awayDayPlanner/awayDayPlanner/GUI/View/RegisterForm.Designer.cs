@@ -36,13 +36,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -172,7 +172,7 @@
             // 
             this.flowLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
             this.flowLayoutPanel10.Controls.Add(this.label11);
-            this.flowLayoutPanel10.Controls.Add(this.textBox9);
+            this.flowLayoutPanel10.Controls.Add(this.txtPassword2);
             this.flowLayoutPanel10.Location = new System.Drawing.Point(6, 104);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Size = new System.Drawing.Size(308, 33);
@@ -188,19 +188,19 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Confirm:    ";
             // 
-            // textBox9
+            // txtPassword2
             // 
-            this.textBox9.Location = new System.Drawing.Point(100, 3);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(205, 27);
-            this.textBox9.TabIndex = 3;
-            this.textBox9.UseSystemPasswordChar = true;
+            this.txtPassword2.Location = new System.Drawing.Point(100, 3);
+            this.txtPassword2.Name = "txtPassword2";
+            this.txtPassword2.Size = new System.Drawing.Size(205, 27);
+            this.txtPassword2.TabIndex = 3;
+            this.txtPassword2.UseSystemPasswordChar = true;
             // 
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
             this.flowLayoutPanel7.Controls.Add(this.label8);
-            this.flowLayoutPanel7.Controls.Add(this.textBox7);
+            this.flowLayoutPanel7.Controls.Add(this.txtUsername);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(6, 26);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(308, 33);
@@ -216,18 +216,18 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Username:";
             // 
-            // textBox7
+            // txtUsername
             // 
-            this.textBox7.Location = new System.Drawing.Point(101, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(203, 27);
-            this.textBox7.TabIndex = 3;
+            this.txtUsername.Location = new System.Drawing.Point(101, 3);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(203, 27);
+            this.txtUsername.TabIndex = 3;
             // 
             // flowLayoutPanel9
             // 
             this.flowLayoutPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
             this.flowLayoutPanel9.Controls.Add(this.label10);
-            this.flowLayoutPanel9.Controls.Add(this.textBox8);
+            this.flowLayoutPanel9.Controls.Add(this.txtPassword);
             this.flowLayoutPanel9.Location = new System.Drawing.Point(6, 65);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
             this.flowLayoutPanel9.Size = new System.Drawing.Size(308, 33);
@@ -243,13 +243,13 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Password: ";
             // 
-            // textBox8
+            // txtPassword
             // 
-            this.textBox8.Location = new System.Drawing.Point(99, 3);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(205, 27);
-            this.textBox8.TabIndex = 3;
-            this.textBox8.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(99, 3);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(205, 27);
+            this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // groupBox1
             // 
@@ -573,10 +573,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Label label6;
@@ -589,7 +589,7 @@
         private System.Windows.Forms.TextBox txtPostcode;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtPassword2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtPhone;

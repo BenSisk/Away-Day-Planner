@@ -1,4 +1,5 @@
-﻿using awayDayPlanner.Lib.Users;
+﻿using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace awayDayPlanner.GUI.Model
 {
     public interface IRegisterModel
     {
-        void Submit(User user, Address address);
+        void Submit(User user, Address address, Login login, string confirmPassword);
 
         void Close();
     }

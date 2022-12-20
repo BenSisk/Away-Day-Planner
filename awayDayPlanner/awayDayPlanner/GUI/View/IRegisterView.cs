@@ -16,8 +16,11 @@ namespace awayDayPlanner.GUI
 
         string FirstLine { get; }
         string SecondLine { get; }
-
         string PostCode { get; }
+
+        string Username { get; }
+        string Password { get; }
+        string Password2 { get; }
 
         RegisterPresenter Presenter { set; }
     }

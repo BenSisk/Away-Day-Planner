@@ -117,9 +117,9 @@
     <Compile Include="IFace_awayDayModel.cs" />
     <Compile Include="IFace_awayDayPresenter.cs" />
     <Compile Include="IFace_awayDayForm.cs" />
-    <Compile Include="Migrations\202212191821369_AddUserClass.cs" />
-    <Compile Include="Migrations\202212191821369_AddUserClass.designer.cs">
-      <DependentUpon>202212191821369_AddUserClass.cs</DependentUpon>
+    <Compile Include="Migrations\202212201034019_AddUerClass.cs" />
+    <Compile Include="Migrations\202212201034019_AddUerClass.designer.cs">
+      <DependentUpon>202212201034019_AddUerClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Factory\Login.cs" />
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="GUI\View\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212191821369_AddUserClass.resx">
-      <DependentUpon>202212191821369_AddUserClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212201034019_AddUerClass.resx">
+      <DependentUpon>202212201034019_AddUerClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

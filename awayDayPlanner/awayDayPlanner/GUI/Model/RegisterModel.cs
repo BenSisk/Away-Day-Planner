@@ -1,4 +1,5 @@
-﻿using awayDayPlanner.Lib.Users;
+﻿using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,16 @@ namespace awayDayPlanner.GUI.Model
 {
     public class RegisterModel : IRegisterModel
     {
-        public void Submit(User user, Address address)
+        public void Submit(User user, Address address, Login login, string confirmPassword)
         {
             Console.WriteLine(address.FirstLine);
             Database.Database.Data.Address.Add(address);
             user.Address = address;
+            user.Login = login;
             Database.Database.Data.User.Add(user);
+
+            Database.Database.Data.Login.Add(login);
+
             Database.Database.Data.SaveChanges();
 
             var query = from b in Database.Database.Data.User
