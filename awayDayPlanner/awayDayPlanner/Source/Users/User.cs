@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using awayDayPlanner.Lib.Factory;
 
 namespace awayDayPlanner.Lib.Users
 {
@@ -26,10 +27,7 @@ namespace awayDayPlanner.Lib.Users
 
         [Required]
         public virtual Address Address { get; set; }
+        public virtual Login Login { get; set; }
 
-        public void verifyDetails()
-        {
-
-        }
     }
 }

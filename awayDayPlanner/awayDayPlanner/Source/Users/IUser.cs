@@ -31,7 +31,5 @@ namespace awayDayPlanner.Lib.Users
         {
             get; set;
         }
-
-        void verifyDetails();
     }
 }

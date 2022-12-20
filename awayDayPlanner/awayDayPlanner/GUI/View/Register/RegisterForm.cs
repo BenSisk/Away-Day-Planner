@@ -45,6 +45,12 @@ namespace awayDayPlanner.GUI
 
         public string PostCode => this.txtPostcode.Text.ToString();
 
+        public string Username => this.txtUsername.Text.ToString();
+
+        public string Password => this.txtPassword.Text.ToString();
+
+        public string Password2 => this.txtPassword2.Text.ToString();
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Presenter.Close();

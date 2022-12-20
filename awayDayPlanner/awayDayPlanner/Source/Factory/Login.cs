@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using awayDayPlanner.GUI.Model;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
@@ -14,18 +15,12 @@ namespace awayDayPlanner.Lib.Factory
     {
         [Key]
         public int loginID { get; set; }
-        public String username { get; set; }
-        public String password { get; set; }
+        public String Username { get; set; }
+        public String Password { get; set; }
 
         private static Login instance = null;
         private static readonly object padlock = new object();
 
-        public virtual ICollection<User> User { get; set; }
-
-        Login()
-        {
-
-        }
 
         public static Login getInstance
         {

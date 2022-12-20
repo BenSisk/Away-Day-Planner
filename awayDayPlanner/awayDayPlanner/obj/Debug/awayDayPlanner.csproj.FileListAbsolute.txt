@@ -39,7 +39,6 @@ C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.RegisterForm.resources
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database.mdf
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database_log.ldf
-C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUserClass.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database.mdf
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database_log.ldf
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\EntityFramework.dll
@@ -50,3 +49,4 @@ C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.RegisterForm.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUserClass.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.csproj.CopyComplete
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUerClass.resources

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddUserClass : DbMigration
+    public partial class AddUerClass : DbMigration
     {
         public override void Up()
         {
@@ -23,8 +23,8 @@
                 c => new
                     {
                         loginID = c.Int(nullable: false, identity: true),
-                        username = c.String(),
-                        password = c.String(),
+                        Username = c.String(),
+                        Password = c.String(),
                     })
                 .PrimaryKey(t => t.loginID);
             
@@ -33,16 +33,16 @@
                 c => new
                     {
                         userID = c.Int(nullable: false, identity: true),
-                        firstname = c.String(),
-                        lastname = c.String(),
-                        email = c.String(),
-                        dob = c.String(),
-                        phone = c.String(),
-                        Address_AddressID = c.Int(),
+                        firstname = c.String(nullable: false),
+                        lastname = c.String(nullable: false),
+                        email = c.String(nullable: false),
+                        dob = c.String(nullable: false),
+                        phone = c.String(nullable: false),
+                        Address_AddressID = c.Int(nullable: false),
                         Login_loginID = c.Int(),
                     })
                 .PrimaryKey(t => t.userID)
-                .ForeignKey("dbo.Addresses", t => t.Address_AddressID)
+                .ForeignKey("dbo.Addresses", t => t.Address_AddressID, cascadeDelete: true)
                 .ForeignKey("dbo.Logins", t => t.Login_loginID)
                 .Index(t => t.Address_AddressID)
                 .Index(t => t.Login_loginID);

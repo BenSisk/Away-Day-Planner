@@ -1,9 +1,11 @@
 ﻿using awayDayPlanner.GUI.Model;
+using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,7 +42,13 @@ namespace awayDayPlanner.GUI
                 PostCode = _view.PostCode
             };
 
-            _model.Submit(user, address);
+            Login login = new Login
+            {
+                Username = _view.Username,
+                Password = _view.Password,
+            };
+
+            _model.Submit(user, address, login, _view.Password2);
         }
 
         public void Close()
