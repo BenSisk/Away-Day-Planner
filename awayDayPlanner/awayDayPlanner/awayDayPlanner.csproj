@@ -71,21 +71,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Booking\Activities.cs" />
-    <Compile Include="Booking\activityPrices.cs" />
-    <Compile Include="Booking\addNewItem.cs">
+    <Compile Include="GUI\addNewItem\addNewItem.Designer.cs" />
+    <Compile Include="GUI\View\Booking\bookingForm.Designer.cs" />
+    <Compile Include="Source\Activities\Activities.cs" />
+    <Compile Include="GUI\addNewItem\addNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Booking\addNewItem.Designer.cs" />
-    <Compile Include="Booking\bookingForm.cs">
+    <Compile Include="GUI\View\Booking\bookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Booking\bookingForm.Designer.cs" />
-    <Compile Include="Booking\bookingModel.cs" />
-    <Compile Include="Booking\bookingPresenter.cs" />
-    <Compile Include="Booking\IbookingForm.cs" />
-    <Compile Include="Booking\IbookingModel.cs" />
-    <Compile Include="Booking\IbookingPresenter.cs" />
+    <Compile Include="GUI\Model\Booking\bookingModel.cs" />
+    <Compile Include="GUI\Presenter\Booking\bookingPresenter.cs" />
+    <Compile Include="GUI\View\Booking\IbookingForm.cs" />
+    <Compile Include="GUI\Model\Booking\IbookingModel.cs" />
+    <Compile Include="GUI\Presenter\Booking\IbookingPresenter.cs" />
     <Compile Include="DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,18 +105,18 @@
       <DependentUpon>ControlPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormProvider.cs" />
-    <Compile Include="GUI\View\ILoginView.cs" />
-    <Compile Include="GUI\View\IRegisterView.cs" />
-    <Compile Include="GUI\View\LoginForm.cs">
+    <Compile Include="GUI\View\Login\ILoginView.cs" />
+    <Compile Include="GUI\View\Register\IRegisterView.cs" />
+    <Compile Include="GUI\View\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\View\LoginForm.Designer.cs">
+    <Compile Include="GUI\View\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\View\RegisterForm.cs">
+    <Compile Include="GUI\View\Register\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\View\RegisterForm.Designer.cs">
+    <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202212191821369_AddUserClass.cs" />
@@ -133,12 +132,10 @@
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Booking\addNewItem.resx" />
-    <EmbeddedResource Include="Booking\bookingForm.resx" />
-    <EmbeddedResource Include="GUI\View\LoginForm.resx">
+    <EmbeddedResource Include="GUI\View\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\View\RegisterForm.resx">
+    <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212191821369_AddUserClass.resx">

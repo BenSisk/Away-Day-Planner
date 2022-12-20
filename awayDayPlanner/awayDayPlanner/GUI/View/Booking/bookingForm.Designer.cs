@@ -1,4 +1,4 @@
-﻿namespace awayDayPlanner.Booking
+﻿namespace awayDayPlanner.GUI.View.Booking
 {
     partial class bookingForm
     {

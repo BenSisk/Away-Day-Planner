@@ -3,7 +3,7 @@ using awayDayPlanner.GUI;
 using System;
 using System.Windows.Forms;
 using System.Data.Entity;
-using awayDayPlanner.Booking;
+using awayDayPlanner.Source.Activities;
 
 namespace awayDayPlanner
 {

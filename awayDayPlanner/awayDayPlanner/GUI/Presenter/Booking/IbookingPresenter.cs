@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace awayDayPlanner.Booking
+namespace awayDayPlanner.GUI.Presenter.Booking
 {
     public interface IbookingPresenter
     {

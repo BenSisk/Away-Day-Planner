@@ -1,10 +1,13 @@
-﻿using awayDayPlanner.Booking;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using awayDayPlanner.GUI.Model.Booking;
+using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.GUI.View.Booking;
+using awayDayPlanner.GUI.newItem;
 
 namespace awayDayPlanner.GUI
 {

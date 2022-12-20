@@ -1,13 +1,16 @@
-﻿using awayDayPlanner.GUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using awayDayPlanner.GUI;
+using awayDayPlanner.Source.Activities;
+using awayDayPlanner.GUI.View.Booking;
+using awayDayPlanner.GUI.Model.Booking;
 
-namespace awayDayPlanner.Booking
+namespace awayDayPlanner.GUI.Presenter.Booking
 {
     public partial class bookingPresenter : IbookingPresenter
     {

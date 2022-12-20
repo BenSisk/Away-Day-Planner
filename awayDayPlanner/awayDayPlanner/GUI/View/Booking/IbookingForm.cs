@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using awayDayPlanner.GUI.Presenter.Booking;
 
-namespace awayDayPlanner.Booking
+namespace awayDayPlanner.GUI.View.Booking
 {
     public interface IbookingForm
     {

@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using awayDayPlanner.GUI.Presenter.Booking;
 
-namespace awayDayPlanner.Booking
+namespace awayDayPlanner.GUI.View.Booking
 {
     public partial class bookingForm : Form, IbookingForm
     {

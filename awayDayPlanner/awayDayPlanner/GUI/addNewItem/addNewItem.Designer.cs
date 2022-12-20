@@ -1,4 +1,4 @@
-﻿namespace awayDayPlanner.Booking
+﻿namespace awayDayPlanner.GUI.newItem
 {
     partial class addNewItem
     {

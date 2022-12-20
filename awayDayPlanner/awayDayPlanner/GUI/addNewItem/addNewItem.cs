@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using awayDayPlanner.Source.Activities;
 
-namespace awayDayPlanner.Booking
+namespace awayDayPlanner.GUI.newItem
 {
     public partial class addNewItem : Form
     {
