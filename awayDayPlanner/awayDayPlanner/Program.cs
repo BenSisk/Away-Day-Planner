@@ -4,6 +4,8 @@ using System;
 using System.Windows.Forms;
 using System.Data.Entity;
 using awayDayPlanner.Source.Activities;
+using System.IO;
+using System.Reflection;
 
 namespace awayDayPlanner
 {
@@ -17,6 +19,7 @@ namespace awayDayPlanner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.FullName);
 
 
             // this will probably be moved to wherever it reads the activity list from later
@@ -26,8 +29,8 @@ namespace awayDayPlanner
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
 
 
-            Application.Run(FormProvider.LoginForm);
-            // Application.Run(FormProvider.bookingForm);
+            // Application.Run(FormProvider.LoginForm);
+            Application.Run(FormProvider.bookingForm);
         }
     }
 }

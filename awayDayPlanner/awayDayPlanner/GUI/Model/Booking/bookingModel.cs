@@ -25,25 +25,9 @@ namespace awayDayPlanner.GUI.Model.Booking
             this.presenter = presenter;
         }
 
-        public Dictionary<string, double> costPerActivity(List<string> activities)
-        {
-            Dictionary<string, double> activityEstimatedCosts = new Dictionary<string, double>();
-            return activityEstimatedCosts;
-        }
-
         private void generatePDF()
         {
             //make itemised PDF
-        }
-
-        private double subtotal(List<double> costs)
-        {
-            double total = 0;
-            foreach (double activityEstimatedCost in costs)
-            {
-                total += activityEstimatedCost;
-            }
-            return total;
         }
 
         public int submit(List<IActivity> activities)
