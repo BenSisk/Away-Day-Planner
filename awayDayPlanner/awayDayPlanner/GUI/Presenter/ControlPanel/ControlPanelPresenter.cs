@@ -15,7 +15,7 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 {
     public class ControlPanelPresenter : IControlPanelPresenter
     {
-        public User user = new User();
+        public User user;
 
         private IControlPanelForm view;
 
@@ -24,13 +24,10 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             this.view = FormProvider.ControlPanelForm;
             view.register(this);
 
-            user.userID = 2;
-            user.firstname = "GONK";
-            user.lastname = "BONK";
-            user.email = "email";
-            user.dob = "dob";
-            user.phone = "phone";
-            user.Address = new Address();
+            var query = from users in Database.Database.Data.User
+                        where (users.userID == 1)
+                        select users;
+            user = query.FirstOrDefault();
         }
 
         public void newAwayDay()
