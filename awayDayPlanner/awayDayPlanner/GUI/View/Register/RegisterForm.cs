@@ -51,6 +51,8 @@ namespace awayDayPlanner.GUI
 
         public string Password2 => this.txtPassword2.Text.ToString();
 
+        public string Salt;
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Presenter.Close();

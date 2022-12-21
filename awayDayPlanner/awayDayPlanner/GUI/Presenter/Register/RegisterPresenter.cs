@@ -42,7 +42,7 @@ namespace awayDayPlanner.GUI
                 PostCode = _view.PostCode
             };
 
-            Login login = new Login
+            Login login = new Login()
             {
                 Username = _view.Username,
                 Password = _view.Password,

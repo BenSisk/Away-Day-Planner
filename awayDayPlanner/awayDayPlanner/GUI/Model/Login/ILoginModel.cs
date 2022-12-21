@@ -8,11 +8,9 @@ namespace awayDayPlanner.GUI.Model
 {
     public interface ILoginModel
     {
-        void verifyCredentials();
-
         void createUser();
 
-        void deshashPassword();
+        void hashPassword();
 
         void Register();
 

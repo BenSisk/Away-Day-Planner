@@ -11,20 +11,27 @@ namespace awayDayPlanner.GUI.Model
 {
     public class RegisterModel : IRegisterModel
     {
+
+        private Register register;
+
+        public RegisterModel()
+        {
+            this.register = new Register();
+        }
+
         public void Submit(User user, Address address, Login login, string confirmPassword)
         {
-            Console.WriteLine(address.FirstLine);
+            Console.WriteLine("Generated salt is" + login.Salt);
             Database.Database.Data.Address.Add(address);
             user.Address = address;
             user.Login = login;
             Database.Database.Data.User.Add(user);
-            Console.WriteLine("checking before submission");
-            login.verifyCredentials();
+
+
+            this.register.verifyCredentials(login, confirmPassword);
             Database.Database.Data.Login.Add(login);
 
             Database.Database.Data.SaveChanges();
-            Console.WriteLine("Checking after submission");
-            login.verifyCredentials();
 
         }
 

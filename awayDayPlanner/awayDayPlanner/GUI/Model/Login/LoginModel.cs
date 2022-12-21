@@ -15,7 +15,7 @@ namespace awayDayPlanner.GUI.Model
             throw new NotImplementedException();
         }
 
-        public void deshashPassword()
+        public void hashPassword()
         {
             throw new NotImplementedException();
         }

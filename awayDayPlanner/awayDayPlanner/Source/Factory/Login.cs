@@ -13,16 +13,21 @@ using awayDayPlanner.Source.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    public class Login : IFactory, ILoginModel
+    public class Login : ILoginModel
     {
         [Key]
         public int loginID { get; set; }
         [Required] public String Username { get; set; }
         [Required] public String Password { get; set; }
+        [Required] public String Salt { get; set; }
 
         private static Login instance = null;
         private static readonly object padlock = new object();
 
+        public Login()
+        {
+            Salt = this.GenerateSalt();
+        }
 
         public static Login getInstance
         {
@@ -39,39 +44,29 @@ namespace awayDayPlanner.Lib.Factory
             }
         }
 
-        private Boolean UserExists()
+        private String GenerateSalt()
         {
-            return Database.Database.Data.Login.Any(c => c.Username == this.Username);
+            const string pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"£$%^&*()0123456789";
+            var builder = new StringBuilder();
+            Random random = new Random((int)DateTime.Now.Ticks);
+
+            for (var i = 0; i < 10; i++)
+            {
+                var c = pool[random.Next(0, pool.Length)];
+                builder.Append(c);
+            }
+
+            return builder.ToString();
         }
 
-        public void verifyCredentials()
+        public void verifyCredentials(Login login)
         {
-            if (this.Username.Length > 3 && this.Username.Length <= 50)
-            {
-                if (this.UserExists())
-                    Console.WriteLine("User exists");
-                else
-                    Console.WriteLine("USer doesn't exist");
-            }
-            else
-            {
-                Console.WriteLine("Username must be between 3 and 50 characters");
-            }
+
         }
 
         public void createUser()
         {
 
-        }
-
-        private void deshashPassword()
-        {
-
-        }
-
-        void ILoginModel.deshashPassword()
-        {
-            throw new NotImplementedException();
         }
 
         public void Register()
@@ -86,5 +81,10 @@ namespace awayDayPlanner.Lib.Factory
 
         public void Submit()
         { throw new NotImplementedException(); }
+
+        public void hashPassword()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

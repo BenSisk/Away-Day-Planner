@@ -71,10 +71,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\addNewItem\addNewItem.cs">
+    <Compile Include="DatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\View\Booking\addNewItem\addNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\addNewItem\addNewItem.Designer.cs">
+    <Compile Include="GUI\View\Booking\addNewItem\addNewItem.Designer.cs">
       <DependentUpon>addNewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\View\Booking\bookingForm.cs">
@@ -90,16 +95,16 @@
     <Compile Include="GUI\Presenter\Booking\IbookingPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
     <Compile Include="Database\Database.cs" />
-    <Compile Include="GUI\Model\ILoginModel.cs" />
-    <Compile Include="GUI\Model\IRegisterModel.cs" />
-    <Compile Include="GUI\Model\LoginModel.cs" />
-    <Compile Include="GUI\Model\RegisterModel.cs" />
-    <Compile Include="GUI\Presenter\LoginPresenter.cs" />
-    <Compile Include="GUI\Presenter\RegisterPresenter.cs" />
-    <Compile Include="GUI\View\ControlPanelForm.cs">
+    <Compile Include="GUI\Model\Login\ILoginModel.cs" />
+    <Compile Include="GUI\Model\Register\IRegisterModel.cs" />
+    <Compile Include="GUI\Model\Login\LoginModel.cs" />
+    <Compile Include="GUI\Model\Register\RegisterModel.cs" />
+    <Compile Include="GUI\Presenter\Login\LoginPresenter.cs" />
+    <Compile Include="GUI\Presenter\Register\RegisterPresenter.cs" />
+    <Compile Include="GUI\View\ControlPanel\ControlPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\View\ControlPanelForm.Designer.cs">
+    <Compile Include="GUI\View\ControlPanel\ControlPanelForm.Designer.cs">
       <DependentUpon>ControlPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormProvider.cs" />
@@ -117,9 +122,9 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212211026119_AddUserClass.cs" />
-    <Compile Include="Migrations\202212211026119_AddUserClass.designer.cs">
-      <DependentUpon>202212211026119_AddUserClass.cs</DependentUpon>
+    <Compile Include="Migrations\202212211354289_AddUserClass.cs" />
+    <Compile Include="Migrations\202212211354289_AddUserClass.designer.cs">
+      <DependentUpon>202212211354289_AddUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
@@ -130,6 +135,9 @@
     <Compile Include="Source\Factory\Login.cs" />
     <Compile Include="Source\Factory\IFactory.cs" />
     <Compile Include="Source\Factory\Register.cs" />
+    <Compile Include="Source\Security\HashProvider.cs" />
+    <Compile Include="Source\Security\Hasher.cs" />
+    <Compile Include="Source\Security\IHasher.cs" />
     <Compile Include="Source\Users\Address.cs" />
     <Compile Include="Source\Users\IUser.cs" />
     <Compile Include="Source\Users\User.cs" />
@@ -141,14 +149,25 @@
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212211026119_AddUserClass.resx">
-      <DependentUpon>202212211026119_AddUserClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212211354289_AddUserClass.resx">
+      <DependentUpon>202212211354289_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DatabaseDataSet.xsc">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSet.xss">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\awayDayPlanner.Database.ADPContext.datasource" />
     <None Include="Properties\DataSources\awayDayPlanner.Database.Database.datasource" />
