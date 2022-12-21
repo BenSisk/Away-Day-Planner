@@ -10,5 +10,6 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
     {
         void Close();
         void PopulateDataGrid();
+        void OpenAwayDay();
     }
 }

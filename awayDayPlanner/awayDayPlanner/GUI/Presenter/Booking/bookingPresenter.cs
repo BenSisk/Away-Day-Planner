@@ -41,13 +41,12 @@ namespace awayDayPlanner.GUI.Presenter.Booking
 
         public void addActivity()
         {
-            var itemForm = FormProvider.addNewItem;
-            if(view.displayFormAsDialog(itemForm) == DialogResult.OK)
+            if(view.displayFormAsDialog(FormProvider.addNewItem) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
-                var activity = itemForm.getActivityType();
-                string custom = itemForm.getCustomRequest().ToString();
-                string notes = itemForm.getNotes().ToString();
+                var activity = FormProvider.addNewItem.getActivityType();
+                string custom = FormProvider.addNewItem.getCustomRequest().ToString();
+                string notes = FormProvider.addNewItem.getNotes().ToString();
 
                 IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.getActivityInstance(activity);
                 activityInstance.Type = activity;

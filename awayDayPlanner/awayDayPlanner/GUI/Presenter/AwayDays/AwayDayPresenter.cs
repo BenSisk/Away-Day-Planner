@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.Source.Activities;
+using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI.Presenter.AwayDays
 {
@@ -13,6 +14,7 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
     {
         IAwayDayForm view;
         IAwayDayModel model;
+        List<AwayDay> data;
 
         public AwayDayPresenter()
         {
@@ -31,10 +33,19 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
 
         public void PopulateDataGrid()
         {
-            List<AwayDay> data = model.GetData();
+            data = model.GetData();
             foreach (var awayday in data)
             {
                 view.addItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), awayday.Confirmed, awayday.TotalCost);
+            }
+        }
+
+        public void OpenAwayDay()
+        {
+            FormProvider.AwayDayActivities.PopulateDataGrid(data.ElementAt(view.GetSelected().Index));
+            if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+            {
+
             }
         }
     }

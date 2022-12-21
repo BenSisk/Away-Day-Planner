@@ -20,6 +20,7 @@ namespace awayDayPlanner.Source.Activities
         [MaxLength(200)]
         public string Notes { get; set; }
         public double EstimatedCost { get; set; }
+        public double ActualCost { get; set; }
 
         public abstract void RegisterActivity();
         public abstract IActivity CreateActivity();

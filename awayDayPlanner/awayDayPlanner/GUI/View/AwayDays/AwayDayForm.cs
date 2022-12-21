@@ -44,7 +44,6 @@ namespace awayDayPlanner.GUI.View.AwayDays
         {
             this.Controls.Add(dgvAwayDays);
             dgvAwayDays.ColumnCount = 4;
-            dgvAwayDays.RowHeadersVisible = false;
 
             dgvAwayDays.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvAwayDays.Columns[1].Width = 150;
@@ -59,12 +58,35 @@ namespace awayDayPlanner.GUI.View.AwayDays
             dgvAwayDays.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAwayDays.Columns["Cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dgvAwayDays.MultiSelect = true;
+            foreach (DataGridViewColumn column in dgvAwayDays.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         public void addItemToDGV(DateTime date, int count, bool confirmed, double cost)
         {
             this.dgvAwayDays.Rows.Add(date, count, confirmed, cost);
+        }
+
+        private void btnOpenAwayDay_Click(object sender, EventArgs e)
+        {
+            presenter.OpenAwayDay();
+        }
+
+        private void dgvAwayDays_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            presenter.OpenAwayDay();
+        }
+
+        public DataGridViewRow GetSelected()
+        {
+            return this.dgvAwayDays.SelectedRows[0];
+        }
+
+        public DialogResult displayFormAsDialog(Form form)
+        {
+            return form.ShowDialog(this);
         }
     }
 }

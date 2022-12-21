@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI.View.AwayDays
 {
@@ -12,5 +13,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
         void register(IAwayDayPresenter presenter);
         void Reset();
         void addItemToDGV(DateTime date, int count, bool confirmed, double cost);
+        DataGridViewRow GetSelected();
+        DialogResult displayFormAsDialog(Form form);
     }
 }

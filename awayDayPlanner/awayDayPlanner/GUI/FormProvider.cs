@@ -185,6 +185,19 @@ namespace awayDayPlanner.GUI
             }
         }
 
+        public static AwayDayActivities AwayDayActivities
+        {
+            get
+            {
+                if (_awayDayActivities == null)
+                {
+                    _awayDayActivities = new AwayDayActivities();
+                }
+
+                return _awayDayActivities;
+            }
+        }
+
         #endregion
 
 
@@ -199,5 +212,6 @@ namespace awayDayPlanner.GUI
         private static AwayDayForm _awayDayForm;
         private static AwayDayPresenter _awayDayPresenter;
         private static AwayDayModel _awayDayModel;
+        private static AwayDayActivities _awayDayActivities;
     }
 }

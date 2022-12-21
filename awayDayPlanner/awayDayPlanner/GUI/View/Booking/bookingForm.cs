@@ -42,6 +42,11 @@ namespace awayDayPlanner.GUI.View.Booking
             dgvActivities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             dgvActivities.MultiSelect = true;
+
+            foreach (DataGridViewColumn column in dgvActivities.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

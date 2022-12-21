@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvAwayDays = new System.Windows.Forms.DataGridView();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnOpenAwayDay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAwayDays)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,51 +38,43 @@
             this.dgvAwayDays.AllowUserToAddRows = false;
             this.dgvAwayDays.AllowUserToDeleteRows = false;
             this.dgvAwayDays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAwayDays.Location = new System.Drawing.Point(12, 86);
+            this.dgvAwayDays.Location = new System.Drawing.Point(12, 65);
+            this.dgvAwayDays.MultiSelect = false;
             this.dgvAwayDays.Name = "dgvAwayDays";
             this.dgvAwayDays.ReadOnly = true;
-            this.dgvAwayDays.Size = new System.Drawing.Size(536, 352);
+            this.dgvAwayDays.RowHeadersVisible = false;
+            this.dgvAwayDays.Size = new System.Drawing.Size(607, 373);
             this.dgvAwayDays.TabIndex = 0;
+            this.dgvAwayDays.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAwayDays_CellDoubleClick);
             // 
-            // txtTotal
+            // btnOpenAwayDay
             // 
-            this.txtTotal.Location = new System.Drawing.Point(554, 318);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotal.Size = new System.Drawing.Size(233, 20);
-            this.txtTotal.TabIndex = 1;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Location = new System.Drawing.Point(554, 344);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(233, 94);
-            this.btnConfirm.TabIndex = 2;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnOpenAwayDay.Location = new System.Drawing.Point(625, 368);
+            this.btnOpenAwayDay.Name = "btnOpenAwayDay";
+            this.btnOpenAwayDay.Size = new System.Drawing.Size(162, 70);
+            this.btnOpenAwayDay.TabIndex = 2;
+            this.btnOpenAwayDay.Text = "Open Selected Away Day";
+            this.btnOpenAwayDay.UseVisualStyleBackColor = true;
+            this.btnOpenAwayDay.Click += new System.EventHandler(this.btnOpenAwayDay_Click);
             // 
             // AwayDayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.btnOpenAwayDay);
             this.Controls.Add(this.dgvAwayDays);
             this.Name = "AwayDayForm";
             this.Text = "Your Planned Away Days";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AwayDayForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAwayDays)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvAwayDays;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnOpenAwayDay;
     }
 }

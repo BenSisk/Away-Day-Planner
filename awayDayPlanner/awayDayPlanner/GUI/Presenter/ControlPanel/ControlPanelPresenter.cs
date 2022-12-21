@@ -24,7 +24,7 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             this.view = FormProvider.ControlPanelForm;
             view.register(this);
 
-            user.userID = 1;
+            user.userID = 2;
             user.firstname = "GONK";
             user.lastname = "BONK";
             user.email = "email";
