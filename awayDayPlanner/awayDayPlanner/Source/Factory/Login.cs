@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.GUI.Model;
@@ -15,8 +17,8 @@ namespace awayDayPlanner.Lib.Factory
     {
         [Key]
         public int loginID { get; set; }
-        public String Username { get; set; }
-        public String Password { get; set; }
+        [Required] public String Username { get; set; }
+        [Required] public String Password { get; set; }
 
         private static Login instance = null;
         private static readonly object padlock = new object();
@@ -37,14 +39,24 @@ namespace awayDayPlanner.Lib.Factory
             }
         }
 
-        public void getCredentials()
-        { 
-
+        private Boolean UserExists()
+        {
+            return Database.Database.Data.Login.Any(c => c.Username == this.Username);
         }
 
         public void verifyCredentials()
-        { 
-
+        {
+            if (this.Username.Length > 3 && this.Username.Length <= 50)
+            {
+                if (this.UserExists())
+                    Console.WriteLine("User exists");
+                else
+                    Console.WriteLine("USer doesn't exist");
+            }
+            else
+            {
+                Console.WriteLine("Username must be between 3 and 50 characters");
+            }
         }
 
         public void createUser()

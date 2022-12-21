@@ -117,6 +117,10 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212211026119_AddUserClass.cs" />
+    <Compile Include="Migrations\202212211026119_AddUserClass.designer.cs">
+      <DependentUpon>202212211026119_AddUserClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
     <Compile Include="Source\Activities\ActivityEnum.cs" />
@@ -136,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212211026119_AddUserClass.resx">
+      <DependentUpon>202212211026119_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
