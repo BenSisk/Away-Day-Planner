@@ -20,11 +20,12 @@ namespace awayDayPlanner.GUI.View.Booking
         public bookingForm()
         {
             this.InitializeComponent();
-            this.populateDataGrid();
+            this.PopulateDataGrid();
         }
 
-        private void populateDataGrid()
+        private void PopulateDataGrid()
         {
+            dgvActivities.Controls.Clear();
             this.Controls.Add(dgvActivities);
 
             dgvActivities.ColumnCount = 3;
@@ -101,16 +102,14 @@ namespace awayDayPlanner.GUI.View.Booking
             }
         }
 
-        public void Reset()
-        {
-            this.Controls.Clear();
-            InitializeComponent();
-            this.populateDataGrid();
-        }
-
         public DateTime getDate()
         {
             return dtpAwayDayDate.Value;
+        }
+
+        public void Reset()
+        {
+            dgvActivities.Rows.Clear();
         }
     }
 }

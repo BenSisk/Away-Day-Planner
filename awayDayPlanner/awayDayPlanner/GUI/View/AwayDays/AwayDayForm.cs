@@ -19,7 +19,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
         public AwayDayForm()
         {
             InitializeComponent();
-            populateDataGrid();
+            this.PopulateDataGrid();
         }
 
         public void register(IAwayDayPresenter presenter)
@@ -35,16 +35,14 @@ namespace awayDayPlanner.GUI.View.AwayDays
 
         public void Reset()
         {
-            this.Controls.Clear();
-            InitializeComponent();
-            populateDataGrid();
+            dgvAwayDays.Rows.Clear();
+            presenter.PopulateDataGrid();
         }
 
 
-        private void populateDataGrid()
+        private void PopulateDataGrid()
         {
             this.Controls.Add(dgvAwayDays);
-
             dgvAwayDays.ColumnCount = 4;
             dgvAwayDays.RowHeadersVisible = false;
 
@@ -62,6 +60,11 @@ namespace awayDayPlanner.GUI.View.AwayDays
             dgvAwayDays.Columns["Cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvAwayDays.MultiSelect = true;
+        }
+
+        public void addItemToDGV(DateTime date, int count, bool confirmed, double cost)
+        {
+            this.dgvAwayDays.Rows.Add(date, count, confirmed, cost);
         }
     }
 }

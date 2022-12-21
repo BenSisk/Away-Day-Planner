@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.GUI.Presenter.ControlPanel;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
@@ -43,6 +44,9 @@ namespace awayDayPlanner.GUI.Model.Booking
                     awayday.AwayDayActivities.Add(activity.getObject());
                 }
                 awayday.AwayDayDate = date;
+                awayday.User = FormProvider.ControlPanelPresenter.user;
+                awayday.Confirmed = false;
+                awayday.TotalCost = 0;
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
                 return 0;

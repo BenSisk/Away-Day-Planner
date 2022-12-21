@@ -11,5 +11,6 @@ namespace awayDayPlanner.GUI.View.AwayDays
     {
         void register(IAwayDayPresenter presenter);
         void Reset();
+        void addItemToDGV(DateTime date, int count, bool confirmed, double cost);
     }
 }

@@ -72,7 +72,7 @@ namespace awayDayPlanner.GUI.Presenter.Booking
         {
             FormProvider.bookingForm.Hide();
             FormProvider.ControlPanelForm.Show();
-            activities = new List<IActivity>();
+            activities.Clear();
             view.Reset();
         }
     }

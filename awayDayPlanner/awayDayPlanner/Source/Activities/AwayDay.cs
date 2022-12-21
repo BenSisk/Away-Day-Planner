@@ -15,6 +15,10 @@ namespace awayDayPlanner.Source.Activities
         [Required]
         public DateTime AwayDayDate { get; set; }
         [Required]
+        public bool Confirmed { get; set; }
+        [Required]
+        public double TotalCost { get; set; }
+        [Required]
         public virtual ICollection<Activity> AwayDayActivities { get; set; } = new List<Activity>();
         //[Required]
         public virtual User User { get; set; }
