@@ -24,12 +24,6 @@ namespace awayDayPlanner.GUI.Presenter.Booking
             this.model = FormProvider.bookingModel;
             view.register(this);
             model.register(this);
-            this.initialiseForm();
-        }
-
-        private void initialiseForm()
-        {
-
         }
 
         public void submit()
@@ -71,6 +65,13 @@ namespace awayDayPlanner.GUI.Presenter.Booking
                 this.activities.RemoveAt(row.Index);
                 view.deleteRow(row);
             }
+        }
+
+        public void Close()
+        {
+            FormProvider.bookingForm.Hide();
+            FormProvider.ControlPanelForm.Show();
+            view.Reset();
         }
     }
 }

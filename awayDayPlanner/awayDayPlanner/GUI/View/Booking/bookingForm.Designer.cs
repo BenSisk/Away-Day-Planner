@@ -100,6 +100,7 @@
             this.MaximizeBox = false;
             this.Name = "bookingForm";
             this.Text = "awayDay_Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.bookingForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
             this.ResumeLayout(false);
 

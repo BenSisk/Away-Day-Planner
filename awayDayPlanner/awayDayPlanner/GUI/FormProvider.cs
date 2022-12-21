@@ -9,6 +9,10 @@ using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.newItem;
 using awayDayPlanner.GUI;
+using awayDayPlanner.GUI.Presenter;
+using awayDayPlanner.GUI.View.AwayDays;
+using awayDayPlanner.GUI.Presenter.AwayDays;
+using awayDayPlanner.GUI.Model.AwayDays;
 
 namespace awayDayPlanner.GUI
 {
@@ -31,19 +35,6 @@ namespace awayDayPlanner.GUI
             }
         }
 
-        public static ControlPanelForm ControlPanelForm
-        {
-            get
-            {
-                if (_controlPanel == null)
-                {
-                    _controlPanel = new ControlPanelForm();
-                }
-
-                return _controlPanel;
-            }
-        }
-
         public static RegisterForm RegisterForm
         {
             get
@@ -59,6 +50,39 @@ namespace awayDayPlanner.GUI
             }
         }
         #endregion
+
+
+        #region Control Panel
+
+        public static ControlPanelForm ControlPanelForm
+        {
+            get
+            {
+                if (_controlPanelForm == null)
+                {
+                    _controlPanelForm = new ControlPanelForm();
+                    _controlPanelPresenter = FormProvider.ControlPanelPresenter;
+                }
+
+                return _controlPanelForm;
+            }
+        }
+
+        public static ControlPanelPresenter ControlPanelPresenter
+        {
+            get
+            {
+                if (_controlPanelPresenter == null)
+                {
+                    _controlPanelPresenter = new ControlPanelPresenter();
+                }
+
+                return _controlPanelPresenter;
+            }
+        }
+
+        #endregion
+
 
         #region Booking System
         public static bookingForm bookingForm
@@ -115,12 +139,62 @@ namespace awayDayPlanner.GUI
         }
         #endregion
 
+
+        #region AwayDay
+
+        public static AwayDayForm AwayDayForm
+        {
+            get
+            {
+                if (_awayDayForm == null)
+                {
+                    _awayDayForm = new AwayDayForm();
+                    _awayDayPresenter = FormProvider.AwayDayPresenter;
+                }
+
+                return _awayDayForm;
+            }
+        }
+
+        public static AwayDayPresenter AwayDayPresenter
+        {
+            get
+            {
+                if (_awayDayPresenter == null)
+                {
+                    _awayDayPresenter = new AwayDayPresenter();
+                }
+
+                return _awayDayPresenter;
+            }
+        }
+
+        public static AwayDayModel AwayDayModel
+        {
+            get
+            {
+                if (_awayDayModel == null)
+                {
+                    _awayDayModel = new AwayDayModel();
+                }
+
+                return _awayDayModel;
+            }
+        }
+
+        #endregion
+
+
         private static RegisterForm _registerForm;
         private static LoginForm _loginForm;
         private static addNewItem _addNewItem;
         private static bookingForm _bookingForm;
         private static bookingPresenter _bookingPresenter;
         private static bookingModel _bookingModel;
-        private static ControlPanelForm _controlPanel;
+        private static ControlPanelForm _controlPanelForm;
+        private static ControlPanelPresenter _controlPanelPresenter;
+        private static AwayDayForm _awayDayForm;
+        private static AwayDayPresenter _awayDayPresenter;
+        private static AwayDayModel _awayDayModel;
     }
 }

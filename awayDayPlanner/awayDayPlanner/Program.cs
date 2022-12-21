@@ -30,7 +30,7 @@ namespace awayDayPlanner
 
 
             // Application.Run(FormProvider.LoginForm);
-            Application.Run(FormProvider.bookingForm);
+            Application.Run(FormProvider.ControlPanelForm);
         }
     }
 }

@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
     public partial class bookingModel : IbookingModel
     {
         private IbookingPresenter presenter;
-
+        private User user = new User();
 
 
         public bookingModel()
@@ -40,6 +41,7 @@ namespace awayDayPlanner.GUI.Model.Booking
                     Database.Database.Data.Activity.Add(activity.getObject());
                     awayday.AwayDayActivities.Add(activity.getObject());
                 }
+                awayday.User = this.user;
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
                 return 0;

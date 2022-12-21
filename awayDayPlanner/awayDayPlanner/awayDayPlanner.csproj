@@ -77,6 +77,19 @@
     <Compile Include="GUI\addNewItem\addNewItem.Designer.cs">
       <DependentUpon>addNewItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Model\AwayDays\AwayDayModel.cs" />
+    <Compile Include="GUI\Model\AwayDays\IAwayDayModel.cs" />
+    <Compile Include="GUI\Presenter\AwayDays\AwayDayPresenter.cs" />
+    <Compile Include="GUI\Presenter\AwayDays\IAwayDayPresenter.cs" />
+    <Compile Include="GUI\Presenter\ControlPanelPresenter.cs" />
+    <Compile Include="GUI\Presenter\IControlPanelPresenter.cs" />
+    <Compile Include="GUI\View\AwayDays\AwayDayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\View\AwayDays\AwayDayForm.Designer.cs">
+      <DependentUpon>AwayDayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\View\AwayDays\IAwayDayForm.cs" />
     <Compile Include="GUI\View\Booking\bookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +116,7 @@
       <DependentUpon>ControlPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormProvider.cs" />
+    <Compile Include="GUI\View\IControlPanelForm.cs" />
     <Compile Include="GUI\View\Login\ILoginView.cs" />
     <Compile Include="GUI\View\Register\IRegisterView.cs" />
     <Compile Include="GUI\View\Login\LoginForm.cs">
@@ -131,6 +145,15 @@
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\View\AwayDays\AwayDayForm.resx">
+      <DependentUpon>AwayDayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\View\Booking\bookingForm.resx">
+      <DependentUpon>bookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\View\ControlPanelForm.resx">
+      <DependentUpon>ControlPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +213,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

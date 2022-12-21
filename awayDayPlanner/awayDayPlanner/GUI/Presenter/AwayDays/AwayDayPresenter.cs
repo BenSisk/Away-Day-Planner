@@ -1,0 +1,33 @@
+﻿using awayDayPlanner.GUI.Model.AwayDays;
+using awayDayPlanner.GUI.View.AwayDays;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace awayDayPlanner.GUI.Presenter.AwayDays
+{
+    public class AwayDayPresenter : IAwayDayPresenter
+    {
+        IAwayDayForm view;
+        IAwayDayModel model;
+
+        public AwayDayPresenter()
+        {
+            this.view = FormProvider.AwayDayForm;
+            this.model = FormProvider.AwayDayModel;
+
+            view.register(this);
+            model.register(this);
+        }
+
+        public void Close()
+        {
+            FormProvider.AwayDayForm.Hide();
+            FormProvider.ControlPanelForm.Show();
+            view.Reset();
+        }
+
+    }
+}

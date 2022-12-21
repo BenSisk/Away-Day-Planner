@@ -89,5 +89,17 @@ namespace awayDayPlanner.GUI.View.Booking
         {
             dgvActivities.Rows.Remove(row);
         }
+
+        private void bookingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            presenter.Close();
+        }
+
+        public void Reset()
+        {
+            this.Controls.Clear();
+            InitializeComponent();
+        }
     }
 }
