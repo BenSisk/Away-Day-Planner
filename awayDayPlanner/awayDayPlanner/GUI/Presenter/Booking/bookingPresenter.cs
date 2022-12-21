@@ -28,9 +28,10 @@ namespace awayDayPlanner.GUI.Presenter.Booking
 
         public void submit()
         {
-            if (model.submit(this.activities) == 0)
+            if (model.submit(this.activities, view.getDate()) == 0)
             {
                 view.message("Application Submitted Successfully");
+                this.Close();
             }
             else
             {
@@ -71,6 +72,7 @@ namespace awayDayPlanner.GUI.Presenter.Booking
         {
             FormProvider.bookingForm.Hide();
             FormProvider.ControlPanelForm.Show();
+            activities = new List<IActivity>();
             view.Reset();
         }
     }

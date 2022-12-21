@@ -21,5 +21,7 @@ namespace awayDayPlanner.GUI.View.Booking
         void deleteRow(DataGridViewRow row);
 
         void Reset();
+
+        DateTime getDate();
     }
 }

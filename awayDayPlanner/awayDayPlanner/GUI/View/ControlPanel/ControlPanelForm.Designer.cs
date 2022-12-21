@@ -1,4 +1,4 @@
-﻿namespace awayDayPlanner.GUI
+﻿namespace awayDayPlanner.GUI.View.ControlPanel
 {
     partial class ControlPanelForm
     {

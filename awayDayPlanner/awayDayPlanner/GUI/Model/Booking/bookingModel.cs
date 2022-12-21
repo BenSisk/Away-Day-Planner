@@ -13,7 +13,6 @@ namespace awayDayPlanner.GUI.Model.Booking
     public partial class bookingModel : IbookingModel
     {
         private IbookingPresenter presenter;
-        private User user = new User();
 
 
         public bookingModel()
@@ -31,8 +30,10 @@ namespace awayDayPlanner.GUI.Model.Booking
             //make itemised PDF
         }
 
-        public int submit(List<IActivity> activities)
+        public int submit(List<IActivity> activities, DateTime date)
         {
+            Console.WriteLine(activities);
+
             if (activities.Count > 0)
             {
                 AwayDay awayday = new AwayDay();
@@ -41,7 +42,7 @@ namespace awayDayPlanner.GUI.Model.Booking
                     Database.Database.Data.Activity.Add(activity.getObject());
                     awayday.AwayDayActivities.Add(activity.getObject());
                 }
-                awayday.User = this.user;
+                awayday.AwayDayDate = date;
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
                 return 0;

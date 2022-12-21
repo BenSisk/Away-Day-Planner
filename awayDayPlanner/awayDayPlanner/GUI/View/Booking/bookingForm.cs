@@ -93,13 +93,24 @@ namespace awayDayPlanner.GUI.View.Booking
         private void bookingForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            presenter.Close();
+
+            DialogResult diaglogResult = MessageBox.Show("Are you sure you would like to cancel this application?\n\nYour changes will not be saved.", "Cancel Application", MessageBoxButtons.YesNo);
+            if (diaglogResult == DialogResult.Yes)
+            {
+                presenter.Close();
+            }
         }
 
         public void Reset()
         {
             this.Controls.Clear();
             InitializeComponent();
+            this.populateDataGrid();
+        }
+
+        public DateTime getDate()
+        {
+            return dtpAwayDayDate.Value;
         }
     }
 }

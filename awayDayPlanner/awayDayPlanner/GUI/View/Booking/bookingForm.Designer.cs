@@ -32,7 +32,7 @@
             this.dgvActivities = new System.Windows.Forms.DataGridView();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.btnRemoveActivity = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpAwayDayDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,19 +79,19 @@
             this.btnRemoveActivity.UseVisualStyleBackColor = true;
             this.btnRemoveActivity.Click += new System.EventHandler(this.btnRemoveActivity_Click);
             // 
-            // dateTimePicker1
+            // dtpAwayDayDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpAwayDayDate.Location = new System.Drawing.Point(12, 12);
+            this.dtpAwayDayDate.Name = "dtpAwayDayDate";
+            this.dtpAwayDayDate.Size = new System.Drawing.Size(207, 20);
+            this.dtpAwayDayDate.TabIndex = 0;
             // 
             // bookingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 469);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpAwayDayDate);
             this.Controls.Add(this.btnRemoveActivity);
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.dgvActivities);
@@ -111,7 +111,7 @@
         private System.Windows.Forms.DataGridView dgvActivities;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Button btnRemoveActivity;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpAwayDayDate;
     }
 }
 

@@ -13,6 +13,8 @@ namespace awayDayPlanner.Source.Activities
         [Key]
         public int AwayDayID { get; set; }
         [Required]
+        public DateTime AwayDayDate { get; set; }
+        [Required]
         public virtual ICollection<Activity> AwayDayActivities { get; set; } = new List<Activity>();
         //[Required]
         public virtual User User { get; set; }

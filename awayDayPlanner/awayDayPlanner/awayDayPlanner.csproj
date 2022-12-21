@@ -81,8 +81,8 @@
     <Compile Include="GUI\Model\AwayDays\IAwayDayModel.cs" />
     <Compile Include="GUI\Presenter\AwayDays\AwayDayPresenter.cs" />
     <Compile Include="GUI\Presenter\AwayDays\IAwayDayPresenter.cs" />
-    <Compile Include="GUI\Presenter\ControlPanelPresenter.cs" />
-    <Compile Include="GUI\Presenter\IControlPanelPresenter.cs" />
+    <Compile Include="GUI\Presenter\ControlPanel\ControlPanelPresenter.cs" />
+    <Compile Include="GUI\Presenter\ControlPanel\IControlPanelPresenter.cs" />
     <Compile Include="GUI\View\AwayDays\AwayDayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,14 +109,14 @@
     <Compile Include="GUI\Model\RegisterModel.cs" />
     <Compile Include="GUI\Presenter\LoginPresenter.cs" />
     <Compile Include="GUI\Presenter\RegisterPresenter.cs" />
-    <Compile Include="GUI\View\ControlPanelForm.cs">
+    <Compile Include="GUI\View\ControlPanel\ControlPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\View\ControlPanelForm.Designer.cs">
+    <Compile Include="GUI\View\ControlPanel\ControlPanelForm.Designer.cs">
       <DependentUpon>ControlPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormProvider.cs" />
-    <Compile Include="GUI\View\IControlPanelForm.cs" />
+    <Compile Include="GUI\View\ControlPanel\IControlPanelForm.cs" />
     <Compile Include="GUI\View\Login\ILoginView.cs" />
     <Compile Include="GUI\View\Register\IRegisterView.cs" />
     <Compile Include="GUI\View\Login\LoginForm.cs">
@@ -151,7 +151,7 @@
     <EmbeddedResource Include="GUI\View\Booking\bookingForm.resx">
       <DependentUpon>bookingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\View\ControlPanelForm.resx">
+    <EmbeddedResource Include="GUI\View\ControlPanel\ControlPanelForm.resx">
       <DependentUpon>ControlPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Login\LoginForm.resx">
@@ -213,7 +213,6 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

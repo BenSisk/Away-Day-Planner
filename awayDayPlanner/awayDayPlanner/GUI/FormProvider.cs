@@ -4,15 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using awayDayPlanner.GUI.Model.Booking;
-using awayDayPlanner.GUI.Presenter.Booking;
-using awayDayPlanner.GUI.View.Booking;
-using awayDayPlanner.GUI.newItem;
+
 using awayDayPlanner.GUI;
-using awayDayPlanner.GUI.Presenter;
+using awayDayPlanner.GUI.View.ControlPanel;
+using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.View.AwayDays;
+using awayDayPlanner.GUI.Presenter.ControlPanel;
+using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.Presenter.AwayDays;
+using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
+using awayDayPlanner.GUI.newItem;
+
 
 namespace awayDayPlanner.GUI
 {

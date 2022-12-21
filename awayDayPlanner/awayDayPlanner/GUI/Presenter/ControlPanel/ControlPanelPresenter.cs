@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.GUI.View;
-using awayDayPlanner.GUI.View.Booking;
+using awayDayPlanner.GUI.View.ControlPanel;
 
-namespace awayDayPlanner.GUI.Presenter
+namespace awayDayPlanner.GUI.Presenter.ControlPanel
 {
     public class ControlPanelPresenter : IControlPanelPresenter
     {
