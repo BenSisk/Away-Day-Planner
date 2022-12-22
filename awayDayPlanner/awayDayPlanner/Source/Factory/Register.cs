@@ -1,4 +1,5 @@
-﻿using awayDayPlanner.Source.Security;
+﻿using awayDayPlanner.Source.Factory;
+using awayDayPlanner.Source.Security;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
@@ -9,10 +10,17 @@ using System.Threading.Tasks;
 // object factory used for creating user objects
 namespace awayDayPlanner.Lib.Factory
 {
-    internal class Register : IFactory
+    public class Register : IFactory, IRegister
     {
         private static Register instance = null;
         private static readonly object padlock = new object();
+
+        public enum RegisterErrors
+        {
+            Success = 0,
+            IncorrectPasswordSize = 1,
+            PasswordMismatch = 2
+        }
 
         public static Register getInstance
         {
@@ -31,11 +39,10 @@ namespace awayDayPlanner.Lib.Factory
 
         private Boolean PasswordsAreEqual(string password, string confirmPassword)
         {
-            Console.WriteLine(password + "." + confirmPassword);
             if (password.Equals(confirmPassword))
                 return true;
             else
-                return true;
+                return false;
         }
 
 
@@ -44,10 +51,19 @@ namespace awayDayPlanner.Lib.Factory
             return Database.Database.Data.Login.Any(c => c.Username == user);
         }
 
-        public void verifyCredentials(Login user, string password2)
+        public RegisterErrors verifyPassword(Login user, string password2)
         {
-            if (user.Username.Length > 3 && user.Username.Length <= 50)
+            if (user.Password.Length >= 5 && password2.Length >=5)
+                if (this.PasswordsAreEqual(user.Password, password2))
+                    return RegisterErrors.Success;
+                else
+                    return RegisterErrors.PasswordMismatch;
+            else
+                return RegisterErrors.IncorrectPasswordSize;
+            
+           /* if (user.Username.Length > 3 && user.Username.Length <= 50)
             {
+
                 if (this.UserExists(user.Username))
                     Console.WriteLine("Username already taken");
                 else
@@ -68,7 +84,7 @@ namespace awayDayPlanner.Lib.Factory
             else
             {
                 Console.WriteLine("Username must be between 3 and 50 characters");
-            }
+            }*/
         }
 
         public void createUser()
@@ -80,6 +96,31 @@ namespace awayDayPlanner.Lib.Factory
 
         {
 
+        }
+
+        public void verifyUsername()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void verifyPassword()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void verifyEmail()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void verifyPhone()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void verifyDob()
+        {
+            throw new NotImplementedException();
         }
     }
 }

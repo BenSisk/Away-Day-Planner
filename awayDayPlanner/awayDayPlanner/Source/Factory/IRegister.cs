@@ -8,5 +8,11 @@ namespace awayDayPlanner.Source.Factory
 {
     internal interface IRegister
     {
+        void verifyUsername();
+        void verifyPassword();
+        void verifyEmail();
+        void verifyPhone();
+        void verifyDob();
+
     }
 }

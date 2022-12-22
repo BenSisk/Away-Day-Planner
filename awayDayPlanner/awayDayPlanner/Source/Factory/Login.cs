@@ -26,7 +26,6 @@ namespace awayDayPlanner.Lib.Factory
 
         public Login()
         {
-            Salt = this.GenerateSalt();
         }
 
         public static Login getInstance
@@ -42,21 +41,6 @@ namespace awayDayPlanner.Lib.Factory
                     return instance;
                 }
             }
-        }
-
-        private String GenerateSalt()
-        {
-            const string pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"£$%^&*()0123456789";
-            var builder = new StringBuilder();
-            Random random = new Random((int)DateTime.Now.Ticks);
-
-            for (var i = 0; i < 10; i++)
-            {
-                var c = pool[random.Next(0, pool.Length)];
-                builder.Append(c);
-            }
-
-            return builder.ToString();
         }
 
         public void verifyCredentials(Login login)

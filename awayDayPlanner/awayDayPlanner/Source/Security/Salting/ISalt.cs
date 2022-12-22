@@ -8,5 +8,7 @@ namespace awayDayPlanner.Source.Security.Salting
 {
     internal interface ISalt
     {
+        string GenerateSalt();
+
     }
 }

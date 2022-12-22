@@ -8,8 +8,6 @@ namespace awayDayPlanner.Lib.Factory
 {
     internal interface IFactory
     {
-        void verifyCredentials(Login login, string password2);
-
         void createUser();
 
     }

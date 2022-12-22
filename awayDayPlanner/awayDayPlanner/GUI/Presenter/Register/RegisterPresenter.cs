@@ -48,7 +48,16 @@ namespace awayDayPlanner.GUI
                 Password = _view.Password,
             };
 
-            _model.Submit(user, address, login, _view.Password2);
+            var result = _model.Submit(user, address, login, _view.Password2);
+
+            switch (result)
+            {
+                case Register.RegisterErrors.Success:
+                    _view.Message("Registration successful");
+                    this.Close();
+                    break;
+
+            }
         }
 
         public void Close()

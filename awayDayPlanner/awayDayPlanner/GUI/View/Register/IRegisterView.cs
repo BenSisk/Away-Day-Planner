@@ -22,6 +22,7 @@ namespace awayDayPlanner.GUI
         string Password { get; }
         string Password2 { get; }
 
+        void Message(string message);
         RegisterPresenter Presenter { set; }
     }
 }

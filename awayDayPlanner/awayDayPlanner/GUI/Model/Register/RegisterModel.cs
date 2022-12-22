@@ -1,11 +1,14 @@
 ﻿using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Security;
+using awayDayPlanner.Source.Security.Salting;
 using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static awayDayPlanner.Lib.Factory.Register;
 
 namespace awayDayPlanner.GUI.Model
 {
@@ -19,19 +22,35 @@ namespace awayDayPlanner.GUI.Model
             this.register = new Register();
         }
 
-        public void Submit(User user, Address address, Login login, string confirmPassword)
+        public RegisterErrors Submit(User user, Address address, Login login, string confirmPassword)
         {
-            Console.WriteLine("Generated salt is" + login.Salt);
-            Database.Database.Data.Address.Add(address);
-            user.Address = address;
-            user.Login = login;
-            Database.Database.Data.User.Add(user);
+            //Console.WriteLine("Generated salt is" + login.Salt);
+            //Database.Database.Data.Address.Add(address);
+            //user.Address = address;
+            //user.Login = login;
+            //Database.Database.Data.User.Add(user);
 
+            var verified = this.register.verifyPassword(login, confirmPassword);
 
-            this.register.verifyCredentials(login, confirmPassword);
-            Database.Database.Data.Login.Add(login);
+            switch(verified)
+            {
+                case RegisterErrors.Success:
+                    login.Salt = SaltProvider.GenerateSalt(new Salter());
 
-            Database.Database.Data.SaveChanges();
+                    login.Password = login.Password + login.Salt;
+                    login.Password = HashProvider.Hash(login.Password, new SHA256Hasher());
+
+                    user.Login = login;
+                    break;
+                case RegisterErrors.PasswordMismatch:
+                    return RegisterErrors.PasswordMismatch;
+            }
+
+            return RegisterErrors.Success;
+
+            //Database.Database.Data.Login.Add(login);
+
+            //Database.Database.Data.SaveChanges();
 
         }
 

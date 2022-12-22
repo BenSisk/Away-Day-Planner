@@ -24,6 +24,10 @@ namespace awayDayPlanner.GUI
             InitializeComponent();
         }
 
+        public void Message(string message)
+        {
+            MessageBox.Show(message);
+        }
         public RegisterPresenter Presenter
         {
             private get; set;

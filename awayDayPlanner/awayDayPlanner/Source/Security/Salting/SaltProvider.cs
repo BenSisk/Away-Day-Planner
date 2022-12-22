@@ -8,5 +8,9 @@ namespace awayDayPlanner.Source.Security.Salting
 {
     internal class SaltProvider
     {
+        public static string GenerateSalt(ISalt salter)
+        {
+            return salter.GenerateSalt();
+        }
     }
 }
