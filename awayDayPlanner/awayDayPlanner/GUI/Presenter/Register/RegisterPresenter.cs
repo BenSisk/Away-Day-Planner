@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static awayDayPlanner.Lib.Factory.Register;
 
 namespace awayDayPlanner.GUI
 {
@@ -50,13 +51,18 @@ namespace awayDayPlanner.GUI
 
             var result = _model.Submit(user, address, login, _view.Password2);
 
-            switch (result)
+            foreach (var item in result)
             {
-                case Register.RegisterErrors.Success:
-                    _view.Message("Registration successful");
-                    this.Close();
-                    break;
-
+                if (item == RegisterErrors.Success)
+                {
+                        _view.Message("Registration successful, You can now login");
+                        this.Close();
+                }
+                if (item == RegisterErrors.PasswordMismatch)
+                {
+                    //_view.lbl
+                    throw new NotImplementedException();
+                }
             }
         }
 

@@ -1,18 +1,20 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Factory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static awayDayPlanner.Lib.Factory.Register;
 
 namespace awayDayPlanner.Source.Factory
 {
     internal interface IRegister
     {
         void verifyUsername();
-        void verifyPassword();
+        List<RegisterErrors> verifyPassword(Login user, string password);
         void verifyEmail();
         void verifyPhone();
-        void verifyDob();
+        List<RegisterErrors> verifyDob(DateTime birthdate);
 
     }
 }

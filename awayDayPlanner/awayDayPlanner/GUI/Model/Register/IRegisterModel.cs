@@ -12,7 +12,7 @@ namespace awayDayPlanner.GUI.Model
 {
     public interface IRegisterModel
     {
-        RegisterErrors Submit(User user, Address address, Login login, string confirmPassword);
+        List<RegisterErrors> Submit(User user, Address address, Login login, string confirmPassword);
 
         void Close();
     }

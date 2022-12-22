@@ -22,7 +22,7 @@ namespace awayDayPlanner.GUI.Model
             this.register = new Register();
         }
 
-        public RegisterErrors Submit(User user, Address address, Login login, string confirmPassword)
+        public List<RegisterErrors> Submit(User user, Address address, Login login, string confirmPassword)
         {
             //Console.WriteLine("Generated salt is" + login.Salt);
             //Database.Database.Data.Address.Add(address);
@@ -30,23 +30,24 @@ namespace awayDayPlanner.GUI.Model
             //user.Login = login;
             //Database.Database.Data.User.Add(user);
 
+            //var verified = this.register.verifyDob(user.dob);
+
             var verified = this.register.verifyPassword(login, confirmPassword);
 
-            switch(verified)
+            foreach (var error in verified)
             {
-                case RegisterErrors.Success:
+                if (error == RegisterErrors.PasswordSuccess)
+                {
                     login.Salt = SaltProvider.GenerateSalt(new Salter());
 
                     login.Password = login.Password + login.Salt;
                     login.Password = HashProvider.Hash(login.Password, new SHA256Hasher());
 
                     user.Login = login;
-                    break;
-                case RegisterErrors.PasswordMismatch:
-                    return RegisterErrors.PasswordMismatch;
+                }
             }
 
-            return RegisterErrors.Success;
+            return verified;
 
             //Database.Database.Data.Login.Add(login);
 

@@ -33,27 +33,17 @@ namespace awayDayPlanner.GUI
             private get; set;
         }
 
-        public string firstname => this.txtFirstname.Text.ToString();
-
-        public string surname => this.txtLastname.Text.ToString();
-
-        public string email => this.txtEmail.Text.ToString();
-
-        public string dob => this.dtpDOB.Text.ToString();
-
-        public string phone => this.txtPhone.Text.ToString();
-
-        public string FirstLine => this.txtFirstline.Text.ToString();
-
-        public string SecondLine => this.txtSecondline.Text.ToString();
-
-        public string PostCode => this.txtPostcode.Text.ToString();
-
-        public string Username => this.txtUsername.Text.ToString();
-
-        public string Password => this.txtPassword.Text.ToString();
-
-        public string Password2 => this.txtPassword2.Text.ToString();
+        public string firstname { get { return this.txtFirstname.Text; } }
+        public string surname { get { return this.txtLastname.Text; } }
+        public string email { get { return this.txtEmail.Text; } }
+        public string dob { get { return this.dtpDOB.Text; } }
+        public string phone { get { return this.txtPhone.Text; } }
+        public string FirstLine { get { return this.txtFirstline.Text; } }
+        public string SecondLine { get { return this.txtSecondline.Text; } }
+        public string PostCode { get { return this.txtPostcode.Text; } }
+        public string Username { get { return this.txtUsername.Text; } }
+        public string Password { get { return this.txtPassword.Text; } }
+        public string Password2 { get { return this.txtPassword2.Text; } }
 
         public string Salt;
 
