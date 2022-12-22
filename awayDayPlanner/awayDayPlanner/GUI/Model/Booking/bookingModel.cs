@@ -26,11 +26,6 @@ namespace awayDayPlanner.GUI.Model.Booking
             this.presenter = presenter;
         }
 
-        private void generatePDF()
-        {
-            //make itemised PDF
-        }
-
         public int submit(List<IActivity> activities, DateTime date)
         {
             Console.WriteLine(activities);
@@ -49,6 +44,8 @@ namespace awayDayPlanner.GUI.Model.Booking
                 awayday.TotalCost = 0;
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
+
+                //GeneratePDF(awayday)
                 return 0;
             }
             else
