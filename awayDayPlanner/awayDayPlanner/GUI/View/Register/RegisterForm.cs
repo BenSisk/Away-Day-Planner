@@ -47,6 +47,70 @@ namespace awayDayPlanner.GUI
 
         public string Salt;
 
+        public System.Windows.Forms.Label labelUsername
+        {
+            get { return this.lblUsername; }
+            set { this.lblUsername = value; }
+        }
+
+        public System.Windows.Forms.Label labelPassword
+        {
+            get { return this.lblPassword; }
+            set { this.lblPassword = value; }
+        }
+
+        public System.Windows.Forms.Label labelPostCode
+        {
+            get { return this.lblPostcode; }
+            set { this.lblPostcode = value; }
+        }
+        public System.Windows.Forms.Label labelSecondLine
+        {
+            get { return this.lblSecondLine; }
+            set { this.lblLastName = value; }
+        }
+        public System.Windows.Forms.Label labelFirstLine
+        {
+            get { return this.lblFirstLine; }
+            set { this.lblFirstLine = value; }
+        }
+
+        public System.Windows.Forms.Label labelFirstName 
+        { 
+            get { return this.lblFirstName; } 
+            set { this.lblFirstName = value; } 
+        }
+
+        public System.Windows.Forms.Label labelEmail
+        {
+            get { return this.lblEmail; }
+            set { this.lblEmail = value; }
+        }
+
+        public System.Windows.Forms.Label labelDOB
+        {
+            get { return this.lblDOB; }
+            set { this.lblDOB = value; }
+        }
+
+        public System.Windows.Forms.Label labelSecondName
+        {
+            get { return this.lblLastName; }
+            set { this.lblLastName = value; }
+        }
+
+        public System.Windows.Forms.Label labelPhone
+        {
+            get { return this.lblPhone; }
+            set { this.lblPhone = value; }
+        }
+
+        public System.Windows.Forms.ToolTip PasswordError
+        {
+            get { return this.tltPasswordError; }
+            set { this.tltPasswordError = value; }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Presenter.Close();

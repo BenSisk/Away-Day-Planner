@@ -53,15 +53,27 @@ namespace awayDayPlanner.GUI
 
             foreach (var item in result)
             {
+                Console.WriteLine(item);
                 if (item == RegisterErrors.Success)
                 {
-                        _view.Message("Registration successful, You can now login");
-                        this.Close();
+                    _view.Message("Registration successful, You can now login");
+                    this.Close();
                 }
+
                 if (item == RegisterErrors.PasswordMismatch)
                 {
-                    //_view.lbl
-                    throw new NotImplementedException();
+                    _view.PasswordError.SetToolTip(_view.labelPassword, "Password Mismatch");
+                    _view.labelPassword.ForeColor = System.Drawing.Color.Red;
+                }
+                else if (item == RegisterErrors.IncorrectPasswordSize)
+                {
+                    _view.PasswordError.SetToolTip(_view.labelPassword, "Incorrect Password size");
+                    _view.labelPassword.ForeColor = System.Drawing.Color.Red;
+                }
+                else if (item == RegisterErrors.PasswordSuccess)
+                {
+                    _view.PasswordError.SetToolTip(_view.labelPassword, null);
+                    _view.labelPassword.ForeColor = System.Drawing.Color.Black;
                 }
             }
         }
