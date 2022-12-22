@@ -34,21 +34,41 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
         public void PopulateDataGrid()
         {
             data = model.GetData();
+            string status;
             foreach (var awayday in data)
             {
-                view.addItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), awayday.Confirmed, awayday.TotalCost);
+                if (awayday.Confirmed)
+                {
+                    status = "Confirmed";
+                }
+                else if (awayday.CanBeConfirmed)
+                {
+                    status = "Confirmable";
+                }
+                else
+                {
+                    status = "Under Review";
+                }
+                view.addItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), status, awayday.TotalCost);
             }
         }
 
         public void OpenAwayDay()
         {
             var awayday = data.ElementAt(view.GetSelected().Index);
-            FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
-            if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+            if (awayday.CanBeConfirmed == true)
             {
-                //GeneratePDF(awayday)
+                FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
+                if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+                {
+                    //GeneratePDF(awayday)
+                }
+                view.Reset();
             }
-            view.Reset();
+            else
+            {
+                view.message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
+            }
         }
     }
 }

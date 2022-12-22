@@ -17,6 +17,8 @@ namespace awayDayPlanner.Source.Activities
         [Required]
         public bool Confirmed { get; set; }
         [Required]
+        public bool CanBeConfirmed { get; set; }
+        [Required]
         public double TotalCost { get; set; }
         [Required]
         public virtual ICollection<Activity> AwayDayActivities { get; set; } = new List<Activity>();

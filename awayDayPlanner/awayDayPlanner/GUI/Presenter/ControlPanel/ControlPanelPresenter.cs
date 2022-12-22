@@ -78,5 +78,10 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(custom, new Activity(custom));
         }
+
+        public void LogOut()
+        {
+            // do stuff
+        }
     }
 }

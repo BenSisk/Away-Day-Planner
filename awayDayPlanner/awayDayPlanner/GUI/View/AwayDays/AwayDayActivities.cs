@@ -56,6 +56,8 @@ namespace awayDayPlanner.GUI.View.AwayDays
             {
                 btnConfirm.Enabled = true;
             }
+
+            txtTotal.Text = awayday.TotalCost.ToString();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

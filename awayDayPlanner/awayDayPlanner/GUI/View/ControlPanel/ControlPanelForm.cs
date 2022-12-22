@@ -34,5 +34,10 @@ namespace awayDayPlanner.GUI.View.ControlPanel
         {
             Presenter.viewExistingAwayDays();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Presenter.LogOut();
+        }
     }
 }

@@ -9,13 +9,15 @@ using awayDayPlanner.GUI;
 using awayDayPlanner.GUI.View.ControlPanel;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.View.AwayDays;
+using awayDayPlanner.GUI.View.Admin;
 using awayDayPlanner.GUI.Presenter.ControlPanel;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.Presenter.AwayDays;
+using awayDayPlanner.GUI.Presenter.Admin;
 using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
+using awayDayPlanner.GUI.Model.Admin;
 using awayDayPlanner.GUI.newItem;
-
 
 namespace awayDayPlanner.GUI
 {
@@ -201,6 +203,90 @@ namespace awayDayPlanner.GUI
         #endregion
 
 
+        #region Admin
+
+        public static AdminForm AdminForm
+        {
+            get
+            {
+                if (_adminForm == null)
+                {
+                    _adminForm = new AdminForm();
+                    _adminPresenter = FormProvider.AdminPresenter;
+                }
+
+                return _adminForm;
+            }
+        }
+
+        public static AdminPresenter AdminPresenter
+        {
+            get
+            {
+                if (_adminPresenter == null)
+                {
+                    _adminPresenter = new AdminPresenter();
+                }
+
+                return _adminPresenter;
+            }
+        }
+
+        public static AdminModel AdminModel
+        {
+            get
+            {
+                if (_adminModel == null)
+                {
+                    _adminModel = new AdminModel();
+                }
+
+                return _adminModel;
+            }
+        }
+
+        public static AdminReviewForm AdminReviewForm
+        {
+            get
+            {
+                if (_adminReviewForm == null)
+                {
+                    _adminReviewForm = new AdminReviewForm();
+                    _adminReviewPresenter = FormProvider.AdminReviewPresenter;
+                }
+
+                return _adminReviewForm;
+            }
+        }
+
+        public static AdminReviewPresenter AdminReviewPresenter
+        {
+            get
+            {
+                if (_adminReviewPresenter == null)
+                {
+                    _adminReviewPresenter = new AdminReviewPresenter();
+                }
+
+                return _adminReviewPresenter;
+            }
+        }
+
+        public static AdminReviewModel AdminReviewModel
+        {
+            get
+            {
+                if (_adminReviewModel == null)
+                {
+                    _adminReviewModel = new AdminReviewModel();
+                }
+
+                return _adminReviewModel;
+            }
+        }
+
+        #endregion
+
         private static RegisterForm _registerForm;
         private static LoginForm _loginForm;
         private static addNewItem _addNewItem;
@@ -213,5 +299,11 @@ namespace awayDayPlanner.GUI
         private static AwayDayPresenter _awayDayPresenter;
         private static AwayDayModel _awayDayModel;
         private static AwayDayActivities _awayDayActivities;
+        private static AdminForm _adminForm;
+        private static AdminPresenter _adminPresenter;
+        private static AdminModel _adminModel;
+        private static AdminReviewForm _adminReviewForm;
+        private static AdminReviewPresenter _adminReviewPresenter;
+        private static AdminReviewModel _adminReviewModel;
     }
 }

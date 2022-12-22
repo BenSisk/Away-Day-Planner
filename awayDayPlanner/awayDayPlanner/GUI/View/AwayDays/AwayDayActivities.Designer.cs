@@ -68,6 +68,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(134, 20);
             this.txtTotal.TabIndex = 2;
+            this.txtTotal.TabStop = false;
             // 
             // lblTotal
             // 

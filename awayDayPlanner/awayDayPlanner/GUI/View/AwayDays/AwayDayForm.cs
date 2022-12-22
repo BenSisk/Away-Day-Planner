@@ -15,7 +15,6 @@ namespace awayDayPlanner.GUI.View.AwayDays
     {
         private IAwayDayPresenter presenter;
 
-
         public AwayDayForm()
         {
             InitializeComponent();
@@ -47,12 +46,12 @@ namespace awayDayPlanner.GUI.View.AwayDays
 
             dgvAwayDays.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvAwayDays.Columns[1].Width = 150;
-            dgvAwayDays.Columns[2].Width = 100;
+            dgvAwayDays.Columns[2].Width = 150;
             dgvAwayDays.Columns[3].Width = 100;
 
             dgvAwayDays.Columns[0].Name = "Date";
             dgvAwayDays.Columns[1].Name = "Number of Activities";
-            dgvAwayDays.Columns[2].Name = "Confirmed?";
+            dgvAwayDays.Columns[2].Name = "Status";
             dgvAwayDays.Columns[3].Name = "Cost";
 
             dgvAwayDays.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -64,9 +63,9 @@ namespace awayDayPlanner.GUI.View.AwayDays
             }
         }
 
-        public void addItemToDGV(DateTime date, int count, bool confirmed, double cost)
+        public void addItemToDGV(DateTime date, int count, string status, double cost)
         {
-            this.dgvAwayDays.Rows.Add(date, count, confirmed, cost);
+            this.dgvAwayDays.Rows.Add(date, count, status, cost);
         }
 
         private void btnOpenAwayDay_Click(object sender, EventArgs e)
@@ -87,6 +86,11 @@ namespace awayDayPlanner.GUI.View.AwayDays
         public DialogResult displayFormAsDialog(Form form)
         {
             return form.ShowDialog(this);
+        }
+
+        public void message(string message, string title)
+        {
+            MessageBox.Show(message, title);
         }
     }
 }

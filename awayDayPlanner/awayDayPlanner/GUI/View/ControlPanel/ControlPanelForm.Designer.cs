@@ -30,6 +30,7 @@
         {
             this.btnNewEvent = new System.Windows.Forms.Button();
             this.btnExistingEvents = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNewEvent
@@ -52,11 +53,22 @@
             this.btnExistingEvents.UseVisualStyleBackColor = true;
             this.btnExistingEvents.Click += new System.EventHandler(this.btnExistingEvents_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(702, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(86, 55);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // ControlPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnExistingEvents);
             this.Controls.Add(this.btnNewEvent);
             this.Name = "ControlPanelForm";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button btnNewEvent;
         private System.Windows.Forms.Button btnExistingEvents;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
