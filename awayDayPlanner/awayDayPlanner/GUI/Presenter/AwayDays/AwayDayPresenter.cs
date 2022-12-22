@@ -42,8 +42,12 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
 
         public void OpenAwayDay()
         {
-            FormProvider.AwayDayActivities.PopulateDataGrid(data.ElementAt(view.GetSelected().Index));
-            view.displayFormAsDialog(FormProvider.AwayDayActivities);
+            var awayday = data.ElementAt(view.GetSelected().Index);
+            FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
+            if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+            {
+                //GeneratePDF(awayday)
+            }
             view.Reset();
         }
     }
