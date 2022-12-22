@@ -81,7 +81,9 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 
         public void LogOut()
         {
-            // do stuff
+            FormProvider.AdminForm.Reset();
+            FormProvider.AdminForm.Show();
+            FormProvider.ControlPanelForm.Hide();
         }
     }
 }

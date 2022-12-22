@@ -28,10 +28,8 @@ namespace awayDayPlanner.GUI.Presenter.Admin
 
         public void OpenSelected()
         {
-            if (view.displayFormAsDialog(FormProvider.AdminReviewForm) == DialogResult.OK)
-            {
-
-            }
+            FormProvider.AdminReviewForm.Reset();
+            view.displayFormAsDialog(FormProvider.AdminReviewForm);
         }
 
         public void PopulateDataGrid()
@@ -59,7 +57,8 @@ namespace awayDayPlanner.GUI.Presenter.Admin
         }
         public void LogOut()
         {
-            // do stuff
+            FormProvider.ControlPanelForm.Show();
+            FormProvider.AdminForm.Hide();
         }
     }
 }
