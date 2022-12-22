@@ -43,10 +43,8 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
         public void OpenAwayDay()
         {
             FormProvider.AwayDayActivities.PopulateDataGrid(data.ElementAt(view.GetSelected().Index));
-            if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
-            {
-
-            }
+            view.displayFormAsDialog(FormProvider.AwayDayActivities);
+            view.Reset();
         }
     }
 }

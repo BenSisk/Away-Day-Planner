@@ -13,6 +13,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
 {
     public partial class AwayDayActivities : Form
     {
+        AwayDay awayday;
         public AwayDayActivities()
         {
             InitializeComponent();
@@ -20,6 +21,8 @@ namespace awayDayPlanner.GUI.View.AwayDays
 
         public void PopulateDataGrid(AwayDay awayday)
         {
+            this.awayday = awayday;
+
             dgvActivities.Rows.Clear();
 
             dgvActivities.ColumnCount = 3;
@@ -40,9 +43,23 @@ namespace awayDayPlanner.GUI.View.AwayDays
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
-            foreach (var activity in awayday.AwayDayActivities)
+            foreach (var activity in this.awayday.AwayDayActivities)
             {
                 dgvActivities.Rows.Add(activity.Name, activity.Notes, activity.ActualCost);
+            }
+
+            if (this.awayday.Confirmed) { btnConfirm.Enabled = false; }
+            else { btnConfirm.Enabled = true; }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            DialogResult diaglogResult = MessageBox.Show("Are you sure you would like to confirm this Away-Day?", "Confirm Away-Day", MessageBoxButtons.YesNo);
+            if (diaglogResult == DialogResult.Yes)
+            {
+                this.awayday.Confirmed = true;
+                Database.Database.Data.SaveChanges();
+                this.DialogResult = DialogResult.OK;
             }
         }
     }

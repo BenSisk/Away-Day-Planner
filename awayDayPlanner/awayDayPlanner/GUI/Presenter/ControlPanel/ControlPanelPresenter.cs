@@ -25,7 +25,7 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             view.register(this);
 
             var query = from users in Database.Database.Data.User
-                        where (users.userID == 1)
+                        where (users.userID == 2)
                         select users;
             user = query.FirstOrDefault();
         }
