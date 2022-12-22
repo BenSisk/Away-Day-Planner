@@ -35,6 +35,8 @@
             this.lblNotes = new System.Windows.Forms.Label();
             this.lblActivity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtEstimatedCost = new System.Windows.Forms.TextBox();
+            this.lblCost = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbxActivity
@@ -102,11 +104,33 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Custom Activity Name:";
             // 
+            // txtEstimatedCost
+            // 
+            this.txtEstimatedCost.Enabled = false;
+            this.txtEstimatedCost.Location = new System.Drawing.Point(274, 74);
+            this.txtEstimatedCost.Name = "txtEstimatedCost";
+            this.txtEstimatedCost.ReadOnly = true;
+            this.txtEstimatedCost.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtEstimatedCost.Size = new System.Drawing.Size(102, 20);
+            this.txtEstimatedCost.TabIndex = 8;
+            this.txtEstimatedCost.TabStop = false;
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Location = new System.Drawing.Point(188, 77);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(80, 13);
+            this.lblCost.TabIndex = 9;
+            this.lblCost.Text = "Estimated Cost:";
+            // 
             // addNewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 292);
+            this.Controls.Add(this.lblCost);
+            this.Controls.Add(this.txtEstimatedCost);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblActivity);
             this.Controls.Add(this.lblNotes);
@@ -131,5 +155,7 @@
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Label lblActivity;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEstimatedCost;
+        private System.Windows.Forms.Label lblCost;
     }
 }

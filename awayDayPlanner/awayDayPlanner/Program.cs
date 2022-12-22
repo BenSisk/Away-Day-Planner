@@ -1,11 +1,13 @@
 ﻿using awayDayPlanner.Database;
 using awayDayPlanner.GUI;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 using System.Data.Entity;
 using awayDayPlanner.Source.Activities;
 using System.IO;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace awayDayPlanner
 {
@@ -21,13 +23,11 @@ namespace awayDayPlanner
             Application.SetCompatibleTextRenderingDefault(false);
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.FullName);
 
-
-            // this will probably be moved to wherever it reads the activity list from later
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity1, new ActivityNormal());
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity2, new ActivityNormal());
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Activity3, new ActivityNormal());
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(ActivityEnum.Custom, new ActivityCustom());
-
+/*
+            Database.Database.Data.ActivityOptions.Add(new ActivityType("activity1", 25));
+            Database.Database.Data.ActivityOptions.Add(new ActivityType("GONK", 10));
+            Database.Database.Data.SaveChanges();
+*/
 
             // Application.Run(FormProvider.LoginForm);
             Application.Run(FormProvider.ControlPanelForm);

@@ -18,5 +18,6 @@ namespace awayDayPlanner.Database
         public DbSet<Address> Address { get; set; }
         public DbSet<AwayDay> AwayDay { get; set; }
         public DbSet<Activity> Activity { get; set; }
+        public DbSet<ActivityType> ActivityOptions { get; set; }
     }
 }

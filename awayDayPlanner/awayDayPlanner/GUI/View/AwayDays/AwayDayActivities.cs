@@ -48,8 +48,14 @@ namespace awayDayPlanner.GUI.View.AwayDays
                 dgvActivities.Rows.Add(activity.Name, activity.Notes, activity.ActualCost);
             }
 
-            if (this.awayday.Confirmed) { btnConfirm.Enabled = false; }
-            else { btnConfirm.Enabled = true; }
+            if (this.awayday.Confirmed)
+            { 
+                btnConfirm.Enabled = false;
+            }
+            else 
+            {
+                btnConfirm.Enabled = true;
+            }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

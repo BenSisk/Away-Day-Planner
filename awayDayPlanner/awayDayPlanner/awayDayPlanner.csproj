@@ -139,8 +139,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
-    <Compile Include="Source\Activities\ActivityEnum.cs" />
     <Compile Include="Source\Activities\ActivityFactory.cs" />
+    <Compile Include="Source\Activities\ActivityType.cs" />
     <Compile Include="Source\Activities\AwayDay.cs" />
     <Compile Include="Source\Activities\IActivity.cs" />
     <Compile Include="Source\Factory\Login.cs" />
@@ -151,6 +151,9 @@
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\addNewItem\addNewItem.resx">
+      <DependentUpon>addNewItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\AwayDays\AwayDayActivities.resx">
       <DependentUpon>AwayDayActivities.cs</DependentUpon>
     </EmbeddedResource>

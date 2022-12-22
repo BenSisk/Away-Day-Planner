@@ -20,7 +20,7 @@ namespace awayDayPlanner.Source.Activities
         public double TotalCost { get; set; }
         [Required]
         public virtual ICollection<Activity> AwayDayActivities { get; set; } = new List<Activity>();
-        //[Required]
+        [Required]
         public virtual User User { get; set; }
     }
 }

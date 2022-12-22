@@ -39,8 +39,6 @@ C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.RegisterForm.resources
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database.mdf
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database_log.ldf
-C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database.mdf
-C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database_log.ldf
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\EntityFramework.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\EntityFramework.xml
@@ -53,3 +51,6 @@ C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.AwayDays.AwayDayForm.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.ControlPanel.ControlPanelForm.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.AwayDays.AwayDayActivities.resources
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database.mdf
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database_log.ldf
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.newItem.addNewItem.resources

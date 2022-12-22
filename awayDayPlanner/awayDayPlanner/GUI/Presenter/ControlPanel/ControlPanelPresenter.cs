@@ -18,16 +18,20 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
         public User user;
 
         private IControlPanelForm view;
+        public List<ActivityType> list;
 
         public ControlPanelPresenter()
         {
             this.view = FormProvider.ControlPanelForm;
             view.register(this);
+            LoadActivitiesFromDB();
 
+
+            //BELOW IS NOT STAYING HERE
             var query = from users in Database.Database.Data.User
-                        where (users.userID == 2)
+                        where (users.userID == 1)
                         select users;
-            user = query.FirstOrDefault();
+            user = query.First();
         }
 
         public void newAwayDay()
@@ -41,6 +45,38 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             FormProvider.AwayDayForm.Reset();
             FormProvider.AwayDayForm.Show();
             FormProvider.ControlPanelForm.Hide();
+        }
+
+        private void LoadActivitiesFromDB()
+        {
+            var query = from activities in Database.Database.Data.ActivityOptions
+                         select activities;
+
+            list = query.ToList();
+            ActivityType custom = null;
+
+            foreach (var item in list)
+            {
+                if (item.ActivityTypeName != "Custom")
+                {
+                    ActivityFactory.ActivityFactorySingleton.RegisterActivity(item, new Activity(item));
+                    Console.WriteLine(item.ActivityTypeName);
+                }
+                else
+                {
+                    custom = item;
+                }
+            }
+
+            if (custom == null)
+            {
+                custom = new ActivityType("Custom", 0);
+                Database.Database.Data.ActivityOptions.Add(custom);
+                Database.Database.Data.SaveChanges();
+                list.Add(custom);
+            }
+
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(custom, new Activity(custom));
         }
     }
 }

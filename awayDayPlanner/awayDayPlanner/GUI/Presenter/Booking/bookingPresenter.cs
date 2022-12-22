@@ -41,7 +41,7 @@ namespace awayDayPlanner.GUI.Presenter.Booking
 
         public void addActivity()
         {
-            if(view.displayFormAsDialog(FormProvider.addNewItem) == DialogResult.OK)
+            if (view.displayFormAsDialog(FormProvider.addNewItem) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
                 var activity = FormProvider.addNewItem.getActivityType();
@@ -54,7 +54,7 @@ namespace awayDayPlanner.GUI.Presenter.Booking
                 activityInstance.Notes = notes;
 
                 this.activities.Add(activityInstance);
-                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.EstimatedCost);
+                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
             }
         }
 
