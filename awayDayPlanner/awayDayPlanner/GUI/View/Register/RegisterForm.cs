@@ -36,7 +36,7 @@ namespace awayDayPlanner.GUI
         public string firstname { get { return this.txtFirstname.Text; } }
         public string surname { get { return this.txtLastname.Text; } }
         public string email { get { return this.txtEmail.Text; } }
-        public string dob { get { return this.dtpDOB.Text; } }
+        public DateTime dob { get { return this.dtpDOB.Value; } }
         public string phone { get { return this.txtPhone.Text; } }
         public string FirstLine { get { return this.txtFirstline.Text; } }
         public string SecondLine { get { return this.txtSecondline.Text; } }

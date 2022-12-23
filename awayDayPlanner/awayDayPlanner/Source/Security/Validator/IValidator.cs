@@ -1,12 +1,12 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Users;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Security.Validator
 {
-    internal interface Interface1
+    internal interface IValidator
     {
+        List<RegisterErrors> ValidateRegister(Login login, User user, Address address, string confirmPassword);
     }
 }

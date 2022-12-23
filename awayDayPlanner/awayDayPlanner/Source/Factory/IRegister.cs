@@ -11,8 +11,6 @@ namespace awayDayPlanner.Source.Factory
 {
     internal interface IRegister
     {
-        List<RegisterErrors> verifyPassword(Login user, string password);
-        List<RegisterErrors> verifyUser(User user);
 
     }
 }

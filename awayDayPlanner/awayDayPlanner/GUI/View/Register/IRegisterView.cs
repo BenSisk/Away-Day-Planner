@@ -13,8 +13,8 @@ namespace awayDayPlanner.GUI
         string firstname { get; }
         string surname { get; }
         string email { get;  }
-        string dob { get; }
-        string phone { get; }    
+        DateTime dob { get; }
+        String phone { get; }    
 
         string FirstLine { get; }
         string SecondLine { get; }

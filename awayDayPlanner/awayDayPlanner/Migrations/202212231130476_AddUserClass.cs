@@ -53,8 +53,8 @@
                         firstname = c.String(nullable: false),
                         lastname = c.String(nullable: false),
                         email = c.String(nullable: false),
-                        dob = c.String(nullable: false),
-                        phone = c.String(nullable: false),
+                        dob = c.DateTime(nullable: false),
+                        phone = c.Int(nullable: false),
                         Address_AddressID = c.Int(nullable: false),
                         Login_loginID = c.Int(),
                     })

@@ -1,9 +1,11 @@
 ﻿using awayDayPlanner.GUI.Model;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Security.Validator;
 using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -27,13 +29,18 @@ namespace awayDayPlanner.GUI
 
         public void Submit()
         {
+            int number;
+
+            if (!int.TryParse(_view.phone, out number))
+                number = 0;
+
             User user = new User
             {
                 firstname = _view.firstname,
                 lastname = _view.surname,
                 email = _view.email,
                 dob = _view.dob,
-                phone = _view.phone
+                phone = number
             };
 
             Address address = new Address
@@ -88,6 +95,24 @@ namespace awayDayPlanner.GUI
                     _view.labelPassword.ForeColor = System.Drawing.Color.Black;
                 }
 
+                if (item == RegisterErrors.InvalidPhone)
+                {
+                    this.ShowError(_view.labelPhone, "Phone number should be numerical");
+                    _view.labelPhone.ForeColor = System.Drawing.Color.Red;
+                }
+
+                if (item == RegisterErrors.InvalidEmail)
+                {
+                    this.ShowError(_view.labelEmail, "Please enter a valid email");
+                    _view.labelEmail.ForeColor = System.Drawing.Color.Red;
+                }
+
+                if (item == RegisterErrors.ShortUsername)
+                {
+                    this.ShowError(_view.labelUsername, "Username should be 4 or more characters");
+                    _view.labelUsername.ForeColor = System.Drawing.Color.Red;
+                }
+
                 _view.PasswordError.Active = true;
             }
         }
@@ -95,7 +120,6 @@ namespace awayDayPlanner.GUI
         public void ShowError(System.Windows.Forms.Control form, string errorMessage)
         {
             _view.PasswordError.SetToolTip(form, errorMessage);
-            _view.PasswordError.Show(form);
         }
 
         public void Close()

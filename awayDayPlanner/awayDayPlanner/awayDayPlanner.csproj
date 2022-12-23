@@ -122,9 +122,9 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212211354289_AddUserClass.cs" />
-    <Compile Include="Migrations\202212211354289_AddUserClass.designer.cs">
-      <DependentUpon>202212211354289_AddUserClass.cs</DependentUpon>
+    <Compile Include="Migrations\202212231130476_AddUserClass.cs" />
+    <Compile Include="Migrations\202212231130476_AddUserClass.designer.cs">
+      <DependentUpon>202212231130476_AddUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
@@ -142,6 +142,9 @@
     <Compile Include="Source\Security\Salting\ISalt.cs" />
     <Compile Include="Source\Security\Salting\Salter.cs" />
     <Compile Include="Source\Security\Salting\SaltProvider.cs" />
+    <Compile Include="Source\Security\Validator\IValidator.cs" />
+    <Compile Include="Source\Security\Validator\Validate.cs" />
+    <Compile Include="Source\Security\Validator\Validator.cs" />
     <Compile Include="Source\Users\Address.cs" />
     <Compile Include="Source\Users\IUser.cs" />
     <Compile Include="Source\Users\User.cs" />
@@ -153,8 +156,8 @@
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212211354289_AddUserClass.resx">
-      <DependentUpon>202212211354289_AddUserClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202212231130476_AddUserClass.resx">
+      <DependentUpon>202212231130476_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

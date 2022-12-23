@@ -27,7 +27,7 @@ namespace awayDayPlanner.Lib.Users
             get; set;
         }
 
-        string dob
+        DateTime dob
         {
             get; set;
         }
