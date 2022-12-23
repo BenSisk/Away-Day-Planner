@@ -18,10 +18,10 @@ namespace awayDayPlanner.GUI.Presenter.Booking
         private IbookingForm view;
         private List<IActivity> activities = new List<IActivity>();
 
-        public bookingPresenter()
+        public bookingPresenter(IbookingForm view, IbookingModel model)
         {
-            this.view = FormProvider.bookingForm;
-            this.model = FormProvider.bookingModel;
+            this.view = view;
+            this.model = model;
             view.register(this);
             model.register(this);
         }

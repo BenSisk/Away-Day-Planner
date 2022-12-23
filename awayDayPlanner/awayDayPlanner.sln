@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "awayDayPlanner", "awayDayPlanner\awayDayPlanner.csproj", "{9CA38ABE-BFE4-4DDA-8748-8D00AF066BBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{EC0641E2-3BE0-4A3E-AA74-27BEE42980B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9CA38ABE-BFE4-4DDA-8748-8D00AF066BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CA38ABE-BFE4-4DDA-8748-8D00AF066BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CA38ABE-BFE4-4DDA-8748-8D00AF066BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0641E2-3BE0-4A3E-AA74-27BEE42980B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0641E2-3BE0-4A3E-AA74-27BEE42980B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0641E2-3BE0-4A3E-AA74-27BEE42980B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0641E2-3BE0-4A3E-AA74-27BEE42980B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

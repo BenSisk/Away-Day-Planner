@@ -41,7 +41,6 @@ namespace awayDayPlanner.GUI.View.AwayDays
 
         private void PopulateDataGrid()
         {
-            this.Controls.Add(dgvAwayDays);
             dgvAwayDays.ColumnCount = 4;
 
             dgvAwayDays.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

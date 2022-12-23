@@ -15,7 +15,7 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
         IAwayDayForm view;
         IAwayDayModel model;
         List<AwayDay> data;
-
+        
         public AwayDayPresenter()
         {
             this.view = FormProvider.AwayDayForm;

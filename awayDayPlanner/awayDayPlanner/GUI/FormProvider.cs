@@ -110,7 +110,7 @@ namespace awayDayPlanner.GUI
             {
                 if (_bookingPresenter == null)
                 {
-                    _bookingPresenter = new bookingPresenter();
+                    _bookingPresenter = new bookingPresenter(bookingForm, bookingModel);
                 }
 
                 return _bookingPresenter;
