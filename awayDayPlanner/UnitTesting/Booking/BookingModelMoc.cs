@@ -11,11 +11,17 @@ namespace UnitTesting.Booking
 {
     class BookingModelMoc : IbookingModel
     {
+        public List<IActivity> mocActivities;
+        public DateTime datetime;
+        public int returnValue = 0;
+
         public void register(IbookingPresenter presenter) { }
 
         public int submit(List<IActivity> activities, DateTime datetime)
         {
-            return 0;
+            this.mocActivities = activities;
+            this.datetime = datetime;
+            return returnValue;
         }
     }
 }

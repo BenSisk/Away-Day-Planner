@@ -35,13 +35,11 @@ namespace awayDayPlanner.Source.Activities
 
         public IActivity getActivityInstance(ActivityType activityType)
         {
-            IActivity activity = null;
             if (ActivityMapping.ContainsKey(activityType))
             {
-                activity = (IActivity)ActivityMapping[activityType];
-                return activity.CreateActivity();
+                return ((IActivity)ActivityMapping[activityType]).CreateActivity();
             }
-            throw new Exception();
+            throw new Exception("Activity Not Registered. Register the activity before use.");
         }
     }
 }

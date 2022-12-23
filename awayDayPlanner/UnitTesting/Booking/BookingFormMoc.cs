@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.View.Booking;
 using System.Windows.Forms;
-
+using awayDayPlanner.GUI.NewItem;
 
 namespace UnitTesting.Booking
 {
     class BookingFormMoc : IbookingForm
     {
         string Message = "";
-        DateTime date;
+        public List<string> names = new List<string>();
+        public List<string> notes = new List<string>();
+        public List<double> prices = new List<double>();
+        public DateTime date;
 
         public void register(IbookingPresenter presenter)
         {
@@ -25,14 +28,16 @@ namespace UnitTesting.Booking
             this.Message = message;
         }
 
-        public DialogResult displayFormAsDialog(Form form)
+        public DialogResult displayFormAsDialog(IaddNewItem form)
         {
             return DialogResult.OK;
         }
 
         public void addItemToDGV(string name, string notes, double price)
         {
-
+            this.names.Add(name);
+            this.notes.Add(notes);
+            this.prices.Add(price);
         }
 
         public void deleteRow(DataGridViewRow row)

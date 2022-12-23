@@ -28,8 +28,6 @@ namespace awayDayPlanner.GUI.Model.Booking
 
         public int submit(List<IActivity> activities, DateTime date)
         {
-            Console.WriteLine(activities);
-
             if (activities.Count > 0)
             {
                 AwayDay awayday = new AwayDay();

@@ -9,6 +9,7 @@ using awayDayPlanner.GUI;
 using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.Model.Booking;
+using awayDayPlanner.GUI.NewItem;
 
 namespace awayDayPlanner.GUI.Presenter.Booking
 {
@@ -16,12 +17,14 @@ namespace awayDayPlanner.GUI.Presenter.Booking
     {
         private IbookingModel model;
         private IbookingForm view;
+        private IaddNewItem newItemForm;
         private List<IActivity> activities = new List<IActivity>();
 
-        public bookingPresenter(IbookingForm view, IbookingModel model)
+        public bookingPresenter(IbookingForm view, IbookingModel model, IaddNewItem newItemForm)
         {
             this.view = view;
             this.model = model;
+            this.newItemForm = newItemForm;
             view.register(this);
             model.register(this);
         }
@@ -41,19 +44,19 @@ namespace awayDayPlanner.GUI.Presenter.Booking
 
         public void addActivity()
         {
-            if (view.displayFormAsDialog(FormProvider.addNewItem) == DialogResult.OK)
+            if (view.displayFormAsDialog(newItemForm) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
-                var activity = FormProvider.addNewItem.getActivityType();
-                string custom = FormProvider.addNewItem.getCustomRequest().ToString();
-                string notes = FormProvider.addNewItem.getNotes().ToString();
+                var activity = newItemForm.getActivityType();
+                string custom = newItemForm.getCustomRequest().ToString();
+                string notes = newItemForm.getNotes().ToString();
 
                 IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.getActivityInstance(activity);
                 activityInstance.Type = activity;
                 activityInstance.Name = custom;
                 activityInstance.Notes = notes;
 
-                this.activities.Add(activityInstance);
+                activities.Add(activityInstance);
                 view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
             }
         }

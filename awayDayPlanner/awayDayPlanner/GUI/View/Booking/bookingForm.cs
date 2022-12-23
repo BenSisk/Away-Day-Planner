@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.GUI.NewItem;
 
 namespace awayDayPlanner.GUI.View.Booking
 {
@@ -78,9 +79,9 @@ namespace awayDayPlanner.GUI.View.Booking
             this.dgvActivities.Rows.Add(name, notes, price);
         }
 
-        public DialogResult displayFormAsDialog(Form form)
+        public DialogResult displayFormAsDialog(IaddNewItem form)
         {
-            return form.ShowDialog(this);
+            return form.GetForm().ShowDialog(this);
         }
 
         private void btnRemoveActivity_Click(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.GUI.NewItem;
 
 namespace awayDayPlanner.GUI.View.Booking
 {
@@ -14,7 +15,7 @@ namespace awayDayPlanner.GUI.View.Booking
         
         void message(string message);
 
-        DialogResult displayFormAsDialog(Form form);
+        DialogResult displayFormAsDialog(IaddNewItem form);
 
         void addItemToDGV(string name, string notes, double price);
 

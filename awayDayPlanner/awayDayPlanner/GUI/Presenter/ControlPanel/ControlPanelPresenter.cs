@@ -60,7 +60,6 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
                 if (item.ActivityTypeName != "Custom")
                 {
                     ActivityFactory.ActivityFactorySingleton.RegisterActivity(item, new Activity(item));
-                    Console.WriteLine(item.ActivityTypeName);
                 }
                 else
                 {
