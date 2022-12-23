@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,36 +8,44 @@ using System.Threading.Tasks;
 namespace awayDayPlanner.GUI.Model.Billing
 {
     
-    class BillingModel : IBillingModel
+    public class BillingModel : IBillingModel
     {
+        public bool Confirmed;
+        public string BuyerFirstName;
+        public string BuyerLastName;
+        public string BuyerFirstLineAddress;
+        public string BuyerSecondLineAddress;
+        public string BuyerPostCode;
+        public string BuyerPhoneNumber;
+        public string BuyerEmail;
+        public double TotalCost;
+        public AwayDay awayDay;
+
+        public ICollection<Activity> AwayDayActivities;
 
         public BillingModel()
         {
-
-
-
-
+/*            this.Confirmed = awayDay.Confirmed;
+            this.BuyerFirstName = awayDay.User.firstname;
+            this.BuyerLastName = awayDay.User.lastname;
+            this.BuyerFirstLineAddress = awayDay.User.Address.FirstLine;
+            this.BuyerSecondLineAddress = awayDay.User.Address.SecondLine;
+            this.BuyerPostCode = awayDay.User.Address.PostCode;
+            this.BuyerPhoneNumber = awayDay.User.phone;
+            this.BuyerEmail = awayDay.User.email;
+            this.AwayDayActivities = awayDay.AwayDayActivities;
+            this.TotalCost = awayDay.TotalCost;*/
         }
 
-        // data passing format: class  awayday : int AwayDayID, DataTime AwayDayDate, bool Confirmed, double TotalCost
-        //                                      virtual ICollection <Activity> AwayDayActivities, virtual User User
-
-
-        public void GetDataFromDatabase(int _billingID)
+        public void Submit(AwayDay awayDay)
         {
-        //    var query = from b in Database.Database.Data.Billing
-        //                 where b.billingID == _billingID
-        //                 select b;
-
-        //    Console.WriteLine("All users in the database:");
-        //    foreach (var item in query)
-        //    {
-        //        Console.WriteLine(item.firstname);
-        //    }
+            var frm = FormProvider.BillingForm;
+            using (var bmp = new Bitmap(frm.Width, frm.Height))
+            {
+                frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                bmp.Save(@"c:\temp\screenshot.png");
+            }
         }
-
-        
-
-
+     
     }
 }

@@ -10,14 +10,18 @@ using awayDayPlanner.GUI.View.ControlPanel;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.View.AwayDays;
 using awayDayPlanner.GUI.View.Admin;
+using awayDayPlanner.GUI.View.Billing;
 using awayDayPlanner.GUI.Presenter.ControlPanel;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.Presenter.AwayDays;
 using awayDayPlanner.GUI.Presenter.Admin;
+using awayDayPlanner.GUI.Presenter.Billing;
 using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
 using awayDayPlanner.GUI.Model.Admin;
+using awayDayPlanner.GUI.Model.Billing;
 using awayDayPlanner.GUI.newItem;
+
 
 namespace awayDayPlanner.GUI
 {
@@ -85,6 +89,7 @@ namespace awayDayPlanner.GUI
                 return _controlPanelPresenter;
             }
         }
+
 
         #endregion
 
@@ -285,6 +290,34 @@ namespace awayDayPlanner.GUI
             }
         }
 
+
+
+        #endregion
+
+        #region Billing
+
+        public static BillingForm BillingForm
+        {
+            get
+            {
+
+                if (_BillingForm == null)
+                {
+                    var model = new Model.Billing.BillingModel();
+                    _BillingForm = new BillingForm();
+                    _BillingForm.Presenter = new BillingPresenter(_BillingForm, model);
+                    _BillingForm.AwayDay = new AwayDay();
+                }
+
+                return _BillingForm;
+            }
+            
+        }
+
+
+
+
+
         #endregion
 
         private static RegisterForm _registerForm;
@@ -305,5 +338,7 @@ namespace awayDayPlanner.GUI
         private static AdminReviewForm _adminReviewForm;
         private static AdminReviewPresenter _adminReviewPresenter;
         private static AdminReviewModel _adminReviewModel;
+        private static BillingForm _BillingForm;
+
     }
 }

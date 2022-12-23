@@ -57,7 +57,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,12 +85,17 @@
     <Compile Include="GUI\Model\Admin\IAdminReviewModel.cs" />
     <Compile Include="GUI\Model\AwayDays\AwayDayModel.cs" />
     <Compile Include="GUI\Model\AwayDays\IAwayDayModel.cs" />
+    <Compile Include="GUI\Model\Billing\BillingModel.cs" />
+    <Compile Include="GUI\Model\Billing\BillingTestClasses.cs" />
+    <Compile Include="GUI\Model\Billing\IBillingModel.cs" />
     <Compile Include="GUI\Presenter\Admin\AdminPresenter.cs" />
     <Compile Include="GUI\Presenter\Admin\AdminReviewPresenter.cs" />
     <Compile Include="GUI\Presenter\Admin\IAdminPresenter.cs" />
     <Compile Include="GUI\Presenter\Admin\IAdminReviewPresenter.cs" />
     <Compile Include="GUI\Presenter\AwayDays\AwayDayPresenter.cs" />
     <Compile Include="GUI\Presenter\AwayDays\IAwayDayPresenter.cs" />
+    <Compile Include="GUI\Presenter\Billing\BillingPresenter.cs" />
+    <Compile Include="GUI\Presenter\Billing\IBillingPresenter.cs" />
     <Compile Include="GUI\Presenter\ControlPanel\ControlPanelPresenter.cs" />
     <Compile Include="GUI\Presenter\ControlPanel\IControlPanelPresenter.cs" />
     <Compile Include="GUI\View\Admin\AdminForm.cs">
@@ -118,6 +125,13 @@
       <DependentUpon>AwayDayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\View\AwayDays\IAwayDayForm.cs" />
+    <Compile Include="GUI\View\Billing\BillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\View\Billing\BillingForm.Designer.cs">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\View\Billing\IBillingView.cs" />
     <Compile Include="GUI\View\Booking\bookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +179,7 @@
     <Compile Include="Source\Activities\ActivityType.cs" />
     <Compile Include="Source\Activities\AwayDay.cs" />
     <Compile Include="Source\Activities\IActivity.cs" />
+    <Compile Include="Source\Billing\Billing.cs" />
     <Compile Include="Source\Factory\Login.cs" />
     <Compile Include="Source\Factory\IFactory.cs" />
     <Compile Include="Source\Factory\Register.cs" />
@@ -187,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\AwayDays\AwayDayForm.resx">
       <DependentUpon>AwayDayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\View\Billing\BillingForm.resx">
+      <DependentUpon>BillingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Booking\bookingForm.resx">
       <DependentUpon>bookingForm.cs</DependentUpon>
