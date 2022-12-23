@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.GUI.Model.Billing
 {
+    
     class BillingModel : IBillingModel
     {
 
         public BillingModel()
         {
 
+
+
+
         }
+
+        // data passing format: class  awayday : int AwayDayID, DataTime AwayDayDate, bool Confirmed, double TotalCost
+        //                                      virtual ICollection <Activity> AwayDayActivities, virtual User User
 
 
         public void GetDataFromDatabase(int _billingID)
@@ -27,5 +34,9 @@ namespace awayDayPlanner.GUI.Model.Billing
         //        Console.WriteLine(item.firstname);
         //    }
         }
+
+        
+
+
     }
 }

@@ -19,5 +19,7 @@ namespace awayDayPlanner.GUI.Billing
 
 
         BillingPresenter Presenter { set; }
+
+        void addItemToDGV(string name, double cost);
     }
 }

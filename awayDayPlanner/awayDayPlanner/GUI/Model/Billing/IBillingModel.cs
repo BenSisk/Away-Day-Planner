@@ -9,5 +9,7 @@ namespace awayDayPlanner.GUI.Model.Billing
     public interface IBillingModel
     {
         void GetDataFromDatabase(int _billingID);
+
+      
     }
 }

@@ -35,7 +35,6 @@
             this.buyerNameLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.totalCost = new System.Windows.Forms.Label();
@@ -51,11 +50,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgvActivityList = new System.Windows.Forms.DataGridView();
             this.Details.SuspendLayout();
             this.flowLayoutPanel11.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivityList)).BeginInit();
             this.SuspendLayout();
             // 
             // buyerPhoneLabel
@@ -121,7 +123,6 @@
             this.flowLayoutPanel11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
             this.flowLayoutPanel11.Controls.Add(this.label8);
-            this.flowLayoutPanel11.Controls.Add(this.label10);
             this.flowLayoutPanel11.Controls.Add(this.label11);
             this.flowLayoutPanel11.Location = new System.Drawing.Point(84, 450);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
@@ -138,21 +139,11 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Activity";
             // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(50, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Quantity";
-            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(102, 0);
+            this.label11.Location = new System.Drawing.Point(50, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 13);
             this.label11.TabIndex = 2;
@@ -275,6 +266,7 @@
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.flowLayoutPanel7.Controls.Add(this.dgvActivityList);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(84, 492);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(632, 137);
@@ -316,6 +308,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ADP Billing Form";
             // 
+            // dgvActivityList
+            // 
+            this.dgvActivityList.AllowUserToAddRows = false;
+            this.dgvActivityList.AllowUserToDeleteRows = false;
+            this.dgvActivityList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActivityList.Location = new System.Drawing.Point(3, 3);
+            this.dgvActivityList.Name = "dgvActivityList";
+            this.dgvActivityList.ReadOnly = true;
+            this.dgvActivityList.Size = new System.Drawing.Size(629, 134);
+            this.dgvActivityList.TabIndex = 0;
+            // 
             // Billing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,8 +336,10 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivityList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,7 +358,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Label label12;
@@ -364,5 +368,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label totalCost;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvActivityList;
     }
 }

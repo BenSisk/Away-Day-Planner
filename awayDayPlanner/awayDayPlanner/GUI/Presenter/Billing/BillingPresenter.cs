@@ -19,5 +19,14 @@ namespace awayDayPlanner.GUI
             view.Presenter = this;
             _model = model;
         }
+
+        public void PopulateDataGrid()
+        {
+            foreach (var awayday in data)
+            {
+                _view.addItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), awayday.TotalCost);
+            }
+        }
+
     }
 }

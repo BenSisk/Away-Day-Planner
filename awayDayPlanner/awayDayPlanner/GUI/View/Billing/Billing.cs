@@ -15,6 +15,7 @@ namespace awayDayPlanner.GUI.View.Billing
         public Billing()
         {
             InitializeComponent();
+            this.PopulateDataGrid();
         }
 
         public string BuyerName
@@ -38,10 +39,31 @@ namespace awayDayPlanner.GUI.View.Billing
             set { this.buyerEmailLabel.Text = value; }
         }
 
+        private void PopulateDataGrid()
+        {
+            dgvActivityList.ColumnCount = 2;
+
+            dgvActivityList.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvActivityList.Columns[1].Width = 150;
+            
+            dgvActivityList.Columns[0].Name = "Activity";
+            dgvActivityList.Columns[1].Name = "Cost";
+ 
+
+            dgvActivityList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvActivityList.Columns["Cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            foreach (DataGridViewColumn column in dgvActivityList.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
 
 
-
-
+        public void addItemToDGV(string name, double cost)
+        {
+            this.dgvActivityList.Rows.Add(name, cost);
+        }
 
 
 
