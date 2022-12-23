@@ -11,15 +11,18 @@ namespace awayDayPlanner.GUI.Model.Billing
         public int AwayDayID = 1;
         public DateTime AwayDayDate = DateTime.Now;
         public bool Confirmed = true;
-        public double TotalCost = 13.45;
+        public double TotalCost = 40.20;
         public ICollection<Activity> AwayDayActivities = new List<Activity>();
         public User User = new User();
 
         public AwayDay()
         {
+            Activity local = new Activity(3);
+            local.Name = "Golf";
+            local.EstimatedCost = 20000.80;
             AwayDayActivities.Add(new Activity(1));
             AwayDayActivities.Add(new Activity(2));
-            AwayDayActivities.Add(new Activity(3));
+            AwayDayActivities.Add(local);
         }
 
     }

@@ -25,16 +25,7 @@ namespace awayDayPlanner.GUI.Model.Billing
 
         public BillingModel()
         {
-/*            this.Confirmed = awayDay.Confirmed;
-            this.BuyerFirstName = awayDay.User.firstname;
-            this.BuyerLastName = awayDay.User.lastname;
-            this.BuyerFirstLineAddress = awayDay.User.Address.FirstLine;
-            this.BuyerSecondLineAddress = awayDay.User.Address.SecondLine;
-            this.BuyerPostCode = awayDay.User.Address.PostCode;
-            this.BuyerPhoneNumber = awayDay.User.phone;
-            this.BuyerEmail = awayDay.User.email;
-            this.AwayDayActivities = awayDay.AwayDayActivities;
-            this.TotalCost = awayDay.TotalCost;*/
+
         }
 
         public void Submit(AwayDay awayDay)

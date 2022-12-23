@@ -1,5 +1,5 @@
 ﻿using awayDayPlanner.GUI.Billing;
-using awayDayPlanner.GUI.Model.Billing;
+using awayDayPlanner.GUI.Model.Billing; //this needs to be bens namespace
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +18,37 @@ namespace awayDayPlanner.GUI.View.Billing
         public BillingForm()
         {
             this.AwayDay = new AwayDay();
+            //this should be bens awayday object
             InitializeComponent();
-            
-            //this.PopulateDataGrid();
+        }
+
+        public System.Windows.Forms.Button buttonClose
+        {
+            get { return this.btnClose; }
+            set { this.btnClose = value; }
+        }
+
+        public System.Windows.Forms.Button buttonCapture
+        {
+            get { return this.btnCapture; }
+            set { this.btnCapture = value; }
+        }
+
+        public System.Windows.Forms.Label TotalCost
+        {
+            get { return this.totalCost; }
+            set { this.totalCost = value; }
+        }
+
+        public System.Windows.Forms.Label Title
+        {
+            get { return this.label2; }
+            set { this.label2 = value; }
+        }
+        public System.Windows.Forms.Panel TopPanel
+        {
+            get { return this.panel1; }
+            set { this.panel1 = value; }
         }
 
         public BillingPresenter Presenter { private get; set; }
@@ -52,60 +80,6 @@ namespace awayDayPlanner.GUI.View.Billing
             get { return this.dgvActivityList; }
             set { this.dgvActivityList = value; }
         }
-
-
-
-        /*
-                public string BuyerName
-                {
-                    get { return this.buyerNameLabel.Text; }
-                    set { this.buyerNameLabel.Text = value; }
-                }
-                public string BuyerAddress
-                {
-                    get { return this.buyerAddressLabel.Text; }
-                    set { this.buyerAddressLabel.Text = value; }
-                }
-                public string BuyerPhone
-                {
-                    get { return this.buyerPhoneLabel.Text; }
-                    set { this.buyerPhoneLabel.Text = value; }
-                }
-                public string BuyerEmail
-                {
-                    get { return this.buyerEmailLabel.Text; }
-                    set { this.buyerEmailLabel.Text = value; }
-                }
-
-                public void PopulateDataGrid()
-                {
-                    dgvActivityList.ColumnCount = 2;
-
-                    dgvActivityList.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dgvActivityList.Columns[1].Width = 150;
-
-                    dgvActivityList.Columns[0].Name = "Activity";
-                    dgvActivityList.Columns[1].Name = "Cost";
-
-
-                    dgvActivityList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                    dgvActivityList.Columns["Cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-                    foreach (DataGridViewColumn column in dgvActivityList.Columns)
-                    {
-                        column.SortMode = DataGridViewColumnSortMode.NotSortable;
-                    }
-                }
-
-
-                public void addItemToDGV(string name, double cost)
-                {
-                    this.dgvActivityList.Rows.Add(name, cost);
-                }
-
-
-        */
-
 
         public void btnRegister_Click(object sender, EventArgs e)
         {

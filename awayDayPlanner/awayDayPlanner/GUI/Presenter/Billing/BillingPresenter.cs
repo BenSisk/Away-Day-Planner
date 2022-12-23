@@ -23,18 +23,27 @@ namespace awayDayPlanner.GUI
 
         public void Submit ()
         {
+            _view.buttonClose.Hide();
+            _view.buttonCapture.Hide();
+            _view.Title.Hide();
+            _view.TopPanel.BackColor = System.Drawing.Color.White;
             _model.Submit(_view.AwayDay);
+            _view.buttonClose.Show();
+            _view.buttonCapture.Show();
+            _view.Title.Show();
+            _view.TopPanel.BackColor = System.Drawing.ColorTranslator.FromHtml("#fc9403");
         }
 
         public void BillingLoad (AwayDay awayDay)
         {
-           // _view.Confirmed = awayDay.Confirmed;
+           // _view.Confirmed = awayDay.Confirmed; //this is tomorrows job //look in billingpresenter
             _view.BuyerName.Text = awayDay.User.firstname + " " + awayDay.User.lastname;
             _view.BuyerAddress.Text = awayDay.User.Address.FirstLine + ", " + awayDay.User.Address.SecondLine 
                 + ", " + awayDay.User.Address.PostCode;
             _view.BuyerPhone.Text = awayDay.User.phone;
             _view.BuyerEmail.Text = awayDay.User.email;
-            // _view.TotalCost = awayDay.TotalCost;
+
+            _view.TotalCost.Text = "£ " + awayDay.TotalCost.ToString("0.00");
             PopulateDataGrid(awayDay);
         }
 
@@ -57,8 +66,8 @@ namespace awayDayPlanner.GUI
             _view.addItemToDGV.Columns[0].Name = "Activity";
             _view.addItemToDGV.Columns[1].Name = "Cost";
 
-
-            _view.addItemToDGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            _view.addItemToDGV.Columns["Cost"].DefaultCellStyle.Format = "N2";
+            _view.addItemToDGV.Columns["Cost"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             _view.addItemToDGV.Columns["Cost"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             foreach (DataGridViewColumn column in _view.addItemToDGV.Columns)

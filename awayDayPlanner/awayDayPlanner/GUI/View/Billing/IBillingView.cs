@@ -14,6 +14,11 @@ namespace awayDayPlanner.GUI.Billing
         System.Windows.Forms.Label BuyerAddress { get; set; }
         System.Windows.Forms.Label BuyerPhone { get; set; }
         System.Windows.Forms.Label BuyerEmail { get; set; }
+        System.Windows.Forms.Label TotalCost { get; set; }
+        System.Windows.Forms.Button buttonClose { get; set; }
+        System.Windows.Forms.Button buttonCapture { get; set; }
+        System.Windows.Forms.Label Title { get; set; }
+        System.Windows.Forms.Panel TopPanel { get ; set; }
 
         System.Windows.Forms.DataGridView addItemToDGV { get; set; }
 
