@@ -13,7 +13,7 @@ using awayDayPlanner.Source.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    public class Login : ILoginModel
+    public class Login : Source.Factory.ILogin
     {
         [Key]
         public int loginID { get; set; }

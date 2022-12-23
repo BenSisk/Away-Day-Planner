@@ -33,7 +33,7 @@ namespace awayDayPlanner.GUI
 
         public void Submit()
         {
-            _model.Submit();
+            _model.Submit(_view.Username, _view.Password);
         }
     }
 }

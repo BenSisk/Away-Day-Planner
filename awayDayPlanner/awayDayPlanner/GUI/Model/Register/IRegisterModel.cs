@@ -8,7 +8,7 @@ namespace awayDayPlanner.GUI.Model
 {
     public interface IRegisterModel
     {
-        List<RegisterErrors> Submit(User user, Address address, Login login, string confirmPassword);
+        Dictionary<RegisterErrors, string> Submit(User user, Address address, Login login, string confirmPassword);
 
         void Close();
     }

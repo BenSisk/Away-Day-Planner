@@ -132,6 +132,7 @@
     <Compile Include="Source\Activities\ActivityFactory.cs" />
     <Compile Include="Source\Activities\AwayDay.cs" />
     <Compile Include="Source\Activities\IActivity.cs" />
+    <Compile Include="Source\Factory\ILogin.cs" />
     <Compile Include="Source\Factory\IRegister.cs" />
     <Compile Include="Source\Factory\Login.cs" />
     <Compile Include="Source\Factory\IFactory.cs" />

@@ -25,12 +25,12 @@ namespace awayDayPlanner.GUI.Model
             this.register = new Register();
         }
 
-        public List<RegisterErrors> Submit(User user, Address address, Login login, string confirmPassword)
+        public Dictionary<RegisterErrors, string> Submit(User user, Address address, Login login, string confirmPassword)
         {
             var verified = Validate.ValidateRegister(login, user, address, confirmPassword, new Validator());
 
 
-            if (verified.Contains(RegisterErrors.Success))
+            if (verified.ContainsKey(RegisterErrors.Success))
             {
                 login.Salt = SaltProvider.GenerateSalt(new Salter());
 

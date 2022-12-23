@@ -7,6 +7,6 @@ namespace awayDayPlanner.Source.Security.Validator
 {
     internal interface IValidator
     {
-        List<RegisterErrors> ValidateRegister(Login login, User user, Address address, string confirmPassword);
+        Dictionary<RegisterErrors, string> ValidateRegister(Login login, User user, Address address, string confirmPassword);
     }
 }

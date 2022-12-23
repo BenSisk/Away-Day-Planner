@@ -6,6 +6,7 @@ using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -58,68 +59,69 @@ namespace awayDayPlanner.GUI
 
             var result = _model.Submit(user, address, login, _view.Password2);
 
-            foreach (var item in result)
+            foreach (KeyValuePair<RegisterErrors, string> item in result)
             {
-                Console.WriteLine(item);
-                if (item == RegisterErrors.Success)
+                if (item.Key == RegisterErrors.Success)
                 {
-                    _view.Message("Registration successful, You can now login");
-                    this.Close();
+                    _view.Message("Registration Successful");
+                    FormProvider.RegisterForm.Hide();
+                    FormProvider.LoginForm.Show();
                 }
-
-                if (item == RegisterErrors.FirstNameSize)
+                else
                 {
-                    this.ShowError(_view.labelFirstName, "Firstname cannot be empty");
-                    _view.labelFirstName.ForeColor = System.Drawing.Color.Red;
+                    RemovePreviousErrors(item);
+                    UpdateErrorForm(item);
                 }
-
-                if (item == RegisterErrors.SurnameSize)
-                {
-                    this.ShowError(_view.labelSecondName, "Surname cannot be empty");
-                    _view.labelSecondName.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (item == RegisterErrors.PasswordMismatch)
-                {
-                    this.ShowError(_view.labelPassword, "Password Mismatch");
-                    _view.labelPassword.ForeColor = System.Drawing.Color.Red;
-                }
-                else if (item == RegisterErrors.IncorrectPasswordSize)
-                {
-                    this.ShowError(_view.labelPassword, "Incorrect Password size");
-                    _view.labelPassword.ForeColor = System.Drawing.Color.Red;
-                }
-                else if (item == RegisterErrors.PasswordSuccess)
-                {
-                    _view.PasswordError.SetToolTip(_view.labelPassword, null);
-                    _view.labelPassword.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (item == RegisterErrors.InvalidPhone)
-                {
-                    this.ShowError(_view.labelPhone, "Phone number should be numerical");
-                    _view.labelPhone.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (item == RegisterErrors.InvalidEmail)
-                {
-                    this.ShowError(_view.labelEmail, "Please enter a valid email");
-                    _view.labelEmail.ForeColor = System.Drawing.Color.Red;
-                }
-
-                if (item == RegisterErrors.ShortUsername)
-                {
-                    this.ShowError(_view.labelUsername, "Username should be 4 or more characters");
-                    _view.labelUsername.ForeColor = System.Drawing.Color.Red;
-                }
-
-                _view.PasswordError.Active = true;
             }
+        }
+
+        public void RemovePreviousErrors(KeyValuePair<RegisterErrors, string> error)
+        {
+            if (error.Key == RegisterErrors.UsernameSuccess)
+                this.RemoveError(_view.labelUsername);
+            if (error.Key == RegisterErrors.FirstSuccess)
+                this.RemoveError(_view.labelFirstName);
+            if (error.Key == RegisterErrors.SurnameSuccess)
+                this.RemoveError(_view.labelSecondName);
+            if (error.Key == RegisterErrors.EmailSuccess)
+                this.RemoveError(_view.labelEmail);
+            if (error.Key == RegisterErrors.PhoneSuccess)
+                this.RemoveError(_view.labelPhone);
+            if (error.Key == RegisterErrors.PasswordSuccess)
+                this.RemoveError(_view.labelPassword);
+        }
+        public void UpdateErrorForm(KeyValuePair<RegisterErrors,string> error)
+        {
+            if (error.Key == RegisterErrors.ShortUsername ||
+                error.Key == RegisterErrors.UsernameTaken ||
+                error.Key == RegisterErrors.InvalidUsername)
+                this.ShowError(_view.labelUsername, error.Value);
+            if (error.Key == RegisterErrors.InvalidEmail)
+                this.ShowError(_view.labelEmail, error.Value);
+            if (error.Key == RegisterErrors.InvalidPhone)
+                this.ShowError(_view.labelPhone, error.Value);
+            if (error.Key == RegisterErrors.IncorrectPasswordSize ||
+                error.Key == RegisterErrors.PasswordMismatch)
+                this.ShowError(_view.labelPassword, error.Value);
+            if (error.Key == RegisterErrors.FirstNameSize ||
+                error.Key == RegisterErrors.SpecialCharactersFirstname)
+                this.ShowError(_view.labelFirstName, error.Value);
+            if (error.Key == RegisterErrors.SurnameSize ||
+                error.Key == RegisterErrors.SpecialCharactersSurname)
+                this.ShowError(_view.labelSecondName, error.Value);
+
         }
 
         public void ShowError(System.Windows.Forms.Control form, string errorMessage)
         {
             _view.PasswordError.SetToolTip(form, errorMessage);
+            form.ForeColor = System.Drawing.Color.Red;
+        }
+
+        public void RemoveError(System.Windows.Forms.Control form)
+        {
+            _view.PasswordError.SetToolTip(form, null);
+            form.ForeColor = System.Drawing.Color.Black;
         }
 
         public void Close()

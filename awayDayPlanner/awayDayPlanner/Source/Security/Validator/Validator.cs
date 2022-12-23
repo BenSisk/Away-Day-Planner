@@ -34,24 +34,25 @@ namespace awayDayPlanner.Source.Security.Validator
     }
     internal class Validator : IValidator
     {
-        public List<RegisterErrors> ValidateRegister(Login login, User user, 
+        private Dictionary<RegisterErrors, string> 
+            AllErrors = new Dictionary<RegisterErrors, string>();
+
+        public Dictionary<RegisterErrors, string> ValidateRegister(Login login, User user, 
             Address address, string confirmPassword)
         {
-            List<RegisterErrors> AllErrors = new List<RegisterErrors>();
+            this.verifyUser(user);
+            this.verifyUsername(login);
+            this.verifyPassword(login, confirmPassword);
 
-            AllErrors.AddRange(this.verifyUser(user));
-            AllErrors.AddRange(this.verifyUsername(login));
-            AllErrors.AddRange(this.verifyPassword(login, confirmPassword));
-
-            if (AllErrors.Contains(RegisterErrors.PasswordSuccess) &&
-                AllErrors.Contains(RegisterErrors.UsernameSuccess) &&
-                AllErrors.Contains(RegisterErrors.PhoneSuccess) &&
-                AllErrors.Contains(RegisterErrors.FirstSuccess) &&
-                AllErrors.Contains(RegisterErrors.SurnameSuccess) &&
-                AllErrors.Contains(RegisterErrors.EmailSuccess))
+            if (AllErrors.ContainsKey(RegisterErrors.PasswordSuccess) &&
+                AllErrors.ContainsKey(RegisterErrors.UsernameSuccess) &&
+                AllErrors.ContainsKey(RegisterErrors.PhoneSuccess) &&
+                AllErrors.ContainsKey(RegisterErrors.FirstSuccess) &&
+                AllErrors.ContainsKey(RegisterErrors.SurnameSuccess) &&
+                AllErrors.ContainsKey(RegisterErrors.EmailSuccess))
             {
                 AllErrors.Clear();
-                AllErrors.Add(RegisterErrors.Success);
+                AllErrors.Add(RegisterErrors.Success, "Validation succeeded");
             }
 
                 return AllErrors;
@@ -95,98 +96,90 @@ namespace awayDayPlanner.Source.Security.Validator
             return Database.Database.Data.Login.Any(c => c.Username == user);
         }
 
-        private List<RegisterErrors> verifyUsername(Login login)
+        private void verifyUsername(Login login)
         {
-            List<RegisterErrors> AllErrors = new List<RegisterErrors>();
             if (this.HasSpecialChars(login.Username))
-                AllErrors.Add(RegisterErrors.InvalidUsername);
+                AllErrors.Add(RegisterErrors.InvalidUsername, 
+                    "Username can't contain special character");
 
-            if (login.Username.Length < 5 || login.Username.Length > 25)
-                AllErrors.Add(RegisterErrors.ShortUsername);
+            else if (login.Username.Length < 5 || login.Username.Length > 25)
+                AllErrors.Add(RegisterErrors.ShortUsername, 
+                    "Username should be between 5 and 25 characters");
 
-            if (UserExists(login.Username))
-                AllErrors.Add(RegisterErrors.UsernameTaken);
+            else if (UserExists(login.Username))
+                AllErrors.Add(RegisterErrors.UsernameTaken,
+                    "Username is already taken");
 
-            if (AllErrors.Count == 0)
-                AllErrors.Add(RegisterErrors.UsernameSuccess);
-
-            return AllErrors;
-
+            else 
+                AllErrors.Add(RegisterErrors.UsernameSuccess, 
+                    "Username Successful");
         }
-        private List<RegisterErrors> verifyPassword(Login user, string password2)
-        {
-            List<RegisterErrors> AllErrors = new List<RegisterErrors>();
 
+        private void verifyPassword(Login user, string password2)
+        {
             if (user.Password.Length >= 5 && password2.Length >= 5)
                 if (this.PasswordsAreEqual(user.Password, password2))
-                    AllErrors.Add(RegisterErrors.PasswordSuccess);
+                    AllErrors.Add(RegisterErrors.PasswordSuccess, "password successful");
                 else
-                    AllErrors.Add(RegisterErrors.PasswordMismatch);
+                    AllErrors.Add(RegisterErrors.PasswordMismatch, "Passwords don't match");
             else
-                AllErrors.Add(RegisterErrors.IncorrectPasswordSize);
-
-            return AllErrors;
+                AllErrors.Add(RegisterErrors.IncorrectPasswordSize, 
+                    "Passwords should be 5 or more characters");
         }
 
-        private List<RegisterErrors> verifyPhone(int number)
+        private void verifyPhone(int number)
         {
-            List<RegisterErrors> PhoneErrors = new List<RegisterErrors>();
-
             if (number == 0)
-                PhoneErrors.Add(RegisterErrors.InvalidPhone);
+                AllErrors.Add(RegisterErrors.InvalidPhone, 
+                    "Invalid phone number");
             else
-                PhoneErrors.Add(RegisterErrors.PhoneSuccess);
-
-            return PhoneErrors;
-
+                AllErrors.Add(RegisterErrors.PhoneSuccess,
+                    "Phone success");
         }
-        private List<RegisterErrors> verifyUser(User user)
-        {
-            List<RegisterErrors> AllErrors = new List<RegisterErrors>();
 
-            AllErrors.AddRange(this.verifyFirstname(user.firstname, false));
-            AllErrors.AddRange(this.verifyFirstname(user.lastname, true));
-            AllErrors.AddRange(this.verifyPhone(user.phone));
+        private void verifyUser(User user)
+        {
+            this.verifyFirstname(user.firstname, false);
+            this.verifyFirstname(user.lastname, true);
+            this.verifyPhone(user.phone);
 
             if (!this.isValidEmail(user.email))
-                AllErrors.Add(RegisterErrors.InvalidEmail);
+                AllErrors.Add(RegisterErrors.InvalidEmail, "Invalid email address");
             else
-                AllErrors.Add(RegisterErrors.EmailSuccess);
-
-            return AllErrors;
+                AllErrors.Add(RegisterErrors.EmailSuccess, "Email success");
         }
 
-        private List<RegisterErrors> verifyFirstname(string firstname, bool Surname)
+        private void verifyFirstname(string firstname, bool Surname)
         {
-            List<RegisterErrors> nameErrors = new List<RegisterErrors>();
             if (firstname == null)
                 if (Surname)
-                    nameErrors.Add(RegisterErrors.EmptyFirstName);
+                    AllErrors.Add(RegisterErrors.EmptyFirstName, "Firstname can't be empty");
                 else
-                    nameErrors.Add(RegisterErrors.EmptySurname);
+                    AllErrors.Add(RegisterErrors.EmptySurname, "Surname can't be empty");
             // no point continuing the checks with a null name
             else
             {
                 // 2 character names? Aj?
                 if (firstname.Length > 50 || firstname.Length < 2)
                     if (Surname)
-                        nameErrors.Add(RegisterErrors.SurnameSize);
+                        AllErrors.Add(RegisterErrors.SurnameSize, 
+                            "Surname must be be 2 and 50 characters");
                     else
-                        nameErrors.Add(RegisterErrors.FirstNameSize);
+                        AllErrors.Add(RegisterErrors.FirstNameSize,
+                            "Firstname must be be 2 and 50 characters");
                 else if (this.HasSpecialChars(firstname))
                     if (Surname)
-                        nameErrors.Add(RegisterErrors.SpecialCharactersSurname);
+                        AllErrors.Add(RegisterErrors.SpecialCharactersSurname,
+                            "Name cannot contain special characters");
                     else
-                        nameErrors.Add(RegisterErrors.SpecialCharactersFirstname);
+                        AllErrors.Add(RegisterErrors.SpecialCharactersFirstname,
+                            "Name cannot contain special characters");
                 else
                     if (Surname)
-                        nameErrors.Add(RegisterErrors.SurnameSuccess);
+                        AllErrors.Add(RegisterErrors.SurnameSuccess, "firstname success");
                     else
-                        nameErrors.Add(RegisterErrors.FirstSuccess);
+                        AllErrors.Add(RegisterErrors.FirstSuccess, "surname Success");
             }
-            return nameErrors;
         }
-
-
     }
 }
