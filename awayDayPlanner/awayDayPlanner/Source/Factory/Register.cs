@@ -1,4 +1,5 @@
-﻿using awayDayPlanner.Source.Factory;
+﻿using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,18 @@ namespace awayDayPlanner.Lib.Factory
 
         public enum RegisterErrors
         {
-            Success = 0,
-            PasswordSuccess = 1,
-            IncorrectPasswordSize = 2,
-            PasswordMismatch = 3
+            Success,
+            PasswordSuccess,
+            IncorrectPasswordSize,
+            PasswordMismatch,
+            FirstNameSize,
+            SurnameSize,
+            EmptyFirstName,
+            EmptySurname,
+            SpecialCharactersSurname,
+            SpecialCharactersFirstname,
+            FirstSuccess,
+            SurnameSuccess
         }
 
         public static Register getInstance
@@ -41,6 +50,11 @@ namespace awayDayPlanner.Lib.Factory
                 return true;
             else
                 return false;
+        }
+
+        private bool HasSpecialChars(string yourString)
+        {
+            return yourString.Any(ch => !char.IsLetterOrDigit(ch));
         }
 
 
@@ -75,22 +89,52 @@ namespace awayDayPlanner.Lib.Factory
 
         }
 
-        public void verifyUsername()
+        public List<RegisterErrors> verifyUser(User user)
+        {
+            List<RegisterErrors> AllErrors = new List<RegisterErrors>();
+
+            AllErrors.AddRange(this.verifyFirstname(user.firstname, false));
+            AllErrors.AddRange(this.verifyFirstname(user.lastname, true));
+            return AllErrors;
+        }
+
+        private List<RegisterErrors> verifyFirstname(string firstname, bool Surname)
+        {
+            List<RegisterErrors> nameErrors = new List<RegisterErrors>();
+            if (firstname == null)
+                if (Surname)
+                    nameErrors.Add(RegisterErrors.EmptyFirstName);
+                else
+                    nameErrors.Add(RegisterErrors.EmptySurname);
+            // no point continuing the checks with a null name
+            else
+            {
+                // 2 character names? Aj?
+                if (firstname.Length > 50 || firstname.Length < 2)
+                    if (Surname)
+                        nameErrors.Add(RegisterErrors.SurnameSize);
+                    else
+                        nameErrors.Add(RegisterErrors.FirstNameSize);
+                else if (this.HasSpecialChars(firstname))
+                    if (Surname)
+                        nameErrors.Add(RegisterErrors.SpecialCharactersSurname);
+                    else
+                        nameErrors.Add(RegisterErrors.SpecialCharactersFirstname);
+                else
+                    if (Surname)
+                        nameErrors.Add(RegisterErrors.SurnameSuccess);
+                    else
+                        nameErrors.Add(RegisterErrors.FirstSuccess);
+            }
+            return nameErrors;
+        }
+
+        private void verifyEmail()
         {
             throw new NotImplementedException();
         }
 
-        public void verifyPassword()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void verifyEmail()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void verifyPhone()
+        private void verifyPhone()
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.Lib.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,8 @@ namespace awayDayPlanner.Source.Factory
 {
     internal interface IRegister
     {
-        void verifyUsername();
         List<RegisterErrors> verifyPassword(Login user, string password);
-        void verifyEmail();
-        void verifyPhone();
-        List<RegisterErrors> verifyDob(DateTime birthdate);
+        List<RegisterErrors> verifyUser(User user);
 
     }
 }

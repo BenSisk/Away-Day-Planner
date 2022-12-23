@@ -60,14 +60,26 @@ namespace awayDayPlanner.GUI
                     this.Close();
                 }
 
+                if (item == RegisterErrors.FirstNameSize)
+                {
+                    this.ShowError(_view.labelFirstName, "Firstname cannot be empty");
+                    _view.labelFirstName.ForeColor = System.Drawing.Color.Red;
+                }
+
+                if (item == RegisterErrors.SurnameSize)
+                {
+                    this.ShowError(_view.labelSecondName, "Surname cannot be empty");
+                    _view.labelSecondName.ForeColor = System.Drawing.Color.Red;
+                }
+
                 if (item == RegisterErrors.PasswordMismatch)
                 {
-                    _view.PasswordError.SetToolTip(_view.labelPassword, "Password Mismatch");
+                    this.ShowError(_view.labelPassword, "Password Mismatch");
                     _view.labelPassword.ForeColor = System.Drawing.Color.Red;
                 }
                 else if (item == RegisterErrors.IncorrectPasswordSize)
                 {
-                    _view.PasswordError.SetToolTip(_view.labelPassword, "Incorrect Password size");
+                    this.ShowError(_view.labelPassword, "Incorrect Password size");
                     _view.labelPassword.ForeColor = System.Drawing.Color.Red;
                 }
                 else if (item == RegisterErrors.PasswordSuccess)
@@ -75,7 +87,15 @@ namespace awayDayPlanner.GUI
                     _view.PasswordError.SetToolTip(_view.labelPassword, null);
                     _view.labelPassword.ForeColor = System.Drawing.Color.Black;
                 }
+
+                _view.PasswordError.Active = true;
             }
+        }
+
+        public void ShowError(System.Windows.Forms.Control form, string errorMessage)
+        {
+            _view.PasswordError.SetToolTip(form, errorMessage);
+            _view.PasswordError.Show(form);
         }
 
         public void Close()

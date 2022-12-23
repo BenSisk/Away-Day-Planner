@@ -31,8 +31,8 @@ namespace awayDayPlanner.GUI.Model
             //Database.Database.Data.User.Add(user);
 
             //var verified = this.register.verifyDob(user.dob);
-
-            var verified = this.register.verifyPassword(login, confirmPassword);
+            var verified = this.register.verifyUser(user);
+            verified.AddRange(this.register.verifyPassword(login, confirmPassword));
 
             foreach (var error in verified)
             {
