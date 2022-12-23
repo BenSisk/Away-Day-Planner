@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using awayDayPlanner.GUI.Presenter.ControlPanel;
 using awayDayPlanner.Source.Activities;
 
 namespace awayDayPlanner.GUI.newItem
@@ -26,16 +27,32 @@ namespace awayDayPlanner.GUI.newItem
             txtCustomActivity.TabStop = false;
             txtCustomActivity.Text = "";
             txtNotes.Text = "";
-            cmbxActivity.SelectedIndex = 0;
+
+            if (cmbxActivity.Items.Count > 0)
+            {
+                cmbxActivity.SelectedIndex = 0;
+                checkCustom();
+            }
         }
 
 
         private void populateComboBox()
         {
-            foreach (var item in Enum.GetValues(typeof(ActivityEnum)))
+            ActivityType custom = null;
+            foreach (var item in FormProvider.ControlPanelPresenter.list)
             {
-                cmbxActivity.Items.Add(item);
+                if (item.ActivityTypeName != "Custom")
+                {
+                    cmbxActivity.Items.Add(item);
+                }
+                else
+                {
+                    custom = item;
+                }
             }
+
+            cmbxActivity.Items.Add(custom);
+
             if (cmbxActivity.Items.Count > 0)
             {
                 cmbxActivity.SelectedIndex = 0;
@@ -44,25 +61,32 @@ namespace awayDayPlanner.GUI.newItem
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            if (cmbxActivity.SelectedItem.Equals(ActivityEnum.Custom))
+            if (cmbxActivity.SelectedItem != null && cmbxActivity.Items.Contains(cmbxActivity.SelectedItem))
             {
-                if (txtCustomActivity.Text.Length == 0)
+                if (cmbxActivity.SelectedItem.ToString().Equals("Custom"))
                 {
-                    MessageBox.Show("You must enter a name for the custom activity", "Error");
-                    txtCustomActivity.Focus();
-                    return;
+                    if (txtCustomActivity.Text.Length == 0)
+                    {
+                        MessageBox.Show("You must enter a name for the custom activity", "Error");
+                        txtCustomActivity.Focus();
+                        return;
+                    }
                 }
+                else
+                {
+                    txtCustomActivity.Text = cmbxActivity.SelectedItem.ToString();
+                }
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
-                txtCustomActivity.Text = cmbxActivity.SelectedItem.ToString();
+                MessageBox.Show("Please choose a valid activity, or select Custom to enter your own.", "Error");
             }
-            this.DialogResult = DialogResult.OK;
         }
 
-        public ActivityEnum getActivityType()
+        public ActivityType getActivityType()
         {
-            return (ActivityEnum) cmbxActivity.SelectedItem;
+            return (ActivityType) cmbxActivity.SelectedItem;
         }
 
         public string getCustomRequest()
@@ -77,7 +101,13 @@ namespace awayDayPlanner.GUI.newItem
 
         private void cmbxActivity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((ActivityEnum) cmbxActivity.SelectedItem == ActivityEnum.Custom)
+            checkCustom();
+        }
+
+        private void checkCustom()
+        {
+            txtEstimatedCost.Text = this.getActivityType().ActivityTypeEstimatedPrice.ToString();
+            if (cmbxActivity.SelectedItem.ToString().Equals("Custom"))
             {
                 txtCustomActivity.Enabled = true;
                 txtCustomActivity.TabStop = true;

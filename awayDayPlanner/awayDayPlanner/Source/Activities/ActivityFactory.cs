@@ -25,7 +25,7 @@ namespace awayDayPlanner.Source.Activities
         }
         #endregion
 
-        public void RegisterActivity(Enum activityType, IActivity activity)
+        public void RegisterActivity(ActivityType activityType, IActivity activity)
         {
             if (!ActivityMapping.ContainsKey(activityType))
             {
@@ -33,7 +33,7 @@ namespace awayDayPlanner.Source.Activities
             }
         }
 
-        public IActivity getActivityInstance(Enum activityType)
+        public IActivity getActivityInstance(ActivityType activityType)
         {
             IActivity activity = null;
             if (ActivityMapping.ContainsKey(activityType))

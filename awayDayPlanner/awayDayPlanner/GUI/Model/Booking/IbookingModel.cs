@@ -11,6 +11,6 @@ namespace awayDayPlanner.GUI.Model.Booking
     public interface IbookingModel
     {
         void register(IbookingPresenter presenter);
-        int submit(List<IActivity> activities);
+        int submit(List<IActivity> activities, DateTime date);
     }
 }

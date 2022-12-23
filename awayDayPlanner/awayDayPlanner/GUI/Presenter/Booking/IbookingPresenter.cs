@@ -12,5 +12,6 @@ namespace awayDayPlanner.GUI.Presenter.Booking
         void submit();
         void addActivity();
         void deleteRows(DataGridViewSelectedRowCollection rows);
+        void Close();
     }
 }

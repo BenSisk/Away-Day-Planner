@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.Lib.Users;
+using awayDayPlanner.GUI.Presenter.ControlPanel;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
     public partial class bookingModel : IbookingModel
     {
         private IbookingPresenter presenter;
-
 
 
         public bookingModel()
@@ -25,13 +26,10 @@ namespace awayDayPlanner.GUI.Model.Booking
             this.presenter = presenter;
         }
 
-        private void generatePDF()
+        public int submit(List<IActivity> activities, DateTime date)
         {
-            //make itemised PDF
-        }
+            Console.WriteLine(activities);
 
-        public int submit(List<IActivity> activities)
-        {
             if (activities.Count > 0)
             {
                 AwayDay awayday = new AwayDay();
@@ -40,8 +38,15 @@ namespace awayDayPlanner.GUI.Model.Booking
                     Database.Database.Data.Activity.Add(activity.getObject());
                     awayday.AwayDayActivities.Add(activity.getObject());
                 }
+                awayday.AwayDayDate = date;
+                awayday.User = FormProvider.ControlPanelPresenter.user;
+                awayday.Confirmed = false;
+                awayday.CanBeConfirmed = false;
+                awayday.TotalCost = 0;
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
+
+                //GeneratePDF(awayday)
                 return 0;
             }
             else

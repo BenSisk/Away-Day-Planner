@@ -18,25 +18,20 @@ namespace awayDayPlanner.GUI.Presenter.Booking
         private IbookingForm view;
         private List<IActivity> activities = new List<IActivity>();
 
-        public bookingPresenter()
+        public bookingPresenter(IbookingForm view, IbookingModel model)
         {
-            this.view = FormProvider.bookingForm;
-            this.model = FormProvider.bookingModel;
+            this.view = view;
+            this.model = model;
             view.register(this);
             model.register(this);
-            this.initialiseForm();
-        }
-
-        private void initialiseForm()
-        {
-
         }
 
         public void submit()
         {
-            if (model.submit(this.activities) == 0)
+            if (model.submit(this.activities, view.getDate()) == 0)
             {
                 view.message("Application Submitted Successfully");
+                this.Close();
             }
             else
             {
@@ -46,13 +41,12 @@ namespace awayDayPlanner.GUI.Presenter.Booking
 
         public void addActivity()
         {
-            var itemForm = FormProvider.addNewItem;
-            if(view.displayFormAsDialog(itemForm) == DialogResult.OK)
+            if (view.displayFormAsDialog(FormProvider.addNewItem) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
-                var activity = itemForm.getActivityType();
-                string custom = itemForm.getCustomRequest().ToString();
-                string notes = itemForm.getNotes().ToString();
+                var activity = FormProvider.addNewItem.getActivityType();
+                string custom = FormProvider.addNewItem.getCustomRequest().ToString();
+                string notes = FormProvider.addNewItem.getNotes().ToString();
 
                 IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.getActivityInstance(activity);
                 activityInstance.Type = activity;
@@ -60,7 +54,7 @@ namespace awayDayPlanner.GUI.Presenter.Booking
                 activityInstance.Notes = notes;
 
                 this.activities.Add(activityInstance);
-                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.EstimatedCost);
+                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
             }
         }
 
@@ -71,6 +65,14 @@ namespace awayDayPlanner.GUI.Presenter.Booking
                 this.activities.RemoveAt(row.Index);
                 view.deleteRow(row);
             }
+        }
+
+        public void Close()
+        {
+            FormProvider.bookingForm.Hide();
+            FormProvider.ControlPanelForm.Show();
+            activities.Clear();
+            view.Reset();
         }
     }
 }

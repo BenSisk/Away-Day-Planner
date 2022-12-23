@@ -19,5 +19,9 @@ namespace awayDayPlanner.GUI.View.Booking
         void addItemToDGV(string name, string notes, double price);
 
         void deleteRow(DataGridViewRow row);
+
+        void Reset();
+
+        DateTime getDate();
     }
 }

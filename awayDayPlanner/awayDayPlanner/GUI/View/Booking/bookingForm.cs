@@ -20,11 +20,12 @@ namespace awayDayPlanner.GUI.View.Booking
         public bookingForm()
         {
             this.InitializeComponent();
-            this.populateDataGrid();
+            this.PopulateDataGrid();
         }
 
-        private void populateDataGrid()
+        private void PopulateDataGrid()
         {
+            dgvActivities.Controls.Clear();
             this.Controls.Add(dgvActivities);
 
             dgvActivities.ColumnCount = 3;
@@ -41,6 +42,11 @@ namespace awayDayPlanner.GUI.View.Booking
             dgvActivities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             dgvActivities.MultiSelect = true;
+
+            foreach (DataGridViewColumn column in dgvActivities.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -88,6 +94,27 @@ namespace awayDayPlanner.GUI.View.Booking
         public void deleteRow(DataGridViewRow row)
         {
             dgvActivities.Rows.Remove(row);
+        }
+
+        private void bookingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+
+            DialogResult diaglogResult = MessageBox.Show("Are you sure you would like to cancel this application?\n\nYour changes will not be saved.", "Cancel Application", MessageBoxButtons.YesNo);
+            if (diaglogResult == DialogResult.Yes)
+            {
+                presenter.Close();
+            }
+        }
+
+        public DateTime getDate()
+        {
+            return dtpAwayDayDate.Value;
+        }
+
+        public void Reset()
+        {
+            dgvActivities.Rows.Clear();
         }
     }
 }
