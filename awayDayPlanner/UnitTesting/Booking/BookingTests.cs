@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using awayDayPlanner.GUI.View.Booking;
+using UnitTesting.ActivityTesting;
 
 namespace UnitTesting.Booking
 {

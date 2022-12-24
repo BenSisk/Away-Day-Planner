@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTesting.Booking
+namespace UnitTesting.ActivityTesting
 {
     public class ActivityMoc : IActivity
     {

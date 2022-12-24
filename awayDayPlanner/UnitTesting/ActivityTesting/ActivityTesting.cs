@@ -2,8 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using UnitTesting.Booking;
 
-namespace UnitTesting.Booking
+namespace UnitTesting.ActivityTesting
 {
     [TestClass]
     public class ActivityTesting
