@@ -15,7 +15,6 @@ namespace awayDayPlanner.GUI.Model.Booking
     {
         private IbookingPresenter presenter;
 
-
         public bookingModel()
         {
 

@@ -63,6 +63,7 @@
     <Compile Include="Booking\AddNewItemMoc.cs" />
     <Compile Include="Booking\BookingFormMoc.cs" />
     <Compile Include="Booking\BookingModelMoc.cs" />
+    <Compile Include="Booking\BookingPresenterMoc.cs" />
     <Compile Include="Booking\BookingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

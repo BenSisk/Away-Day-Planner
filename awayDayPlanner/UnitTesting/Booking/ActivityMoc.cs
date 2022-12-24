@@ -21,7 +21,12 @@ namespace UnitTesting.Booking
 
         public Activity getObject()
         {
-            return new Activity();
+            var activity = new Activity();
+            activity.Name = this.Name;
+            activity.Type = this.Type;
+            activity.ActualCost = this.ActualCost;
+            activity.Notes = this.Notes;
+            return activity;
         }
 
         public ActivityMoc(ActivityType Type)

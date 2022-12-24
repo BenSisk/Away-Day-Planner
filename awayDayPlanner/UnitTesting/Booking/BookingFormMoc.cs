@@ -12,7 +12,7 @@ namespace UnitTesting.Booking
 {
     class BookingFormMoc : IbookingForm
     {
-        string Message = "";
+        public string Message = "";
         public List<string> names = new List<string>();
         public List<string> notes = new List<string>();
         public List<double> prices = new List<double>();
