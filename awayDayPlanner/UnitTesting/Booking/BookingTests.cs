@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using awayDayPlanner.GUI.View.Booking;
 
 namespace UnitTesting.Booking
 {
@@ -162,6 +163,30 @@ namespace UnitTesting.Booking
             int output = model.submit(new List<IActivity> { activity, activity, activity }, DateTime.Now);
 
             Assert.AreEqual(0, output);
+        }
+
+        [TestMethod]
+        public void TestMethod6()
+        {
+            bookingForm view = FormProvider.bookingForm;
+
+            Assert.AreSame(view, FormProvider.bookingForm);
+        }
+
+        [TestMethod]
+        public void TestMethod7()
+        {
+            bookingPresenter presenter = FormProvider.bookingPresenter;
+
+            Assert.AreSame(presenter, FormProvider.bookingPresenter);
+        }
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            bookingModel model = FormProvider.bookingModel;
+
+            Assert.AreSame(model, FormProvider.bookingModel);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace awayDayPlanner.Source.Activities
             {
                 return ((IActivity)ActivityMapping[activityType]).CreateActivity();
             }
-            throw new Exception("Activity Not Registered. Register the activity before use.");
+            throw new KeyNotFoundException("Activity Not Registered. Register the activity before use.");
         }
     }
 }

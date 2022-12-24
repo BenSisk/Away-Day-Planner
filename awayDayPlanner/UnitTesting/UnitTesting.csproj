@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Booking\ActivityMoc.cs" />
+    <Compile Include="Booking\ActivityTesting.cs" />
     <Compile Include="Booking\AddNewItemMoc.cs" />
     <Compile Include="Booking\BookingFormMoc.cs" />
     <Compile Include="Booking\BookingModelMoc.cs" />
