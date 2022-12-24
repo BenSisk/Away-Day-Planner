@@ -8,11 +8,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using awayDayPlanner.GUI.NewItem;
 using awayDayPlanner.GUI.Presenter.ControlPanel;
 using awayDayPlanner.Source.Activities;
 
-namespace awayDayPlanner.GUI.newItem
+namespace awayDayPlanner.GUI.View.NewItem
 {
     public partial class addNewItem : Form, IaddNewItem
     {

@@ -9,7 +9,7 @@ using awayDayPlanner.GUI;
 using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.Model.Booking;
-using awayDayPlanner.GUI.NewItem;
+using awayDayPlanner.GUI.View.NewItem;
 
 namespace awayDayPlanner.GUI.Presenter.Booking
 {

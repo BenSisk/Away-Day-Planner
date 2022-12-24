@@ -1,4 +1,4 @@
-﻿namespace awayDayPlanner.GUI.newItem
+﻿namespace awayDayPlanner.GUI.View.NewItem
 {
     partial class addNewItem
     {

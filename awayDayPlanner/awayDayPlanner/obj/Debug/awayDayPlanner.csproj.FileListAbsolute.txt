@@ -53,6 +53,6 @@ C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.AwayDays.AwayDayActivities.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database.mdf
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Database\Database_log.ldf
-C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.newItem.addNewItem.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.Admin.AdminForm.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.Admin.AdminReviewForm.resources
+C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.NewItem.addNewItem.resources

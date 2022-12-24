@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.View.Booking;
 using System.Windows.Forms;
-using awayDayPlanner.GUI.NewItem;
+using awayDayPlanner.GUI.View.NewItem;
 
 namespace UnitTesting.Booking
 {

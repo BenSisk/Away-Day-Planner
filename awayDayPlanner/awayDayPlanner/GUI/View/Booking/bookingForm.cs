@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using awayDayPlanner.GUI.Presenter.Booking;
-using awayDayPlanner.GUI.NewItem;
+using awayDayPlanner.GUI.View.NewItem;
 
 namespace awayDayPlanner.GUI.View.Booking
 {

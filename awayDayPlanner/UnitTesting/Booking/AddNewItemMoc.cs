@@ -1,4 +1,4 @@
-﻿using awayDayPlanner.GUI.NewItem;
+﻿using awayDayPlanner.GUI.View.NewItem;
 using awayDayPlanner.Source.Activities;
 using System;
 using System.Collections.Generic;

@@ -17,7 +17,7 @@ using awayDayPlanner.GUI.Presenter.Admin;
 using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
 using awayDayPlanner.GUI.Model.Admin;
-using awayDayPlanner.GUI.newItem;
+using awayDayPlanner.GUI.View.NewItem;
 
 namespace awayDayPlanner.GUI
 {

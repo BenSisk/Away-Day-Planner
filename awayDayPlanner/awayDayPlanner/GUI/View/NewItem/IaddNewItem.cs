@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace awayDayPlanner.GUI.NewItem
+namespace awayDayPlanner.GUI.View.NewItem
 {
     public interface IaddNewItem
     {

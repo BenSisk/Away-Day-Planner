@@ -71,13 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\NewItem\addNewItem.cs">
+    <Compile Include="GUI\View\NewItem\addNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NewItem\addNewItem.Designer.cs">
+    <Compile Include="GUI\View\NewItem\addNewItem.Designer.cs">
       <DependentUpon>addNewItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NewItem\IaddNewItem.cs" />
+    <Compile Include="GUI\View\NewItem\IaddNewItem.cs" />
     <Compile Include="GUI\Model\Admin\AdminModel.cs" />
     <Compile Include="GUI\Model\Admin\AdminReviewModel.cs" />
     <Compile Include="GUI\Model\Admin\IAdminModel.cs" />
@@ -174,7 +174,7 @@
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\NewItem\addNewItem.resx">
+    <EmbeddedResource Include="GUI\View\NewItem\addNewItem.resx">
       <DependentUpon>addNewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Admin\AdminForm.resx">
