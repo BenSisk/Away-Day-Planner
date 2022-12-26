@@ -6,3 +6,4 @@ awayDayPlanner/.vs/*
 *.mdf
 awayDayPlanner/awayDayPlanner/bin/Debug/Database/Database.mdf
 *.ldf
+*exe
