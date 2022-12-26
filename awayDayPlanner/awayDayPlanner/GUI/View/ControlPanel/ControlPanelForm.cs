@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using awayDayPlanner.GUI.Presenter.ControlPanel;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI.View.ControlPanel
 {
@@ -23,6 +24,8 @@ namespace awayDayPlanner.GUI.View.ControlPanel
         {
             private get; set;
         }
+
+        public User user { get; set; }
 
         public void register(IControlPanelPresenter presenter)
         {

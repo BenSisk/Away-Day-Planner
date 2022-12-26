@@ -73,8 +73,10 @@
             this.Controls.Add(this.btnExistingEvents);
             this.Controls.Add(this.btnNewEvent);
             this.Name = "ControlPanelForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ControlPanel";
             this.ResumeLayout(false);
+
         }
             private System.Windows.Forms.Button btnNewEvent;
             private System.Windows.Forms.Button btnExistingEvents;

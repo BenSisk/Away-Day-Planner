@@ -37,9 +37,15 @@ namespace awayDayPlanner.GUI
             var user = _model.Submit(_view.Username, _view.Password);
 
             if (user is null)
-                Console.WriteLine("Invalid login");
+                _view.Message("Invalid login details");
             else
+            {
+
+
+                FormProvider.ControlPanelForm.user = user;
                 FormProvider.ControlPanelForm.Show();
+                FormProvider.LoginForm.Hide();
+            }
         }
     }
 }
