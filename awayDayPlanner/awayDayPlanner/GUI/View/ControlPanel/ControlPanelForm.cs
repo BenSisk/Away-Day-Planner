@@ -19,6 +19,11 @@ namespace awayDayPlanner.GUI.View.ControlPanel
             InitializeComponent();
         }
 
+        public IControlPanelPresenter Presenter
+        {
+            private get; set;
+        }
+
         public void register(IControlPanelPresenter presenter)
         {
             this.Presenter = presenter;
