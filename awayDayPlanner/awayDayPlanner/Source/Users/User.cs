@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Source.Activities;
+using System.ComponentModel;
 
 namespace awayDayPlanner.Lib.Users
 {
@@ -30,5 +31,6 @@ namespace awayDayPlanner.Lib.Users
         public virtual Address Address { get; set; }
         public virtual Login Login { get; set; }
         public virtual ICollection<AwayDay> AwayDays { get; set; } = new List<AwayDay>();
+
     }
 }

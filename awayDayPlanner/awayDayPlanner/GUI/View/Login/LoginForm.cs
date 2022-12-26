@@ -25,6 +25,11 @@ namespace awayDayPlanner.GUI
             private get; set; 
         }
 
+        public void Message(string message)
+        {
+            MessageBox.Show(message);
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Presenter.Register();
@@ -38,6 +43,12 @@ namespace awayDayPlanner.GUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Presenter.Submit();
+        }
+
+        public void Reset()
+        {
+            this.txtUsername.Text = "";
+            this.txtPassword.Text = "";
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using awayDayPlanner.GUI.Model;
+using awayDayPlanner.Lib.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,18 @@ namespace awayDayPlanner.GUI
 
         public void Submit()
         {
-            _model.Submit(_view.Username, _view.Password);
+            var user = _model.Submit(_view.Username, _view.Password);
+
+            if (user is null)
+                _view.Message("Invalid login details");
+            else
+            {
+
+
+                FormProvider.ControlPanelForm.user = user;
+                FormProvider.ControlPanelForm.Show();
+                FormProvider.LoginForm.Hide();
+            }
         }
     }
 }
