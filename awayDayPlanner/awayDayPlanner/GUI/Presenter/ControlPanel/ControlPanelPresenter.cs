@@ -28,10 +28,10 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 
 
             //BELOW IS NOT STAYING HERE
-            var query = from users in Database.Database.Data.User
-                        where (users.userID == 1)
-                        select users;
-            user = query.First();
+            //var query = from users in Database.Database.Data.User
+            //            where (users.userID == 1)
+            //            select users;
+            //user = query.First();
         }
 
         public void newAwayDay()
