@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,6 @@ namespace awayDayPlanner.GUI.Model
 
         void Close();
 
-        void Submit(string username, string password);
+        User Submit(string username, string password);
     }
 }
