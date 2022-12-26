@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace awayDayPlanner.Lib.Factory
+namespace awayDayPlanner.Source.Factory
 {
-    internal interface IFactory
+    internal interface ILogin
     {
-        void createUser();
 
     }
 }
-

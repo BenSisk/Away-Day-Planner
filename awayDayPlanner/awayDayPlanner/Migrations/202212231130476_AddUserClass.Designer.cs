@@ -7,13 +7,13 @@ namespace awayDayPlanner.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddUerClass : IMigrationMetadata
+    public sealed partial class AddUserClass : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUerClass));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUserClass));
         
         string IMigrationMetadata.Id
         {
-            get { return "202212201034019_AddUerClass"; }
+            get { return "202212231130476_AddUserClass"; }
         }
         
         string IMigrationMetadata.Source

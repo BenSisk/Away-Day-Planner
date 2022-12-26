@@ -1,4 +1,5 @@
 ﻿namespace awayDayPlanner.GUI.View.ControlPanel
+
 {
     partial class ControlPanelForm
     {
@@ -82,5 +83,14 @@
         private System.Windows.Forms.Button btnNewEvent;
         private System.Windows.Forms.Button btnExistingEvents;
         private System.Windows.Forms.Button btnLogout;
+
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "ControlPanel";
+        }
+
+        #endregion
+
     }
 }

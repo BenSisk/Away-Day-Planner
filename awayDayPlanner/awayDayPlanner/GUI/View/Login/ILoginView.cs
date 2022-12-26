@@ -8,8 +8,8 @@ namespace awayDayPlanner.GUI
 {
     public interface ILoginView
     {
-        string userName { get;}
-        string password { get;}
+        string Username { get;}
+        string Password { get;}
 
         LoginPresenter Presenter { set; }
     }

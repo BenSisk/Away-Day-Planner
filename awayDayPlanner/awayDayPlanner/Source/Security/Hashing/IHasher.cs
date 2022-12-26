@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace awayDayPlanner.Lib.Factory
+namespace awayDayPlanner.Source.Security
 {
-    internal interface IFactory
+    internal interface IHasher
     {
-        void createUser();
-
+        byte[] Hash(byte[] data);
     }
 }
-

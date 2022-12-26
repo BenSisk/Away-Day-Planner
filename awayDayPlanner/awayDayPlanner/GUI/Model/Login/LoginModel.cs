@@ -1,5 +1,7 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using System;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace awayDayPlanner.GUI.Model
 {
@@ -15,7 +17,7 @@ namespace awayDayPlanner.GUI.Model
             throw new NotImplementedException();
         }
 
-        public void deshashPassword()
+        public void hashPassword()
         {
             throw new NotImplementedException();
         }
@@ -36,17 +38,23 @@ namespace awayDayPlanner.GUI.Model
             FormProvider.LoginForm.Close();
         }
 
-        public void Submit()
+        public string userSalt(string username)
         {
-            var query = from b in Database.Database.Data.User
-                        orderby b.firstname
-                        select b;
+            var query = Database.Database.Data.Login.Where(x => x.Username == username)
+                .Select(x=>x.Salt).Distinct();
 
-            Console.WriteLine("All users in the database:");
             foreach (var item in query)
             {
-                Console.WriteLine(item.firstname);
+                return item;
             }
+
+            return null;
+        }
+
+        public void Submit(string username, string password)
+        {
+            string salt = userSalt(username);
+            Console.WriteLine("user salt is " + salt);
         }
 
         public void verifyCredentials()

@@ -1,21 +1,17 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Factory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 // object factory used for creating user objects
 namespace awayDayPlanner.Lib.Factory
 {
-    internal class Register : IFactory
+    public class Register : IFactory, IRegister
     {
         private static Register instance = null;
         private static readonly object padlock = new object();
-
-        Register()
-        {
-
-        }
 
         public static Register getInstance
         {
@@ -32,16 +28,6 @@ namespace awayDayPlanner.Lib.Factory
             }
         }
 
-        public void getCredentials()
-        {
-
-        }
-
-        public void verifyCredentials()
-        {
-
-        }
-
         public void createUser()
         {
 
@@ -52,5 +38,16 @@ namespace awayDayPlanner.Lib.Factory
         {
 
         }
+
+        private void verifyEmail()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void verifyPhone()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

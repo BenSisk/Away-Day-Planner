@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,40 +36,42 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblConfirm = new System.Windows.Forms.Label();
             this.txtPassword2 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblFirstLine = new System.Windows.Forms.Label();
             this.txtFirstline = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblSecondLine = new System.Windows.Forms.Label();
             this.txtSecondline = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblPostcode = new System.Windows.Forms.Label();
             this.txtPostcode = new System.Windows.Forms.TextBox();
             this.Details = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDOB = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.tltPassword = new System.Windows.Forms.ToolTip(this.components);
+            this.tltPasswordError = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -171,22 +174,22 @@
             // flowLayoutPanel10
             // 
             this.flowLayoutPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel10.Controls.Add(this.label11);
+            this.flowLayoutPanel10.Controls.Add(this.lblConfirm);
             this.flowLayoutPanel10.Controls.Add(this.txtPassword2);
             this.flowLayoutPanel10.Location = new System.Drawing.Point(6, 104);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel10.TabIndex = 5;
             // 
-            // label11
+            // lblConfirm
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 6);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 21);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Confirm:    ";
+            this.lblConfirm.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblConfirm.AutoSize = true;
+            this.lblConfirm.Location = new System.Drawing.Point(3, 6);
+            this.lblConfirm.Name = "lblConfirm";
+            this.lblConfirm.Size = new System.Drawing.Size(91, 21);
+            this.lblConfirm.TabIndex = 2;
+            this.lblConfirm.Text = "Confirm:    ";
             // 
             // txtPassword2
             // 
@@ -199,22 +202,22 @@
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel7.Controls.Add(this.label8);
+            this.flowLayoutPanel7.Controls.Add(this.lblUsername);
             this.flowLayoutPanel7.Controls.Add(this.txtUsername);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(6, 26);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel7.TabIndex = 2;
             // 
-            // label8
+            // lblUsername
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 6);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 21);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Username:";
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(3, 6);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(92, 21);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "Username:";
             // 
             // txtUsername
             // 
@@ -226,22 +229,23 @@
             // flowLayoutPanel9
             // 
             this.flowLayoutPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel9.Controls.Add(this.label10);
+            this.flowLayoutPanel9.Controls.Add(this.lblPassword);
             this.flowLayoutPanel9.Controls.Add(this.txtPassword);
             this.flowLayoutPanel9.Location = new System.Drawing.Point(6, 65);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
             this.flowLayoutPanel9.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel9.TabIndex = 4;
             // 
-            // label10
+            // lblPassword
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 21);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Password: ";
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(3, 6);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(90, 21);
+            this.lblPassword.TabIndex = 2;
+            this.lblPassword.Text = "Password: ";
+            this.tltPassword.SetToolTip(this.lblPassword, "Password must be 5 Characters or Larger");
             // 
             // txtPassword
             // 
@@ -271,22 +275,22 @@
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel5.Controls.Add(this.label6);
+            this.flowLayoutPanel5.Controls.Add(this.lblFirstLine);
             this.flowLayoutPanel5.Controls.Add(this.txtFirstline);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(6, 26);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel5.TabIndex = 2;
             // 
-            // label6
+            // lblFirstLine
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 21);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "First Line:  ";
+            this.lblFirstLine.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFirstLine.AutoSize = true;
+            this.lblFirstLine.Location = new System.Drawing.Point(3, 6);
+            this.lblFirstLine.Name = "lblFirstLine";
+            this.lblFirstLine.Size = new System.Drawing.Size(85, 21);
+            this.lblFirstLine.TabIndex = 2;
+            this.lblFirstLine.Text = "First Line:  ";
             // 
             // txtFirstline
             // 
@@ -298,22 +302,22 @@
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel6.Controls.Add(this.label7);
+            this.flowLayoutPanel6.Controls.Add(this.lblSecondLine);
             this.flowLayoutPanel6.Controls.Add(this.txtSecondline);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(6, 65);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel6.TabIndex = 4;
             // 
-            // label7
+            // lblSecondLine
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Town:       ";
+            this.lblSecondLine.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSecondLine.AutoSize = true;
+            this.lblSecondLine.Location = new System.Drawing.Point(3, 6);
+            this.lblSecondLine.Name = "lblSecondLine";
+            this.lblSecondLine.Size = new System.Drawing.Size(84, 21);
+            this.lblSecondLine.TabIndex = 2;
+            this.lblSecondLine.Text = "Town:       ";
             // 
             // txtSecondline
             // 
@@ -325,22 +329,22 @@
             // flowLayoutPanel8
             // 
             this.flowLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel8.Controls.Add(this.label9);
+            this.flowLayoutPanel8.Controls.Add(this.lblPostcode);
             this.flowLayoutPanel8.Controls.Add(this.txtPostcode);
             this.flowLayoutPanel8.Location = new System.Drawing.Point(6, 104);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel8.TabIndex = 5;
             // 
-            // label9
+            // lblPostcode
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 21);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Postcode:";
+            this.lblPostcode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPostcode.AutoSize = true;
+            this.lblPostcode.Location = new System.Drawing.Point(3, 6);
+            this.lblPostcode.Name = "lblPostcode";
+            this.lblPostcode.Size = new System.Drawing.Size(87, 21);
+            this.lblPostcode.TabIndex = 2;
+            this.lblPostcode.Text = "Postcode:";
             // 
             // txtPostcode
             // 
@@ -372,22 +376,22 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.lblFirstName);
             this.flowLayoutPanel1.Controls.Add(this.txtFirstname);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 26);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // label1
+            // lblFirstName
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "First Name: ";
+            this.lblFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(3, 6);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(99, 21);
+            this.lblFirstName.TabIndex = 2;
+            this.lblFirstName.Text = "First Name: ";
             // 
             // txtFirstname
             // 
@@ -399,22 +403,22 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel2.Controls.Add(this.label3);
+            this.flowLayoutPanel2.Controls.Add(this.lblLastName);
             this.flowLayoutPanel2.Controls.Add(this.txtLastname);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 65);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
-            // label3
+            // lblLastName
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Last Name:";
+            this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(3, 6);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(97, 21);
+            this.lblLastName.TabIndex = 2;
+            this.lblLastName.Text = "Last Name:";
             // 
             // txtLastname
             // 
@@ -426,22 +430,22 @@
             // flowLayoutPanel11
             // 
             this.flowLayoutPanel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel11.Controls.Add(this.label12);
+            this.flowLayoutPanel11.Controls.Add(this.lblPhone);
             this.flowLayoutPanel11.Controls.Add(this.txtPhone);
             this.flowLayoutPanel11.Location = new System.Drawing.Point(6, 187);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
             this.flowLayoutPanel11.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel11.TabIndex = 6;
             // 
-            // label12
+            // lblPhone
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 21);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Phone:        ";
+            this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(3, 6);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(95, 21);
+            this.lblPhone.TabIndex = 2;
+            this.lblPhone.Text = "Phone:        ";
             // 
             // txtPhone
             // 
@@ -454,22 +458,22 @@
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel4.Controls.Add(this.label5);
+            this.flowLayoutPanel4.Controls.Add(this.lblDOB);
             this.flowLayoutPanel4.Controls.Add(this.dtpDOB);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(6, 143);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel4.TabIndex = 6;
             // 
-            // label5
+            // lblDOB
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 21);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "DOB             ";
+            this.lblDOB.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Location = new System.Drawing.Point(3, 6);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(97, 21);
+            this.lblDOB.TabIndex = 2;
+            this.lblDOB.Text = "DOB             ";
             // 
             // dtpDOB
             // 
@@ -481,22 +485,22 @@
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
-            this.flowLayoutPanel3.Controls.Add(this.label4);
+            this.flowLayoutPanel3.Controls.Add(this.lblEmail);
             this.flowLayoutPanel3.Controls.Add(this.txtEmail);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(6, 104);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(308, 33);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
-            // label4
+            // lblEmail
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Email:           ";
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(3, 6);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(99, 21);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email:           ";
             // 
             // txtEmail
             // 
@@ -505,6 +509,14 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 27);
             this.txtEmail.TabIndex = 3;
+            // 
+            // tltPassword
+            // 
+            this.tltPassword.IsBalloon = true;
+            // 
+            // tltPasswordError
+            // 
+            this.tltPasswordError.ForeColor = System.Drawing.Color.Red;
             // 
             // RegisterForm
             // 
@@ -559,40 +571,42 @@
         private System.Windows.Forms.GroupBox Details;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstname;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblFirstLine;
         private System.Windows.Forms.TextBox txtFirstline;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblSecondLine;
         private System.Windows.Forms.TextBox txtSecondline;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPostcode;
         private System.Windows.Forms.TextBox txtPostcode;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblConfirm;
         private System.Windows.Forms.TextBox txtPassword2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.ToolTip tltPassword;
+        private System.Windows.Forms.ToolTip tltPasswordError;
     }
 }

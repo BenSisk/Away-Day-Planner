@@ -22,9 +22,9 @@ namespace awayDayPlanner.Lib.Users
         [Required]
         public string email { get; set; }
         [Required]
-        public string dob { get; set; }
+        public DateTime dob { get; set; }
         [Required]
-        public string phone { get; set; }
+        public int phone { get; set; }
 
         [Required]
         public virtual Address Address { get; set; }

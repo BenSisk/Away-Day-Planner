@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace awayDayPlanner.Lib.Factory
+namespace awayDayPlanner.Source.Security.Salting
 {
-    internal interface IFactory
+    internal interface ISalt
     {
-        void createUser();
+        string GenerateSalt();
 
     }
 }
-

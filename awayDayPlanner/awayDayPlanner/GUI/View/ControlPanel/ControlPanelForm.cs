@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using awayDayPlanner.GUI.Presenter.ControlPanel;
 
 namespace awayDayPlanner.GUI.View.ControlPanel
 {
     public partial class ControlPanelForm : Form, IControlPanelForm
     {
-        private IControlPanelPresenter Presenter;
-
         public ControlPanelForm()
         {
             InitializeComponent();

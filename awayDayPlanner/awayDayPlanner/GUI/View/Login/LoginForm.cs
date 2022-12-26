@@ -17,15 +17,8 @@ namespace awayDayPlanner.GUI
             InitializeComponent();
         }
 
-        public string userName
-        {
-            get { return this.txtUsername.Text; }
-        }
-
-        public string password
-        {
-            get { return this.txtPassword.Text; }
-        }
+        public string Username { get { return this.txtUsername.Text; } }
+        public string Password { get { return this.txtPassword.Text; } }
 
         public LoginPresenter Presenter
         { 
