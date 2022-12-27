@@ -38,26 +38,26 @@
             this.buyerAddressLabel = new System.Windows.Forms.Label();
             this.buyerNameLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvActivityList = new System.Windows.Forms.DataGridView();
+            this.invoiceLabel = new System.Windows.Forms.Label();
             this.totalCost = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnCapture = new System.Windows.Forms.Button();
-            this.dgvActivityList = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.Details.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivityList)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +123,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.dgvActivityList);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.invoiceLabel);
             this.panel2.Controls.Add(this.totalCost);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.label12);
@@ -135,6 +135,63 @@
             this.panel2.Size = new System.Drawing.Size(800, 657);
             this.panel2.TabIndex = 3;
             // 
+            // dgvActivityList
+            // 
+            this.dgvActivityList.AllowUserToAddRows = false;
+            this.dgvActivityList.AllowUserToDeleteRows = false;
+            this.dgvActivityList.AllowUserToResizeColumns = false;
+            this.dgvActivityList.AllowUserToResizeRows = false;
+            this.dgvActivityList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvActivityList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvActivityList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivityList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvActivityList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivityList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvActivityList.EnableHeadersVisualStyles = false;
+            this.dgvActivityList.GridColor = System.Drawing.Color.White;
+            this.dgvActivityList.Location = new System.Drawing.Point(59, 267);
+            this.dgvActivityList.MultiSelect = false;
+            this.dgvActivityList.Name = "dgvActivityList";
+            this.dgvActivityList.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivityList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvActivityList.RowHeadersVisible = false;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvActivityList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvActivityList.RowTemplate.ReadOnly = true;
+            this.dgvActivityList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivityList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvActivityList.Size = new System.Drawing.Size(676, 337);
+            this.dgvActivityList.TabIndex = 0;
+            // 
+            // invoiceLabel
+            // 
+            this.invoiceLabel.AutoSize = true;
+            this.invoiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceLabel.Location = new System.Drawing.Point(59, 11);
+            this.invoiceLabel.Name = "invoiceLabel";
+            this.invoiceLabel.Size = new System.Drawing.Size(144, 36);
+            this.invoiceLabel.TabIndex = 19;
+            this.invoiceLabel.Text = "INVOICE";
+            // 
             // totalCost
             // 
             this.totalCost.AutoSize = true;
@@ -145,16 +202,6 @@
             this.totalCost.TabIndex = 20;
             this.totalCost.Text = "£??.??";
             this.totalCost.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 36);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "INVOICE";
             // 
             // groupBox1
             // 
@@ -176,6 +223,42 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill From:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 125);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 21);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "KV5 3FU";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 21);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Altis,";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 21);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Aggelochori,";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(154, 21);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "24 Sandy Beaches,";
             // 
             // label6
             // 
@@ -229,53 +312,6 @@
             this.btnCapture.UseVisualStyleBackColor = false;
             this.btnCapture.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // dgvActivityList
-            // 
-            this.dgvActivityList.AllowUserToAddRows = false;
-            this.dgvActivityList.AllowUserToDeleteRows = false;
-            this.dgvActivityList.AllowUserToResizeColumns = false;
-            this.dgvActivityList.AllowUserToResizeRows = false;
-            this.dgvActivityList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvActivityList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvActivityList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivityList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvActivityList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActivityList.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvActivityList.EnableHeadersVisualStyles = false;
-            this.dgvActivityList.GridColor = System.Drawing.Color.White;
-            this.dgvActivityList.Location = new System.Drawing.Point(59, 267);
-            this.dgvActivityList.MultiSelect = false;
-            this.dgvActivityList.Name = "dgvActivityList";
-            this.dgvActivityList.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivityList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvActivityList.RowHeadersVisible = false;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivityList.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvActivityList.RowTemplate.ReadOnly = true;
-            this.dgvActivityList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActivityList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvActivityList.Size = new System.Drawing.Size(676, 337);
-            this.dgvActivityList.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(148)))), ((int)(((byte)(3)))));
@@ -313,42 +349,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ADP Billing Form";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 21);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "24 Sandy Beaches,";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 21);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Aggelochori,";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 21);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Altis,";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 125);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 21);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "KV5 3FU";
-            // 
             // BillingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,9 +366,9 @@
             this.Details.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActivityList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvActivityList)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label totalCost;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label invoiceLabel;
         private System.Windows.Forms.DataGridView dgvActivityList;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;

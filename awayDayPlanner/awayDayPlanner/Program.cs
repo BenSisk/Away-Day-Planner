@@ -29,7 +29,7 @@ namespace awayDayPlanner
                         Database.Database.Data.SaveChanges();
             */
 
-            Application.Run(FormProvider.BillingForm);
+             Application.Run(FormProvider.BillingForm);
             // Application.Run(FormProvider.LoginForm);
             // Application.Run(FormProvider.ControlPanelForm);
             // Application.Run(FormProvider.AdminForm);

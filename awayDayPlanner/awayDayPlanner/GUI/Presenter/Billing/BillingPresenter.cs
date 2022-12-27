@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace awayDayPlanner.GUI
 {
     public class BillingPresenter
@@ -36,7 +37,9 @@ namespace awayDayPlanner.GUI
 
         public void BillingLoad (AwayDay awayDay)
         {
-           // _view.Confirmed = awayDay.Confirmed; //this is tomorrows job //look in billingpresenter
+            if (awayDay.Confirmed) _view.billingLabel.Text = "Final Invoice";
+            else _view.billingLabel.Text = "Estimate Invoice";
+
             _view.BuyerName.Text = awayDay.User.firstname + " " + awayDay.User.lastname;
             _view.BuyerAddress.Text = awayDay.User.Address.FirstLine + ", " + awayDay.User.Address.SecondLine 
                 + ", " + awayDay.User.Address.PostCode;

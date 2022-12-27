@@ -81,6 +81,12 @@ namespace awayDayPlanner.GUI.View.Billing
             set { this.dgvActivityList = value; }
         }
 
+        public System.Windows.Forms.Label billingLabel
+        {
+            get { return this.invoiceLabel; }
+            set { this.invoiceLabel = value; }
+        }
+
         public void btnRegister_Click(object sender, EventArgs e)
         {
             Presenter.Submit();

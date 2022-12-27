@@ -19,7 +19,7 @@ namespace awayDayPlanner.GUI.Billing
         System.Windows.Forms.Button buttonCapture { get; set; }
         System.Windows.Forms.Label Title { get; set; }
         System.Windows.Forms.Panel TopPanel { get ; set; }
-
+        System.Windows.Forms.Label billingLabel { get; set; }
         System.Windows.Forms.DataGridView addItemToDGV { get; set; }
 
 

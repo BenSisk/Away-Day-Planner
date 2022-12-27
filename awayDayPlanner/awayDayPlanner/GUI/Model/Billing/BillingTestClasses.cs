@@ -73,21 +73,4 @@ namespace awayDayPlanner.GUI.Model.Billing
         public string PostCode = "PostCode";
     }
 
-    // awayday.User.Address.FirstLine
-    // awayday.AwayDayActivities.first().ActivityType.ActivityTypeName
-
-    // AwayDayActivities is a list, use a for loop to iterate over
-    //  //fornoneconfirmed
-    //  foreach(var Activity in awayday.AwayDayActivities)
-    //  {
-    //      
-    //      view.addItemToDGV(Activity.Name, Activity.EstimatedCost)
-    //  }
-
-    //  //forconfirmed
-    //  foreach(var Activity in awayday.AwayDayActivities)
-    //  {
-    //      
-    //      view.addItemToDGV(Activity.Name, Activity.ActualCost)
-    //  }
 }
