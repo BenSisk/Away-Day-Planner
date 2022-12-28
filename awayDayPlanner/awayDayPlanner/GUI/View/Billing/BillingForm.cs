@@ -89,7 +89,7 @@ namespace awayDayPlanner.GUI.View.Billing
 
         public void btnRegister_Click(object sender, EventArgs e)
         {
-            Presenter.Submit();
+            Presenter.Submit(this.AwayDay);
         }
 
         private void BillingForm_Load(object sender, EventArgs e)

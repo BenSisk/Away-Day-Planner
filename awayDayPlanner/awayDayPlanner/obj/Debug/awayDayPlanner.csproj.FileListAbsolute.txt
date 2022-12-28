@@ -82,3 +82,9 @@ D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\D
 D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.exe
 D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.pdb
 D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.Billing.BillingForm.resources
+D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\PdfSharp.Charting.dll
+D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\PdfSharp.dll
+D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\PdfSharp.xml
+D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\PdfSharp.Charting.xml
+D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\de\PdfSharp.resources.dll
+D:\Home\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\de\PdfSharp.Charting.resources.dll

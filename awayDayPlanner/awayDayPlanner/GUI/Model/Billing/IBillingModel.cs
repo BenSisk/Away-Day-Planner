@@ -10,6 +10,9 @@ namespace awayDayPlanner.GUI.Model.Billing
     {
         void Submit(AwayDay awayDay);
 
-      
+        void SaveImageAsPdf(string imageFileName, string pdfFileName, int width = 600, bool deleteImage = false);
+
+
+
     }
 }

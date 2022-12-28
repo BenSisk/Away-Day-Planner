@@ -308,7 +308,7 @@
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(148, 35);
             this.btnCapture.TabIndex = 12;
-            this.btnCapture.Text = "Delete Me Please";
+            this.btnCapture.Text = "Print To PDF";
             this.btnCapture.UseVisualStyleBackColor = false;
             this.btnCapture.Click += new System.EventHandler(this.btnRegister_Click);
             // 

@@ -22,7 +22,7 @@ namespace awayDayPlanner.GUI
             _model = model;
         }
 
-        public void Submit ()
+        public void Submit (AwayDay awayDay)
         {
             _view.buttonClose.Hide();
             _view.buttonCapture.Hide();
@@ -33,6 +33,9 @@ namespace awayDayPlanner.GUI
             _view.buttonCapture.Show();
             _view.Title.Show();
             _view.TopPanel.BackColor = System.Drawing.ColorTranslator.FromHtml("#fc9403");
+            var datetime = DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss");
+            var filename = awayDay.User.firstname + " " + awayDay.User.lastname + " " + datetime;
+            _model.SaveImageAsPdf(@"c:\temp\screenshot.png", @"c:\temp\" + filename + ".pdf");
         }
 
         public void BillingLoad (AwayDay awayDay)

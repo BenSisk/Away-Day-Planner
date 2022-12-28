@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 
 namespace awayDayPlanner.GUI.Model.Billing
 {
@@ -37,6 +40,31 @@ namespace awayDayPlanner.GUI.Model.Billing
                 bmp.Save(@"c:\temp\screenshot.png");
             }
         }
-     
+
+        public void SaveImageAsPdf(string imageFileName, string pdfFileName, int width = 600, bool deleteImage = false)
+        {
+            using (var document = new PdfDocument())
+            {
+                PdfPage page = document.AddPage();
+                using (XImage img = XImage.FromFile(imageFileName))
+                {
+                    var height = (int)(((double)width / (double)img.PixelWidth) * img.PixelHeight);
+
+                    page.Width = width;
+                    page.Height = height;
+
+                    XGraphics gfx = XGraphics.FromPdfPage(page);
+                    gfx.DrawImage(img, 0, 0, width, height);
+                }
+                document.Save(pdfFileName);
+            }
+
+            if (deleteImage)
+                File.Delete(imageFileName);
+        }
+
+
+
+
     }
 }
