@@ -61,6 +61,16 @@
   <ItemGroup>
     <Compile Include="ActivityTesting\ActivityMoc.cs" />
     <Compile Include="ActivityTesting\ActivityTesting.cs" />
+    <Compile Include="AdminTesting\AdminFormMoc.cs" />
+    <Compile Include="AdminTesting\AdminModelMoc.cs" />
+    <Compile Include="AdminTesting\AdminPresenterMoc.cs" />
+    <Compile Include="AdminTesting\AdminReviewFormMoc.cs" />
+    <Compile Include="AdminTesting\AdminReviewTesting.cs" />
+    <Compile Include="AdminTesting\AdminTesting.cs" />
+    <Compile Include="AwayDayTesting\AwayDayModelMoc.cs" />
+    <Compile Include="AwayDayTesting\AwayDayFormMoc.cs" />
+    <Compile Include="AwayDayTesting\AwayDayPresenterMoc.cs" />
+    <Compile Include="AwayDayTesting\AwayDayTesting.cs" />
     <Compile Include="Booking\AddNewItemMoc.cs" />
     <Compile Include="Booking\BookingFormMoc.cs" />
     <Compile Include="Booking\BookingModelMoc.cs" />

@@ -11,21 +11,21 @@ using awayDayPlanner.GUI.Presenter.ControlPanel;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
-    public partial class bookingModel : IbookingModel
+    public partial class BookingModel : IBookingModel
     {
-        private IbookingPresenter presenter;
+        private IBookingPresenter presenter;
 
-        public bookingModel()
+        public BookingModel()
         {
 
         }
 
-        public void register(IbookingPresenter presenter)
+        public void Register(IBookingPresenter presenter)
         {
             this.presenter = presenter;
         }
 
-        public int submit(List<IActivity> activities, DateTime date)
+        public int Submit(List<IActivity> activities, DateTime date)
         {
             if (activities.Count > 0)
             {

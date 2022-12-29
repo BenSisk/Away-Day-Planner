@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace UnitTesting.Booking
 {
-    class AddNewItemMoc : IaddNewItem
+    class AddNewItemMoc : IAddNewItem
     {
         public string custom;
         public string notes;

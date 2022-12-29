@@ -10,24 +10,24 @@ using System.Windows.Forms;
 
 namespace UnitTesting.Booking
 {
-    public class BookingPresenterMoc : IbookingPresenter
+    public class BookingPresenterMoc : IBookingPresenter
     {
-        public IbookingModel model;
+        public IBookingModel model;
         public int submitSuccess;
         public List<IActivity> activities;
         public DateTime date;
 
-        public void submit()
+        public void Submit()
         {
 
         }
 
-        public void addActivity()
+        public void AddActivity()
         {
 
         }
 
-        public void deleteRows(DataGridViewSelectedRowCollection rows)
+        public void DeleteRows(DataGridViewSelectedRowCollection rows)
         {
 
         }
@@ -37,9 +37,9 @@ namespace UnitTesting.Booking
 
         }
 
-        public void callModel()
+        public void CallModel()
         {
-            model.submit(activities, date);
+            model.Submit(activities, date);
         }
     }
 }

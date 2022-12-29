@@ -62,7 +62,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
             }
         }
 
-        public void addItemToDGV(DateTime date, int count, string status, double cost)
+        public void AddItemToDGV(DateTime date, int count, string status, double cost)
         {
             this.dgvAwayDays.Rows.Add(date, count, status, cost);
         }
@@ -87,7 +87,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
             return form.ShowDialog(this);
         }
 
-        public void message(string message, string title)
+        public void Message(string message, string title)
         {
             MessageBox.Show(message, title);
         }

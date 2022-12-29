@@ -10,9 +10,9 @@ namespace awayDayPlanner.GUI.Model.Admin
 {
     public class AdminModel : IAdminModel
     {
-        IAdminPresenter presenter;
+        private IAdminPresenter presenter;
 
-        public void register(IAdminPresenter presenter)
+        public void Register(IAdminPresenter presenter)
         {
             this.presenter = presenter;
         }

@@ -12,9 +12,9 @@ namespace awayDayPlanner.GUI.View.AwayDays
     {
         void register(IAwayDayPresenter presenter);
         void Reset();
-        void addItemToDGV(DateTime date, int count, string status, double cost);
+        void AddItemToDGV(DateTime date, int count, string status, double cost);
         DataGridViewRow GetSelected();
         DialogResult displayFormAsDialog(Form form);
-        void message(string message, string title);
+        void Message(string message, string title);
     }
 }

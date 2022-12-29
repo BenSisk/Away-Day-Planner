@@ -12,14 +12,14 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
 {
     public class AwayDayPresenter : IAwayDayPresenter
     {
-        IAwayDayForm view;
-        IAwayDayModel model;
-        List<AwayDay> data;
+        private IAwayDayForm view;
+        private IAwayDayModel model;
+        private List<AwayDay> data;
         
-        public AwayDayPresenter()
+        public AwayDayPresenter(IAwayDayForm view, IAwayDayModel model)
         {
-            this.view = FormProvider.AwayDayForm;
-            this.model = FormProvider.AwayDayModel;
+            this.view = view;
+            this.model = model;
 
             view.register(this);
             model.register(this);
@@ -43,13 +43,13 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
                 }
                 else if (awayday.CanBeConfirmed)
                 {
-                    status = "Confirmable";
+                    status = "Ready For Confirmation";
                 }
                 else
                 {
                     status = "Under Review";
                 }
-                view.addItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), status, awayday.TotalCost);
+                view.AddItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), status, awayday.TotalCost);
             }
         }
 
@@ -67,7 +67,7 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
             }
             else
             {
-                view.message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
+                view.Message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
             }
         }
     }

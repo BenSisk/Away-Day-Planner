@@ -28,7 +28,7 @@ namespace UnitTesting.Booking
             AddNewItemMoc newitem = new AddNewItemMoc();
             ActivityMoc activity = new ActivityMoc();
 
-            bookingPresenter presenter = new bookingPresenter(view, model, newitem);
+            BookingPresenter presenter = new BookingPresenter(view, model, newitem);
 
             ActivityType Type = new ActivityType("Hello World", 50);
 
@@ -39,7 +39,7 @@ namespace UnitTesting.Booking
 
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity);
 
-            presenter.addActivity();
+            presenter.AddActivity();
 
             Console.WriteLine(view.names);
 
@@ -60,7 +60,7 @@ namespace UnitTesting.Booking
             AddNewItemMoc newitem = new AddNewItemMoc();
             ActivityMoc activity = new ActivityMoc();
 
-            bookingPresenter presenter = new bookingPresenter(view, model, newitem);
+            BookingPresenter presenter = new BookingPresenter(view, model, newitem);
 
             ActivityType Type = new ActivityType("Hello World", 50);
 
@@ -71,9 +71,9 @@ namespace UnitTesting.Booking
 
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity);
 
-            presenter.addActivity();
-            presenter.addActivity();
-            presenter.addActivity();
+            presenter.AddActivity();
+            presenter.AddActivity();
+            presenter.AddActivity();
 
             CollectionAssert.AreEqual(new List<string> { "name", "name", "name" }, view.names);
             CollectionAssert.AreEqual(new List<string> { "notes", "notes", "notes" }, view.notes);
@@ -91,7 +91,7 @@ namespace UnitTesting.Booking
             AddNewItemMoc newitem = new AddNewItemMoc();
             ActivityMoc activity = new ActivityMoc();
 
-            bookingPresenter presenter = new bookingPresenter(view, model, newitem);
+            BookingPresenter presenter = new BookingPresenter(view, model, newitem);
 
             ActivityType Type = new ActivityType("Hello World", 50);
 
@@ -106,13 +106,13 @@ namespace UnitTesting.Booking
 
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity);
 
-            presenter.addActivity();
-            presenter.addActivity();
-            presenter.addActivity();
+            presenter.AddActivity();
+            presenter.AddActivity();
+            presenter.AddActivity();
 
 
-            presenter.submit();
-            Assert.AreEqual(view.Message, "Something went wrong.");
+            presenter.Submit();
+            Assert.AreEqual(view.message_txt, "Something went wrong.");
             Assert.AreEqual(3, model.mocActivities.Count);
             Assert.AreEqual(Type, model.mocActivities.First().Type);
 
@@ -132,7 +132,7 @@ namespace UnitTesting.Booking
             ActivityMoc activity = new ActivityMoc();
 
             BookingPresenterMoc presenter = new BookingPresenterMoc();
-            bookingModel model = new bookingModel();
+            BookingModel model = new BookingModel();
 
             ActivityType Type = new ActivityType("Custom", 50);
 
@@ -140,7 +140,7 @@ namespace UnitTesting.Booking
             activity.Name = "name";
             activity.Notes = "notes";
 
-            int output = model.submit(new List<IActivity> { activity }, DateTime.Now);
+            int output = model.Submit(new List<IActivity> { activity }, DateTime.Now);
 
             Assert.AreEqual(0, output);
         }
@@ -153,7 +153,7 @@ namespace UnitTesting.Booking
             ActivityMoc activity = new ActivityMoc();
 
             BookingPresenterMoc presenter = new BookingPresenterMoc();
-            bookingModel model = new bookingModel();
+            BookingModel model = new BookingModel();
 
             ActivityType Type = new ActivityType("Custom", 50);
 
@@ -161,7 +161,7 @@ namespace UnitTesting.Booking
             activity.Name = "name";
             activity.Notes = "notes";
 
-            int output = model.submit(new List<IActivity> { activity, activity, activity }, DateTime.Now);
+            int output = model.Submit(new List<IActivity> { activity, activity, activity }, DateTime.Now);
 
             Assert.AreEqual(0, output);
         }
@@ -169,25 +169,25 @@ namespace UnitTesting.Booking
         [TestMethod]
         public void TestMethod6()
         {
-            bookingForm view = FormProvider.bookingForm;
+            BookingForm view = FormProvider.BookingForm;
 
-            Assert.AreSame(view, FormProvider.bookingForm);
+            Assert.AreSame(view, FormProvider.BookingForm);
         }
 
         [TestMethod]
         public void TestMethod7()
         {
-            bookingPresenter presenter = FormProvider.bookingPresenter;
+            BookingPresenter presenter = FormProvider.BookingPresenter;
 
-            Assert.AreSame(presenter, FormProvider.bookingPresenter);
+            Assert.AreSame(presenter, FormProvider.BookingPresenter);
         }
 
         [TestMethod]
         public void TestMethod8()
         {
-            bookingModel model = FormProvider.bookingModel;
+            BookingModel model = FormProvider.BookingModel;
 
-            Assert.AreSame(model, FormProvider.bookingModel);
+            Assert.AreSame(model, FormProvider.BookingModel);
         }
     }
 }

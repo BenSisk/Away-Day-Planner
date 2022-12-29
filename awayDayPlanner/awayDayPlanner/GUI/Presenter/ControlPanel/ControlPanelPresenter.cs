@@ -17,12 +17,12 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
     {
         public User user;
 
-        private IControlPanelForm view;
+        readonly private IControlPanelForm view;
         public List<ActivityType> list;
 
-        public ControlPanelPresenter()
+        public ControlPanelPresenter(IControlPanelForm view)
         {
-            this.view = FormProvider.ControlPanelForm;
+            this.view = view;
             view.register(this);
             LoadActivitiesFromDB();
 
@@ -34,13 +34,13 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             user = query.First();
         }
 
-        public void newAwayDay()
+        public void NewAwayDay()
         {
-            FormProvider.bookingForm.Show();
+            FormProvider.BookingForm.Show();
             FormProvider.ControlPanelForm.Hide();
         }
 
-        public void viewExistingAwayDays()
+        public void ViewExistingAwayDays()
         {
             FormProvider.AwayDayForm.Reset();
             FormProvider.AwayDayForm.Show();

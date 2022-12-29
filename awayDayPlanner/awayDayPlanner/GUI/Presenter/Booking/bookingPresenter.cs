@@ -13,38 +13,38 @@ using awayDayPlanner.GUI.View.NewItem;
 
 namespace awayDayPlanner.GUI.Presenter.Booking
 {
-    public partial class bookingPresenter : IbookingPresenter
+    public partial class BookingPresenter : IBookingPresenter
     {
-        private IbookingModel model;
-        private IbookingForm view;
-        private IaddNewItem newItemForm;
+        private IBookingModel model;
+        private IBookingForm view;
+        private IAddNewItem newItemForm;
         private List<IActivity> activities = new List<IActivity>();
 
-        public bookingPresenter(IbookingForm view, IbookingModel model, IaddNewItem newItemForm)
+        public BookingPresenter(IBookingForm view, IBookingModel model, IAddNewItem newItemForm)
         {
             this.view = view;
             this.model = model;
             this.newItemForm = newItemForm;
-            view.register(this);
-            model.register(this);
+            view.Register(this);
+            model.Register(this);
         }
 
-        public void submit()
+        public void Submit()
         {
-            if (model.submit(this.activities, view.getDate()) == 0)
+            if (model.Submit(this.activities, view.GetDate()) == 0)
             {
-                view.message("Application Submitted Successfully");
+                view.Message("Application Submitted Successfully");
                 this.Close();
             }
             else
             {
-                view.message("Something went wrong.");
+                view.Message("Something went wrong.");
             }
         }
 
-        public void addActivity()
+        public void AddActivity()
         {
-            if (view.displayFormAsDialog(newItemForm) == DialogResult.OK)
+            if (view.DisplayFormAsDialog(newItemForm) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
                 var activity = newItemForm.getActivityType();
@@ -57,22 +57,22 @@ namespace awayDayPlanner.GUI.Presenter.Booking
                 activityInstance.Notes = notes;
 
                 activities.Add(activityInstance);
-                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
+                view.AddItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
             }
         }
 
-        public void deleteRows(DataGridViewSelectedRowCollection rows)
+        public void DeleteRows(DataGridViewSelectedRowCollection rows)
         {
             foreach (DataGridViewRow row in rows)
             {
                 this.activities.RemoveAt(row.Index);
-                view.deleteRow(row);
+                view.DeleteRow(row);
             }
         }
 
         public void Close()
         {
-            FormProvider.bookingForm.Hide();
+            FormProvider.BookingForm.Hide();
             FormProvider.ControlPanelForm.Show();
             activities.Clear();
             view.Reset();

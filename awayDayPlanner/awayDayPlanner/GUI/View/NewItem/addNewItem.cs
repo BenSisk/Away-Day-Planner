@@ -13,9 +13,9 @@ using awayDayPlanner.Source.Activities;
 
 namespace awayDayPlanner.GUI.View.NewItem
 {
-    public partial class addNewItem : Form, IaddNewItem
+    public partial class AddNewItem : Form, IAddNewItem
     {
-        public addNewItem()
+        public AddNewItem()
         {
             InitializeComponent();
             populateComboBox();

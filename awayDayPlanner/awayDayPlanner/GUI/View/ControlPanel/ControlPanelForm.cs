@@ -27,12 +27,12 @@ namespace awayDayPlanner.GUI.View.ControlPanel
 
         private void btnNewEvent_Click(object sender, EventArgs e)
         {
-            Presenter.newAwayDay();
+            Presenter.NewAwayDay();
         }
 
         private void btnExistingEvents_Click(object sender, EventArgs e)
         {
-            Presenter.viewExistingAwayDays();
+            Presenter.ViewExistingAwayDays();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -71,17 +71,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\View\NewItem\addNewItem.cs">
+    <Compile Include="GUI\View\NewItem\AddNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\View\NewItem\addNewItem.Designer.cs">
-      <DependentUpon>addNewItem.cs</DependentUpon>
+    <Compile Include="GUI\View\NewItem\AddNewItem.Designer.cs">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\View\NewItem\IaddNewItem.cs" />
+    <Compile Include="GUI\View\NewItem\IAddNewItem.cs" />
     <Compile Include="GUI\Model\Admin\AdminModel.cs" />
-    <Compile Include="GUI\Model\Admin\AdminReviewModel.cs" />
     <Compile Include="GUI\Model\Admin\IAdminModel.cs" />
-    <Compile Include="GUI\Model\Admin\IAdminReviewModel.cs" />
     <Compile Include="GUI\Model\AwayDays\AwayDayModel.cs" />
     <Compile Include="GUI\Model\AwayDays\IAwayDayModel.cs" />
     <Compile Include="GUI\Presenter\Admin\AdminPresenter.cs" />
@@ -119,17 +117,17 @@
       <DependentUpon>AwayDayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\View\AwayDays\IAwayDayForm.cs" />
-    <Compile Include="GUI\View\Booking\bookingForm.cs">
+    <Compile Include="GUI\View\Booking\BookingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\View\Booking\bookingForm.Designer.cs">
-      <DependentUpon>bookingForm.cs</DependentUpon>
+    <Compile Include="GUI\View\Booking\BookingForm.Designer.cs">
+      <DependentUpon>BookingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Model\Booking\bookingModel.cs" />
-    <Compile Include="GUI\Presenter\Booking\bookingPresenter.cs" />
-    <Compile Include="GUI\View\Booking\IbookingForm.cs" />
-    <Compile Include="GUI\Model\Booking\IbookingModel.cs" />
-    <Compile Include="GUI\Presenter\Booking\IbookingPresenter.cs" />
+    <Compile Include="GUI\Model\Booking\BookingModel.cs" />
+    <Compile Include="GUI\Presenter\Booking\BookingPresenter.cs" />
+    <Compile Include="GUI\View\Booking\IBookingForm.cs" />
+    <Compile Include="GUI\Model\Booking\IBookingModel.cs" />
+    <Compile Include="GUI\Presenter\Booking\IBookingPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="GUI\Model\ILoginModel.cs" />
@@ -174,8 +172,8 @@
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\View\NewItem\addNewItem.resx">
-      <DependentUpon>addNewItem.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\View\NewItem\AddNewItem.resx">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
@@ -189,8 +187,8 @@
     <EmbeddedResource Include="GUI\View\AwayDays\AwayDayForm.resx">
       <DependentUpon>AwayDayForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\View\Booking\bookingForm.resx">
-      <DependentUpon>bookingForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\View\Booking\BookingForm.resx">
+      <DependentUpon>BookingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\ControlPanel\ControlPanelForm.resx">
       <DependentUpon>ControlPanelForm.cs</DependentUpon>

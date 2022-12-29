@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI.View.NewItem
 {
-    public interface IaddNewItem
+    public interface IAddNewItem
     {
         ActivityType getActivityType();
         string getCustomRequest();

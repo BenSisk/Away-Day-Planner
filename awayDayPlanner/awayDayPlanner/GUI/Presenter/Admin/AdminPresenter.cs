@@ -13,23 +13,23 @@ namespace awayDayPlanner.GUI.Presenter.Admin
 {
     public class AdminPresenter : IAdminPresenter
     {
-        IAdminForm view;
-        IAdminModel model;
+        private IAdminForm view;
+        private IAdminModel model;
         List<AwayDay> data;
 
-        public AdminPresenter()
+        public AdminPresenter(IAdminForm view, IAdminModel model)
         {
-            this.view = FormProvider.AdminForm;
-            this.model = FormProvider.AdminModel;
-            view.register(this);
-            model.register(this);
+            this.view = view;
+            this.model = model;
+            view.Register(this);
+            model.Register(this);
             view.Reset();
         }
 
         public void OpenSelected()
         {
             FormProvider.AdminReviewForm.Reset();
-            view.displayFormAsDialog(FormProvider.AdminReviewForm);
+            view.DisplayFormAsDialog(FormProvider.AdminReviewForm);
         }
 
         public void PopulateDataGrid()
@@ -37,11 +37,11 @@ namespace awayDayPlanner.GUI.Presenter.Admin
             data = model.GetData();
             foreach (var item in data)
             {
-                view.addItemToDGV(item.AwayDayDate, item.AwayDayActivities.Count(), sum(item));
+                view.AddItemToDGV(item.AwayDayDate, item.AwayDayActivities.Count(), Sum(item));
             }
         }
 
-        private double sum(AwayDay awayday)
+        private double Sum(AwayDay awayday)
         {
             double total = 0;
             foreach (var item in awayday.AwayDayActivities)
@@ -51,7 +51,7 @@ namespace awayDayPlanner.GUI.Presenter.Admin
             return total;
         }
 
-        public AwayDay getAwayDay()
+        public AwayDay GetAwayDay()
         {
             return data.ElementAt(view.GetSelected().Index);
         }

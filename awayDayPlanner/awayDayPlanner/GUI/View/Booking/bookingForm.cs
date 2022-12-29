@@ -14,11 +14,11 @@ using awayDayPlanner.GUI.View.NewItem;
 
 namespace awayDayPlanner.GUI.View.Booking
 {
-    public partial class bookingForm : Form, IbookingForm
+    public partial class BookingForm : Form, IBookingForm
     {
-        private IbookingPresenter presenter;
+        private IBookingPresenter presenter;
 
-        public bookingForm()
+        public BookingForm()
         {
             this.InitializeComponent();
             this.PopulateDataGrid();
@@ -26,25 +26,25 @@ namespace awayDayPlanner.GUI.View.Booking
 
         private void PopulateDataGrid()
         {
-            dgvActivities.Controls.Clear();
-            this.Controls.Add(dgvActivities);
+            DGV_Activities.Controls.Clear();
+            this.Controls.Add(DGV_Activities);
 
-            dgvActivities.ColumnCount = 3;
-            dgvActivities.RowHeadersVisible = false;
+            DGV_Activities.ColumnCount = 3;
+            DGV_Activities.RowHeadersVisible = false;
 
-            dgvActivities.Columns[0].Width = 200;
-            dgvActivities.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvActivities.Columns[2].Width = 100;
+            DGV_Activities.Columns[0].Width = 200;
+            DGV_Activities.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DGV_Activities.Columns[2].Width = 100;
 
-            dgvActivities.Columns[0].Name = "Activity";
-            dgvActivities.Columns[1].Name = "Notes";
-            dgvActivities.Columns[2].Name = "Estimated Cost";
+            DGV_Activities.Columns[0].Name = "Activity";
+            DGV_Activities.Columns[1].Name = "Notes";
+            DGV_Activities.Columns[2].Name = "Estimated Cost";
 
-            dgvActivities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGV_Activities.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            dgvActivities.MultiSelect = true;
+            DGV_Activities.MultiSelect = true;
 
-            foreach (DataGridViewColumn column in dgvActivities.Columns)
+            foreach (DataGridViewColumn column in DGV_Activities.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -55,31 +55,31 @@ namespace awayDayPlanner.GUI.View.Booking
             DialogResult diaglogResult = MessageBox.Show("Are you sure you would like to submit this away-day application?", "Submit Application", MessageBoxButtons.YesNo);
             if (diaglogResult == DialogResult.Yes)
             {
-                presenter.submit();
+                presenter.Submit();
             }
         }
 
-        public void register(IbookingPresenter presenter)
+        public void Register(IBookingPresenter presenter)
         {
             this.presenter = presenter;
         }
 
-        public void message(string message)
+        public void Message(string message)
         {
             MessageBox.Show(message);
         }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            presenter.addActivity();
+            presenter.AddActivity();
         }
 
-        public void addItemToDGV(string name, string notes, double price)
+        public void AddItemToDGV(string name, string notes, double price)
         {
-            this.dgvActivities.Rows.Add(name, notes, price);
+            this.DGV_Activities.Rows.Add(name, notes, price);
         }
 
-        public DialogResult displayFormAsDialog(IaddNewItem form)
+        public DialogResult DisplayFormAsDialog(IAddNewItem form)
         {
             return form.GetForm().ShowDialog(this);
         }
@@ -88,13 +88,13 @@ namespace awayDayPlanner.GUI.View.Booking
         {
             if (MessageBox.Show("Do you want really to delete the selected row", "Confirm Deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                presenter.deleteRows(dgvActivities.SelectedRows);
+                presenter.DeleteRows(DGV_Activities.SelectedRows);
             }
         }
 
-        public void deleteRow(DataGridViewRow row)
+        public void DeleteRow(DataGridViewRow row)
         {
-            dgvActivities.Rows.Remove(row);
+            DGV_Activities.Rows.Remove(row);
         }
 
         private void bookingForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -108,14 +108,14 @@ namespace awayDayPlanner.GUI.View.Booking
             }
         }
 
-        public DateTime getDate()
+        public DateTime GetDate()
         {
             return dtpAwayDayDate.Value;
         }
 
         public void Reset()
         {
-            dgvActivities.Rows.Clear();
+            DGV_Activities.Rows.Clear();
         }
     }
 }

@@ -9,8 +9,8 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 {
     public interface IControlPanelPresenter
     {
-        void newAwayDay();
-        void viewExistingAwayDays();
+        void NewAwayDay();
+        void ViewExistingAwayDays();
         void LogOut();
     }
 }

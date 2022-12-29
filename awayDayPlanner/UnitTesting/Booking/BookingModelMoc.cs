@@ -9,15 +9,15 @@ using awayDayPlanner.Source.Activities;
 
 namespace UnitTesting.Booking
 {
-    class BookingModelMoc : IbookingModel
+    class BookingModelMoc : IBookingModel
     {
         public List<IActivity> mocActivities;
         public DateTime datetime;
         public int returnValue = 0;
 
-        public void register(IbookingPresenter presenter) { }
+        public void Register(IBookingPresenter presenter) { }
 
-        public int submit(List<IActivity> activities, DateTime datetime)
+        public int Submit(List<IActivity> activities, DateTime datetime)
         {
             this.mocActivities = activities;
             this.datetime = datetime;
