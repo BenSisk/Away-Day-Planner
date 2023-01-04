@@ -18,13 +18,11 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
         public User user;
 
         private IControlPanelForm view;
-        public List<ActivityType> list;
 
-        public ControlPanelPresenter()
+        public ControlPanelPresenter(IControlPanelForm view)
         {
-            this.view = FormProvider.ControlPanelForm;
-            view.register(this);
-            LoadActivitiesFromDB();
+            this.view = view;
+            view.Register(this);
 
 
             //BELOW IS NOT STAYING HERE
@@ -34,49 +32,17 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             //user = query.First();
         }
 
-        public void newAwayDay()
+        public void NewAwayDay()
         {
-            FormProvider.bookingForm.Show();
+            FormProvider.BookingForm.Show();
             FormProvider.ControlPanelForm.Hide();
         }
 
-        public void viewExistingAwayDays()
+        public void ViewExistingAwayDays()
         {
             FormProvider.AwayDayForm.Reset();
             FormProvider.AwayDayForm.Show();
             FormProvider.ControlPanelForm.Hide();
-        }
-
-        private void LoadActivitiesFromDB()
-        {
-            var query = from activities in Database.Database.Data.ActivityOptions
-                         select activities;
-
-            list = query.ToList();
-            ActivityType custom = null;
-
-            foreach (var item in list)
-            {
-                if (item.ActivityTypeName != "Custom")
-                {
-                    ActivityFactory.ActivityFactorySingleton.RegisterActivity(item, new Activity(item));
-                    Console.WriteLine(item.ActivityTypeName);
-                }
-                else
-                {
-                    custom = item;
-                }
-            }
-
-            if (custom == null)
-            {
-                custom = new ActivityType("Custom", 0);
-                Database.Database.Data.ActivityOptions.Add(custom);
-                Database.Database.Data.SaveChanges();
-                list.Add(custom);
-            }
-
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(custom, new Activity(custom));
         }
 
         public void LogOut()

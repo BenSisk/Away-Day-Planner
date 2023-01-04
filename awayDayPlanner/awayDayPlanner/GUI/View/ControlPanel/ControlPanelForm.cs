@@ -20,6 +20,7 @@ namespace awayDayPlanner.GUI.View.ControlPanel
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         public IControlPanelPresenter Presenter
         {
             private get; set;
@@ -28,18 +29,21 @@ namespace awayDayPlanner.GUI.View.ControlPanel
         public User user { get; set; }
 
         public void register(IControlPanelPresenter presenter)
+=======
+        public void Register(IControlPanelPresenter presenter)
+>>>>>>> Booking
         {
             this.Presenter = presenter;
         }
 
         private void btnNewEvent_Click(object sender, EventArgs e)
         {
-            Presenter.newAwayDay();
+            Presenter.NewAwayDay();
         }
 
         private void btnExistingEvents_Click(object sender, EventArgs e)
         {
-            Presenter.viewExistingAwayDays();
+            Presenter.ViewExistingAwayDays();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

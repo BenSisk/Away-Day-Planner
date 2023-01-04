@@ -11,9 +11,9 @@ namespace awayDayPlanner.GUI.View.Admin
 {
     public interface IAdminReviewForm
     {
-        void register(IAdminReviewPresenter presenter);
+        void Register(IAdminReviewPresenter presenter);
         void Reset();
-        void addItemToDGV(ActivityType type, string name, double cost);
+        void AddItemToDGV(ActivityType type, string name, double cost);
         DataGridViewRowCollection GetPrices();
         void Exit();
         void Message(string message, string title);

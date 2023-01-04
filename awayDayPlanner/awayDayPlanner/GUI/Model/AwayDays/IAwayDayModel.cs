@@ -10,7 +10,7 @@ namespace awayDayPlanner.GUI.Model.AwayDays
 {
     public interface IAwayDayModel
     {
-        void register(IAwayDayPresenter presenter);
+        void Register(IAwayDayPresenter presenter);
         List<AwayDay> GetData();
     }
 }

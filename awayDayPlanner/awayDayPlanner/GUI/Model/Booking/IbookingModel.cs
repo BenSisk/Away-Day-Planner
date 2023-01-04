@@ -8,9 +8,9 @@ using awayDayPlanner.GUI.Presenter.Booking;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
-    public interface IbookingModel
+    public interface IBookingModel
     {
-        void register(IbookingPresenter presenter);
-        int submit(List<IActivity> activities, DateTime date);
+        void Register(IBookingPresenter presenter);
+        int Submit(List<IActivity> activities, DateTime date);
     }
 }

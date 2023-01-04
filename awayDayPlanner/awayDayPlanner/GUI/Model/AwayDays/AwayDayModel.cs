@@ -13,7 +13,7 @@ namespace awayDayPlanner.GUI.Model.AwayDays
     {
         private IAwayDayPresenter presenter;
 
-        public void register(IAwayDayPresenter presenter)
+        public void Register(IAwayDayPresenter presenter)
         {
             this.presenter = presenter;
         }

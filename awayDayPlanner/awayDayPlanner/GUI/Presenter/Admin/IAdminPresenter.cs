@@ -12,7 +12,7 @@ namespace awayDayPlanner.GUI.Presenter.Admin
     {
         void OpenSelected();
         void PopulateDataGrid();
-        AwayDay getAwayDay();
+        AwayDay GetAwayDay();
         void LogOut();
     }
 }

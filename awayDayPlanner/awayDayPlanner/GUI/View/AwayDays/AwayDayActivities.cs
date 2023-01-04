@@ -13,7 +13,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
 {
     public partial class AwayDayActivities : Form
     {
-        AwayDay awayday;
+        private AwayDay awayday;
         public AwayDayActivities()
         {
             InitializeComponent();
