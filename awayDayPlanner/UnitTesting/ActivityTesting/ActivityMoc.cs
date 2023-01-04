@@ -19,7 +19,7 @@ namespace UnitTesting.ActivityTesting
             return new ActivityMoc(this.Type);
         }
 
-        public Activity getObject()
+        public Activity GetObject()
         {
             var activity = new Activity();
             activity.Name = this.Name;

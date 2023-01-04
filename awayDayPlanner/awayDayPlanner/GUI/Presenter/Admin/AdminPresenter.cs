@@ -15,7 +15,7 @@ namespace awayDayPlanner.GUI.Presenter.Admin
     {
         private IAdminForm view;
         private IAdminModel model;
-        List<AwayDay> data;
+        private List<AwayDay> data;
 
         public AdminPresenter(IAdminForm view, IAdminModel model)
         {

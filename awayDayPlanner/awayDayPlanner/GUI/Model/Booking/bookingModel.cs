@@ -15,11 +15,6 @@ namespace awayDayPlanner.GUI.Model.Booking
     {
         private IBookingPresenter presenter;
 
-        public BookingModel()
-        {
-
-        }
-
         public void Register(IBookingPresenter presenter)
         {
             this.presenter = presenter;
@@ -32,8 +27,8 @@ namespace awayDayPlanner.GUI.Model.Booking
                 AwayDay awayday = new AwayDay();
                 foreach (IActivity activity in activities)
                 {
-                    Database.Database.Data.Activity.Add(activity.getObject());
-                    awayday.AwayDayActivities.Add(activity.getObject());
+                    Database.Database.Data.Activity.Add(activity.GetObject());
+                    awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
                 awayday.User = FormProvider.ControlPanelPresenter.user;

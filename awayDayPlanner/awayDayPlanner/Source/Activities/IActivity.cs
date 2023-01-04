@@ -14,7 +14,7 @@ namespace awayDayPlanner.Source.Activities
         string Name { get; set; }
         string Notes { get; set; }
         double ActualCost { get; set; }
-        IActivity CreateActivity();
-        Activity getObject();
+        object Clone();
+        Activity GetObject();
     }
 }

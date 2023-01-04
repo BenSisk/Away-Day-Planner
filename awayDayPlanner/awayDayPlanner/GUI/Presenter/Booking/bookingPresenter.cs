@@ -47,11 +47,11 @@ namespace awayDayPlanner.GUI.Presenter.Booking
             if (view.DisplayFormAsDialog(newItemForm) == DialogResult.OK)
             {
                 //call a factory to create an activity object with activity type, name and notes
-                var activity = newItemForm.getActivityType();
-                string custom = newItemForm.getCustomRequest().ToString();
-                string notes = newItemForm.getNotes().ToString();
+                var activity = newItemForm.GetActivityType();
+                string custom = newItemForm.GetCustomRequest().ToString();
+                string notes = newItemForm.GetNotes().ToString();
 
-                IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.getActivityInstance(activity);
+                IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(activity);
                 activityInstance.Type = activity;
                 activityInstance.Name = custom;
                 activityInstance.Notes = notes;

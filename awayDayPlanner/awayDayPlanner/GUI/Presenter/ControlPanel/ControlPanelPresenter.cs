@@ -17,14 +17,12 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
     {
         public User user;
 
-        readonly private IControlPanelForm view;
-        public List<ActivityType> list;
+        private IControlPanelForm view;
 
         public ControlPanelPresenter(IControlPanelForm view)
         {
             this.view = view;
-            view.register(this);
-            LoadActivitiesFromDB();
+            view.Register(this);
 
 
             //BELOW IS NOT STAYING HERE
@@ -45,37 +43,6 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             FormProvider.AwayDayForm.Reset();
             FormProvider.AwayDayForm.Show();
             FormProvider.ControlPanelForm.Hide();
-        }
-
-        private void LoadActivitiesFromDB()
-        {
-            var query = from activities in Database.Database.Data.ActivityOptions
-                         select activities;
-
-            list = query.ToList();
-            ActivityType custom = null;
-
-            foreach (var item in list)
-            {
-                if (item.ActivityTypeName != "Custom")
-                {
-                    ActivityFactory.ActivityFactorySingleton.RegisterActivity(item, new Activity(item));
-                }
-                else
-                {
-                    custom = item;
-                }
-            }
-
-            if (custom == null)
-            {
-                custom = new ActivityType("Custom", 0);
-                Database.Database.Data.ActivityOptions.Add(custom);
-                Database.Database.Data.SaveChanges();
-                list.Add(custom);
-            }
-
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(custom, new Activity(custom));
         }
 
         public void LogOut()

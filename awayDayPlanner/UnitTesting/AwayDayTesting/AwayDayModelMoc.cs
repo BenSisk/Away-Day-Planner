@@ -13,7 +13,7 @@ namespace UnitTesting.AwayDayTesting
     {
         public List<AwayDay> awayDayList = new List<AwayDay>();
 
-        public void register(IAwayDayPresenter presenter) { }
+        public void Register(IAwayDayPresenter presenter) { }
         public List<AwayDay> GetData()
         {
             return awayDayList;

@@ -18,7 +18,7 @@ namespace awayDayPlanner.GUI.View.NewItem
         public AddNewItem()
         {
             InitializeComponent();
-            populateComboBox();
+            PopulateComboBox();
         }
 
         private void addNewItem_Load(object sender, EventArgs e)
@@ -31,15 +31,15 @@ namespace awayDayPlanner.GUI.View.NewItem
             if (cmbxActivity.Items.Count > 0)
             {
                 cmbxActivity.SelectedIndex = 0;
-                checkCustom();
+                CheckCustom();
             }
         }
 
 
-        private void populateComboBox()
+        private void PopulateComboBox()
         {
             ActivityType custom = null;
-            foreach (var item in FormProvider.ControlPanelPresenter.list)
+            foreach (var item in LoadActivitiesFromDB())
             {
                 if (item.ActivityTypeName != "Custom")
                 {
@@ -84,29 +84,29 @@ namespace awayDayPlanner.GUI.View.NewItem
             }
         }
 
-        public ActivityType getActivityType()
+        public ActivityType GetActivityType()
         {
             return (ActivityType) cmbxActivity.SelectedItem;
         }
 
-        public string getCustomRequest()
+        public string GetCustomRequest()
         {
             return (string)txtCustomActivity.Text;
         }
 
-        public string getNotes()
+        public string GetNotes()
         {
             return txtNotes.Text;
         }
 
         private void cmbxActivity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            checkCustom();
+            CheckCustom();
         }
 
-        private void checkCustom()
+        private void CheckCustom()
         {
-            txtEstimatedCost.Text = this.getActivityType().ActivityTypeEstimatedPrice.ToString();
+            txtEstimatedCost.Text = this.GetActivityType().ActivityTypeEstimatedPrice.ToString();
             if (cmbxActivity.SelectedItem.ToString().Equals("Custom"))
             {
                 txtCustomActivity.Enabled = true;
@@ -124,6 +124,38 @@ namespace awayDayPlanner.GUI.View.NewItem
         public Form GetForm()
         {
             return this;
+        }
+
+        private List<ActivityType> LoadActivitiesFromDB()
+        {
+            var query = from activities in Database.Database.Data.ActivityOptions
+                        select activities;
+
+            List<ActivityType> list = query.ToList();
+            ActivityType custom = null;
+
+            foreach (var item in list)
+            {
+                if (item.ActivityTypeName != "Custom")
+                {
+                    ActivityFactory.ActivityFactorySingleton.RegisterActivity(item, new Activity(item));
+                }
+                else
+                {
+                    custom = item;
+                }
+            }
+
+            if (custom == null)
+            {
+                custom = new ActivityType("Custom", 0);
+                Database.Database.Data.ActivityOptions.Add(custom);
+                Database.Database.Data.SaveChanges();
+                list.Add(custom);
+            }
+
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(custom, new Activity(custom));
+            return list;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace UnitTesting.AwayDayTesting
         public bool haveDisplayedForm = false;
         public bool haveReset = false;
 
-        public void register(IAwayDayPresenter presenter) { }
+        public void Register(IAwayDayPresenter presenter) { }
         public void Reset()
         {
             this.haveReset = true;
@@ -39,7 +39,7 @@ namespace UnitTesting.AwayDayTesting
         {
             return row;
         }
-        public DialogResult displayFormAsDialog(Form form)
+        public DialogResult DisplayFormAsDialog(Form form)
         {
             this.haveDisplayedForm = true;
             return result;

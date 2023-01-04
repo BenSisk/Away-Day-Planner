@@ -15,17 +15,17 @@ namespace UnitTesting.Booking
         public string notes;
         public ActivityType activityType;
 
-        public ActivityType getActivityType()
+        public ActivityType GetActivityType()
         {
             return activityType;
         }
 
-        public string getCustomRequest()
+        public string GetCustomRequest()
         {
             return custom;
         }
 
-        public string getNotes()
+        public string GetNotes()
         {
             return notes;
         }

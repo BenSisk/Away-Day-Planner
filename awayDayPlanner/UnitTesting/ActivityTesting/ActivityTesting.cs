@@ -20,7 +20,7 @@ namespace UnitTesting.ActivityTesting
             activity1.Name = "name";
             activity1.Notes = "notes";
             
-            Assert.ThrowsException<KeyNotFoundException>(() => ActivityFactory.ActivityFactorySingleton.getActivityInstance(Type));
+            Assert.ThrowsException<KeyNotFoundException>(() => ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type));
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace UnitTesting.ActivityTesting
 
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity1);
 
-            Assert.AreEqual(activity1.Type, ActivityFactory.ActivityFactorySingleton.getActivityInstance(Type).Type);
+            Assert.AreEqual(activity1.Type, ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type).Type);
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace UnitTesting.ActivityTesting
         {
             Activity activity = new Activity();
 
-            Assert.AreSame(activity, activity.getObject());
+            Assert.AreSame(activity, activity.GetObject());
         }
 
         [TestMethod]

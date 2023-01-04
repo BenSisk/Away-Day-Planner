@@ -10,9 +10,9 @@ namespace awayDayPlanner.GUI.View.NewItem
 {
     public interface IAddNewItem
     {
-        ActivityType getActivityType();
-        string getCustomRequest();
-        string getNotes();
+        ActivityType GetActivityType();
+        string GetCustomRequest();
+        string GetNotes();
         Form GetForm();
     }
 }

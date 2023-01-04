@@ -21,8 +21,8 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
             this.view = view;
             this.model = model;
 
-            view.register(this);
-            model.register(this);
+            view.Register(this);
+            model.Register(this);
         }
 
         public void Close()
@@ -59,7 +59,7 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
             if (awayday.CanBeConfirmed == true)
             {
                 FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
-                if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+                if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
                 {
                     //GeneratePDF(awayday)
                 }

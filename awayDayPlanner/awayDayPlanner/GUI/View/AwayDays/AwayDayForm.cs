@@ -21,7 +21,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
             this.PopulateDataGrid();
         }
 
-        public void register(IAwayDayPresenter presenter)
+        public void Register(IAwayDayPresenter presenter)
         {
             this.presenter = presenter;
         }
@@ -82,7 +82,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
             return this.dgvAwayDays.SelectedRows[0];
         }
 
-        public DialogResult displayFormAsDialog(Form form)
+        public DialogResult DisplayFormAsDialog(Form form)
         {
             return form.ShowDialog(this);
         }
