@@ -54,7 +54,10 @@ namespace UnitTesting.ActivityTesting
             Activity activity = new Activity();
             activity.Type = Type;
 
-            Assert.AreEqual(activity.Type, activity.CreateActivity().Type);
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity);
+            var newActivity = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type);
+
+            Assert.AreEqual(activity.Type, newActivity.Type);
         }
 
         [TestMethod]
@@ -70,7 +73,7 @@ namespace UnitTesting.ActivityTesting
         {
             Activity activity = new Activity();
 
-            Assert.AreNotSame(activity, activity.CreateActivity());
+            Assert.AreNotSame(activity, ((IActivity)activity.Clone()));
         }
 
         [TestMethod]
@@ -80,15 +83,21 @@ namespace UnitTesting.ActivityTesting
             ActivityType Type = new ActivityType("Hello World", 50);
 
             activity.Type = Type;
-            activity.Name = "name";
-            activity.Notes = "notes";
-            activity.ActualCost = 50;
-            
-            Assert.AreNotSame(activity, activity.CreateActivity());
-            Assert.AreNotEqual(activity.Name, activity.CreateActivity().Name);
-            Assert.AreNotEqual(activity.Notes, activity.CreateActivity().Notes);
-            Assert.AreNotEqual(activity.ActualCost, activity.CreateActivity().ActualCost);
-            Assert.AreEqual(activity.Type, activity.CreateActivity().Type);
+            ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity);
+
+
+            var activity1 = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type);
+            var activity2 = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type);
+
+            activity1.Name = "name";
+            activity1.Notes = "notes";
+            activity1.ActualCost = 5;
+
+            Assert.AreNotSame(activity1, activity2);
+            Assert.AreNotEqual(activity1.Name, activity2.Name);
+            Assert.AreNotEqual(activity1.Notes, activity2.Notes);
+            Assert.AreNotEqual(activity1.ActualCost, activity2.ActualCost);
+            Assert.AreEqual(activity1.Type, activity2.Type);
         }
     }
 }

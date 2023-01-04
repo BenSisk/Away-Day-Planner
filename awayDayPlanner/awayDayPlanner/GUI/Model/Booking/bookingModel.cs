@@ -31,7 +31,7 @@ namespace awayDayPlanner.GUI.Model.Booking
                     awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
-                awayday.User = FormProvider.ControlPanelPresenter.user;
+                awayday.User = (User) FormProvider.LoginForm.GetUser();
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;

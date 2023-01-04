@@ -86,9 +86,15 @@ namespace awayDayPlanner.GUI.View.Admin
             return this.dgvReview.SelectedRows[0];
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnControlPanel_Click(object sender, EventArgs e)
         {
-            presenter.LogOut();
+            presenter.CloseAdmin();
+        }
+
+        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            presenter.CloseAdmin();
         }
     }
 }

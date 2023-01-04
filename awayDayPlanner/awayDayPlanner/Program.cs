@@ -24,14 +24,13 @@ namespace awayDayPlanner
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.FullName);
 
             /*
-                        Database.Database.Data.ActivityOptions.Add(new ActivityType("activity1", 25));
-                        Database.Database.Data.ActivityOptions.Add(new ActivityType("GONK", 10));
-                        Database.Database.Data.SaveChanges();
+            Database.Database.Data.ActivityOptions.Add(new ActivityType("activity1", 25));
+            Database.Database.Data.ActivityOptions.Add(new ActivityType("GONK", 10));
+            Database.Database.Data.SaveChanges();
             */
 
             Application.Run(FormProvider.LoginForm);
-            //Application.Run(FormProvider.ControlPanelForm);
-            // Application.Run(FormProvider.AdminForm);
+            // Application.Run(FormProvider.ControlPanelForm);
         }
     }
 }

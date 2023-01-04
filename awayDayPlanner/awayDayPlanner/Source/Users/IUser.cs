@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Lib.Users
 {
-    internal interface IUser
+    public interface IUser
     {
         int userID
         {
@@ -30,6 +30,11 @@ namespace awayDayPlanner.Lib.Users
         DateTime dob
         {
             get; set;
+        }
+
+        bool isAdmin
+        {
+            get;
         }
     }
 }

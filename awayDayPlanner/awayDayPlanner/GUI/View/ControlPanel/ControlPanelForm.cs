@@ -20,7 +20,6 @@ namespace awayDayPlanner.GUI.View.ControlPanel
             InitializeComponent();
         }
 
-<<<<<<< HEAD
         public IControlPanelPresenter Presenter
         {
             private get; set;
@@ -28,10 +27,7 @@ namespace awayDayPlanner.GUI.View.ControlPanel
 
         public User user { get; set; }
 
-        public void register(IControlPanelPresenter presenter)
-=======
         public void Register(IControlPanelPresenter presenter)
->>>>>>> Booking
         {
             this.Presenter = presenter;
         }
@@ -48,6 +44,31 @@ namespace awayDayPlanner.GUI.View.ControlPanel
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            Presenter.LogOut();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            btnAdmin.Enabled = false;
+            btnAdmin.Visible = false;
+            Presenter.AdminShow();
+        }
+
+        public void ShowAdminButton()
+        {
+            btnAdmin.Enabled = true;
+            btnAdmin.Visible = true;
+        }
+
+        public void HideAdminButton()
+        {
+            btnAdmin.Enabled = false;
+            btnAdmin.Visible = false;
+        }
+
+        private void ControlPanelForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
             Presenter.LogOut();
         }
     }

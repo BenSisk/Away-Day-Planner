@@ -79,7 +79,14 @@ namespace awayDayPlanner.GUI.View.AwayDays
 
         public DataGridViewRow GetSelected()
         {
-            return this.dgvAwayDays.SelectedRows[0];
+            if (dgvAwayDays.Rows.Count > 0)
+            {
+                return this.dgvAwayDays.SelectedRows[0];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
         }
 
         public DialogResult DisplayFormAsDialog(Form form)

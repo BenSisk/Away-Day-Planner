@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.Source.Activities;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace awayDayPlanner.GUI.Presenter.AwayDays
 {
@@ -55,20 +56,28 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
 
         public void OpenAwayDay()
         {
-            var awayday = data.ElementAt(view.GetSelected().Index);
-            if (awayday.CanBeConfirmed == true)
+            try
             {
-                FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
-                if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+                var awayday = data.ElementAt(view.GetSelected().Index);
+                if (awayday.CanBeConfirmed == true)
                 {
-                    //GeneratePDF(awayday)
+                    FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
+                    if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+                    {
+                        //GeneratePDF(awayday)
+                    }
+                    view.Reset();
                 }
-                view.Reset();
+                else
+                {
+                    view.Message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
+                }
             }
-            else
+            catch (IndexOutOfRangeException)
             {
-                view.Message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
+                
             }
+            
         }
     }
 }

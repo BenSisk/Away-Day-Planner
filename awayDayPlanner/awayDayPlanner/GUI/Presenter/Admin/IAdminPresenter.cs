@@ -13,6 +13,6 @@ namespace awayDayPlanner.GUI.Presenter.Admin
         void OpenSelected();
         void PopulateDataGrid();
         AwayDay GetAwayDay();
-        void LogOut();
+        void CloseAdmin();
     }
 }

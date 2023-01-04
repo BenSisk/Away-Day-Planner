@@ -20,8 +20,9 @@ namespace awayDayPlanner.GUI.Model.AwayDays
 
         public List<AwayDay> GetData()
         {
+            var user = FormProvider.LoginForm.GetUser().userID;
             var query = from awaydays in Database.Database.Data.AwayDay
-                        where (awaydays.User.userID == FormProvider.ControlPanelPresenter.user.userID)
+                        where (awaydays.User.userID == user)
                         select awaydays;
             return query.ToList();
         }

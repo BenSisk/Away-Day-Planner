@@ -273,6 +273,7 @@ namespace awayDayPlanner.GUI
         }
         #endregion
 
+
         private static RegisterForm _registerForm;
         private static LoginForm _loginForm;
         private static AddNewItem _addNewItem;

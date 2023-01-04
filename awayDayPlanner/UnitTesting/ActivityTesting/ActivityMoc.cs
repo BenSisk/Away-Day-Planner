@@ -7,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace UnitTesting.ActivityTesting
 {
-    public class ActivityMoc : IActivity
+    public class ActivityMoc : IActivity, ICloneable
     {
         public int ActivityID { get; set; }
         public ActivityType Type { get; set; }
         public string Name { get; set; }
         public string Notes { get; set; }
         public double ActualCost { get; set; }
-        public IActivity CreateActivity()
-        {
-            return new ActivityMoc(this.Type);
-        }
 
         public Activity GetObject()
         {
@@ -35,5 +31,10 @@ namespace UnitTesting.ActivityTesting
         }
 
         public ActivityMoc() { }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

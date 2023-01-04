@@ -15,21 +15,12 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 {
     public class ControlPanelPresenter : IControlPanelPresenter
     {
-        public User user;
-
         private IControlPanelForm view;
 
         public ControlPanelPresenter(IControlPanelForm view)
         {
             this.view = view;
             view.Register(this);
-
-
-            //BELOW IS NOT STAYING HERE
-            //var query = from users in Database.Database.Data.User
-            //            where (users.userID == 1)
-            //            select users;
-            //user = query.First();
         }
 
         public void NewAwayDay()
@@ -47,10 +38,27 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 
         public void LogOut()
         {
-            FormProvider.ControlPanelForm.user = null;
             FormProvider.LoginForm.Reset();
             FormProvider.LoginForm.Show();
             FormProvider.ControlPanelForm.Hide();
+        }
+
+        public void AdminShow()
+        {
+            FormProvider.AdminForm.Show();
+            FormProvider.ControlPanelForm.Hide();
+        }
+
+        public void AdminCheck()
+        {
+            if (FormProvider.LoginForm.GetUser().isAdmin)
+            {
+                view.ShowAdminButton();
+            }
+            else
+            {
+                view.HideAdminButton();
+            }
         }
     }
 }

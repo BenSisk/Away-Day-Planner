@@ -12,5 +12,7 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
         void NewAwayDay();
         void ViewExistingAwayDays();
         void LogOut();
+        void AdminShow();
+        void AdminCheck();
     }
 }

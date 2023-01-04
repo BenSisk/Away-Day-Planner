@@ -55,8 +55,9 @@ namespace awayDayPlanner.GUI.Presenter.Admin
         {
             return data.ElementAt(view.GetSelected().Index);
         }
-        public void LogOut()
+        public void CloseAdmin()
         {
+            FormProvider.ControlPanelPresenter.AdminCheck();
             FormProvider.ControlPanelForm.Show();
             FormProvider.AdminForm.Hide();
         }

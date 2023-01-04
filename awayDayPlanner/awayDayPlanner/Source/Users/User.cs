@@ -26,6 +26,8 @@ namespace awayDayPlanner.Lib.Users
         public DateTime dob { get; set; }
         [Required]
         public int phone { get; set; }
+        [Required]
+        public bool isAdmin { get; set; } = false;
 
         [Required]
         public virtual Address Address { get; set; }

@@ -76,16 +76,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUI\View\Booking\addNewItem\addNewItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\View\Booking\addNewItem\addNewItem.Designer.cs">
-      <DependentUpon>addNewItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Model\Admin\AdminModel.cs" />
-    <Compile Include="GUI\Model\Admin\AdminReviewModel.cs" />
     <Compile Include="GUI\Model\Admin\IAdminModel.cs" />
-    <Compile Include="GUI\Model\Admin\IAdminReviewModel.cs" />
     <Compile Include="GUI\Model\AwayDays\AwayDayModel.cs" />
     <Compile Include="GUI\Model\AwayDays\IAwayDayModel.cs" />
     <Compile Include="GUI\Presenter\Admin\AdminPresenter.cs" />
@@ -151,6 +143,13 @@
     <Compile Include="GUI\FormProvider.cs" />
     <Compile Include="GUI\View\ControlPanel\IControlPanelForm.cs" />
     <Compile Include="GUI\View\Login\ILoginView.cs" />
+    <Compile Include="GUI\View\NewItem\addNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\View\NewItem\addNewItem.Designer.cs">
+      <DependentUpon>addNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\View\NewItem\IaddNewItem.cs" />
     <Compile Include="GUI\View\Register\IRegisterView.cs" />
     <Compile Include="GUI\View\Login\LoginForm.cs">
       <SubType>Form</SubType>
@@ -164,11 +163,6 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202212261000599_AddUserClass.cs" />
-    <Compile Include="Migrations\202212261000599_AddUserClass.designer.cs">
-      <DependentUpon>202212261000599_AddUserClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
     <Compile Include="Source\Activities\ActivityFactory.cs" />
     <Compile Include="Source\Activities\ActivityType.cs" />
@@ -214,11 +208,11 @@
     <EmbeddedResource Include="GUI\View\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\View\NewItem\addNewItem.resx">
+      <DependentUpon>addNewItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202212261000599_AddUserClass.resx">
-      <DependentUpon>202212261000599_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -278,6 +272,10 @@
   <ItemGroup>
     <Content Include="Database\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
