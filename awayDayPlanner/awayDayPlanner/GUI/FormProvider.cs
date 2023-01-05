@@ -18,6 +18,7 @@ using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
 using awayDayPlanner.GUI.Model.Admin;
 using awayDayPlanner.GUI.View.NewItem;
+using awayDayPlanner.GUI.Model;
 
 namespace awayDayPlanner.GUI
 {
@@ -46,9 +47,9 @@ namespace awayDayPlanner.GUI
             {
                 if (_registerForm == null)
                 {
-                    var model = new Model.RegisterModel();
+                    var model = RegisterModel.getInstance();
                     _registerForm = RegisterForm.getInstance();
-                    _registerForm.Presenter = new RegisterPresenter(_registerForm, model);
+                    _registerForm.Presenter = RegisterPresenter.getInstance();
                 }
 
                 return _registerForm;

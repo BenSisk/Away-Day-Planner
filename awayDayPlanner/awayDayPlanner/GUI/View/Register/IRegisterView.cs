@@ -40,6 +40,6 @@ namespace awayDayPlanner.GUI
 
         System.Windows.Forms.ToolTip PasswordError { get; set; }
         void Message(string message);
-        RegisterPresenter Presenter { set; }
+        RegisterPresenter Presenter { get;}
     }
 }

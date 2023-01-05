@@ -21,8 +21,5 @@ namespace awayDayPlanner.Lib.Users
 
         int phone { get; set; }
         bool isAdmin { get; }
-
-        IAddress Address { get; set; }
-        ILogin Login { get; set; }
     }
 }

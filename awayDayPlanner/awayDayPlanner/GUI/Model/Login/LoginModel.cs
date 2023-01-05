@@ -15,21 +15,6 @@ namespace awayDayPlanner.GUI.Model
         
         }
 
-        public void createUser()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void hashPassword()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void getCredentials()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Register()
         {
             FormProvider.RegisterForm.Show();
@@ -103,9 +88,5 @@ namespace awayDayPlanner.GUI.Model
             }
         }
 
-        public void verifyCredentials()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

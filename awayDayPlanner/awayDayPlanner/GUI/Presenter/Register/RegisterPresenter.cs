@@ -12,14 +12,21 @@ namespace awayDayPlanner.GUI
     {
         private readonly IRegisterView _view;
         private readonly IRegisterModel _model;
+        private static RegisterPresenter instance = null;
 
-        public RegisterPresenter(IRegisterView view, IRegisterModel model)
+
+        private RegisterPresenter()
         {
-            _view = view;
-            view.Presenter = this;
-            _model = model;
+            _view = RegisterForm.getInstance();
+            _model = RegisterModel.getInstance();
         }
 
+        public static RegisterPresenter getInstance()
+        {
+            if (instance == null)
+                instance = new RegisterPresenter();
+            return instance;
+        }
         public void Submit()
         {
             int number;
@@ -34,19 +41,17 @@ namespace awayDayPlanner.GUI
             user.dob = _view.dob;
             user.phone = number;
 
-            Address address = new Address
-            {
-                FirstLine = _view.FirstLine,
-                SecondLine = _view.SecondLine,
-                PostCode = _view.PostCode
-            };
+            Address address = Address.getInstance();
+            address.FirstLine = _view.FirstLine;
+            address.SecondLine = _view.SecondLine;
+            address.PostCode = _view.PostCode;
 
             Login login = Login.getInstance();
 
             login.Username = _view.Username;
             login.Password = _view.Password;
 
-            var result = _model.Submit(user, address, login, _view.Password2);
+            var result = _model.Submit(_view.Password2);
 
             foreach (KeyValuePair<RegisterErrors, string> item in result)
             {

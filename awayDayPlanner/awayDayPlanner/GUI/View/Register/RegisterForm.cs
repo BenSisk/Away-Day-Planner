@@ -39,11 +39,6 @@ namespace awayDayPlanner.GUI
             MessageBox.Show(message);
         }
 
-        public RegisterPresenter Presenter
-        {
-            private get; set;
-        }
-
         public string firstname { get { return this.txtFirstname.Text; } }
         public string surname { get { return this.txtLastname.Text; } }
         public string email { get { return this.txtEmail.Text; } }
@@ -121,6 +116,10 @@ namespace awayDayPlanner.GUI
             get { return this.tltPasswordError; }
             set { this.tltPasswordError = value; }
         }
+
+        RegisterPresenter IRegisterView.Presenter { get => RegisterPresenter.getInstance(); }
+
+        public RegisterPresenter Presenter = RegisterPresenter.getInstance();
 
         private void btnClose_Click(object sender, EventArgs e)
         {

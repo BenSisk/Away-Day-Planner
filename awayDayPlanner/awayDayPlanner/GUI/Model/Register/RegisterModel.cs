@@ -1,23 +1,45 @@
-﻿using awayDayPlanner.Lib.Users;
+﻿using awayDayPlanner.Lib.Factory;
+using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Factory;
 using awayDayPlanner.Source.Security;
 using awayDayPlanner.Source.Security.Salting;
 using awayDayPlanner.Source.Security.Validator;
 using awayDayPlanner.Source.Users;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static awayDayPlanner.Source.Security.Validator.Validator;
 
 namespace awayDayPlanner.GUI.Model
 {
     public class RegisterModel : IRegisterModel
     {
+        private static RegisterModel instance = null;
 
-        public RegisterModel()
+        private RegisterModel() {}
+
+        public static RegisterModel getInstance()
         {
+            if (instance == null) 
+                instance = new RegisterModel();
+
+            return instance;
         }
+               
 
-        public Dictionary<RegisterErrors, string> Submit(IUser user, IAddress address, ILogin login, string confirmPassword)
+        public Dictionary<RegisterErrors, string> Submit(string confirmPassword)
         {
-            var verified = Validate.ValidateRegister(login, user, address, confirmPassword, new Validator());
+            Login login = Login.getInstance();
+            User user =User.getInstance();
+            Address address = Address.getInstance();
+
+            var verified = Validate.ValidateRegister(login,
+                                                     user,
+                                                     address,
+                                                     confirmPassword, new Validator());
 
 
             if (verified.ContainsKey(RegisterErrors.Success))
