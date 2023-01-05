@@ -40,8 +40,6 @@ namespace awayDayPlanner.GUI
                 _view.Message("Invalid login details");
             else
             {
-
-
                 FormProvider.ControlPanelForm.user = user;
                 FormProvider.ControlPanelForm.Show();
                 FormProvider.LoginForm.Hide();

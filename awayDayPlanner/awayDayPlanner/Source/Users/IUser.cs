@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Lib.Users
 {
-    internal interface IUser
+    public interface IUser
     {
         int userID
         {
