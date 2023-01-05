@@ -11,35 +11,27 @@ using awayDayPlanner.GUI.Presenter.ControlPanel;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
-    public partial class bookingModel : IbookingModel
+    public partial class BookingModel : IBookingModel
     {
-        private IbookingPresenter presenter;
+        private IBookingPresenter presenter;
 
-
-        public bookingModel()
-        {
-
-        }
-
-        public void register(IbookingPresenter presenter)
+        public void Register(IBookingPresenter presenter)
         {
             this.presenter = presenter;
         }
 
-        public int submit(List<IActivity> activities, DateTime date)
+        public int Submit(List<IActivity> activities, DateTime date)
         {
-            Console.WriteLine(activities);
-
             if (activities.Count > 0)
             {
                 AwayDay awayday = new AwayDay();
                 foreach (IActivity activity in activities)
                 {
-                    Database.Database.Data.Activity.Add(activity.getObject());
-                    awayday.AwayDayActivities.Add(activity.getObject());
+                    Database.Database.Data.Activity.Add(activity.GetObject());
+                    awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
-                awayday.User = FormProvider.ControlPanelPresenter.user;
+                awayday.User = (User) FormProvider.LoginForm.GetUser();
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;

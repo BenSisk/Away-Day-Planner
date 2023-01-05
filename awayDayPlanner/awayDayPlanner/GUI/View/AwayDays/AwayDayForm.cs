@@ -21,7 +21,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
             this.PopulateDataGrid();
         }
 
-        public void register(IAwayDayPresenter presenter)
+        public void Register(IAwayDayPresenter presenter)
         {
             this.presenter = presenter;
         }
@@ -62,7 +62,7 @@ namespace awayDayPlanner.GUI.View.AwayDays
             }
         }
 
-        public void addItemToDGV(DateTime date, int count, string status, double cost)
+        public void AddItemToDGV(DateTime date, int count, string status, double cost)
         {
             this.dgvAwayDays.Rows.Add(date, count, status, cost);
         }
@@ -79,15 +79,22 @@ namespace awayDayPlanner.GUI.View.AwayDays
 
         public DataGridViewRow GetSelected()
         {
-            return this.dgvAwayDays.SelectedRows[0];
+            if (dgvAwayDays.Rows.Count > 0)
+            {
+                return this.dgvAwayDays.SelectedRows[0];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
         }
 
-        public DialogResult displayFormAsDialog(Form form)
+        public DialogResult DisplayFormAsDialog(Form form)
         {
             return form.ShowDialog(this);
         }
 
-        public void message(string message, string title)
+        public void Message(string message, string title)
         {
             MessageBox.Show(message, title);
         }

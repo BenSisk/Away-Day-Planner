@@ -5,23 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.GUI.View.NewItem;
 
 namespace awayDayPlanner.GUI.View.Booking
 {
-    public interface IbookingForm
+    public interface IBookingForm
     {
-        void register(IbookingPresenter presenter);
+        void Register(IBookingPresenter presenter);
         
-        void message(string message);
+        void Message(string message);
 
-        DialogResult displayFormAsDialog(Form form);
+        DialogResult DisplayFormAsDialog(IAddNewItem form);
 
-        void addItemToDGV(string name, string notes, double price);
+        void AddItemToDGV(string name, string notes, double price);
 
-        void deleteRow(DataGridViewRow row);
+        void DeleteRow(DataGridViewRow row);
 
         void Reset();
 
-        DateTime getDate();
+        DateTime GetDate();
     }
 }

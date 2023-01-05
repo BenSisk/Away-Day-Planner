@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,8 +48,14 @@ namespace awayDayPlanner.GUI
 
         public void Reset()
         {
+            Presenter.Reset();
             this.txtUsername.Text = "";
             this.txtPassword.Text = "";
+        }
+
+        public IUser GetUser()
+        {
+            return (IUser) Presenter.User;
         }
     }
 }

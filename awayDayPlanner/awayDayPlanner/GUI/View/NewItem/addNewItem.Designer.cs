@@ -1,6 +1,6 @@
-﻿namespace awayDayPlanner.GUI.newItem
+﻿namespace awayDayPlanner.GUI.View.NewItem
 {
-    partial class addNewItem
+    partial class AddNewItem
     {
         /// <summary>
         /// Required designer variable.

@@ -12,6 +12,8 @@ namespace awayDayPlanner.GUI
 {
     public class LoginPresenter
     {
+        public User User { get; private set; }
+
         private readonly ILoginView _view;
         private readonly ILoginModel _model;
 
@@ -41,9 +43,16 @@ namespace awayDayPlanner.GUI
             else
             {
                 FormProvider.ControlPanelForm.user = user;
+                this.User = user;
+                FormProvider.ControlPanelPresenter.AdminCheck();
                 FormProvider.ControlPanelForm.Show();
                 FormProvider.LoginForm.Hide();
             }
+        }
+
+        public void Reset()
+        {
+            this.User = null;
         }
     }
 }

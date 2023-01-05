@@ -31,5 +31,10 @@ namespace awayDayPlanner.Lib.Users
         {
             get; set;
         }
+
+        bool isAdmin
+        {
+            get;
+        }
     }
 }

@@ -10,11 +10,11 @@ namespace awayDayPlanner.GUI.View.AwayDays
 {
     public interface IAwayDayForm
     {
-        void register(IAwayDayPresenter presenter);
+        void Register(IAwayDayPresenter presenter);
         void Reset();
-        void addItemToDGV(DateTime date, int count, string status, double cost);
+        void AddItemToDGV(DateTime date, int count, string status, double cost);
         DataGridViewRow GetSelected();
-        DialogResult displayFormAsDialog(Form form);
-        void message(string message, string title);
+        DialogResult DisplayFormAsDialog(Form form);
+        void Message(string message, string title);
     }
 }

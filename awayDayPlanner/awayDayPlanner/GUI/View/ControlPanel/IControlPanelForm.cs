@@ -10,6 +10,8 @@ namespace awayDayPlanner.GUI.View.ControlPanel
 {
     public interface IControlPanelForm
     {
-        void register(IControlPanelPresenter presenter);
+        void Register(IControlPanelPresenter presenter);
+        void ShowAdminButton();
+        void HideAdminButton();
     }
 }

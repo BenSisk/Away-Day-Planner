@@ -10,10 +10,10 @@ namespace awayDayPlanner.GUI.View.Admin
 {
     public interface IAdminForm
     {
-        void register(IAdminPresenter presenter);
-        void addItemToDGV(DateTime date, int count, double cost);
+        void Register(IAdminPresenter presenter);
+        void AddItemToDGV(DateTime date, int count, double cost);
         void Reset();
-        DialogResult displayFormAsDialog(Form form);
+        DialogResult DisplayFormAsDialog(Form form);
         DataGridViewRow GetSelected();
     }
 }

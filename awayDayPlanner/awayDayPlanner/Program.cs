@@ -22,9 +22,7 @@ namespace awayDayPlanner
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.FullName);
-
             Application.Run(FormProvider.LoginForm);
-
         }
     }
 }

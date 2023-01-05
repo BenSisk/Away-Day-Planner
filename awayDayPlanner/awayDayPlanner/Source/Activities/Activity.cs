@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.Source.Activities
 {
-    public class Activity : IActivity
+    public class Activity : IActivity, ICloneable
     {
         [Key]
         public int ActivityID { get; set; }
@@ -21,12 +21,7 @@ namespace awayDayPlanner.Source.Activities
         [Required]
         public virtual ActivityType Type { get; set; }
 
-        public IActivity CreateActivity()
-        {
-            return new Activity(this.Type);
-        }
-
-        public Activity getObject()
+        public Activity GetObject()
         {
             return this;
         }
@@ -36,6 +31,10 @@ namespace awayDayPlanner.Source.Activities
             this.Type = Type;
         }
 
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
         public Activity() { }
     }
 }
