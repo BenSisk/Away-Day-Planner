@@ -21,5 +21,10 @@ namespace UnitTesting.AdminTesting
             return awayday;
         }
         public void LogOut() { }
+
+        public void CloseAdmin()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

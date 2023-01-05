@@ -9,6 +9,7 @@ using System.Data.Entity;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Source.Activities;
 using System.ComponentModel;
+using awayDayPlanner.Source.Factory;
 
 namespace awayDayPlanner.Lib.Users
 {
@@ -31,7 +32,7 @@ namespace awayDayPlanner.Lib.Users
 
         [Required]
         public virtual IAddress Address { get; set; }
-        public virtual Login Login { get; set; }
+        public virtual ILogin Login { get; set; }
         public virtual ICollection<AwayDay> AwayDays { get; set; } = new List<AwayDay>();
 
         private static User instance = null;

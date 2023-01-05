@@ -1,4 +1,6 @@
-﻿using System;
+﻿using awayDayPlanner.Source.Factory;
+using awayDayPlanner.Source.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,5 +21,8 @@ namespace awayDayPlanner.Lib.Users
 
         int phone { get; set; }
         bool isAdmin { get; }
+
+        IAddress Address { get; set; }
+        ILogin Login { get; set; }
     }
 }

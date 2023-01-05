@@ -77,7 +77,7 @@ namespace awayDayPlanner.GUI.Model
                              where login.Password == passwordHash
                              select User;
 
-                User user = query2.FirstOrDefault<User>();
+                User user = query2.FirstOrDefault();
                 return user;
             }
 
