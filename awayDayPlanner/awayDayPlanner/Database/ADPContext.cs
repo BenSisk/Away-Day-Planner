@@ -4,6 +4,7 @@ using System.Data.Entity;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Source.Users;
 using awayDayPlanner.Source.Activities;
+using awayDayPlanner.Source.Factory;
 
 namespace awayDayPlanner.Database
 {
@@ -13,9 +14,9 @@ namespace awayDayPlanner.Database
             : base("name=conString")
             { 
         }
-        public DbSet<User> User { get; set; }
-        public DbSet<Login> Login { get; set; }
-        public DbSet<Address> Address { get; set; }
+        public DbSet<IUser> User { get; set; }
+        public DbSet<ILogin> Login { get; set; }
+        public DbSet<IAddress> Address { get; set; }
         public DbSet<AwayDay> AwayDay { get; set; }
         public DbSet<Activity> Activity { get; set; }
         public DbSet<ActivityType> ActivityOptions { get; set; }

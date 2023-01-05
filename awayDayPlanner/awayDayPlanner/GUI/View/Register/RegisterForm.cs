@@ -13,9 +13,19 @@ namespace awayDayPlanner.GUI
 {
     public partial class RegisterForm : Form, IRegisterView
     {
-        public RegisterForm()
+        private static RegisterForm instance = null;
+        private RegisterForm()
         {
             InitializeComponent();
+        }
+
+        public static RegisterForm getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new RegisterForm();
+            }
+            return instance;
         }
 
         public void Reset()

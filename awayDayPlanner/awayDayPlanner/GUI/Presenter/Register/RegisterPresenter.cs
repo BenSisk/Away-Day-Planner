@@ -64,7 +64,7 @@ namespace awayDayPlanner.GUI
             }
         }
 
-        public void RemovePreviousErrors(KeyValuePair<RegisterErrors, string> error)
+        private void RemovePreviousErrors(KeyValuePair<RegisterErrors, string> error)
         {
             if (error.Key == RegisterErrors.UsernameSuccess)
                 this.RemoveError(_view.labelUsername);
@@ -79,7 +79,7 @@ namespace awayDayPlanner.GUI
             if (error.Key == RegisterErrors.PasswordSuccess)
                 this.RemoveError(_view.labelPassword);
         }
-        public void UpdateErrorForm(KeyValuePair<RegisterErrors,string> error)
+        private void UpdateErrorForm(KeyValuePair<RegisterErrors,string> error)
         {
             if (error.Key == RegisterErrors.ShortUsername ||
                 error.Key == RegisterErrors.UsernameTaken ||
@@ -101,13 +101,13 @@ namespace awayDayPlanner.GUI
 
         }
 
-        public void ShowError(System.Windows.Forms.Control form, string errorMessage)
+        private void ShowError(System.Windows.Forms.Control form, string errorMessage)
         {
             _view.PasswordError.SetToolTip(form, errorMessage);
             form.ForeColor = System.Drawing.Color.Red;
         }
 
-        public void RemoveError(System.Windows.Forms.Control form)
+        private void RemoveError(System.Windows.Forms.Control form)
         {
             _view.PasswordError.SetToolTip(form, null);
             form.ForeColor = System.Drawing.Color.Black;

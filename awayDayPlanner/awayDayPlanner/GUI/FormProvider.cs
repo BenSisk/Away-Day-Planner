@@ -47,7 +47,7 @@ namespace awayDayPlanner.GUI
                 if (_registerForm == null)
                 {
                     var model = new Model.RegisterModel();
-                    _registerForm = new RegisterForm();
+                    _registerForm = RegisterForm.getInstance();
                     _registerForm.Presenter = new RegisterPresenter(_registerForm, model);
                 }
 

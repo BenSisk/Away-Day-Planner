@@ -23,3 +23,7 @@ C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\UnitTesting.dll.config
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.csproj.AssemblyReference.cache
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.csproj.CoreCompileInputs.cache
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.dll
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.pdb
