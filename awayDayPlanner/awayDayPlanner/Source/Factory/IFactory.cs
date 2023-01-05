@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.Lib.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,7 @@ namespace awayDayPlanner.Lib.Factory
 {
     internal interface IFactory
     {
-        void createUser();
-
+        IUser CreateUserObject();
     }
 }
 

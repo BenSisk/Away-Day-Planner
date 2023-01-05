@@ -8,33 +8,16 @@ namespace awayDayPlanner.Lib.Users
 {
     public interface IUser
     {
-        int userID
-        {
-            get; set;
-        }
+        int userID { get; set; }
 
-        string firstname
-        {
-            get; set;
-        }
+        string firstname { get; set; }
 
-        string lastname
-        { 
-            get; set;
-        }
-        string email
-        {
-            get; set;
-        }
+        string lastname { get; set; }
+        string email { get; set; }
 
-        DateTime dob
-        {
-            get; set;
-        }
+        DateTime dob { get; set; }
 
-        bool isAdmin
-        {
-            get;
-        }
+        int phone { get; set; }
+        bool isAdmin { get; }
     }
 }

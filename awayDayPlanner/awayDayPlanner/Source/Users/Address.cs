@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Users
 {
-    public class Address
+    public class Address : IAddress
     {
         [Key] public int AddressID { get; set; }
         public string FirstLine { get; set; }

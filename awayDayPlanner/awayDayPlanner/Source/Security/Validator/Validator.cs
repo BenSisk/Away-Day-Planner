@@ -1,5 +1,6 @@
 ﻿using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Factory;
 using awayDayPlanner.Source.Users;
 using System;
 using System.Collections.Generic;
@@ -37,8 +38,8 @@ namespace awayDayPlanner.Source.Security.Validator
         private Dictionary<RegisterErrors, string> 
             AllErrors = new Dictionary<RegisterErrors, string>();
 
-        public Dictionary<RegisterErrors, string> ValidateRegister(Login login, User user, 
-            Address address, string confirmPassword)
+        public Dictionary<RegisterErrors, string> ValidateRegister(ILogin login, IUser user, 
+            IAddress address, string confirmPassword)
         {
             this.verifyUser(user);
             this.verifyUsername(login);
@@ -96,7 +97,7 @@ namespace awayDayPlanner.Source.Security.Validator
             return Database.Database.Data.Login.Any(c => c.Username == user);
         }
 
-        private void verifyUsername(Login login)
+        private void verifyUsername(ILogin login)
         {
             if (this.HasSpecialChars(login.Username))
                 AllErrors.Add(RegisterErrors.InvalidUsername, 
@@ -115,7 +116,7 @@ namespace awayDayPlanner.Source.Security.Validator
                     "Username Successful");
         }
 
-        private void verifyPassword(Login user, string password2)
+        private void verifyPassword(ILogin user, string password2)
         {
             if (user.Password.Length >= 5 && password2.Length >= 5)
                 if (this.PasswordsAreEqual(user.Password, password2))
@@ -137,7 +138,7 @@ namespace awayDayPlanner.Source.Security.Validator
                     "Phone success");
         }
 
-        private void verifyUser(User user)
+        private void verifyUser(IUser user)
         {
             this.verifyFirstname(user.firstname, false);
             this.verifyFirstname(user.lastname, true);

@@ -3,16 +3,8 @@ using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Security.Validator;
 using awayDayPlanner.Source.Users;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static awayDayPlanner.Lib.Factory.Register;
+
 
 namespace awayDayPlanner.GUI
 {
@@ -35,14 +27,12 @@ namespace awayDayPlanner.GUI
             if (!int.TryParse(_view.phone, out number))
                 number = 0;
 
-            User user = new User
-            {
-                firstname = _view.firstname,
-                lastname = _view.surname,
-                email = _view.email,
-                dob = _view.dob,
-                phone = number
-            };
+            User user = User.getInstance();
+            user.firstname = _view.firstname;
+            user.lastname = _view.surname;
+            user.email = _view.email;
+            user.dob = _view.dob;
+            user.phone = number;
 
             Address address = new Address
             {
@@ -51,11 +41,10 @@ namespace awayDayPlanner.GUI
                 PostCode = _view.PostCode
             };
 
-            Login login = new Login()
-            {
-                Username = _view.Username,
-                Password = _view.Password,
-            };
+            Login login = Login.getInstance();
+
+            login.Username = _view.Username;
+            login.Password = _view.Password;
 
             var result = _model.Submit(user, address, login, _view.Password2);
 

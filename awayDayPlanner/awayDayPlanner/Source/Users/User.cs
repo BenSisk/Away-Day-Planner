@@ -30,9 +30,22 @@ namespace awayDayPlanner.Lib.Users
         public bool isAdmin { get; set; } = false;
 
         [Required]
-        public virtual Address Address { get; set; }
+        public virtual IAddress Address { get; set; }
         public virtual Login Login { get; set; }
         public virtual ICollection<AwayDay> AwayDays { get; set; } = new List<AwayDay>();
+
+        private static User instance = null;
+
+        private User() { }
+
+        public static User getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new User();
+            }
+            return instance;
+        }
 
     }
 }

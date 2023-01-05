@@ -13,7 +13,7 @@ using awayDayPlanner.Source.Users;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    public class Login : Source.Factory.ILogin
+    public class Login : IFactory, Source.Factory.ILogin
     {
         [Key]
         public int loginID { get; set; }
@@ -22,53 +22,21 @@ namespace awayDayPlanner.Lib.Factory
         [Required] public String Salt { get; set; }
 
         private static Login instance = null;
-        private static readonly object padlock = new object();
 
-        public Login()
-        {
-        }
+        private Login() { }
 
-        public static Login getInstance
+        public static Login getInstance()
         {
-            get
-            {
-                lock (padlock)
+                if (instance == null)
                 {
-                    if (instance == null)
-                    {
-                        instance = new Login();
-                    }
-                    return instance;
+                    instance = new Login();
                 }
-            }
+                return instance;
         }
 
-        public void verifyCredentials(Login login)
+        public IUser CreateUserObject()
         {
-
-        }
-
-        public void createUser()
-        {
-
-        }
-
-        public void Register()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Close()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Submit()
-        { throw new NotImplementedException(); }
-
-        public void hashPassword()
-        {
-            throw new NotImplementedException();
+            return User.getInstance();
         }
     }
 }

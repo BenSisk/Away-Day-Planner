@@ -177,10 +177,8 @@
     <Compile Include="Source\Activities\AwayDay.cs" />
     <Compile Include="Source\Activities\IActivity.cs" />
     <Compile Include="Source\Factory\ILogin.cs" />
-    <Compile Include="Source\Factory\IRegister.cs" />
     <Compile Include="Source\Factory\Login.cs" />
     <Compile Include="Source\Factory\IFactory.cs" />
-    <Compile Include="Source\Factory\Register.cs" />
     <Compile Include="Source\Security\Hashing\HashProvider.cs" />
     <Compile Include="Source\Security\Hashing\Hasher.cs" />
     <Compile Include="Source\Security\Hashing\IHasher.cs" />
@@ -191,6 +189,7 @@
     <Compile Include="Source\Security\Validator\Validate.cs" />
     <Compile Include="Source\Security\Validator\Validator.cs" />
     <Compile Include="Source\Users\Address.cs" />
+    <Compile Include="Source\Users\IAddress.cs" />
     <Compile Include="Source\Users\IUser.cs" />
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
