@@ -36,7 +36,9 @@ namespace UnitTesting.ActivityTesting
 
             ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity1);
 
-            Assert.AreEqual(activity1.Type, ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type).Type);
+            var activity2 = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type);
+            Assert.AreEqual(activity1.Type, activity2.Type);
+            Assert.AreNotEqual(activity1, activity2);
         }
 
         [TestMethod]
@@ -49,35 +51,21 @@ namespace UnitTesting.ActivityTesting
         [TestMethod]
         public void TestMethod4()
         {
-            ActivityType Type = new ActivityType("Hello World", 50);
-
-            Activity activity = new Activity();
-            activity.Type = Type;
-
-            ActivityFactory.ActivityFactorySingleton.RegisterActivity(Type, activity);
-            var newActivity = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(Type);
-
-            Assert.AreEqual(activity.Type, newActivity.Type);
-        }
-
-        [TestMethod]
-        public void TestMethod5()
-        {
-            Activity activity = new Activity();
+            IActivity activity = new Activity();
 
             Assert.AreSame(activity, activity.GetObject());
         }
 
         [TestMethod]
-        public void TestMethod6()
+        public void TestMethod5()
         {
-            Activity activity = new Activity();
+            IActivity activity = new Activity();
 
             Assert.AreNotSame(activity, ((IActivity)activity.Clone()));
         }
 
         [TestMethod]
-        public void TestMethod7()
+        public void TestMethod6()
         {
             Activity activity = new Activity();
             ActivityType Type = new ActivityType("Hello World", 50);

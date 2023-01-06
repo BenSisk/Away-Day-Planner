@@ -43,8 +43,6 @@ namespace UnitTesting.Booking
 
             presenter.AddActivity();
 
-            Console.WriteLine(view.names);
-
             CollectionAssert.AreEqual(new List<string> { "name" }, view.names);
             CollectionAssert.AreEqual(new List<string> { "notes" }, view.notes);
             CollectionAssert.AreEqual(new List<double> { 50 }, view.prices);

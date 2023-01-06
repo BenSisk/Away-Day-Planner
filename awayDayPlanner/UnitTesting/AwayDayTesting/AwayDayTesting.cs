@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using UnitTesting.ValidatorTests;
 
 namespace UnitTesting.AwayDayTesting
 {
@@ -68,7 +69,7 @@ namespace UnitTesting.AwayDayTesting
             bool CanBeConfirmed = true;
             double TotalCost = 0;
             List<Activity> activityList = new List<Activity> { new Activity(), new Activity() };
-            User user = User.getInstance();
+            IUser user = new UserMock();
 
 
             awayday.AwayDayID = ID;
@@ -206,8 +207,8 @@ namespace UnitTesting.AwayDayTesting
             view.result = DialogResult.OK;
             presenter.OpenAwayDay();
 
-            Assert.AreEqual(true, view.haveDisplayedForm);
-            Assert.AreEqual(true, view.haveReset);
+            Assert.IsTrue(view.haveDisplayedForm);
+            Assert.IsTrue(view.haveReset);
         }
     }
 }
