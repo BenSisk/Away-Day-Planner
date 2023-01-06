@@ -18,7 +18,6 @@ namespace UnitTesting.AdminTesting
         {
             AdminReviewFormMoc reviewView = new AdminReviewFormMoc();
             AdminFormMoc adminView = new AdminFormMoc();
-            AdminModelMoc adminModel = new AdminModelMoc();
             AdminPresenterMoc adminPresenter = new AdminPresenterMoc();
             IAdminReviewPresenter reviewPresenter = new AdminReviewPresenter(reviewView, adminView, adminPresenter);
 
@@ -31,7 +30,6 @@ namespace UnitTesting.AdminTesting
         {
             AdminReviewFormMoc reviewView = new AdminReviewFormMoc();
             AdminFormMoc adminView = new AdminFormMoc();
-            AdminModelMoc adminModel = new AdminModelMoc();
             AdminPresenterMoc adminPresenter = new AdminPresenterMoc();
             IAdminReviewPresenter reviewPresenter = new AdminReviewPresenter(reviewView, adminView, adminPresenter);
 
@@ -77,12 +75,11 @@ namespace UnitTesting.AdminTesting
         {
             AdminReviewFormMoc reviewView = new AdminReviewFormMoc();
             AdminFormMoc adminView = new AdminFormMoc();
-            AdminModelMoc adminModel = new AdminModelMoc();
             AdminPresenterMoc adminPresenter = new AdminPresenterMoc();
             IAdminReviewPresenter reviewPresenter = new AdminReviewPresenter(reviewView, adminView, adminPresenter);
 
             DataGridView grid = new DataGridView();
-            grid.Columns.Add("Actual Cost", "Actual Cost");
+            grid.Columns.Add("Actual Cost", "test");
             grid.Rows.Add(new DataGridViewRow());
             grid.Rows.Add(new DataGridViewRow());
             grid.Rows.Add(new DataGridViewRow());
@@ -99,9 +96,9 @@ namespace UnitTesting.AdminTesting
             Activity activity1 = new Activity();
             Activity activity2 = new Activity();
 
-            ActivityType Type1 = new ActivityType();
             double price1 = 5;
             double price2 = 50;
+            ActivityType Type1 = new ActivityType();
             Type1.ActivityTypeEstimatedPrice = price1;
             ActivityType Type2 = new ActivityType();
             Type2.ActivityTypeEstimatedPrice = price2;
@@ -134,7 +131,6 @@ namespace UnitTesting.AdminTesting
         {
             AdminReviewFormMoc reviewView = new AdminReviewFormMoc();
             AdminFormMoc adminView = new AdminFormMoc();
-            AdminModelMoc adminModel = new AdminModelMoc();
             AdminPresenterMoc adminPresenter = new AdminPresenterMoc();
             IAdminReviewPresenter reviewPresenter = new AdminReviewPresenter(reviewView, adminView, adminPresenter);
 
@@ -184,6 +180,7 @@ namespace UnitTesting.AdminTesting
 
             Assert.AreEqual("Error", reviewView.title);
             Assert.AreEqual("Invalid Price", reviewView.text);
+            Assert.IsFalse(reviewView.hasExit);
         }
 
         [TestMethod]
@@ -191,7 +188,6 @@ namespace UnitTesting.AdminTesting
         {
             AdminReviewFormMoc reviewView = new AdminReviewFormMoc();
             AdminFormMoc adminView = new AdminFormMoc();
-            AdminModelMoc adminModel = new AdminModelMoc();
             AdminPresenterMoc adminPresenter = new AdminPresenterMoc();
             IAdminReviewPresenter reviewPresenter = new AdminReviewPresenter(reviewView, adminView, adminPresenter);
 
@@ -241,6 +237,7 @@ namespace UnitTesting.AdminTesting
 
             Assert.AreEqual("Error", reviewView.title);
             Assert.AreEqual("Invalid Price", reviewView.text);
+            Assert.IsFalse(reviewView.hasExit);
         }
     }
 }

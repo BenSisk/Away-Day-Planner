@@ -364,7 +364,7 @@ namespace UnitTesting.ValidatorTests
             ILogin login = new LoginMock();
             IAddress address = new AddressMock();
 
-            user.email = "123423@42";
+            user.email = "123423@042";
             var verified = awayDayPlanner.Source.Security.Validator.Validate.ValidateRegister(login,
                                          user,
                                          address,
