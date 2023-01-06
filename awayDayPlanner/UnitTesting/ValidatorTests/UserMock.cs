@@ -30,7 +30,7 @@ namespace UnitTesting.ValidatorTests
             this.userID = 1;
             this.firstname = "1";
             this.lastname = "2";
-            this.email = "email";
+            this.email = "email@email.com";
             this.isAdmin = true;
             this.dob = DateTime.Now;
             this.phone = 10;

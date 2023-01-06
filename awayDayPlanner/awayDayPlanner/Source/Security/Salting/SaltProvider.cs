@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Security.Salting
 {
-    internal class SaltProvider
+    public class SaltProvider
     {
         public static string GenerateSalt(ISalt salter)
         {

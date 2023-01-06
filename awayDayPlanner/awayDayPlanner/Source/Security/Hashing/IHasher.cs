@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Security
 {
-    internal interface IHasher
+    public interface IHasher
     {
         byte[] Hash(byte[] data);
     }

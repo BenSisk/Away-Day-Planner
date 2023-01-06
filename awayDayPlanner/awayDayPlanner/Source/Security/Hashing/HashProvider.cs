@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Security
 {
-    class HashProvider
+    public class HashProvider
     {
         private static string BytesToString(byte[] bytes)
         {

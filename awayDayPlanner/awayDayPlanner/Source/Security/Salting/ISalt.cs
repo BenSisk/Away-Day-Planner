@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Security.Salting
 {
-    internal interface ISalt
+    public interface ISalt
     {
         string GenerateSalt();
 
