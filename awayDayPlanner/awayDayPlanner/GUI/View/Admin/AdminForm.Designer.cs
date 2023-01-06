@@ -30,7 +30,7 @@
         {
             this.dgvReview = new System.Windows.Forms.DataGridView();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnControlPanel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,26 +58,27 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // btnLogout
+            // btnControlPanel
             // 
-            this.btnLogout.Location = new System.Drawing.Point(675, 12);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(113, 67);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnControlPanel.Location = new System.Drawing.Point(616, 12);
+            this.btnControlPanel.Name = "btnControlPanel";
+            this.btnControlPanel.Size = new System.Drawing.Size(172, 78);
+            this.btnControlPanel.TabIndex = 3;
+            this.btnControlPanel.Text = "Control Panel";
+            this.btnControlPanel.UseVisualStyleBackColor = true;
+            this.btnControlPanel.Click += new System.EventHandler(this.btnControlPanel_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnControlPanel);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.dgvReview);
             this.Name = "AdminForm";
             this.Text = "Admin Review";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReview)).EndInit();
             this.ResumeLayout(false);
 
@@ -87,6 +88,6 @@
 
         private System.Windows.Forms.DataGridView dgvReview;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnControlPanel;
     }
 }

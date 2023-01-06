@@ -14,7 +14,7 @@ namespace awayDayPlanner.GUI.View.Admin
 {
     public partial class AdminReviewForm : Form, IAdminReviewForm
     {
-        IAdminReviewPresenter presenter;
+        private IAdminReviewPresenter presenter;
 
         public AdminReviewForm()
         {
@@ -22,7 +22,7 @@ namespace awayDayPlanner.GUI.View.Admin
             this.PopulateDataGrid();
         }
 
-        public void register(IAdminReviewPresenter presenter)
+        public void Register(IAdminReviewPresenter presenter)
         {
             this.presenter = presenter;
         }
@@ -56,7 +56,7 @@ namespace awayDayPlanner.GUI.View.Admin
             presenter.PopulateDataGrid();
         }
 
-        public void addItemToDGV(ActivityType type, string name, double cost)
+        public void AddItemToDGV(ActivityType type, string name, double cost)
         {
             this.dgvReviewActivities.Rows.Add(type, name, cost);
         }

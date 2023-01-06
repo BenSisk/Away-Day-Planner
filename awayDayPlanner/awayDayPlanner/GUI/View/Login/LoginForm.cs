@@ -1,4 +1,6 @@
-﻿using System;
+﻿using awayDayPlanner.GUI.Presenter.Login;
+using awayDayPlanner.Lib.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,19 +19,17 @@ namespace awayDayPlanner.GUI
             InitializeComponent();
         }
 
-        public string userName
-        {
-            get { return this.txtUsername.Text; }
-        }
+        public string Username { get { return this.txtUsername.Text; } }
+        public string Password { get { return this.txtPassword.Text; } }
 
-        public string password
-        {
-            get { return this.txtPassword.Text; }
-        }
-
-        public LoginPresenter Presenter
+        public ILoginPresenter Presenter
         { 
             private get; set; 
+        }
+
+        public void Message(string message)
+        {
+            MessageBox.Show(message);
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -46,5 +46,13 @@ namespace awayDayPlanner.GUI
         {
             Presenter.Submit();
         }
+
+        public void Reset()
+        {
+            Presenter.Reset();
+            this.txtUsername.Text = "";
+            this.txtPassword.Text = "";
+        }
+
     }
 }

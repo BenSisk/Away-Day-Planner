@@ -7,22 +7,23 @@ using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.Source.Activities;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace awayDayPlanner.GUI.Presenter.AwayDays
 {
     public class AwayDayPresenter : IAwayDayPresenter
     {
-        IAwayDayForm view;
-        IAwayDayModel model;
-        List<AwayDay> data;
+        private IAwayDayForm view;
+        private IAwayDayModel model;
+        private List<AwayDay> data;
         
-        public AwayDayPresenter()
+        public AwayDayPresenter(IAwayDayForm view, IAwayDayModel model)
         {
-            this.view = FormProvider.AwayDayForm;
-            this.model = FormProvider.AwayDayModel;
+            this.view = view;
+            this.model = model;
 
-            view.register(this);
-            model.register(this);
+            view.Register(this);
+            model.Register(this);
         }
 
         public void Close()
@@ -43,32 +44,40 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
                 }
                 else if (awayday.CanBeConfirmed)
                 {
-                    status = "Confirmable";
+                    status = "Ready For Confirmation";
                 }
                 else
                 {
                     status = "Under Review";
                 }
-                view.addItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), status, awayday.TotalCost);
+                view.AddItemToDGV(awayday.AwayDayDate, awayday.AwayDayActivities.Count(), status, awayday.TotalCost);
             }
         }
 
         public void OpenAwayDay()
         {
-            var awayday = data.ElementAt(view.GetSelected().Index);
-            if (awayday.CanBeConfirmed == true)
+            try
             {
-                FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
-                if (view.displayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+                var awayday = data.ElementAt(view.GetSelected().Index);
+                if (awayday.CanBeConfirmed == true)
                 {
-                    //GeneratePDF(awayday)
+                    FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
+                    if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
+                    {
+                        //GeneratePDF(awayday)
+                    }
+                    view.Reset();
                 }
-                view.Reset();
+                else
+                {
+                    view.Message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
+                }
             }
-            else
+            catch (IndexOutOfRangeException)
             {
-                view.message("Away-Day has not yet been reviewed.\n\nPlease try again later", "Error");
+                
             }
+            
         }
     }
 }

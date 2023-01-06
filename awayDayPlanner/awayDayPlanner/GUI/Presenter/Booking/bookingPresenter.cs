@@ -9,67 +9,71 @@ using awayDayPlanner.GUI;
 using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.Model.Booking;
+using awayDayPlanner.GUI.View.NewItem;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI.Presenter.Booking
 {
-    public partial class bookingPresenter : IbookingPresenter
+    public partial class BookingPresenter : IBookingPresenter
     {
-        private IbookingModel model;
-        private IbookingForm view;
+        private IBookingModel model;
+        private IBookingForm view;
+        private IAddNewItem newItemForm;
         private List<IActivity> activities = new List<IActivity>();
 
-        public bookingPresenter(IbookingForm view, IbookingModel model)
+        public BookingPresenter(IBookingForm view, IBookingModel model, IAddNewItem newItemForm)
         {
             this.view = view;
             this.model = model;
-            view.register(this);
-            model.register(this);
+            this.newItemForm = newItemForm;
+            view.Register(this);
+            model.Register(this);
         }
 
-        public void submit()
+        public void Submit()
         {
-            if (model.submit(this.activities, view.getDate()) == 0)
+            if (model.Submit(this.activities, view.GetDate(), User.getInstance()) == 0)
             {
-                view.message("Application Submitted Successfully");
+                view.Message("Application Submitted Successfully");
                 this.Close();
             }
             else
             {
-                view.message("Something went wrong.");
+                view.Message("Something went wrong.");
             }
         }
 
-        public void addActivity()
+        public void AddActivity()
         {
-            if (view.displayFormAsDialog(FormProvider.addNewItem) == DialogResult.OK)
+            if (view.DisplayFormAsDialog(newItemForm) == DialogResult.OK)
             {
-                //call a factory to create an activity object with activity type, name and notes
-                var activity = FormProvider.addNewItem.getActivityType();
-                string custom = FormProvider.addNewItem.getCustomRequest().ToString();
-                string notes = FormProvider.addNewItem.getNotes().ToString();
+                var activity = newItemForm.GetActivityType();
+                string custom = newItemForm.GetCustomRequest().ToString();
+                string notes = newItemForm.GetNotes().ToString();
 
-                IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.getActivityInstance(activity);
+                //call a factory to create an activity object with activity type, name and notes
+                IActivity activityInstance = ActivityFactory.ActivityFactorySingleton.GetActivityInstance(activity);
                 activityInstance.Type = activity;
                 activityInstance.Name = custom;
                 activityInstance.Notes = notes;
 
-                this.activities.Add(activityInstance);
-                view.addItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
+                activities.Add(activityInstance);
+                view.AddItemToDGV(activityInstance.Name, activityInstance.Notes, activityInstance.Type.ActivityTypeEstimatedPrice);
             }
         }
 
-        public void deleteRows(DataGridViewSelectedRowCollection rows)
+        public void DeleteRows(DataGridViewSelectedRowCollection rows)
         {
             foreach (DataGridViewRow row in rows)
             {
                 this.activities.RemoveAt(row.Index);
-                view.deleteRow(row);
+                view.DeleteRow(row);
             }
         }
 
         public void Close()
         {
-            FormProvider.bookingForm.Hide();
+            FormProvider.BookingForm.Hide();
             FormProvider.ControlPanelForm.Show();
             activities.Clear();
             view.Reset();

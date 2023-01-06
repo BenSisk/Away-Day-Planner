@@ -10,7 +10,7 @@ namespace awayDayPlanner.GUI.Model.Admin
 {
     public interface IAdminModel 
     {
-        void register(IAdminPresenter presenter);
+        void Register(IAdminPresenter presenter);
         List<AwayDay> GetData();
     }
 }

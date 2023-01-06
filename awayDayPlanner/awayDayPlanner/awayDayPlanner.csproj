@@ -63,8 +63,11 @@
     <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -79,16 +82,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\addNewItem\addNewItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\addNewItem\addNewItem.Designer.cs">
-      <DependentUpon>addNewItem.cs</DependentUpon>
+    <Compile Include="DatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="GUI\Model\Admin\AdminModel.cs" />
-    <Compile Include="GUI\Model\Admin\AdminReviewModel.cs" />
     <Compile Include="GUI\Model\Admin\IAdminModel.cs" />
-    <Compile Include="GUI\Model\Admin\IAdminReviewModel.cs" />
     <Compile Include="GUI\Model\AwayDays\AwayDayModel.cs" />
     <Compile Include="GUI\Model\AwayDays\IAwayDayModel.cs" />
     <Compile Include="GUI\Model\Billing\BillingModel.cs" />
@@ -104,6 +104,8 @@
     <Compile Include="GUI\Presenter\Billing\IBillingPresenter.cs" />
     <Compile Include="GUI\Presenter\ControlPanel\ControlPanelPresenter.cs" />
     <Compile Include="GUI\Presenter\ControlPanel\IControlPanelPresenter.cs" />
+    <Compile Include="GUI\Presenter\Login\ILoginPresenter.cs" />
+    <Compile Include="GUI\Presenter\Register\IRegisterPresenter.cs" />
     <Compile Include="GUI\View\Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,12 +153,12 @@
     <Compile Include="GUI\Presenter\Booking\IbookingPresenter.cs" />
     <Compile Include="Database\ADPContext.cs" />
     <Compile Include="Database\Database.cs" />
-    <Compile Include="GUI\Model\ILoginModel.cs" />
-    <Compile Include="GUI\Model\IRegisterModel.cs" />
-    <Compile Include="GUI\Model\LoginModel.cs" />
-    <Compile Include="GUI\Model\RegisterModel.cs" />
-    <Compile Include="GUI\Presenter\LoginPresenter.cs" />
-    <Compile Include="GUI\Presenter\RegisterPresenter.cs" />
+    <Compile Include="GUI\Model\Login\ILoginModel.cs" />
+    <Compile Include="GUI\Model\Register\IRegisterModel.cs" />
+    <Compile Include="GUI\Model\Login\LoginModel.cs" />
+    <Compile Include="GUI\Model\Register\RegisterModel.cs" />
+    <Compile Include="GUI\Presenter\Login\LoginPresenter.cs" />
+    <Compile Include="GUI\Presenter\Register\RegisterPresenter.cs" />
     <Compile Include="GUI\View\ControlPanel\ControlPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +168,13 @@
     <Compile Include="GUI\FormProvider.cs" />
     <Compile Include="GUI\View\ControlPanel\IControlPanelForm.cs" />
     <Compile Include="GUI\View\Login\ILoginView.cs" />
+    <Compile Include="GUI\View\NewItem\addNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\View\NewItem\addNewItem.Designer.cs">
+      <DependentUpon>addNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\View\NewItem\IaddNewItem.cs" />
     <Compile Include="GUI\View\Register\IRegisterView.cs" />
     <Compile Include="GUI\View\Login\LoginForm.cs">
       <SubType>Form</SubType>
@@ -179,6 +188,10 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301061308320_AddUserClass.cs" />
+    <Compile Include="Migrations\202301061308320_AddUserClass.designer.cs">
+      <DependentUpon>202301061308320_AddUserClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
     <Compile Include="Source\Activities\ActivityFactory.cs" />
@@ -186,17 +199,23 @@
     <Compile Include="Source\Activities\AwayDay.cs" />
     <Compile Include="Source\Activities\IActivity.cs" />
     <Compile Include="Source\Billing\Billing.cs" />
-    <Compile Include="Source\Factory\Login.cs" />
-    <Compile Include="Source\Factory\IFactory.cs" />
-    <Compile Include="Source\Factory\Register.cs" />
+    <Compile Include="Source\Login\ILogin.cs" />
+    <Compile Include="Source\Login\Login.cs" />
+    <Compile Include="Source\Security\Hashing\HashProvider.cs" />
+    <Compile Include="Source\Security\Hashing\Hasher.cs" />
+    <Compile Include="Source\Security\Hashing\IHasher.cs" />
+    <Compile Include="Source\Security\Salting\ISalt.cs" />
+    <Compile Include="Source\Security\Salting\Salter.cs" />
+    <Compile Include="Source\Security\Salting\SaltProvider.cs" />
+    <Compile Include="Source\Security\Validator\IValidator.cs" />
+    <Compile Include="Source\Security\Validator\Validate.cs" />
+    <Compile Include="Source\Security\Validator\Validator.cs" />
     <Compile Include="Source\Users\Address.cs" />
+    <Compile Include="Source\Users\IAddress.cs" />
     <Compile Include="Source\Users\IUser.cs" />
     <Compile Include="Source\Users\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\addNewItem\addNewItem.resx">
-      <DependentUpon>addNewItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,14 +240,31 @@
     <EmbeddedResource Include="GUI\View\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\View\NewItem\addNewItem.resx">
+      <DependentUpon>addNewItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301061308320_AddUserClass.resx">
+      <DependentUpon>202301061308320_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DatabaseDataSet.xsc">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseDataSet.xss">
+      <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\awayDayPlanner.Database.ADPContext.datasource" />
     <None Include="Properties\DataSources\awayDayPlanner.Database.Database.datasource" />

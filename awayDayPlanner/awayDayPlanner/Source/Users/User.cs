@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Source.Activities;
+using System.ComponentModel;
+using awayDayPlanner.Source.Factory;
+using System.Runtime.CompilerServices;
 
 namespace awayDayPlanner.Lib.Users
 {
@@ -22,13 +25,35 @@ namespace awayDayPlanner.Lib.Users
         [Required]
         public string email { get; set; }
         [Required]
-        public string dob { get; set; }
+        public DateTime dob { get; set; }
         [Required]
-        public string phone { get; set; }
+        public int phone { get; set; }
+        [Required]
+        public bool isAdmin { get; set; } = false;
 
         [Required]
-        public virtual Address Address { get; set; }
+        public virtual IAddress Address { get; set; }
         public virtual Login Login { get; set; }
-        public virtual ICollection<AwayDay> AwayDays { get; set; } = new List<AwayDay>();
+        public virtual ICollection<AwayDay> AwayDays { get; set; }
+        public ICollection<AwayDay> AwayDay { get; set; }
+
+        private static IUser instance = null;
+
+        private User() { }
+
+        public static IUser getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new User();
+            }
+            return instance;
+        }
+
+        public static void UpdateInstance(IUser user)
+        {
+            instance = user;
+        }
+
     }
 }

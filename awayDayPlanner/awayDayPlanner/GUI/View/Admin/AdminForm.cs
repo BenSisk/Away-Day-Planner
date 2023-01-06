@@ -13,7 +13,7 @@ namespace awayDayPlanner.GUI.View.Admin
 {
     public partial class AdminForm : Form, IAdminForm
     {
-        IAdminPresenter presenter;
+        private IAdminPresenter presenter;
 
         public AdminForm()
         {
@@ -48,12 +48,12 @@ namespace awayDayPlanner.GUI.View.Admin
             presenter.PopulateDataGrid();
         }
 
-        public void register(IAdminPresenter presenter)
+        public void Register(IAdminPresenter presenter)
         {
             this.presenter = presenter;
         }
 
-        public void addItemToDGV(DateTime date, int count, double cost)
+        public void AddItemToDGV(DateTime date, int count, double cost)
         {
             this.dgvReview.Rows.Add(date, count, cost);
         }
@@ -76,7 +76,7 @@ namespace awayDayPlanner.GUI.View.Admin
             this.OpenSelected();
         }
 
-        public DialogResult displayFormAsDialog(Form form)
+        public DialogResult DisplayFormAsDialog(Form form)
         {
             return form.ShowDialog(this);
         }
@@ -86,9 +86,15 @@ namespace awayDayPlanner.GUI.View.Admin
             return this.dgvReview.SelectedRows[0];
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void btnControlPanel_Click(object sender, EventArgs e)
         {
-            presenter.LogOut();
+            presenter.CloseAdmin();
+        }
+
+        private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            presenter.CloseAdmin();
         }
     }
 }

@@ -13,25 +13,26 @@ namespace awayDayPlanner.GUI.Presenter.Admin
 {
     public class AdminReviewPresenter : IAdminReviewPresenter
     {
-        IAdminReviewForm view;
-        IAdminReviewModel model;
-        AwayDay awayday;
+        private IAdminReviewForm view;
+        private IAdminForm adminForm;
+        private IAdminPresenter adminPresenter;
+        private AwayDay awayday;
 
-        public AdminReviewPresenter()
+        public AdminReviewPresenter(IAdminReviewForm view, IAdminForm adminForm, IAdminPresenter adminPresenter)
         {
-            this.view = FormProvider.AdminReviewForm;
-            this.model = FormProvider.AdminReviewModel;
-            view.register(this);
-            model.register(this);
+            this.view = view;
+            this.adminForm = adminForm;
+            this.adminPresenter = adminPresenter;
+            view.Register(this);
             view.Reset();
         }
 
         public void PopulateDataGrid()
         {
-            awayday = FormProvider.AdminPresenter.getAwayDay();
+            awayday = this.adminPresenter.GetAwayDay();
             foreach (var activity in awayday.AwayDayActivities)
             {
-                view.addItemToDGV(activity.Type, activity.Name, activity.Type.ActivityTypeEstimatedPrice);
+                view.AddItemToDGV(activity.Type, activity.Name, activity.Type.ActivityTypeEstimatedPrice);
             }
         }
 
@@ -42,11 +43,13 @@ namespace awayDayPlanner.GUI.Presenter.Admin
             DataGridViewRowCollection rows = view.GetPrices();
             foreach (DataGridViewRow row in rows)
             {
+                // if price value is invalid = fail. otherwise write updated prices to DB
                 if (row.Cells["Actual Cost"].Value == null ||
                     ! Double.TryParse(row.Cells["Actual Cost"].Value.ToString(), out double result) ||
                     result < 0)
                 {
                     passed = false;
+                    break;
                 }
                 else
                 {
@@ -66,7 +69,7 @@ namespace awayDayPlanner.GUI.Presenter.Admin
                 this.awayday.TotalCost = total;
                 this.awayday.CanBeConfirmed = true;
                 Database.Database.Data.SaveChanges();
-                FormProvider.AdminForm.Reset();
+                this.adminForm.Reset();
                 view.Exit();
             }
             else

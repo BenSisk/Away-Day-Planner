@@ -13,15 +13,17 @@ namespace awayDayPlanner.GUI.Model.AwayDays
     {
         private IAwayDayPresenter presenter;
 
-        public void register(IAwayDayPresenter presenter)
+        public void Register(IAwayDayPresenter presenter)
         {
             this.presenter = presenter;
         }
 
         public List<AwayDay> GetData()
         {
+            var user = User.getInstance().userID;
+            //var user = FormProvider.LoginForm.GetUser().userID;
             var query = from awaydays in Database.Database.Data.AwayDay
-                        where (awaydays.User.userID == FormProvider.ControlPanelPresenter.user.userID)
+                        where (awaydays.User.userID == user)
                         select awaydays;
             return query.ToList();
         }

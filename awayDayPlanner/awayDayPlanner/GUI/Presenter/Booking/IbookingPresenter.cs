@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI.Presenter.Booking
 {
-    public interface IbookingPresenter
+    public interface IBookingPresenter
     {
-        void submit();
-        void addActivity();
-        void deleteRows(DataGridViewSelectedRowCollection rows);
+        void Submit();
+        void AddActivity();
+        void DeleteRows(DataGridViewSelectedRowCollection rows);
         void Close();
     }
 }

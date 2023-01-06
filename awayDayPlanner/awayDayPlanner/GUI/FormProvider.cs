@@ -20,7 +20,9 @@ using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
 using awayDayPlanner.GUI.Model.Admin;
 using awayDayPlanner.GUI.Model.Billing;
-using awayDayPlanner.GUI.newItem;
+using awayDayPlanner.GUI.View.NewItem;
+using awayDayPlanner.GUI.Model;
+using awayDayPlanner.Lib.Users;
 
 
 namespace awayDayPlanner.GUI
@@ -50,8 +52,8 @@ namespace awayDayPlanner.GUI
             {
                 if (_registerForm == null)
                 {
-                    var model = new Model.RegisterModel();
-                    _registerForm = new RegisterForm();
+                    var model = RegisterModel.getInstance();
+                    _registerForm = RegisterForm.getInstance();
                     _registerForm.Presenter = new RegisterPresenter(_registerForm, model);
                 }
 
@@ -69,7 +71,8 @@ namespace awayDayPlanner.GUI
             {
                 if (_controlPanelForm == null)
                 {
-                    _controlPanelForm = new ControlPanelForm();
+                    IUser user = User.getInstance();
+                    _controlPanelForm = new ControlPanelForm(user);
                     _controlPanelPresenter = FormProvider.ControlPanelPresenter;
                 }
 
@@ -83,7 +86,7 @@ namespace awayDayPlanner.GUI
             {
                 if (_controlPanelPresenter == null)
                 {
-                    _controlPanelPresenter = new ControlPanelPresenter();
+                    _controlPanelPresenter = new ControlPanelPresenter(ControlPanelForm);
                 }
 
                 return _controlPanelPresenter;
@@ -95,53 +98,53 @@ namespace awayDayPlanner.GUI
 
 
         #region Booking System
-        public static bookingForm bookingForm
+        public static BookingForm BookingForm
         {
             get
             {
                 if (_bookingForm == null)
                 {
-                    _bookingForm = new bookingForm();
-                    _bookingPresenter = FormProvider.bookingPresenter;
+                    _bookingForm = new BookingForm();
+                    _bookingPresenter = FormProvider.BookingPresenter;
                 }
 
                 return _bookingForm;
             }
         }
 
-        public static bookingPresenter bookingPresenter
+        public static BookingPresenter BookingPresenter
         {
             get
             {
                 if (_bookingPresenter == null)
                 {
-                    _bookingPresenter = new bookingPresenter(bookingForm, bookingModel);
+                    _bookingPresenter = new BookingPresenter(BookingForm, BookingModel, AddNewItem);
                 }
 
                 return _bookingPresenter;
             }
         }
 
-        public static bookingModel bookingModel
+        public static BookingModel BookingModel
         {
             get
             {
                 if (_bookingModel == null)
                 {
-                    _bookingModel = new bookingModel();
+                    _bookingModel = new BookingModel();
                 }
 
                 return _bookingModel;
             }
         }
 
-        public static addNewItem addNewItem
+        public static AddNewItem AddNewItem
         {
             get
             {
                 if (_addNewItem == null)
                 {
-                    _addNewItem = new addNewItem();
+                    _addNewItem = new AddNewItem();
                 }
 
                 return _addNewItem;
@@ -172,7 +175,7 @@ namespace awayDayPlanner.GUI
             {
                 if (_awayDayPresenter == null)
                 {
-                    _awayDayPresenter = new AwayDayPresenter();
+                    _awayDayPresenter = new AwayDayPresenter(AwayDayForm, AwayDayModel);
                 }
 
                 return _awayDayPresenter;
@@ -230,7 +233,7 @@ namespace awayDayPlanner.GUI
             {
                 if (_adminPresenter == null)
                 {
-                    _adminPresenter = new AdminPresenter();
+                    _adminPresenter = new AdminPresenter(AdminForm, AdminModel);
                 }
 
                 return _adminPresenter;
@@ -270,27 +273,12 @@ namespace awayDayPlanner.GUI
             {
                 if (_adminReviewPresenter == null)
                 {
-                    _adminReviewPresenter = new AdminReviewPresenter();
+                    _adminReviewPresenter = new AdminReviewPresenter(AdminReviewForm, AdminForm, AdminPresenter);
                 }
 
                 return _adminReviewPresenter;
             }
         }
-
-        public static AdminReviewModel AdminReviewModel
-        {
-            get
-            {
-                if (_adminReviewModel == null)
-                {
-                    _adminReviewModel = new AdminReviewModel();
-                }
-
-                return _adminReviewModel;
-            }
-        }
-
-
 
         #endregion
 
@@ -314,31 +302,26 @@ namespace awayDayPlanner.GUI
             
         }
 
-
-
-
-
         #endregion
+
 
         private static RegisterForm _registerForm;
         private static LoginForm _loginForm;
-        private static addNewItem _addNewItem;
-        private static bookingForm _bookingForm;
-        private static bookingPresenter _bookingPresenter;
-        private static bookingModel _bookingModel;
+        private static AddNewItem _addNewItem;
+        private static BookingForm _bookingForm;
+        private static BookingPresenter _bookingPresenter;
+        private static BookingModel _bookingModel;
         private static ControlPanelForm _controlPanelForm;
         private static ControlPanelPresenter _controlPanelPresenter;
         private static AwayDayForm _awayDayForm;
         private static AwayDayPresenter _awayDayPresenter;
         private static AwayDayModel _awayDayModel;
+        private static AdminModel _adminModel;
         private static AwayDayActivities _awayDayActivities;
         private static AdminForm _adminForm;
         private static AdminPresenter _adminPresenter;
-        private static AdminModel _adminModel;
         private static AdminReviewForm _adminReviewForm;
         private static AdminReviewPresenter _adminReviewPresenter;
-        private static AdminReviewModel _adminReviewModel;
         private static BillingForm _BillingForm;
-
     }
 }

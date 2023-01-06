@@ -33,15 +33,13 @@ namespace awayDayPlanner.Source.Activities
             }
         }
 
-        public IActivity getActivityInstance(ActivityType activityType)
+        public IActivity GetActivityInstance(ActivityType activityType)
         {
-            IActivity activity = null;
             if (ActivityMapping.ContainsKey(activityType))
             {
-                activity = (IActivity)ActivityMapping[activityType];
-                return activity.CreateActivity();
+                return (IActivity) ((IActivity)ActivityMapping[activityType]).Clone();
             }
-            throw new Exception();
+            throw new KeyNotFoundException("Activity Not Registered. Register the activity before use.");
         }
     }
 }
