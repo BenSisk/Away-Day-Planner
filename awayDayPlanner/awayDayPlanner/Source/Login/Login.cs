@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using awayDayPlanner.GUI.Model;
-using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
-using awayDayPlanner.Source.Users;
+using awayDayPlanner.Source.Factory;
 
 namespace awayDayPlanner.Lib.Factory
 {
-    public class Login : IFactory, Source.Factory.ILogin
+    public class Login : ILogin
     {
         [Key]
         public int loginID { get; set; }
@@ -25,18 +17,13 @@ namespace awayDayPlanner.Lib.Factory
 
         private Login() { }
 
-        public static Source.Factory.ILogin getInstance()
+        public static ILogin getInstance()
         {
                 if (instance == null)
                 {
                     instance = new Login();
                 }
                 return instance;
-        }
-
-        public IUser CreateUserObject()
-        {
-            return User.getInstance();
         }
     }
 }

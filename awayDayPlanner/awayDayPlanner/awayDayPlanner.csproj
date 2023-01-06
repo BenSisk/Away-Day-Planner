@@ -186,9 +186,8 @@
     <Compile Include="Source\Activities\ActivityType.cs" />
     <Compile Include="Source\Activities\AwayDay.cs" />
     <Compile Include="Source\Activities\IActivity.cs" />
-    <Compile Include="Source\Factory\ILogin.cs" />
-    <Compile Include="Source\Factory\Login.cs" />
-    <Compile Include="Source\Factory\IFactory.cs" />
+    <Compile Include="Source\Login\ILogin.cs" />
+    <Compile Include="Source\Login\Login.cs" />
     <Compile Include="Source\Security\Hashing\HashProvider.cs" />
     <Compile Include="Source\Security\Hashing\Hasher.cs" />
     <Compile Include="Source\Security\Hashing\IHasher.cs" />
