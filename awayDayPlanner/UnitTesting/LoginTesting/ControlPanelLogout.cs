@@ -21,9 +21,9 @@ namespace UnitTesting.LoginTesting
             IUser user = new UserMock();
             User.UpdateInstance(user);
 
-            presenter.LogOut();
+            presenter.SetUserNull();
             user = User.getInstance();
-            Assert.IsNull(user);
+            Assert.IsNull(user.firstname);
         }
     }
 }

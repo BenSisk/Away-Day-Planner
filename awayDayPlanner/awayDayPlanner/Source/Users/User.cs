@@ -52,7 +52,7 @@ namespace awayDayPlanner.Lib.Users
 
         public static void UpdateInstance(IUser user)
         {
-            instance = (User) user;
+            instance = user;
         }
 
     }

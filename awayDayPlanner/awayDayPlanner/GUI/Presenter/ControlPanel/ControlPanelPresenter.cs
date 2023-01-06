@@ -41,9 +41,14 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
             FormProvider.LoginForm.Reset();
             FormProvider.LoginForm.Show();
             FormProvider.ControlPanelForm.Hide();
-            User.UpdateInstance(null);
+
+            this.SetUserNull();
         }
 
+        public void SetUserNull()
+        {
+            User.UpdateInstance(null);
+        }
         public void AdminShow()
         {
             FormProvider.AdminForm.Show();
