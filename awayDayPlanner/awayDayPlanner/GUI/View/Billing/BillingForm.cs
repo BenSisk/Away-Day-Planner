@@ -1,5 +1,6 @@
 ﻿using awayDayPlanner.GUI.Billing;
 using awayDayPlanner.GUI.Model.Billing; //this needs to be bens namespace
+using awayDayPlanner.Source.Activities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

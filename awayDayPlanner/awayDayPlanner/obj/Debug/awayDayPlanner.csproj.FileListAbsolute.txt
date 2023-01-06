@@ -58,7 +58,6 @@ C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.pdb
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Rhino.Mocks.dll
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Rhino.Mocks.xml
-C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUserClass.resources
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\PdfSharp.Charting.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\PdfSharp.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\Rhino.Mocks.dll
@@ -68,3 +67,5 @@ C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUserClass.resources
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.GUI.View.Billing.BillingForm.resources
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\awayDayPlanner\obj\Debug\awayDayPlanner.Migrations.AddUserClass.resources

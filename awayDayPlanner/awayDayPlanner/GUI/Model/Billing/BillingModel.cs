@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using awayDayPlanner.Source.Activities;
 
 namespace awayDayPlanner.GUI.Model.Billing
 {

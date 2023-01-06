@@ -23,7 +23,7 @@ using awayDayPlanner.GUI.Model.Billing;
 using awayDayPlanner.GUI.View.NewItem;
 using awayDayPlanner.GUI.Model;
 using awayDayPlanner.Lib.Users;
-
+using awayDayPlanner.Source.Activities;
 
 namespace awayDayPlanner.GUI
 {

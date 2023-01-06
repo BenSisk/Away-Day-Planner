@@ -52,3 +52,6 @@ C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bi
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\Rhino.Mocks.xml
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\Rhino.Mocks.dll
 C:\Users\Ben\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\Rhino.Mocks.xml
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\PdfSharp.dll
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\PdfSharp.xml
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\de\PdfSharp.resources.dll

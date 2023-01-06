@@ -1,5 +1,6 @@
 ﻿using awayDayPlanner.GUI.Billing;
 using awayDayPlanner.GUI.Model.Billing;
+using awayDayPlanner.Source.Activities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,7 @@ namespace awayDayPlanner.GUI
             _view.BuyerName.Text = awayDay.User.firstname + " " + awayDay.User.lastname;
             _view.BuyerAddress.Text = awayDay.User.Address.FirstLine + ", " + awayDay.User.Address.SecondLine 
                 + ", " + awayDay.User.Address.PostCode;
-            _view.BuyerPhone.Text = awayDay.User.phone;
+            _view.BuyerPhone.Text = awayDay.User.phone.ToString();
             _view.BuyerEmail.Text = awayDay.User.email;
 
             _view.TotalCost.Text = "£ " + awayDay.TotalCost.ToString("0.00");
@@ -58,7 +59,7 @@ namespace awayDayPlanner.GUI
             DataGridSetup();
             foreach (var activity in awayDay.AwayDayActivities)
             {
-                _view.addItemToDGV.Rows.Add(activity.Name, activity.EstimatedCost);
+                _view.addItemToDGV.Rows.Add(activity.Name, activity.Type.ActivityTypeEstimatedPrice);
             }
         }
 
