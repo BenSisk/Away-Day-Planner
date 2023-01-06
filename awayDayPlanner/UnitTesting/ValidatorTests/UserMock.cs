@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace UnitTesting.ValidatorTests
 {
-    internal class UserMock : IUser
+    public class UserMock : IUser
     {
         public int userID { get; set; }
         public string firstname { get; set; }

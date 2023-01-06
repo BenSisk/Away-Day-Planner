@@ -11,6 +11,7 @@ using System.Linq;
 using System.Windows.Forms;
 using awayDayPlanner.GUI.View.Booking;
 using UnitTesting.ActivityTesting;
+using UnitTesting.ValidatorTests;
 
 namespace UnitTesting.Booking
 {

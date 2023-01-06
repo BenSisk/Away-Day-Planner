@@ -79,6 +79,7 @@
     <Compile Include="Booking\BookingModelMoc.cs" />
     <Compile Include="Booking\BookingPresenterMoc.cs" />
     <Compile Include="Booking\BookingTests.cs" />
+    <Compile Include="Booking\UserMock.cs" />
     <Compile Include="UsersTest\AddressTests.cs" />
     <Compile Include="UsersTest\UserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

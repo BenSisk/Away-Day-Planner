@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTesting.ValidatorTests
+namespace UnitTesting.Booking
 {
     internal class UserMock : IUser
     {
