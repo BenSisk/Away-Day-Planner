@@ -7,3 +7,10 @@ awayDayPlanner/.vs/*
 awayDayPlanner/awayDayPlanner/bin/Debug/Database/Database.mdf
 *.ldf
 *.exe
+awayDayPlanner/awayDayPlanner/bin/Debug/Database/Database.mdf
+awayDayPlanner/UnitTesting/bin/Debug/awayDayPlanner.exe
+awayDayPlanner/UnitTesting/bin/Debug/awayDayPlanner.pdb
+awayDayPlanner/UnitTesting/bin/Debug/UnitTesting.dll
+awayDayPlanner/UnitTesting/bin/Debug/UnitTesting.pdb
+awayDayPlanner/UnitTesting/obj/Debug/UnitTesting.dll
+awayDayPlanner/UnitTesting/obj/Debug/UnitTesting.pdb
