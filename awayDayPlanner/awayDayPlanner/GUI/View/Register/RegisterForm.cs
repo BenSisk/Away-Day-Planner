@@ -13,6 +13,7 @@ namespace awayDayPlanner.GUI
 {
     public partial class RegisterForm : Form, IRegisterView
     {
+        public RegisterPresenter Presenter { get; set; }
         private static RegisterForm instance = null;
         private RegisterForm()
         {
@@ -116,10 +117,6 @@ namespace awayDayPlanner.GUI
             get { return this.tltPasswordError; }
             set { this.tltPasswordError = value; }
         }
-
-        RegisterPresenter IRegisterView.Presenter { get => RegisterPresenter.getInstance(); }
-
-        public RegisterPresenter Presenter = RegisterPresenter.getInstance();
 
         private void btnClose_Click(object sender, EventArgs e)
         {

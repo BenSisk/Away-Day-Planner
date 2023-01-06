@@ -1,4 +1,5 @@
-﻿using awayDayPlanner.Lib.Users;
+﻿using awayDayPlanner.GUI.Presenter.Login;
+using awayDayPlanner.Lib.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace awayDayPlanner.GUI
         public string Username { get { return this.txtUsername.Text; } }
         public string Password { get { return this.txtPassword.Text; } }
 
-        public LoginPresenter Presenter
+        public ILoginPresenter Presenter
         { 
             private get; set; 
         }
@@ -53,9 +54,5 @@ namespace awayDayPlanner.GUI
             this.txtPassword.Text = "";
         }
 
-        public IUser GetUser()
-        {
-            return (IUser) Presenter.User;
-        }
     }
 }

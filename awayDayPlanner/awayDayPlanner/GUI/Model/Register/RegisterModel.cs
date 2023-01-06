@@ -5,13 +5,7 @@ using awayDayPlanner.Source.Security;
 using awayDayPlanner.Source.Security.Salting;
 using awayDayPlanner.Source.Security.Validator;
 using awayDayPlanner.Source.Users;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static awayDayPlanner.Source.Security.Validator.Validator;
 
 namespace awayDayPlanner.GUI.Model
 {
@@ -25,14 +19,13 @@ namespace awayDayPlanner.GUI.Model
         {
             if (instance == null) 
                 instance = new RegisterModel();
-
             return instance;
         }
                
 
         public Dictionary<RegisterErrors, string> Submit(string confirmPassword)
         {
-            Login login = Login.getInstance();
+            Login login = (Login)Login.getInstance();
             User user =User.getInstance();
             Address address = Address.getInstance();
 

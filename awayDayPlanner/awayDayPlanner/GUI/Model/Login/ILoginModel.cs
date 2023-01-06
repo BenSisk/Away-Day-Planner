@@ -13,6 +13,6 @@ namespace awayDayPlanner.GUI.Model
 
         void Close();
 
-        User Submit(string username, string password);
+        IUser Submit(string username, string password);
     }
 }

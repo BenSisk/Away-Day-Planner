@@ -10,6 +10,7 @@ using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Source.Activities;
 using System.ComponentModel;
 using awayDayPlanner.Source.Factory;
+using System.Runtime.CompilerServices;
 
 namespace awayDayPlanner.Lib.Users
 {
@@ -31,9 +32,10 @@ namespace awayDayPlanner.Lib.Users
         public bool isAdmin { get; set; } = false;
 
         [Required]
-        public virtual Address Address { get; set; }
+        public virtual IAddress Address { get; set; }
         public virtual Login Login { get; set; }
-        public virtual ICollection<AwayDay> AwayDays { get; set; } = new List<AwayDay>();
+        public virtual ICollection<AwayDay> AwayDays { get; set; }
+        public ICollection<AwayDay> AwayDay { get; set; }
 
         private static User instance = null;
 
@@ -46,6 +48,11 @@ namespace awayDayPlanner.Lib.Users
                 instance = new User();
             }
             return instance;
+        }
+
+        public static void UpdateInstance(IUser user)
+        {
+            instance = (User) user;
         }
 
     }

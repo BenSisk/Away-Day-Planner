@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "awayDayPlanner.Database.ADPContext";
         }
 
         protected override void Seed(awayDayPlanner.Database.ADPContext context)

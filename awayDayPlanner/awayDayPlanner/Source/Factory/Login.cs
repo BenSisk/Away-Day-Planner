@@ -25,7 +25,7 @@ namespace awayDayPlanner.Lib.Factory
 
         private Login() { }
 
-        public static Login getInstance()
+        public static Source.Factory.ILogin getInstance()
         {
                 if (instance == null)
                 {

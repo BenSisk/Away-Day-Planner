@@ -22,6 +22,8 @@ namespace awayDayPlanner.Source.Security.Validator
         EmptySurname,
         SpecialCharactersSurname,
         SpecialCharactersFirstname,
+        FirstNameHasDigits,
+        SurnameHasDigits,
         FirstSuccess,
         SurnameSuccess,
         InvalidEmail,
@@ -33,7 +35,7 @@ namespace awayDayPlanner.Source.Security.Validator
         PhoneSuccess,
         EmailSuccess
     }
-    internal class Validator : IValidator
+    public class Validator : IValidator
     {
         private Dictionary<RegisterErrors, string> 
             AllErrors = new Dictionary<RegisterErrors, string>();
@@ -150,33 +152,45 @@ namespace awayDayPlanner.Source.Security.Validator
                 AllErrors.Add(RegisterErrors.EmailSuccess, "Email success");
         }
 
-        private void verifyFirstname(string firstname, bool Surname)
+        private bool stringHasDigits(string firstname)
         {
-            if (firstname == null)
-                if (Surname)
-                    AllErrors.Add(RegisterErrors.EmptyFirstName, "Firstname can't be empty");
-                else
+            bool containsInt = firstname.Any(char.IsDigit);
+            return containsInt;
+        }
+
+        private void verifyFirstname(string testname, bool IsSurname)
+        {
+            if (testname == null)
+                if (IsSurname)
                     AllErrors.Add(RegisterErrors.EmptySurname, "Surname can't be empty");
+                else
+                    AllErrors.Add(RegisterErrors.EmptyFirstName, "Firstname can't be empty");
+
             // no point continuing the checks with a null name
             else
             {
                 // 2 character names? Aj?
-                if (firstname.Length > 50 || firstname.Length < 2)
-                    if (Surname)
+                if (testname.Length > 30 || testname.Length < 2)
+                    if (IsSurname)
                         AllErrors.Add(RegisterErrors.SurnameSize, 
                             "Surname must be be 2 and 50 characters");
                     else
                         AllErrors.Add(RegisterErrors.FirstNameSize,
                             "Firstname must be be 2 and 50 characters");
-                else if (this.HasSpecialChars(firstname))
-                    if (Surname)
+                else if (this.HasSpecialChars(testname))
+                    if (IsSurname)
                         AllErrors.Add(RegisterErrors.SpecialCharactersSurname,
                             "Name cannot contain special characters");
                     else
                         AllErrors.Add(RegisterErrors.SpecialCharactersFirstname,
                             "Name cannot contain special characters");
+                else if (this.stringHasDigits(testname))
+                    if (IsSurname)
+                        AllErrors.Add(RegisterErrors.SurnameHasDigits, "Surname can't contain digits");
+                    else
+                        AllErrors.Add(RegisterErrors.FirstNameHasDigits, "Firstname can't contain digits");
                 else
-                    if (Surname)
+                    if (IsSurname)
                         AllErrors.Add(RegisterErrors.SurnameSuccess, "firstname success");
                     else
                         AllErrors.Add(RegisterErrors.FirstSuccess, "surname Success");

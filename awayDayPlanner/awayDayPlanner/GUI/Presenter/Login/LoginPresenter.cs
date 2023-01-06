@@ -1,4 +1,5 @@
 ﻿using awayDayPlanner.GUI.Model;
+using awayDayPlanner.GUI.Presenter.Login;
 using awayDayPlanner.Lib.Users;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,14 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.GUI
 {
-    public class LoginPresenter
+    public class LoginPresenter: ILoginPresenter
     {
-        public User User { get; private set; }
-
         private readonly ILoginView _view;
         private readonly ILoginModel _model;
 
         public LoginPresenter(ILoginView view, ILoginModel model)
         {
             _view = view;
-            view.Presenter = this;
             _model = model;
         }
 
@@ -42,8 +40,6 @@ namespace awayDayPlanner.GUI
                 _view.Message("Invalid login details");
             else
             {
-                FormProvider.ControlPanelForm.user = user;
-                this.User = user;
                 FormProvider.ControlPanelPresenter.AdminCheck();
                 FormProvider.ControlPanelForm.Show();
                 FormProvider.LoginForm.Hide();
@@ -52,7 +48,7 @@ namespace awayDayPlanner.GUI
 
         public void Reset()
         {
-            this.User = null;
+            User.UpdateInstance(null);
         }
     }
 }

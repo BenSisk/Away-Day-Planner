@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace awayDayPlanner.Source.Security.Validator
 {
-    internal interface IValidator
+    public interface IValidator
     {
         Dictionary<RegisterErrors, string> ValidateRegister(
             ILogin login,

@@ -51,7 +51,7 @@ namespace awayDayPlanner.GUI.Presenter.ControlPanel
 
         public void AdminCheck()
         {
-            if (FormProvider.LoginForm.GetUser().isAdmin)
+            if (User.getInstance().isAdmin)
             {
                 view.ShowAdminButton();
             }

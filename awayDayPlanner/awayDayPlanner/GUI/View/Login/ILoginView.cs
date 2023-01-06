@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awayDayPlanner.GUI.Presenter.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,10 @@ namespace awayDayPlanner.GUI
         string Username { get;}
         string Password { get;}
 
-        LoginPresenter Presenter { set; }
+        ILoginPresenter Presenter { set; }
 
         void Message(string message);
+
+        void Reset();
     }
 }

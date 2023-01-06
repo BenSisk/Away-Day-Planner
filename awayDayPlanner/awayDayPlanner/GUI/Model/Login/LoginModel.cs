@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI.Model
 {
-    internal class LoginModel : ILoginModel
+    public class LoginModel : ILoginModel
     {
 
         public LoginModel() { 
@@ -38,7 +38,7 @@ namespace awayDayPlanner.GUI.Model
 
             return null;
         }
-        public User loginVerify(string username, string passwordHash)
+        public IUser loginVerify(string username, string passwordHash)
         {
             bool PasswordsMatch = false;
             var query = Database.Database.Data.Login.Where(x => x.Username == username)
@@ -62,13 +62,13 @@ namespace awayDayPlanner.GUI.Model
                              where login.Password == passwordHash
                              select User;
 
-                User user = query2.FirstOrDefault();
+                IUser user = query2.FirstOrDefault();
                 return user;
             }
 
             return null;
         }
-        public User Submit(string username, string password)
+        public IUser Submit(string username, string password)
         {
             
             string salt = userSalt(username);
@@ -82,8 +82,8 @@ namespace awayDayPlanner.GUI.Model
                 password = password + salt;
                 password = HashProvider.Hash(password, new SHA256Hasher());
 
-                User user = loginVerify(username, password);
-
+                IUser user = loginVerify(username, password);
+                User.UpdateInstance(user);
                 return user;
             }
         }

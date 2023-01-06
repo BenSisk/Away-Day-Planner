@@ -13,11 +13,15 @@ using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI.View.ControlPanel
 {
+
     public partial class ControlPanelForm : Form, IControlPanelForm
     {
-        public ControlPanelForm()
+        public IUser user { get; set; }
+
+        public ControlPanelForm(IUser user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         public IControlPanelPresenter Presenter
@@ -25,7 +29,6 @@ namespace awayDayPlanner.GUI.View.ControlPanel
             private get; set;
         }
 
-        public User user { get; set; }
 
         public void Register(IControlPanelPresenter presenter)
         {

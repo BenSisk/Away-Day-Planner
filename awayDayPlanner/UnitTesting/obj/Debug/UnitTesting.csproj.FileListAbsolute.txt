@@ -48,3 +48,5 @@ C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\ob
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.csproj.CopyComplete
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.dll
 C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\obj\Debug\UnitTesting.pdb
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\Rhino.Mocks.dll
+C:\Users\Amzo\Documents\GitHub\AdvancedProgramming\awayDayPlanner\UnitTesting\bin\Debug\Rhino.Mocks.xml

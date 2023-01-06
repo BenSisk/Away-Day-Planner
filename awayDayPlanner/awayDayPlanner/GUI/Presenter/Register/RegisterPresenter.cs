@@ -1,6 +1,8 @@
 ﻿using awayDayPlanner.GUI.Model;
+using awayDayPlanner.GUI.Presenter.Register;
 using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Factory;
 using awayDayPlanner.Source.Security.Validator;
 using awayDayPlanner.Source.Users;
 using System.Collections.Generic;
@@ -8,25 +10,17 @@ using System.Collections.Generic;
 
 namespace awayDayPlanner.GUI
 {
-    public class RegisterPresenter
+    public class RegisterPresenter: IRegisterPresenter
     {
         private readonly IRegisterView _view;
         private readonly IRegisterModel _model;
-        private static RegisterPresenter instance = null;
 
-
-        private RegisterPresenter()
+        public RegisterPresenter(IRegisterView view, IRegisterModel model)
         {
-            _view = RegisterForm.getInstance();
-            _model = RegisterModel.getInstance();
+            _view = view;
+            _model = model;
         }
 
-        public static RegisterPresenter getInstance()
-        {
-            if (instance == null)
-                instance = new RegisterPresenter();
-            return instance;
-        }
         public void Submit()
         {
             int number;
@@ -46,7 +40,7 @@ namespace awayDayPlanner.GUI
             address.SecondLine = _view.SecondLine;
             address.PostCode = _view.PostCode;
 
-            Login login = Login.getInstance();
+            ILogin login = Login.getInstance();
 
             login.Username = _view.Username;
             login.Password = _view.Password;

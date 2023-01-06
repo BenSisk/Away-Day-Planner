@@ -63,6 +63,9 @@
     <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -96,6 +99,8 @@
     <Compile Include="GUI\Presenter\AwayDays\IAwayDayPresenter.cs" />
     <Compile Include="GUI\Presenter\ControlPanel\ControlPanelPresenter.cs" />
     <Compile Include="GUI\Presenter\ControlPanel\IControlPanelPresenter.cs" />
+    <Compile Include="GUI\Presenter\Login\ILoginPresenter.cs" />
+    <Compile Include="GUI\Presenter\Register\IRegisterPresenter.cs" />
     <Compile Include="GUI\View\Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,13 +176,9 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202301051009098_InitialCreate.cs" />
-    <Compile Include="Migrations\202301051009098_InitialCreate.designer.cs">
-      <DependentUpon>202301051009098_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202301051059544_AddUserClass.cs" />
-    <Compile Include="Migrations\202301051059544_AddUserClass.designer.cs">
-      <DependentUpon>202301051059544_AddUserClass.cs</DependentUpon>
+    <Compile Include="Migrations\202301061201000_AddUserClass.cs" />
+    <Compile Include="Migrations\202301061201000_AddUserClass.designer.cs">
+      <DependentUpon>202301061201000_AddUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
@@ -230,11 +231,8 @@
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202301051009098_InitialCreate.resx">
-      <DependentUpon>202301051009098_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202301051059544_AddUserClass.resx">
-      <DependentUpon>202301051059544_AddUserClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301061201000_AddUserClass.resx">
+      <DependentUpon>202301061201000_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

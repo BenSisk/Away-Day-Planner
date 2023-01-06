@@ -19,6 +19,7 @@ using awayDayPlanner.GUI.Model.AwayDays;
 using awayDayPlanner.GUI.Model.Admin;
 using awayDayPlanner.GUI.View.NewItem;
 using awayDayPlanner.GUI.Model;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI
 {
@@ -49,7 +50,7 @@ namespace awayDayPlanner.GUI
                 {
                     var model = RegisterModel.getInstance();
                     _registerForm = RegisterForm.getInstance();
-                    _registerForm.Presenter = RegisterPresenter.getInstance();
+                    _registerForm.Presenter = new RegisterPresenter(_registerForm, model);
                 }
 
                 return _registerForm;
@@ -66,7 +67,8 @@ namespace awayDayPlanner.GUI
             {
                 if (_controlPanelForm == null)
                 {
-                    _controlPanelForm = new ControlPanelForm();
+                    IUser user = User.getInstance();
+                    _controlPanelForm = new ControlPanelForm(user);
                     _controlPanelPresenter = FormProvider.ControlPanelPresenter;
                 }
 
@@ -286,10 +288,10 @@ namespace awayDayPlanner.GUI
         private static AwayDayForm _awayDayForm;
         private static AwayDayPresenter _awayDayPresenter;
         private static AwayDayModel _awayDayModel;
+        private static AdminModel _adminModel;
         private static AwayDayActivities _awayDayActivities;
         private static AdminForm _adminForm;
         private static AdminPresenter _adminPresenter;
-        private static AdminModel _adminModel;
         private static AdminReviewForm _adminReviewForm;
         private static AdminReviewPresenter _adminReviewPresenter;
     }
