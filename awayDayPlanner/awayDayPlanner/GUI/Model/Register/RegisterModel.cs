@@ -13,7 +13,7 @@ namespace awayDayPlanner.GUI.Model
     {
         private static RegisterModel instance = null;
 
-        private RegisterModel() {}
+        public RegisterModel() {}
 
         public static RegisterModel getInstance()
         {
@@ -23,11 +23,10 @@ namespace awayDayPlanner.GUI.Model
         }
                
 
-        public Dictionary<RegisterErrors, string> Submit(string confirmPassword)
+        public Dictionary<RegisterErrors, string> Submit(string confirmPassword, IUser user, ILogin login, IAddress address)
         {
-            Login login = (Login)Login.getInstance();
-            User user =User.getInstance();
-            Address address = Address.getInstance();
+            if (user is null || login is null || address is null)
+                return null;
 
             var verified = Validate.ValidateRegister(login,
                                                      user,
@@ -42,11 +41,11 @@ namespace awayDayPlanner.GUI.Model
                 login.Password = login.Password + login.Salt;
                 login.Password = HashProvider.Hash(login.Password, new SHA256Hasher());
 
-                Database.Database.Data.Address.Add(address);
+                Database.Database.Data.Address.Add((Address)address);
                 user.Address = address;
-                user.Login = login;
-                Database.Database.Data.User.Add(user);
-                Database.Database.Data.Login.Add(login);
+                user.Login = (Login)login;
+                Database.Database.Data.User.Add((User)user);
+                Database.Database.Data.Login.Add((Login)login);
 
                 Database.Database.Data.SaveChanges();
 

@@ -28,14 +28,14 @@ namespace awayDayPlanner.GUI
             if (!int.TryParse(_view.phone, out number))
                 number = 0;
 
-            User user = User.getInstance();
+            IUser user = User.getInstance();
             user.firstname = _view.firstname;
             user.lastname = _view.surname;
             user.email = _view.email;
             user.dob = _view.dob;
             user.phone = number;
 
-            Address address = Address.getInstance();
+            IAddress address = Address.getInstance();
             address.FirstLine = _view.FirstLine;
             address.SecondLine = _view.SecondLine;
             address.PostCode = _view.PostCode;
@@ -45,7 +45,12 @@ namespace awayDayPlanner.GUI
             login.Username = _view.Username;
             login.Password = _view.Password;
 
-            var result = _model.Submit(_view.Password2);
+            var result = _model.Submit(_view.Password2, user, login, address);
+
+            if (result is null) 
+            {
+                _view.Message("All fields are required");
+            }
 
             foreach (KeyValuePair<RegisterErrors, string> item in result)
             {

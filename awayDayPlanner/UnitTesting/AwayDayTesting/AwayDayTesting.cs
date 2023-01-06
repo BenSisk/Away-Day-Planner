@@ -31,7 +31,7 @@ namespace UnitTesting.AwayDayTesting
             bool CanBeConfirmed = false;
             double TotalCost = 20.05;
             List<Activity> activityList =  new List<Activity> { new Activity(), new Activity() };
-            User user = User.getInstance();
+            IUser user = User.getInstance();
 
 
             awayday.AwayDayID = ID;
@@ -68,7 +68,7 @@ namespace UnitTesting.AwayDayTesting
             bool CanBeConfirmed = true;
             double TotalCost = 0;
             List<Activity> activityList = new List<Activity> { new Activity(), new Activity() };
-            User user = User.getInstance();
+            IUser user = User.getInstance();
 
 
             awayday.AwayDayID = ID;
@@ -105,7 +105,7 @@ namespace UnitTesting.AwayDayTesting
             bool CanBeConfirmed = true;
             double TotalCost = -5;
             List<Activity> activityList = new List<Activity> { new Activity(), new Activity() };
-            User user = User.getInstance();
+            IUser user = User.getInstance();
 
 
             awayday.AwayDayID = ID;
