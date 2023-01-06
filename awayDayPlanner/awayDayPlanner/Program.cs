@@ -19,10 +19,20 @@ namespace awayDayPlanner
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.FullName);
-            Application.Run(FormProvider.LoginForm);
+
+
+            if (!File.Exists("Database\\Database.mdf"))
+            {
+                MessageBox.Show("No Database found, Aborting");
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(FormProvider.LoginForm);
+            }
         }
     }
 }
