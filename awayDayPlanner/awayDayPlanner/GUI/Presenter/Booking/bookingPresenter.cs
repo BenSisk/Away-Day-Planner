@@ -10,6 +10,7 @@ using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.View.NewItem;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI.Presenter.Booking
 {
@@ -31,7 +32,7 @@ namespace awayDayPlanner.GUI.Presenter.Booking
 
         public void Submit()
         {
-            if (model.Submit(this.activities, view.GetDate()) == 0)
+            if (model.Submit(this.activities, view.GetDate(), User.getInstance()) == 0)
             {
                 view.Message("Application Submitted Successfully");
                 this.Close();

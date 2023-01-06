@@ -13,7 +13,7 @@ namespace awayDayPlanner.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202301061201000_AddUserClass"; }
+            get { return "202301061308320_AddUserClass"; }
         }
         
         string IMigrationMetadata.Source

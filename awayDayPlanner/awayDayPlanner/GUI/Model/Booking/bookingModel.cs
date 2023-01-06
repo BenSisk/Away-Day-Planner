@@ -20,7 +20,7 @@ namespace awayDayPlanner.GUI.Model.Booking
             this.presenter = presenter;
         }
 
-        public int Submit(List<IActivity> activities, DateTime date)
+        public int Submit(List<IActivity> activities, DateTime date, IUser iuser)
         {
             if (activities.Count > 0)
             {
@@ -31,7 +31,7 @@ namespace awayDayPlanner.GUI.Model.Booking
                     awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
-                awayday.User = (User) User.getInstance();
+                awayday.User = iuser;
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;

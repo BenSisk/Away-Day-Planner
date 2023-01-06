@@ -176,9 +176,9 @@
     <Compile Include="GUI\View\Register\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202301061201000_AddUserClass.cs" />
-    <Compile Include="Migrations\202301061201000_AddUserClass.designer.cs">
-      <DependentUpon>202301061201000_AddUserClass.cs</DependentUpon>
+    <Compile Include="Migrations\202301061308320_AddUserClass.cs" />
+    <Compile Include="Migrations\202301061308320_AddUserClass.designer.cs">
+      <DependentUpon>202301061308320_AddUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Source\Activities\Activity.cs" />
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="GUI\View\Register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202301061201000_AddUserClass.resx">
-      <DependentUpon>202301061201000_AddUserClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202301061308320_AddUserClass.resx">
+      <DependentUpon>202301061308320_AddUserClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

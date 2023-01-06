@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using awayDayPlanner.GUI.View.Booking;
 using UnitTesting.ActivityTesting;
 using UnitTesting.ValidatorTests;
+using awayDayPlanner.Lib.Users;
 
 namespace UnitTesting.Booking
 {
@@ -141,7 +142,8 @@ namespace UnitTesting.Booking
             activity.Name = "name";
             activity.Notes = "notes";
 
-            int output = model.Submit(new List<IActivity> { activity }, DateTime.Now);
+            IUser user = new UserMock();
+            int output = model.Submit(new List<IActivity> { activity }, DateTime.Now, user);
 
             Assert.AreEqual(0, output);
         }
@@ -162,7 +164,8 @@ namespace UnitTesting.Booking
             activity.Name = "name";
             activity.Notes = "notes";
 
-            int output = model.Submit(new List<IActivity> { activity, activity, activity }, DateTime.Now);
+            IUser user = new UserMock();
+            int output = model.Submit(new List<IActivity> { activity, activity, activity }, DateTime.Now, user);
 
             Assert.AreEqual(0, output);
         }

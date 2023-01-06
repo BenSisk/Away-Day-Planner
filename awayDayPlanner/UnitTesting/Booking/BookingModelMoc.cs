@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Activities;
 
 namespace UnitTesting.Booking
@@ -17,7 +18,7 @@ namespace UnitTesting.Booking
 
         public void Register(IBookingPresenter presenter) { }
 
-        public int Submit(List<IActivity> activities, DateTime datetime)
+        public int Submit(List<IActivity> activities, DateTime datetime, IUser user)
         {
             this.mocActivities = activities;
             this.datetime = datetime;

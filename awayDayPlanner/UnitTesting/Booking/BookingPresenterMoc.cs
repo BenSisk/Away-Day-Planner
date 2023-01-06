@@ -1,5 +1,6 @@
 ﻿using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Presenter.Booking;
+using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Activities;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,8 @@ namespace UnitTesting.Booking
 
         public void CallModel()
         {
-            model.Submit(activities, date);
+            IUser user = User.getInstance();
+            model.Submit(activities, date, user);
         }
     }
 }
