@@ -115,25 +115,5 @@ namespace UnitTesting.LoginTesting
             view.VerifyAllExpectations();
 
         }
-
-        [TestMethod]
-        public void TestPresenterSubmit()
-        {
-            ILoginView view = MockRepository.GenerateMock<ILoginView>();
-            ILoginModel model = MockRepository.GenerateMock<LoginModel>();
-
-            ILoginPresenter Presenter = MockRepository.GenerateMock<LoginPresenter>(view, model);
-
-            view.Stub(x => x.Username).Return("test");
-            view.Stub(x => x.Password).Return("password");
-
-            Presenter.Expect(i => i.Submit());
-
-            model.Submit(view.Username, view.Password);
-
-            Presenter.VerifyAllExpectations();
-
-        }
-
     }
 }

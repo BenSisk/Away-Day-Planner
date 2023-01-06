@@ -37,11 +37,11 @@ namespace awayDayPlanner.Lib.Users
         public virtual ICollection<AwayDay> AwayDays { get; set; }
         public ICollection<AwayDay> AwayDay { get; set; }
 
-        private static User instance = null;
+        private static IUser instance = null;
 
         private User() { }
 
-        public static User getInstance()
+        public static IUser getInstance()
         {
             if (instance == null)
             {
