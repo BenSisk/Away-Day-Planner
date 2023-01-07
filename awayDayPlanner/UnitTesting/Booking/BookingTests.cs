@@ -13,6 +13,7 @@ using awayDayPlanner.GUI.View.Booking;
 using UnitTesting.ActivityTesting;
 using UnitTesting.ValidatorTests;
 using awayDayPlanner.Lib.Users;
+using awayDayPlanner.Source.Users;
 
 namespace UnitTesting.Booking
 {

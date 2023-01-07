@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using awayDayPlanner.Source.Activities;
 using System.Windows.Forms;
 using System.Reflection;
+using awayDayPlanner.Lib.Users;
 
 namespace awayDayPlanner.GUI.Presenter.AwayDays
 {
@@ -64,7 +65,9 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
                     FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
                     if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
                     {
-                        //GeneratePDF(awayday)
+                        awayday.User = (User) User.getInstance();
+                        FormProvider.BillingForm.awayDay = awayday;
+                        FormProvider.BillingForm.Execute();
                     }
                     view.Reset();
                 }

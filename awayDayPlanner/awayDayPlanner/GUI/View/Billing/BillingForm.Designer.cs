@@ -361,7 +361,6 @@
             this.Name = "BillingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "billing";
-            this.Load += new System.EventHandler(this.BillingForm_Load);
             this.Details.ResumeLayout(false);
             this.Details.PerformLayout();
             this.panel2.ResumeLayout(false);

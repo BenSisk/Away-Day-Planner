@@ -56,6 +56,8 @@ namespace awayDayPlanner.GUI.View.Booking
             if (diaglogResult == DialogResult.Yes)
             {
                 presenter.Submit();
+                FormProvider.BillingForm.Execute();
+                FormProvider.BookingForm.Hide();
             }
         }
 

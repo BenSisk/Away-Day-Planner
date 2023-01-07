@@ -8,6 +8,7 @@ using awayDayPlanner.Source.Activities;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.Lib.Users;
 using awayDayPlanner.GUI.Presenter.ControlPanel;
+using awayDayPlanner.Source.Users;
 
 namespace awayDayPlanner.GUI.Model.Booking
 {
@@ -24,6 +25,7 @@ namespace awayDayPlanner.GUI.Model.Booking
         {
             if (activities.Count > 0)
             {
+                UserCast castthis = new UserCast();
                 AwayDay awayday = new AwayDay();
                 foreach (IActivity activity in activities)
                 {
@@ -31,14 +33,15 @@ namespace awayDayPlanner.GUI.Model.Booking
                     awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
-                awayday.User = iuser;
+                awayday.User = castthis.convertInterfacetype(iuser);
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
 
-                //GeneratePDF(awayday)
+                FormProvider.BillingForm.awayDay = awayday;
+
                 return 0;
             }
             else

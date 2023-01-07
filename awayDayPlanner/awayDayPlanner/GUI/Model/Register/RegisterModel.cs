@@ -42,7 +42,7 @@ namespace awayDayPlanner.GUI.Model
                 login.Password = HashProvider.Hash(login.Password, new SHA256Hasher());
 
                 Database.Database.Data.Address.Add((Address)address);
-                user.Address = address;
+                user.Address = (Address) address;
                 user.Login = (Login)login;
                 Database.Database.Data.User.Add((User)user);
                 Database.Database.Data.Login.Add((Login)login);

@@ -1,10 +1,12 @@
 ﻿using awayDayPlanner.Lib.Factory;
 using awayDayPlanner.Lib.Users;
 using awayDayPlanner.Source.Security;
+using awayDayPlanner.Source.Users;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace awayDayPlanner.GUI.Model
 {
@@ -68,6 +70,24 @@ namespace awayDayPlanner.GUI.Model
 
             return null;
         }
+
+        private Address getUserAddress(IUser user)
+        {
+            var addressID = from User in Database.Database.Data.User
+                            where User.userID == user.userID
+                            select User.Address.AddressID;
+
+            int address1 = addressID.FirstOrDefault();
+
+            var query2 = from User in Database.Database.Data.User
+                             join Address in Database.Database.Data.Address
+                             on User.Address.AddressID equals Address.AddressID
+                             where Address.AddressID == address1
+                             select Address;
+            Address address = query2.FirstOrDefault();
+
+            return address;
+        }
         public IUser Submit(string username, string password)
         {
             
@@ -81,8 +101,8 @@ namespace awayDayPlanner.GUI.Model
             {
                 password = password + salt;
                 password = HashProvider.Hash(password, new SHA256Hasher());
-
                 IUser user = loginVerify(username, password);
+                user.Address = getUserAddress(user);
                 User.UpdateInstance(user);
                 return user;
             }

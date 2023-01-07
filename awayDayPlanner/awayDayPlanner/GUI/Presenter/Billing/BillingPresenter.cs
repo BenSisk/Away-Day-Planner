@@ -1,6 +1,8 @@
 ﻿using awayDayPlanner.GUI.Billing;
 using awayDayPlanner.GUI.Model.Billing;
 using awayDayPlanner.Source.Activities;
+using PdfSharp.Pdf.IO;
+using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,9 @@ namespace awayDayPlanner.GUI
             _view.TopPanel.BackColor = System.Drawing.ColorTranslator.FromHtml("#fc9403");
             var datetime = DateTime.Now.ToString("yyyy-dd-M-HH-mm-ss");
             var filename = awayDay.User.firstname + " " + awayDay.User.lastname + " " + datetime;
-            _model.SaveImageAsPdf(@"c:\temp\screenshot.png", @"c:\temp\" + filename + ".pdf");
+            _model.SaveImageAsPdf("screenshot.png", @"../../PDF/" + filename + ".pdf");
+            _view.Message("The saved PDF can be viewed at: " + @"../../PDF/" + filename + ".pdf");
+            _view.Message("Invoice Emailed to " + awayDay.User.email);
         }
 
         public void BillingLoad (AwayDay awayDay)
@@ -59,7 +63,10 @@ namespace awayDayPlanner.GUI
             DataGridSetup();
             foreach (var activity in awayDay.AwayDayActivities)
             {
-                _view.addItemToDGV.Rows.Add(activity.Name, activity.Type.ActivityTypeEstimatedPrice);
+                if (awayDay.Confirmed)
+                    _view.addItemToDGV.Rows.Add(activity.Name, activity.ActualCost);
+                else
+                    _view.addItemToDGV.Rows.Add(activity.Name, activity.Type.ActivityTypeEstimatedPrice);
             }
         }
 
@@ -85,7 +92,8 @@ namespace awayDayPlanner.GUI
 
         public void Close ()
         {
-            FormProvider.BillingForm.Close();
+            FormProvider.BillingForm.Reset();
+            FormProvider.BillingForm.Hide();
         }
 
 

@@ -23,6 +23,6 @@ namespace awayDayPlanner.Source.Activities
         [Required]
         public virtual ICollection<Activity> AwayDayActivities { get; set; } = new List<Activity>();
         [Required]
-        public virtual IUser User { get; set; }
+        public virtual User User { get; set; }
     }
 }

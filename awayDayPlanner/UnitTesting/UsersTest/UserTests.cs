@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnitTesting.Booking;
+using UnitTesting.ValidatorTests;
 
 namespace UnitTesting.LoginTesting
 {
@@ -66,9 +67,11 @@ namespace UnitTesting.LoginTesting
         public void TestUsersAddress()
         {
             IUser user = User.getInstance();
-            user.Address = MockRepository.GenerateMock<IAddress>();
+            IAddress address = new AddressMock();
+            UserCast castthis = new UserCast();
+            user.Address = castthis.convertAddresstype(address);
 
-            Assert.IsInstanceOfType(user.Address, typeof(IAddress));
+            Assert.IsInstanceOfType(user.Address, typeof(Address));
         }
 
         [TestMethod] public void TestAdminBool()

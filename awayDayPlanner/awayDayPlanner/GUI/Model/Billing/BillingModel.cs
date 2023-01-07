@@ -8,6 +8,7 @@ using System.IO;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using awayDayPlanner.Source.Activities;
+using System.Windows.Forms;
 
 namespace awayDayPlanner.GUI.Model.Billing
 {
@@ -38,7 +39,7 @@ namespace awayDayPlanner.GUI.Model.Billing
             using (var bmp = new Bitmap(frm.Width, frm.Height))
             {
                 frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-                bmp.Save(@"c:\temp\screenshot.png");
+                bmp.Save("screenshot.png");
             }
         }
 

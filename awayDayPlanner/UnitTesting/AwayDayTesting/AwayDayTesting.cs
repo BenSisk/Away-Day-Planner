@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 using UnitTesting.ValidatorTests;
+using awayDayPlanner.Source.Users;
 
 namespace UnitTesting.AwayDayTesting
 {
@@ -41,7 +42,7 @@ namespace UnitTesting.AwayDayTesting
             awayday.CanBeConfirmed = CanBeConfirmed;
             awayday.TotalCost = TotalCost;
             awayday.AwayDayActivities = activityList;
-            awayday.User = user;
+            awayday.User = (User) user;
 
             model.awayDayList.Add(awayday);
             presenter.PopulateDataGrid();
@@ -70,7 +71,7 @@ namespace UnitTesting.AwayDayTesting
             double TotalCost = 0;
             List<Activity> activityList = new List<Activity> { new Activity(), new Activity() };
             IUser user = new UserMock();
-
+            UserCast castthis = new UserCast();
 
             awayday.AwayDayID = ID;
             awayday.AwayDayDate = datetime;
@@ -78,7 +79,7 @@ namespace UnitTesting.AwayDayTesting
             awayday.CanBeConfirmed = CanBeConfirmed;
             awayday.TotalCost = TotalCost;
             awayday.AwayDayActivities = activityList;
-            awayday.User = user;
+            awayday.User = castthis.convertInterfacetype(user);
 
             model.awayDayList.Add(awayday);
             presenter.PopulateDataGrid();
@@ -115,7 +116,7 @@ namespace UnitTesting.AwayDayTesting
             awayday.CanBeConfirmed = CanBeConfirmed;
             awayday.TotalCost = TotalCost;
             awayday.AwayDayActivities = activityList;
-            awayday.User = user;
+            awayday.User = (User) user;
 
             model.awayDayList.Add(awayday);
             model.awayDayList.Add(awayday);

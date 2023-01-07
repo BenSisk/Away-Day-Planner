@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnitTesting.ValidatorTests;
 
 namespace UnitTesting.Booking
 {
@@ -21,9 +22,9 @@ namespace UnitTesting.Booking
         public DateTime dob { get; set; }
         public int phone { get; set; }
         public bool isAdmin { get; set; } = false;
-        public Login Login { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IAddress Address { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ICollection<AwayDay> AwayDay { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public virtual Address Address { get; set; }
+        public virtual Login Login { get; set; }
+        public ICollection<AwayDay> AwayDay { get; set; }
 
         public UserMock() 
         {
@@ -34,6 +35,10 @@ namespace UnitTesting.Booking
             this.isAdmin = true;
             this.dob = DateTime.Now;
             this.phone = 10;
+
+            IAddress address = new AddressMock();
+            UserCast castthis = new UserCast();
+            this.Address = castthis.convertAddresstype(address);
         }
     }
 }

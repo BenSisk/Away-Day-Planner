@@ -31,6 +31,7 @@ namespace awayDayPlanner
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                //Application.Run(FormProvider.LoginForm);
                 Application.Run(FormProvider.LoginForm);
             }
         }

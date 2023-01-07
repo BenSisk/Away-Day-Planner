@@ -23,7 +23,7 @@ namespace awayDayPlanner.GUI.Billing
         System.Windows.Forms.Label billingLabel { get; set; }
         System.Windows.Forms.DataGridView addItemToDGV { get; set; }
 
-
+        void Message(string message);
 
         BillingPresenter Presenter { set; }
 

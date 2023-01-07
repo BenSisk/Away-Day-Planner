@@ -26,7 +26,7 @@ namespace awayDayPlanner.Lib.Users
 
         Login Login { get; set; }
 
-        IAddress Address { get; set; }
+        Address Address { get; set; }
 
         ICollection<AwayDay> AwayDay { get; set; }
 

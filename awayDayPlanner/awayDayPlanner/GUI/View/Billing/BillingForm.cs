@@ -1,5 +1,6 @@
 ﻿using awayDayPlanner.GUI.Billing;
 using awayDayPlanner.GUI.Model.Billing; //this needs to be bens namespace
+using awayDayPlanner.GUI.View.AwayDays;
 using awayDayPlanner.Source.Activities;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,11 @@ namespace awayDayPlanner.GUI.View.Billing
 {
     public partial class BillingForm : Form, IBillingView
     {
-        
+
+        public AwayDay awayDay  { get; set; } = null;
+
         public BillingForm()
         {
-            this.AwayDay = new AwayDay();
-            //this should be bens awayday object
             InitializeComponent();
         }
 
@@ -90,17 +91,28 @@ namespace awayDayPlanner.GUI.View.Billing
 
         public void btnRegister_Click(object sender, EventArgs e)
         {
-            Presenter.Submit(this.AwayDay);
-        }
-
-        private void BillingForm_Load(object sender, EventArgs e)
-        {
-            Presenter.BillingLoad(this.AwayDay);
+            Presenter.Submit(this.awayDay);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Presenter.Close();
+        }
+        public void Message(string message)
+        {
+            MessageBox.Show(message);
+        }
+
+        public void Reset()
+        {
+            this.Controls.Clear();
+            InitializeComponent();
+        }
+
+        public void Execute()
+        {
+            Presenter.BillingLoad(this.awayDay);
+            this.Show();
         }
     }
 }

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using awayDayPlanner.GUI;
-using awayDayPlanner.GUI.View.ControlPanel;
+﻿using awayDayPlanner.GUI.View.ControlPanel;
 using awayDayPlanner.GUI.View.Booking;
 using awayDayPlanner.GUI.View.AwayDays;
 using awayDayPlanner.GUI.View.Admin;
@@ -15,11 +7,9 @@ using awayDayPlanner.GUI.Presenter.ControlPanel;
 using awayDayPlanner.GUI.Presenter.Booking;
 using awayDayPlanner.GUI.Presenter.AwayDays;
 using awayDayPlanner.GUI.Presenter.Admin;
-using awayDayPlanner.GUI.Presenter.Billing;
 using awayDayPlanner.GUI.Model.Booking;
 using awayDayPlanner.GUI.Model.AwayDays;
 using awayDayPlanner.GUI.Model.Admin;
-using awayDayPlanner.GUI.Model.Billing;
 using awayDayPlanner.GUI.View.NewItem;
 using awayDayPlanner.GUI.Model;
 using awayDayPlanner.Lib.Users;
