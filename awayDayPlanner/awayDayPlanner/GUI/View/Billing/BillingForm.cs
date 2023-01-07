@@ -19,9 +19,10 @@ namespace awayDayPlanner.GUI.View.Billing
 
         public AwayDay awayDay  { get; set; } = null;
 
-        public BillingForm()
+        public BillingForm(AwayDay awayDay)
         {
             InitializeComponent();
+            this.awayDay = awayDay;
         }
 
         public System.Windows.Forms.Button buttonClose
@@ -113,6 +114,11 @@ namespace awayDayPlanner.GUI.View.Billing
         {
             Presenter.BillingLoad(this.awayDay);
             this.Show();
+        }
+
+        public void CloseForm()
+        {
+            this.Close();
         }
     }
 }

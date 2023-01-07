@@ -40,7 +40,8 @@ namespace awayDayPlanner.GUI.Model.Booking
                 Database.Database.Data.AwayDay.Add(awayday);
                 Database.Database.Data.SaveChanges();
 
-                FormProvider.BillingForm.awayDay = awayday;
+                //var _form = FormProvider.BillingForm(awayday);
+                //_form.Execute();
 
                 return 0;
             }

@@ -92,8 +92,7 @@ namespace awayDayPlanner.GUI
 
         public void Close ()
         {
-            FormProvider.BillingForm.Reset();
-            FormProvider.BillingForm.Hide();
+            _view.CloseForm();
         }
 
 

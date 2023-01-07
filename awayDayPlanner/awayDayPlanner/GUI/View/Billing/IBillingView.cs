@@ -25,6 +25,8 @@ namespace awayDayPlanner.GUI.Billing
 
         void Message(string message);
 
+        void CloseForm();
+
         BillingPresenter Presenter { set; }
 
     }

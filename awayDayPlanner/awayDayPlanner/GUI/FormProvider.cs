@@ -274,22 +274,15 @@ namespace awayDayPlanner.GUI
 
         #region Billing
 
-        public static BillingForm BillingForm
+        public static BillingForm BillingForm(AwayDay awayDay)
         {
-            get
-            {
-
-                if (_BillingForm == null)
-                {
-                    var model = new Model.Billing.BillingModel();
-                    _BillingForm = new BillingForm();
-                    _BillingForm.Presenter = new BillingPresenter(_BillingForm, model);
-                    _BillingForm.AwayDay = new AwayDay();
-                }
+                var model = new Model.Billing.BillingModel();
+                var _BillingForm = new BillingForm(awayDay);
+                _BillingForm.Presenter = new BillingPresenter(_BillingForm, model);
+                _BillingForm.AwayDay = new AwayDay();
 
                 return _BillingForm;
-            }
-            
+           
         }
 
         #endregion
@@ -312,6 +305,5 @@ namespace awayDayPlanner.GUI
         private static AdminPresenter _adminPresenter;
         private static AdminReviewForm _adminReviewForm;
         private static AdminReviewPresenter _adminReviewPresenter;
-        private static BillingForm _BillingForm;
     }
 }

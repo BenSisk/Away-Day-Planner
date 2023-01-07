@@ -66,8 +66,8 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
                     if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
                     {
                         awayday.User = (User) User.getInstance();
-                        FormProvider.BillingForm.awayDay = awayday;
-                        FormProvider.BillingForm.Execute();
+                        var _form = FormProvider.BillingForm(awayday);
+                        _form.Execute();
                     }
                     view.Reset();
                 }

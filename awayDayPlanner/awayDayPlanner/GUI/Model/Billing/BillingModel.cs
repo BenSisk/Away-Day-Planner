@@ -35,7 +35,7 @@ namespace awayDayPlanner.GUI.Model.Billing
 
         public void Submit(AwayDay awayDay)
         {
-            var frm = FormProvider.BillingForm;
+            var frm = FormProvider.BillingForm(awayDay);
             using (var bmp = new Bitmap(frm.Width, frm.Height))
             {
                 frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
