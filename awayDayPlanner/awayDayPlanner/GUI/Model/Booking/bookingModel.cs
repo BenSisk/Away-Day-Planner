@@ -32,13 +32,13 @@ namespace awayDayPlanner.GUI.Model.Booking
                     awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
-                awayday.User = UserCast.convertInterfacetype(iuser);
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;
 
-                if (typeof(IUser) == typeof(User))
+                if (iuser.GetType() == typeof(User))
                 {
+                    awayday.User = (User) iuser;
                     Database.Database.Data.AwayDay.Add(awayday);
                     Database.Database.Data.SaveChanges();
 
