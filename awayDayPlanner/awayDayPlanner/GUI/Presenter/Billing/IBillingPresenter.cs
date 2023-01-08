@@ -8,6 +8,8 @@ namespace awayDayPlanner.GUI.Presenter.Billing
 {
     interface IBillingPresenter
     {
+        void DataGridSetup();
+
 
     }
 }

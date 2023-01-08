@@ -102,9 +102,14 @@ namespace awayDayPlanner.GUI.Model
                 password = password + salt;
                 password = HashProvider.Hash(password, new SHA256Hasher());
                 IUser user = loginVerify(username, password);
-                user.Address = getUserAddress(user);
-                User.UpdateInstance(user);
-                return user;
+                if (user == null)
+                    return null;
+                else;
+                {
+                    user.Address = getUserAddress(user);
+                    User.UpdateInstance(user);
+                    return user;
+                }
             }
         }
 

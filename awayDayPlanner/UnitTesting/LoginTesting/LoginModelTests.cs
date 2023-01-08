@@ -20,6 +20,7 @@ namespace UnitTesting.LoginTesting
         [TestMethod]
         public void TestNullSalt()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName);
             LoginModel model = new LoginModel();
 
             IUser result = model.Submit("NoSuchUser", "password");
@@ -31,6 +32,8 @@ namespace UnitTesting.LoginTesting
         [TestMethod]
         public void TestInvalidPassword()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName);
+
             LoginModel model = new LoginModel();
             IUser result = model.Submit("Admin", "TotallyIncorrect");
 
