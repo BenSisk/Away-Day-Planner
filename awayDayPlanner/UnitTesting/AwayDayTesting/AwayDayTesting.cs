@@ -178,21 +178,12 @@ namespace UnitTesting.AwayDayTesting
             model.awayDayList = new List<AwayDay>();
             AwayDay awayday = new AwayDay();
 
-            DateTime datetime = DateTime.Now;
-            bool Confirmed = false;
-            bool CanBeConfirmed = true;
-            double TotalCost = 0;
-            IUser user = new UserMock();
-            List<Activity> activityList = new List<Activity> { new Activity(), new Activity() };
-
-
-            awayday.AwayDayDate = datetime;
-            awayday.Confirmed = Confirmed;
-            awayday.CanBeConfirmed = CanBeConfirmed;
-            awayday.TotalCost = TotalCost;
-            awayday.AwayDayActivities = activityList;
-            // awayday.User = new UserCast().convertInterfacetype(user);
-
+            awayday.AwayDayDate = DateTime.Today;
+            awayday.Confirmed = false;
+            awayday.CanBeConfirmed = true;
+            awayday.TotalCost = 0;
+            awayday.AwayDayActivities = new List<Activity> { new Activity(), new Activity() };
+            awayday.User = UserCast.convertInterfacetype(new UserMock());
 
             model.awayDayList.Add(awayday);
             presenter.PopulateDataGrid();
@@ -202,7 +193,7 @@ namespace UnitTesting.AwayDayTesting
             grid.Rows.Add(new DataGridViewRow());
 
             view.row = grid.Rows[0];
-            view.result = DialogResult.OK;
+            view.result = DialogResult.Cancel;
             presenter.OpenAwayDay();
 
             Assert.IsTrue(view.haveDisplayedForm);

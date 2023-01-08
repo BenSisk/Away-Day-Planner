@@ -36,11 +36,15 @@ namespace awayDayPlanner.GUI.Model.Booking
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;
-                Database.Database.Data.AwayDay.Add(awayday);
-                Database.Database.Data.SaveChanges();
 
-                var _form = FormProvider.BillingForm(awayday);
-                _form.Execute();
+                if (typeof(IUser) == typeof(User))
+                {
+                    Database.Database.Data.AwayDay.Add(awayday);
+                    Database.Database.Data.SaveChanges();
+
+                    var _form = FormProvider.BillingForm(awayday);
+                    _form.Execute();
+                }
 
                 return 0;
             }

@@ -16,13 +16,10 @@ namespace awayDayPlanner.GUI.View.Billing
 {
     public partial class BillingForm : Form, IBillingView
     {
-
-        public AwayDay awayDay  { get; set; } = null;
-
         public BillingForm(AwayDay awayDay)
         {
             InitializeComponent();
-            this.awayDay = awayDay;
+            this.AwayDay = awayDay;
         }
 
         public System.Windows.Forms.Button buttonClose
@@ -57,6 +54,7 @@ namespace awayDayPlanner.GUI.View.Billing
         public BillingPresenter Presenter { private get; set; }
 
         public AwayDay AwayDay { get; set; }
+
         public System.Windows.Forms.Label BuyerName
         {
             get { return this.buyerNameLabel; }
@@ -92,7 +90,7 @@ namespace awayDayPlanner.GUI.View.Billing
 
         public void btnRegister_Click(object sender, EventArgs e)
         {
-            Presenter.Submit(this.awayDay);
+            Presenter.Submit(this.AwayDay);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -112,7 +110,7 @@ namespace awayDayPlanner.GUI.View.Billing
 
         public void Execute()
         {
-            Presenter.BillingLoad(this.awayDay);
+            Presenter.BillingLoad(this.AwayDay);
             this.Show();
         }
 
