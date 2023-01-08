@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace awayDayPlanner.Source.Users
 {
-    public class UserCast
+    public static class UserCast
     {
-        public User convertInterfacetype(IUser user)
+        public static User convertInterfacetype(IUser user)
         {
             User.getInstance().userID = user.userID;
             User.getInstance().firstname = user.firstname;
@@ -24,7 +24,7 @@ namespace awayDayPlanner.Source.Users
             return (User) User.getInstance();
         }
 
-        public Address convertAddresstype(IAddress address)
+        public static Address convertAddresstype(IAddress address)
         {
             Address.getInstance().AddressID = address.AddressID;
             Address.getInstance().FirstLine = address.FirstLine;

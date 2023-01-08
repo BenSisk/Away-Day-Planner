@@ -68,8 +68,7 @@ namespace UnitTesting.LoginTesting
         {
             IUser user = User.getInstance();
             IAddress address = new AddressMock();
-            UserCast castthis = new UserCast();
-            user.Address = castthis.convertAddresstype(address);
+            user.Address = UserCast.convertAddresstype(address);
 
             Assert.IsInstanceOfType(user.Address, typeof(Address));
         }

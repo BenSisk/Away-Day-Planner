@@ -164,6 +164,8 @@ namespace UnitTesting.Booking
             activity.Notes = "notes";
 
             IUser user = new UserMock();
+            IAddress address = new AddressMock();
+            user.Address = UserCast.convertAddresstype(address);
             int output = model.Submit(new List<IActivity> { activity, activity, activity }, DateTime.Now, user);
 
             Assert.AreEqual(0, output);

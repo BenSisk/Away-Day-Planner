@@ -36,9 +36,7 @@ namespace UnitTesting.Booking
             this.dob = DateTime.Now;
             this.phone = 10;
 
-            IAddress address = new AddressMock();
-            UserCast castthis = new UserCast();
-            this.Address = castthis.convertAddresstype(address);
+            this.Address = UserCast.convertAddresstype(new AddressMock());
         }
     }
 }
