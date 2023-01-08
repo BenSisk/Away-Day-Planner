@@ -25,7 +25,6 @@ namespace awayDayPlanner.GUI.Model.Booking
         {
             if (activities.Count > 0)
             {
-                UserCast castthis = new UserCast();
                 AwayDay awayday = new AwayDay();
                 foreach (IActivity activity in activities)
                 {
@@ -33,15 +32,19 @@ namespace awayDayPlanner.GUI.Model.Booking
                     awayday.AwayDayActivities.Add(activity.GetObject());
                 }
                 awayday.AwayDayDate = date;
-                awayday.User = castthis.convertInterfacetype(iuser);
                 awayday.Confirmed = false;
                 awayday.CanBeConfirmed = false;
                 awayday.TotalCost = 0;
-                Database.Database.Data.AwayDay.Add(awayday);
-                Database.Database.Data.SaveChanges();
 
-                //var _form = FormProvider.BillingForm(awayday);
-                //_form.Execute();
+                if (iuser.GetType() == typeof(User))
+                {
+                    awayday.User = (User) iuser;
+                    Database.Database.Data.AwayDay.Add(awayday);
+                    Database.Database.Data.SaveChanges();
+
+                    var _form = FormProvider.BillingForm(awayday);
+                    _form.Execute();
+                }
 
                 return 0;
             }

@@ -65,7 +65,6 @@ namespace awayDayPlanner.GUI.Presenter.AwayDays
                     FormProvider.AwayDayActivities.PopulateDataGrid(awayday);
                     if (view.DisplayFormAsDialog(FormProvider.AwayDayActivities) == DialogResult.OK)
                     {
-                        awayday.User = (User) User.getInstance();
                         var _form = FormProvider.BillingForm(awayday);
                         _form.Execute();
                     }

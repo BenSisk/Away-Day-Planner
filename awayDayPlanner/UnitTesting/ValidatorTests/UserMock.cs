@@ -36,8 +36,7 @@ namespace UnitTesting.ValidatorTests
             this.phone = 10;
 
             IAddress address = new AddressMock();
-            UserCast castthis = new UserCast();
-            this.Address = castthis.convertAddresstype(address);
+            this.Address = UserCast.convertAddresstype(address);
         }
     }
 }
