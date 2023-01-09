@@ -46,7 +46,7 @@
             this.cmbxActivity.FormattingEnabled = true;
             this.cmbxActivity.Location = new System.Drawing.Point(12, 35);
             this.cmbxActivity.Name = "cmbxActivity";
-            this.cmbxActivity.Size = new System.Drawing.Size(121, 21);
+            this.cmbxActivity.Size = new System.Drawing.Size(173, 21);
             this.cmbxActivity.TabIndex = 0;
             this.cmbxActivity.SelectedIndexChanged += new System.EventHandler(this.cmbxActivity_SelectedIndexChanged);
             // 
@@ -63,9 +63,9 @@
             // txtCustomActivity
             // 
             this.txtCustomActivity.Enabled = false;
-            this.txtCustomActivity.Location = new System.Drawing.Point(139, 36);
+            this.txtCustomActivity.Location = new System.Drawing.Point(191, 36);
             this.txtCustomActivity.Name = "txtCustomActivity";
-            this.txtCustomActivity.Size = new System.Drawing.Size(237, 20);
+            this.txtCustomActivity.Size = new System.Drawing.Size(185, 20);
             this.txtCustomActivity.TabIndex = 1;
             this.txtCustomActivity.TabStop = false;
             // 
@@ -98,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(136, 13);
+            this.label1.Location = new System.Drawing.Point(188, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 7;
@@ -124,7 +124,7 @@
             this.lblCost.TabIndex = 9;
             this.lblCost.Text = "Estimated Cost:";
             // 
-            // addNewItem
+            // AddNewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,7 +138,7 @@
             this.Controls.Add(this.txtCustomActivity);
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.cmbxActivity);
-            this.Name = "addNewItem";
+            this.Name = "AddNewItem";
             this.Text = "addNewItem";
             this.Load += new System.EventHandler(this.addNewItem_Load);
             this.ResumeLayout(false);
